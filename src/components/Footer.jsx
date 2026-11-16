@@ -306,7 +306,7 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate?.('home', '#featured-stages')}
+                  onClick={() => onNavigate?.('gallery')}
                   className="hover:text-gold transition-colors cursor-pointer text-left"
                 >
                   Gallery
