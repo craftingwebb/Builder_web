@@ -56,7 +56,7 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
     { label: 'About', href: '#/about', isPage: true },
     { label: 'Services', href: '#/services', isPage: true },
     { label: 'Portfolio', href: '#/portfolio', isPage: true },
-    { label: 'Clients', href: '#testimonials' },
+    { label: 'Clients', href: '#/clients', isPage: true },
     { label: 'Gallery', href: '#featured-stages' },
     { label: 'Insights', href: '#insights' },
     { label: 'Contact', href: '#/contact', isPage: true },
@@ -72,6 +72,8 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
       onNavigate?.('services');
     } else if (link.label === 'Portfolio') {
       onNavigate?.('portfolio');
+    } else if (link.label === 'Clients') {
+      onNavigate?.('clients');
     } else if (link.label === 'Contact') {
       onNavigate?.('contact');
     } else {
@@ -107,6 +109,7 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
               (currentPage === 'about' && link.label === 'About') ||
               (currentPage === 'services' && link.label === 'Services') ||
               (currentPage === 'portfolio' && link.label === 'Portfolio') ||
+              (currentPage === 'clients' && link.label === 'Clients') ||
               (currentPage === 'contact' && link.label === 'Contact');
             return (
               <a
@@ -164,6 +167,7 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
                 (currentPage === 'about' && link.label === 'About') ||
                 (currentPage === 'services' && link.label === 'Services') ||
                 (currentPage === 'portfolio' && link.label === 'Portfolio') ||
+                (currentPage === 'clients' && link.label === 'Clients') ||
                 (currentPage === 'contact' && link.label === 'Contact');
               return (
                 <a

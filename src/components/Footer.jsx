@@ -257,7 +257,7 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate?.('home', '#testimonials')}
+                  onClick={() => onNavigate?.('clients')}
                   className="hover:text-gold transition-colors cursor-pointer text-left"
                 >
                   Our Clients
@@ -265,7 +265,7 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate?.('home', '#testimonials')}
+                  onClick={() => onNavigate?.('clients')}
                   className="hover:text-gold transition-colors cursor-pointer text-left"
                 >
                   Partners

@@ -10,6 +10,7 @@ import PortfolioPage from './components/PortfolioPage';
 import ProposalPage from './components/ProposalPage';
 import AboutPage from './components/AboutPage';
 import ServicesPage from './components/ServicesPage';
+import ClientsPage from './components/ClientsPage';
 import ContactPage from './components/ContactPage';
 import IndustriesSection from './components/IndustriesSection';
 import ProcessSection from './components/ProcessSection';
@@ -34,6 +35,9 @@ export default function App() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (hash === '#/services' || hash === '#services') {
         setCurrentPage('services');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (hash === '#/clients' || hash === '#clients') {
+        setCurrentPage('clients');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (hash === '#/about' || hash === '#about') {
         setCurrentPage('about');
@@ -77,6 +81,10 @@ export default function App() {
       } else {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
+    } else if (page === 'clients') {
+      window.location.hash = '#/clients';
+      setCurrentPage('clients');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (page === 'about') {
       window.location.hash = '#/about';
       setCurrentPage('about');
@@ -146,6 +154,15 @@ export default function App() {
         /* Dedicated About Us Page (Screenshots 1-7) */
         <main>
           <AboutPage
+            onNavigateHome={() => handleNavigate('home')}
+            onOpenProposalModal={() => handleNavigate('proposal')}
+            onViewPortfolio={() => handleNavigate('portfolio')}
+          />
+        </main>
+      ) : currentPage === 'clients' ? (
+        /* Dedicated Clients & Case Studies Page (Screenshots 1-9) */
+        <main>
+          <ClientsPage
             onNavigateHome={() => handleNavigate('home')}
             onOpenProposalModal={() => handleNavigate('proposal')}
             onViewPortfolio={() => handleNavigate('portfolio')}
