@@ -1,25 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, ArrowRight, Menu, X } from 'lucide-react';
 
-export function Logo({ name = "Lumora Events", light = true }) {
-  const [first, ...rest] = name.split(" ");
+export function Logo({ light = true }) {
   return (
     <span className="inline-flex items-center gap-2.5">
-      <span className="inline-flex items-center justify-center size-9 rounded-[0.65rem] bg-[#11173a] ring-1 ring-[#c9a96a]/40 shrink-0">
-        <svg viewBox="0 0 32 32" className="size-[62%]" fill="none">
-          <path d="M6 22a10 10 0 0 1 20 0" stroke="#c9a96a" strokeWidth="2.6" strokeLinecap="round" />
-          <path d="M11 22a5 5 0 0 1 10 0" stroke="#c9a96a" strokeWidth="2.6" strokeLinecap="round" opacity=".55" />
-          <path d="M4 26h24" stroke="#c9a96a" strokeWidth="2.6" strokeLinecap="round" />
-          <circle cx="16" cy="9" r="2" fill="#c9a96a" />
-        </svg>
+      <span className="inline-flex items-center justify-center size-9 rounded-[0.65rem] bg-[#11173a] ring-1 ring-[#c9a96a]/40 shrink-0 font-bold text-xs tracking-wider text-gold shadow-sm">
+        SA
       </span>
-      <span className="text-[1.15rem] leading-none font-bold tracking-[-0.02em] text-white">
-        {first}
-        {rest.length > 0 && (
-          <span className="accent-serif ml-1 text-[1.3rem] font-normal text-gold">
-            {rest.join(" ")}
-          </span>
-        )}
+      <span className="text-[1.05rem] leading-none font-bold tracking-[-0.02em] text-white flex flex-wrap items-baseline gap-1">
+        <span>S. A Event&apos;s</span>
+        <span className="accent-serif text-[1.15rem] font-normal text-gold">
+          &amp; Manpower Service
+        </span>
       </span>
     </span>
   );
@@ -101,9 +93,9 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
         <button
           onClick={() => onNavigate?.('home')}
           className="shrink-0 cursor-pointer text-left"
-          aria-label="Lumora Events home"
+          aria-label="S. A Event's and Manpower Service home"
         >
-          <Logo name="Lumora Events" light={true} />
+          <Logo light={true} />
         </button>
 
         {/* Center Nav links */}

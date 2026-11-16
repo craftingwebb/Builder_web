@@ -39,7 +39,7 @@ export default function WhatsAppButton() {
 
       {/* Floating WhatsApp Pill Button */}
       <a
-        href="https://wa.me/917600149422?text=Hello%20Lumora%20Events,%20I%20would%20like%20to%20request%20a%20proposal%20for%20an%20event."
+        href="https://wa.me/917600149422?text=Hello%20S.%20A%20Event's%20and%20Manpower%20Service,%20I%20would%20like%20to%20request%20a%20proposal%20for%20an%20event."
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold tracking-wide shadow-2xl shadow-emerald-500/30 transition-all hover:scale-105"

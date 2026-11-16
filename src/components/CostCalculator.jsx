@@ -86,7 +86,7 @@ export default function CostCalculator() {
       .filter(Boolean)
       .join(', ');
 
-    const message = `*Lumora Events - Instant Estimate Request*%0A%0A` +
+    const message = `*S. A Event's and Manpower Service - Instant Estimate Request*%0A%0A` +
       `*Event Type:* ${currentEventType.label}%0A` +
       `*Expected Guests:* ${guestCount}%0A` +
       `*Tentative Date:* ${eventDate || 'To be decided'}%0A` +

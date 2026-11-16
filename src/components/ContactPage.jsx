@@ -44,10 +44,10 @@ function SocialIcon({ type }) {
 
 // 4 Regional Production Offices
 const OFFICES = [
-  { name: 'Mumbai (HQ)', subtitle: 'Production office' },
+  { name: 'Kolkata (HQ)', subtitle: '22/a gora chand lane' },
+  { name: 'Mumbai', subtitle: 'Production office' },
   { name: 'Delhi NCR', subtitle: 'Production office' },
   { name: 'Bengaluru', subtitle: 'Production office' },
-  { name: 'Hyderabad', subtitle: 'Production office' },
 ];
 
 export default function ContactPage({
@@ -176,7 +176,7 @@ export default function ContactPage({
 
             {/* Card 3: WHATSAPP ENQUIRY */}
             <a
-              href="https://wa.me/917600149422?text=Hello%20Lumora%20Events,%20I'd%20like%20to%20discuss%20an%20event."
+              href="https://wa.me/917600149422?text=Hello%20S.%20A%20Event's%20and%20Manpower%20Service,%20I'd%20like%20to%20discuss%20an%20event."
               target="_blank"
               rel="noopener noreferrer"
               className="group rounded-3xl bg-white p-7 shadow-lg border border-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
@@ -398,29 +398,40 @@ export default function ContactPage({
             {/* ------------------------------------------------------- */}
             <div className="lg:col-span-5 space-y-6">
               
-              {/* Top Dark Card: Official Social Connect */}
+              {/* Top Dark Card: Head Office & Official Social Connect */}
               <div className="rounded-3xl bg-[#090d21] p-8 sm:p-10 text-white shadow-xl border border-white/10">
                 <div className="flex items-center gap-2 mb-4">
                   <span className="w-8 h-px bg-gold" />
                   <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
-                    OFFICIAL INSTAGRAM &amp; SOCIALS
+                    HEAD OFFICE &amp; OPERATIONS
                   </span>
+                </div>
+
+                {/* Physical Address */}
+                <div className="flex items-start gap-3 mt-4">
+                  <MapPin className="size-5 shrink-0 text-gold mt-1" />
+                  <div>
+                    <p className="text-base sm:text-lg font-bold leading-snug text-white/95">
+                      22/a gora chand lane, Kolkata, West Bengal
+                    </p>
+                    <p className="text-xs text-white/60 mt-1">S. A Event&apos;s and Manpower Service</p>
+                  </div>
                 </div>
 
                 <a
                   href="https://www.instagram.com/s.aeventsandmanpowerservice/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-4 mt-4 group"
+                  className="flex items-start gap-4 mt-6 pt-6 border-t border-white/10 group"
                 >
-                  <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white shadow-lg group-hover:scale-105 transition-transform">
+                  <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white shadow-lg group-hover:scale-105 transition-transform">
                     <SocialIcon type="instagram" />
                   </div>
                   <div>
-                    <p className="text-base sm:text-lg font-bold leading-tight text-white group-hover:text-gold transition-colors">
+                    <p className="text-sm sm:text-base font-bold leading-tight text-white group-hover:text-gold transition-colors">
                       @s.aeventsandmanpowerservice
                     </p>
-                    <p className="text-xs text-white/60 mt-1">S.A EVENTS &amp; MANPOWER SERVICE</p>
+                    <p className="text-xs text-white/60 mt-0.5">Follow Official Instagram &amp; Updates</p>
                   </div>
                 </a>
 

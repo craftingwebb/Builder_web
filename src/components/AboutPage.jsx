@@ -204,12 +204,10 @@ export default function AboutPage({
 
           {/* Paragraph */}
           <p className="mt-6 max-w-3xl text-base sm:text-lg text-white/70 leading-relaxed font-normal">
-            Lumora Events is a full-service corporate event management company
-            headquartered in Mumbai, with production teams in Delhi NCR,
-            Bengaluru and Hyderabad. We partner with leadership, HR and
-            marketing teams to plan and execute conferences, launches, award
-            nights, offsites and hybrid experiences — on brief, on brand and on
-            budget.
+            S. A Event&apos;s and Manpower Service is a full-service event management and certified manpower collective
+            headquartered at 22/a gora chand lane, Kolkata, West Bengal, with production operations across India.
+            We partner with leadership, HR, corporate marketers, and private organizers to plan and execute conferences, launches, award
+            nights, weddings, and bespoke gatherings — on brief, on brand and on budget.
           </p>
         </div>
       </section>
@@ -225,7 +223,7 @@ export default function AboutPage({
               <div className="relative overflow-hidden rounded-[1.75rem] shadow-2xl bg-zinc-900 aspect-[4/3] group">
                 <img
                   src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=85"
-                  alt="Lumora corporate auditorium arena"
+                  alt="S. A Event's and Manpower Service corporate auditorium arena"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
@@ -250,10 +248,7 @@ export default function AboutPage({
 
               <div className="mt-8 space-y-5 text-sm sm:text-base text-ink/75 leading-relaxed">
                 <p>
-                  Lumora began in 2012 with a three-person team and a single
-                  dealer meet in Pune. The brief was simple — make 400 channel
-                  partners feel valued. We obsessed over every detail, from the
-                  arrival experience to the final applause.
+                  S. A Event&apos;s and Manpower Service began with an uncompromising standard for stage perfection and client trust. The brief was simple — make every single channel partner and guest feel valued. We obsessed over every detail, from the arrival experience to the final applause.
                 </p>
                 <p>
                   That obsession became our method. Today, a 120-member team of

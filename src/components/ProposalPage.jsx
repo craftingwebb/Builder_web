@@ -99,7 +99,7 @@ export default function ProposalPage({ onNavigateHome }) {
 
     // Construct formal WhatsApp submission
     const message =
-      `*New RFP Proposal Request - Lumora Events*%0A%0A` +
+      `*New RFP Proposal Request - S. A Event's and Manpower Service*%0A%0A` +
       `*Client:* ${fullName} (${company || 'Corporate Client'})%0A` +
       `*Work Email:* ${email}%0A` +
       `*Phone:* ${phone}%0A` +

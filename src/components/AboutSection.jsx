@@ -15,7 +15,7 @@ export default function AboutSection({ onOpenProposalModal, onNavigateAbout }) {
             </p>
 
             <p className="mt-8 text-[1.65rem] leading-[1.35] font-medium tracking-[-0.02em] text-ink sm:text-[2.2rem]">
-              Lumora Events is an integrated experiential design and turnkey production collective headquartered in Mumbai, with dedicated production units in Delhi NCR, Bengaluru, and Hyderabad. We collaborate with visionary corporate leaders, marketing directors, and creative founders to orchestrate high-impact conferences, product reveals, awards galas, and bespoke summits &mdash; flawlessly aligned with your strategy, your brand, and your investment targets.
+              S. A Event&apos;s and Manpower Service is an integrated experiential design and turnkey event production collective headquartered at 22/a gora chand lane, Kolkata, with dedicated operations across India. We collaborate with visionary corporate leaders, brand custodians, and celebratory families to orchestrate high-impact conferences, weddings, awards galas, and bespoke summits &mdash; flawlessly aligned with your vision, your brand, and your budget.
             </p>
 
             {/* 3 Metric Stats */}

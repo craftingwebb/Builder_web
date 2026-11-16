@@ -66,7 +66,7 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
           {/* Brand Info & Newsletter (4 cols) */}
           <div className="lg:col-span-4 flex flex-col justify-between">
             <div>
-              <Logo name="Lumora Events" light={true} />
+              <Logo light={true} />
               <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/55">
                 End-to-end creative direction, stage engineering, and turnkey production for landmark conferences, brand reveals, and gala evenings across India and abroad.
               </p>
@@ -103,7 +103,7 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
               {isSubscribed && (
                 <p className="mt-2.5 flex items-center gap-1.5 text-xs text-emerald-400">
                   <CheckCircle2 className="size-3.5" />
-                  <span>Thank you for subscribing to Lumora Insights!</span>
+                  <span>Thank you for subscribing to S. A Event&apos;s and Manpower Service Insights!</span>
                 </p>
               )}
             </form>
@@ -263,7 +263,11 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
 
           {/* 3. Bottom Rounded Contact Desk Card (Screenshot 4) */}
           <div className="md:col-span-2 lg:col-span-12 xl:col-span-12">
-            <div className="grid gap-4 rounded-3xl border border-white/10 bg-white/[0.03] p-6 sm:grid-cols-3 text-sm text-white/70">
+            <div className="grid gap-4 rounded-3xl border border-white/10 bg-white/[0.03] p-6 sm:grid-cols-2 lg:grid-cols-4 text-sm text-white/70">
+              <div className="flex items-start gap-3">
+                <MapPin className="mt-0.5 size-4 shrink-0 text-gold" />
+                <span className="leading-snug">22/a gora chand lane, Kolkata, West Bengal</span>
+              </div>
               <a
                 href="https://www.instagram.com/s.aeventsandmanpowerservice/"
                 target="_blank"
@@ -291,7 +295,7 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
                 className="flex items-center gap-3 hover:text-white transition-colors"
               >
                 <Mail className="size-4 shrink-0 text-gold" />
-                <span>s.aeventsandmanpowerservice@gmail.com</span>
+                <span className="truncate">s.aeventsandmanpowerservice@gmail.com</span>
               </a>
             </div>
           </div>
@@ -299,7 +303,7 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
 
         {/* 4. Copyright & Legal Bar */}
         <div className="flex flex-col gap-4 border-t border-white/10 py-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Lumora Events. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} S. A Event&apos;s and Manpower Service. All rights reserved.</p>
           
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <a href="#" className="hover:text-white transition-colors">
@@ -380,7 +384,7 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
         aria-hidden="true"
         className="pointer-events-none relative -mb-[3vw] overflow-hidden text-center leading-none font-bold tracking-[-0.06em] whitespace-nowrap text-white/[0.04] select-none text-[17vw]"
       >
-        LUMORA
+        S.A EVENTS
       </div>
     </footer>
   );
