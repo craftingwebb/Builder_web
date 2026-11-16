@@ -93,31 +93,34 @@ export default function ProposalBanner({ onOpenProposalModal }) {
               href={item.href}
               target={item.isExternal ? '_blank' : undefined}
               rel={item.isExternal ? 'noreferrer' : undefined}
-              className="group bg-ivory p-7 transition-colors duration-300 hover:bg-white flex flex-col justify-between min-w-0"
+              className="group bg-ivory p-6 sm:p-7 transition-colors duration-300 hover:bg-white flex flex-col justify-start min-w-0"
             >
               {/* Circle Icon Badge */}
-              <div>
-                <span className="flex size-11 items-center justify-center rounded-full bg-ink text-gold transition-colors duration-300 group-hover:bg-[#6d5efc] group-hover:text-white">
-                  <item.icon className="size-[1.15rem]" />
-                </span>
-                <p className="mt-5 text-xs font-semibold tracking-wider text-ink/45 uppercase">
-                  {item.label}
-                </p>
-              </div>
+              <span className="flex size-11 items-center justify-center rounded-full bg-ink text-gold transition-colors duration-300 group-hover:bg-[#6d5efc] group-hover:text-white">
+                <item.icon className="size-[1.15rem]" />
+              </span>
+
+              {/* Eyebrow Label */}
+              <p className="mt-5 text-xs font-semibold tracking-wider text-ink/45 uppercase">
+                {item.label}
+              </p>
 
               {/* Value Text */}
-              <p
-                className="mt-2 text-sm xl:text-[0.95rem] leading-snug font-semibold text-ink"
-                title={item.value}
-              >
-                {item.label === 'EXECUTIVE INBOX' ? (
-                  <span className="break-all [overflow-wrap:anywhere]">
-                    s.aeventsandmanpowerservice<wbr />@gmail.com
-                  </span>
-                ) : (
-                  item.value
-                )}
-              </p>
+              {item.label === 'EXECUTIVE INBOX' ? (
+                <p
+                  className="mt-2 text-xs sm:text-[0.78rem] xl:text-[0.82rem] leading-snug font-medium text-ink tracking-tight truncate group-hover:text-[#6d5efc] transition-colors"
+                  title={item.value}
+                >
+                  {item.value}
+                </p>
+              ) : (
+                <p
+                  className="mt-2 text-sm xl:text-[0.95rem] leading-snug font-semibold text-ink group-hover:text-[#6d5efc] transition-colors"
+                  title={item.value}
+                >
+                  {item.value}
+                </p>
+              )}
             </a>
           ))}
         </div>
