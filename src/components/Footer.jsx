@@ -276,11 +276,11 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
                 <span>+91 76001 49422</span>
               </a>
               <a
-                href="mailto:hello@lumoraevents.in"
+                href="mailto:s.aeventsandmanpowerservice@gmail.com"
                 className="flex items-center gap-3 hover:text-white transition-colors"
               >
                 <Mail className="size-4 shrink-0 text-gold" />
-                <span>hello@lumoraevents.in</span>
+                <span>s.aeventsandmanpowerservice@gmail.com</span>
               </a>
             </div>
           </div>

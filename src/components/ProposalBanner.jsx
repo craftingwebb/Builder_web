@@ -12,8 +12,8 @@ const CONTACT_CHANNELS = [
   {
     icon: Mail,
     label: 'EXECUTIVE INBOX',
-    value: 'hello@lumoraevents.in',
-    href: 'mailto:hello@lumoraevents.in',
+    value: 's.aeventsandmanpowerservice@gmail.com',
+    href: 'mailto:s.aeventsandmanpowerservice@gmail.com',
     isExternal: false,
   },
   {
