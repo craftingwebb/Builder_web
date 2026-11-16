@@ -53,7 +53,7 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
               <ArrowUpRight className="size-4" />
             </button>
             <a
-              href="tel:+919820012345"
+              href="tel:+917600149422"
               className="btn-ghost-light !py-3.5 !px-7 font-semibold text-sm transition-all duration-300"
             >
               Speak with a director
@@ -269,11 +269,11 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
                 <span>14th Floor, Lumora House, Bandra Kurla Complex, Mumbai 400051</span>
               </p>
               <a
-                href="tel:+919820012345"
+                href="tel:+917600149422"
                 className="flex items-center gap-3 hover:text-white transition-colors"
               >
                 <Phone className="size-4 shrink-0 text-gold" />
-                <span>+91 98200 12345</span>
+                <span>+91 76001 49422</span>
               </a>
               <a
                 href="mailto:hello@lumoraevents.in"

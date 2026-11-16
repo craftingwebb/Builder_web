@@ -40,8 +40,8 @@ export default function ManpowerSection({ onSelectManpower }) {
             </div>
             <div>
               <p className="text-xs text-zinc-400">Emergency Manpower Dispatch</p>
-              <a href="tel:+919876543210" className="text-sm font-bold text-white hover:text-amber-400 transition-colors">
-                +91 98765 43210
+              <a href="tel:+917600149422" className="text-sm font-bold text-white hover:text-amber-400 transition-colors">
+                +91 76001 49422
               </a>
             </div>
           </div>

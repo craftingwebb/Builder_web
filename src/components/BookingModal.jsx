@@ -48,7 +48,7 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
       `*Specific Requirements:* ${formData.notes || 'None specified'}%0A%0A` +
       `Please provide an official quote and feasibility confirmation.`;
 
-    window.open(`https://wa.me/919876543210?text=${text}`, '_blank');
+    window.open(`https://wa.me/917600149422?text=${text}`, '_blank');
     setSubmitted(true);
   };
 

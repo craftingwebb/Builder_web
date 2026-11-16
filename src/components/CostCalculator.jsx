@@ -97,7 +97,7 @@ export default function CostCalculator() {
       `*Estimated Range:* ${formatCurrency(minEstimate)} - ${formatCurrency(maxEstimate)}%0A%0A` +
       `Please contact me with a finalized formal proposal.`;
 
-    window.open(`https://wa.me/919820012345?text=${message}`, '_blank');
+    window.open(`https://wa.me/917600149422?text=${message}`, '_blank');
   };
 
   return (
@@ -266,7 +266,7 @@ export default function CostCalculator() {
                 <label className="block text-[11px] text-white/60 mb-1">WhatsApp Number</label>
                 <input
                   type="tel"
-                  placeholder="+91 98200..."
+                  placeholder="+91 76001..."
                   value={clientPhone}
                   onChange={(e) => setClientPhone(e.target.value)}
                   className="w-full bg-white/5 border border-white/15 rounded-xl px-3 py-2 text-xs text-white placeholder-white/30 focus:outline-none focus:border-gold"

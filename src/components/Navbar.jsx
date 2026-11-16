@@ -130,11 +130,11 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
         {/* Right Action Button & Hotline */}
         <div className="ml-auto flex items-center gap-4 lg:ml-4">
           <a
-            href="tel:+919820012345"
+            href="tel:+917600149422"
             className="hidden items-center gap-2 text-[0.85rem] font-medium text-white/80 transition hover:text-white xl:flex"
           >
             <Phone className="size-4 text-gold" />
-            <span>+91 98200 12345</span>
+            <span>+91 76001 49422</span>
           </a>
 
           <button
@@ -183,11 +183,11 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
 
             <div className="pt-4 flex flex-col gap-3">
               <a
-                href="tel:+919820012345"
+                href="tel:+917600149422"
                 className="text-xs font-mono text-white/70 flex items-center gap-2"
               >
                 <Phone className="size-4 text-gold" />
-                <span>+91 98200 12345</span>
+                <span>+91 76001 49422</span>
               </a>
 
               <button

@@ -5,8 +5,8 @@ const CONTACT_CHANNELS = [
   {
     icon: Phone,
     label: 'DIRECT LINE',
-    value: '+91 98200 12345',
-    href: 'tel:+919820012345',
+    value: '+91 76001 49422',
+    href: 'tel:+917600149422',
     isExternal: false,
   },
   {
@@ -20,7 +20,7 @@ const CONTACT_CHANNELS = [
     icon: MessageCircle,
     label: 'INSTANT CONCIERGE',
     value: 'Connect with a Director',
-    href: "https://wa.me/919820012345?text=Hi!%20I'd%20like%20to%20plan%20a%20corporate%20event.",
+    href: "https://wa.me/917600149422?text=Hi!%20I'd%20like%20to%20plan%20a%20corporate%20event.",
     isExternal: true,
   },
   {

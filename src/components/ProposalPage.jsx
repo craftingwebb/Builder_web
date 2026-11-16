@@ -112,7 +112,7 @@ export default function ProposalPage({ onNavigateHome }) {
       (briefNotes ? `*Production Brief:* ${briefNotes}%0A%0A` : '%0A') +
       `Please assign a senior director and share the concept deck.`;
 
-    window.open(`https://wa.me/919820012345?text=${message}`, '_blank');
+    window.open(`https://wa.me/917600149422?text=${message}`, '_blank');
     setIsSubmitted(true);
   };
 
@@ -191,14 +191,14 @@ export default function ProposalPage({ onNavigateHome }) {
                 </p>
                 <div className="flex flex-wrap items-center gap-5 text-sm font-semibold">
                   <a
-                    href="tel:+919820012345"
+                    href="tel:+917600149422"
                     className="flex items-center gap-2 text-white hover:text-gold transition-colors"
                   >
                     <Phone className="size-4 text-gold" />
-                    <span>+91 98200 12345</span>
+                    <span>+91 76001 49422</span>
                   </a>
                   <a
-                    href="https://wa.me/919820012345?text=Hi!%20I'd%20like%20to%20discuss%20a%20corporate%20event."
+                    href="https://wa.me/917600149422?text=Hi!%20I'd%20like%20to%20discuss%20a%20corporate%20event."
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-2 text-[#25D366] hover:brightness-110 transition"
@@ -529,7 +529,7 @@ export default function ProposalPage({ onNavigateHome }) {
                               required
                               value={phone}
                               onChange={(e) => setPhone(e.target.value)}
-                              placeholder="+91 98200 XXXXX"
+                              placeholder="+91 76001 XXXXX"
                               className="w-full rounded-xl border border-ink/15 bg-zinc-50/50 px-4 py-2.5 text-xs sm:text-sm text-ink outline-none focus:border-ink focus:bg-white"
                             />
                           </div>

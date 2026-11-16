@@ -293,7 +293,7 @@ export default function ServicesSection({ onSelectService }) {
                           </button>
 
                           <a
-                            href={`https://wa.me/919820012345?text=Hello,%20I%20want%20to%20inquire%20about%20${encodeURIComponent(item.title)}`}
+                            href={`https://wa.me/917600149422?text=Hello,%20I%20want%20to%20inquire%20about%20${encodeURIComponent(item.title)}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-xs text-emerald-400 hover:underline font-semibold"

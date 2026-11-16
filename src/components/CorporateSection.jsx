@@ -26,7 +26,7 @@ export default function CorporateSection({ onSelectService }) {
 
           <div className="flex items-center gap-3">
             <a
-              href="https://wa.me/919876543210?text=Hello,%20I%20am%20looking%20for%20Corporate%20Event%20Management%20services."
+              href="https://wa.me/917600149422?text=Hello,%20I%20am%20looking%20for%20Corporate%20Event%20Management%20services."
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-semibold transition-all border border-zinc-700 flex items-center gap-2"
