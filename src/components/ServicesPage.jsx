@@ -245,8 +245,8 @@ export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onN
       {/* ========================================================= */}
       {/* 2. SERVICES CATALOG (9 Full Alternating Cards on Ivory) */}
       {/* ========================================================= */}
-      <section className="bg-ivory py-16 sm:py-24">
-        <div className="site-container space-y-12 sm:space-y-16">
+      <section className="bg-ivory py-10 sm:py-14">
+        <div className="site-container space-y-6">
           {SERVICES_CATALOG.map((service, idx) => {
             const isReversed = idx % 2 !== 0; // Alternates image left / right
             const IconComponent = service.icon;
