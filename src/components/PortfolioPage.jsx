@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, ArrowUpRight, ArrowRight } from 'lucide-react';
+import { MapPin, ArrowUpRight } from 'lucide-react';
 
 export const ALL_PORTFOLIO_EVENTS = [
   {

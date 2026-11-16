@@ -10,10 +10,7 @@ import {
   PartyPopper,
   MonitorPlay,
   Check,
-  ArrowUpRight,
-  ArrowRight,
-  ExternalLink,
-  MessageCircle
+  ArrowUpRight
 } from 'lucide-react';
 
 export const SERVICES_CATALOG = [

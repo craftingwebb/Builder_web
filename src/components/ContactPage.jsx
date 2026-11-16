@@ -9,8 +9,6 @@ import {
   Send,
   CheckCircle2,
   ExternalLink,
-  Building2,
-  Sparkles
 } from 'lucide-react';
 
 // Social Icon SVGs
@@ -68,20 +66,27 @@ export default function ContactPage({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
+    const cleanName = formData.name.trim().slice(0, 100);
+    const cleanEmail = formData.email.trim().slice(0, 120);
+    const cleanMessage = formData.message.trim().slice(0, 2000);
+    const cleanPhone = formData.phone.trim().slice(0, 30);
+    const cleanCompany = formData.company.trim().slice(0, 120);
 
-    // Dispatch via WhatsApp Concierge
-    const waText =
-      `*New Contact Message from Website*%0A%0A` +
-      `*Name:* ${formData.name}%0A` +
-      `*Company:* ${formData.company || 'Not Specified'}%0A` +
-      `*Email:* ${formData.email}%0A` +
-      `*Phone:* ${formData.phone || 'Not Specified'}%0A` +
-      `*Subject:* ${formData.subject}%0A%0A` +
-      `*Message:*%0A${formData.message}%0A%0A` +
+    if (!cleanName || !cleanEmail || !cleanMessage) return;
+
+    // Securely encode message payload to prevent query-string injection
+    const rawText =
+      `*New Contact Message from Website*\n\n` +
+      `*Name:* ${cleanName}\n` +
+      `*Company:* ${cleanCompany || 'Not Specified'}\n` +
+      `*Email:* ${cleanEmail}\n` +
+      `*Phone:* ${cleanPhone || 'Not Specified'}\n` +
+      `*Subject:* ${formData.subject}\n\n` +
+      `*Message:*\n${cleanMessage}\n\n` +
       `Please contact the sender.`;
 
-    window.open(`https://wa.me/917600149422?text=${waText}`, '_blank');
+    const waUrl = `https://wa.me/917600149422?text=${encodeURIComponent(rawText)}`;
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
     setIsSubmitted(true);
   };
 

@@ -13,7 +13,6 @@ import {
   ChevronLeft,
   ChevronRight,
   ArrowUpRight,
-  Eye,
   Volume2,
   VolumeX,
 } from 'lucide-react';

@@ -376,7 +376,7 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
 
         {/* 4. Copyright & Legal Bar */}
         <div className="flex flex-col gap-4 border-t border-white/10 py-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} S. A Event&apos;s and Manpower Service. All rights reserved.</p>
+          <p>© 2026 S. A Event&apos;s and Manpower Service. All rights reserved.</p>
           
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <a href="#" className="hover:text-white transition-colors">

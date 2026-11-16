@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, ArrowUpRight, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { Star, ArrowUpRight } from 'lucide-react';
 
 // 16 Corporate Clients (4x4 Grid in Screenshot 2 & 5: media_1794857642174_4bde9fee.jpg)
 const CORPORATE_CLIENTS = [

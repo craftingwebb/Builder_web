@@ -35,20 +35,27 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const cleanName = formData.name.trim().slice(0, 100);
+    const cleanPhone = formData.phone.trim().slice(0, 30);
+    const cleanEmail = formData.email.trim().slice(0, 120);
+    const cleanCity = formData.city.trim().slice(0, 100);
+    const cleanNotes = formData.notes.trim().slice(0, 1500);
 
-    const text = `*New Event Booking Request - AuraVibe Events*%0A%0A` +
-      `*Client Name:* ${formData.name}%0A` +
-      `*Phone:* ${formData.phone}%0A` +
-      `*Email:* ${formData.email || 'N/A'}%0A` +
-      `*Event Category:* ${formData.eventType}%0A` +
-      `*Requested Service/Crew:* ${formData.serviceTitle || 'Full Turnkey Event'}%0A` +
-      `*City:* ${formData.city}%0A` +
-      `*Target Date:* ${formData.date || 'TBD'}%0A` +
-      `*Expected Guests:* ${formData.guestCount}%0A` +
-      `*Specific Requirements:* ${formData.notes || 'None specified'}%0A%0A` +
+    const rawText =
+      `*New Event Booking Request - S. A Event's and Manpower Service*\n\n` +
+      `*Client Name:* ${cleanName}\n` +
+      `*Phone:* ${cleanPhone}\n` +
+      `*Email:* ${cleanEmail || 'N/A'}\n` +
+      `*Event Category:* ${formData.eventType}\n` +
+      `*Requested Service/Crew:* ${formData.serviceTitle || 'Full Turnkey Event'}\n` +
+      `*City:* ${cleanCity || 'TBD'}\n` +
+      `*Target Date:* ${formData.date || 'TBD'}\n` +
+      `*Expected Guests:* ${formData.guestCount}\n` +
+      `*Specific Requirements:* ${cleanNotes || 'None specified'}\n\n` +
       `Please provide an official quote and feasibility confirmation.`;
 
-    window.open(`https://wa.me/917600149422?text=${text}`, '_blank');
+    const waUrl = `https://wa.me/917600149422?text=${encodeURIComponent(rawText)}`;
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
     setSubmitted(true);
   };
 

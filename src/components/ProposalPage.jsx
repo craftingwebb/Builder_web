@@ -95,24 +95,33 @@ export default function ProposalPage({ onNavigateHome }) {
 
   const handleFinalSubmit = (e) => {
     e.preventDefault();
-    if (!fullName || !email || !phone) return;
+    const cleanName = fullName.trim().slice(0, 100);
+    const cleanEmail = email.trim().slice(0, 120);
+    const cleanPhone = phone.trim().slice(0, 30);
+    const cleanCompany = company.trim().slice(0, 120);
+    const cleanCity = city.trim().slice(0, 100);
+    const cleanTargetDate = targetDate.trim().slice(0, 100);
+    const cleanNotes = briefNotes.trim().slice(0, 2000);
 
-    // Construct formal WhatsApp submission
-    const message =
-      `*New RFP Proposal Request - S. A Event's and Manpower Service*%0A%0A` +
-      `*Client:* ${fullName} (${company || 'Corporate Client'})%0A` +
-      `*Work Email:* ${email}%0A` +
-      `*Phone:* ${phone}%0A` +
-      `*Event Type:* ${selectedEventType}%0A` +
-      `*Required Services:* ${selectedServices.join(', ') || 'Full Turnkey'}%0A` +
-      `*Destination City:* ${city || 'TBD'}%0A` +
-      `*Target Timeline:* ${targetDate || 'TBD'}%0A` +
-      `*Estimated Delegates:* ${guestCount}%0A` +
-      `*NDA Requested:* ${requireNda ? 'YES' : 'Standard Confidentiality'}%0A` +
-      (briefNotes ? `*Production Brief:* ${briefNotes}%0A%0A` : '%0A') +
+    if (!cleanName || !cleanEmail || !cleanPhone) return;
+
+    // Construct formal WhatsApp submission with safe URI encoding
+    const rawMessage =
+      `*New RFP Proposal Request - S. A Event's and Manpower Service*\n\n` +
+      `*Client:* ${cleanName} (${cleanCompany || 'Corporate Client'})\n` +
+      `*Work Email:* ${cleanEmail}\n` +
+      `*Phone:* ${cleanPhone}\n` +
+      `*Event Type:* ${selectedEventType}\n` +
+      `*Required Services:* ${selectedServices.join(', ') || 'Full Turnkey'}\n` +
+      `*Destination City:* ${cleanCity || 'TBD'}\n` +
+      `*Target Timeline:* ${cleanTargetDate || 'TBD'}\n` +
+      `*Estimated Delegates:* ${guestCount}\n` +
+      `*NDA Requested:* ${requireNda ? 'YES' : 'Standard Confidentiality'}\n` +
+      (cleanNotes ? `*Production Brief:* ${cleanNotes}\n\n` : '\n') +
       `Please assign a senior director and share the concept deck.`;
 
-    window.open(`https://wa.me/917600149422?text=${message}`, '_blank');
+    const waUrl = `https://wa.me/917600149422?text=${encodeURIComponent(rawMessage)}`;
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
     setIsSubmitted(true);
   };
 
