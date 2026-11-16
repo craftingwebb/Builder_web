@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { InstagramLogo } from './Footer';
+import WhatsAppIcon from './WhatsAppIcon';
 import {
   Phone,
   Mail,
-  MessageCircle,
   Clock,
   MapPin,
   Send,
@@ -217,8 +217,8 @@ export default function ContactPage({
               rel="noopener noreferrer"
               className="group rounded-3xl bg-white p-7 shadow-lg border border-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
             >
-              <div className="flex size-11 items-center justify-center rounded-full bg-ink text-[#25D366] group-hover:scale-105 transition-transform">
-                <MessageCircle className="size-5" />
+              <div className="flex size-11 items-center justify-center rounded-full bg-ink group-hover:scale-110 transition-transform shadow-md">
+                <WhatsAppIcon className="size-6" bubbleColor="#25D366" phoneColor="#FFFFFF" />
               </div>
               <p className="mt-6 text-[0.7rem] font-bold uppercase tracking-[0.15em] text-ink/50">
                 WHATSAPP ENQUIRY

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import WhatsAppIcon from './WhatsAppIcon';
 import {
   Clock,
   ShieldCheck,
   UserCheck,
   Phone,
-  MessageCircle,
   ArrowRight,
   ArrowLeft,
   Check,
@@ -238,7 +238,7 @@ export default function ProposalPage({ onNavigateHome }) {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-[#25D366] hover:brightness-110 transition"
                   >
-                    <MessageCircle className="size-4 fill-current" />
+                    <WhatsAppIcon className="size-4.5" bubbleColor="#25D366" phoneColor="#FFFFFF" />
                     <span>WhatsApp us</span>
                   </a>
                 </div>

@@ -34,11 +34,9 @@ export default function Hero({ onOpenProposalModal, onViewPortfolio }) {
         ))}
       </div>
 
-      {/* Exact 3 overlay layers in Deep Velvet Maroon Noir with Center Ambient Glow */}
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(19,3,8,0.55)_0%,rgba(19,3,8,0.30)_40%,rgba(19,3,8,0.95)_100%)]" />
-      <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 -z-10 h-[26rem] w-[55rem] rounded-full bg-[#991435]/30 blur-[140px]" />
-      <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 -z-10 h-64 w-[32rem] rounded-full bg-[#c9a96a]/15 blur-[110px]" />
-      <div className="absolute inset-0 -z-10 bg-ink/35 lg:hidden" />
+      {/* Clean, Light Cinematic Vignette Overlay (Allows natural photo vibrancy to shine through) */}
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(15,2,6,0.38)_0%,rgba(15,2,6,0.08)_35%,rgba(15,2,6,0.85)_100%)]" />
+      <div className="absolute inset-0 -z-10 bg-black/15 lg:hidden" />
 
       {/* Main Container - Aligned to bottom like original */}
       <div className="site-container flex flex-1 flex-col justify-end pt-32 pb-10 sm:pb-14">

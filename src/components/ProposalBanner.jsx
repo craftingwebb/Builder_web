@@ -1,5 +1,6 @@
 import React from 'react';
-import { ArrowUpRight, Phone, Mail, MessageCircle, MapPin } from 'lucide-react';
+import { ArrowUpRight, Phone, Mail, MapPin } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 const CONTACT_CHANNELS = [
   {
@@ -17,7 +18,7 @@ const CONTACT_CHANNELS = [
     isExternal: false,
   },
   {
-    icon: MessageCircle,
+    icon: WhatsAppIcon,
     label: 'INSTANT CONCIERGE',
     value: 'Connect with a Director',
     href: "https://wa.me/917600149422?text=Hi!%20I'd%20like%20to%20plan%20a%20corporate%20event.",

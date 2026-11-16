@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Check, MessageCircle } from 'lucide-react';
+import { Check } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { sanitizeString, sanitizePhone, safeOpenExternal } from '../utils/security';
 
 const EVENT_TYPES = [
@@ -321,9 +322,9 @@ export default function CostCalculator() {
 
               <button
                 onClick={handleWhatsAppQuote}
-                className="btn-gold w-full cursor-pointer"
+                className="btn-gold w-full cursor-pointer flex items-center justify-center gap-2"
               >
-                <MessageCircle className="size-4" />
+                <WhatsAppIcon className="size-4" bubbleColor="#130308" phoneColor="#c9a96a" />
                 <span>Send Estimate to WhatsApp</span>
               </button>
             </div>
