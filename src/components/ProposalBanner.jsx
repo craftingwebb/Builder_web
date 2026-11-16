@@ -27,7 +27,7 @@ const CONTACT_CHANNELS = [
     icon: MapPin,
     label: 'STUDIO & HEADQUARTERS',
     value: '14th Floor, Lumora House, Bandra Kurla Complex, Mumbai 400051',
-    href: '#contact',
+    href: '#/contact',
     isExternal: false,
   },
 ];

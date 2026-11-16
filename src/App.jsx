@@ -9,6 +9,7 @@ import PortfolioSection from './components/PortfolioSection';
 import PortfolioPage from './components/PortfolioPage';
 import ProposalPage from './components/ProposalPage';
 import AboutPage from './components/AboutPage';
+import ContactPage from './components/ContactPage';
 import IndustriesSection from './components/IndustriesSection';
 import ProcessSection from './components/ProcessSection';
 import TestimonialsSection from './components/TestimonialsSection';
@@ -27,7 +28,10 @@ export default function App() {
   useEffect(() => {
     const handleHashSync = () => {
       const hash = window.location.hash;
-      if (hash === '#/about' || hash === '#about') {
+      if (hash === '#/contact' || hash === '#contact') {
+        setCurrentPage('contact');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (hash === '#/about' || hash === '#about') {
         setCurrentPage('about');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (hash === '#/portfolio' || hash === '#portfolio') {
@@ -52,7 +56,11 @@ export default function App() {
   }, []);
 
   const handleNavigate = (page, sectionHref = null) => {
-    if (page === 'about') {
+    if (page === 'contact') {
+      window.location.hash = '#/contact';
+      setCurrentPage('contact');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (page === 'about') {
       window.location.hash = '#/about';
       setCurrentPage('about');
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -100,7 +108,15 @@ export default function App() {
       />
 
       {/* 2. Main View Switcher */}
-      {currentPage === 'about' ? (
+      {currentPage === 'contact' ? (
+        /* Dedicated Contact Us Page */
+        <main>
+          <ContactPage
+            onNavigateHome={() => handleNavigate('home')}
+            onOpenProposalModal={() => handleNavigate('proposal')}
+          />
+        </main>
+      ) : currentPage === 'about' ? (
         /* Dedicated About Us Page (Screenshots 1-7) */
         <main>
           <AboutPage
