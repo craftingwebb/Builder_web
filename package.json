@@ -1,8 +1,8 @@
 {
-  "name": "lumora-events-web",
+  "name": "sa-events-and-manpower-service",
   "private": true,
   "version": "1.0.0",
-  "description": "Premier luxury corporate event management and experiential production web application",
+  "description": "S. A Event's and Manpower Service — Turnkey Corporate Events & Production Platform",
   "type": "module",
   "scripts": {
     "dev": "vite",

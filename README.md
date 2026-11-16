@@ -1,11 +1,21 @@
-# Lumora Events — Experiential Design & Stage Production Platform
+# S. A Event's and Manpower Service — Turnkey Corporate Events & Production Collective
 
 [![React](https://img.shields.io/badge/React-19.3-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-8.3-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.3-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-MIT-gold?style=for-the-badge)](LICENSE)
 
-An ultra-modern, high-converting digital platform engineered for a premier corporate event management and turnkey experiential production collective. Designed with an editorial luxury aesthetic, cinematic dark-mode palette, GPU-accelerated scroll animations, and interactive client conversion funnels.
+An ultra-modern, high-converting digital platform engineered for **S. A Event's and Manpower Service** — Kolkata's premier corporate event management, stage engineering, and turnkey experiential production collective. Designed with an editorial luxury aesthetic, cinematic dark-mode palette, GPU-accelerated scroll animations, and interactive client conversion funnels.
+
+---
+
+## 🏢 Business & Contact Details
+
+* **Company Name:** S. A Event's and Manpower Service
+* **Studio & Headquarters:** 22/a gora chand lane, Kolkata, West Bengal
+* **Direct Hotline / WhatsApp:** [+91 76001 49422](tel:+917600149422)
+* **Executive Inbox:** [s.aeventsandmanpowerservice@gmail.com](mailto:s.aeventsandmanpowerservice@gmail.com)
+* **Official Instagram:** [@s.aeventsandmanpowerservice](https://www.instagram.com/s.aeventsandmanpowerservice/)
 
 ---
 
@@ -18,10 +28,31 @@ An ultra-modern, high-converting digital platform engineered for a premier corpo
 
 ### 2. Multi-Page Architecture (Client-Side Hash Routing)
 - **Home Page (`/`):** Full agency showcase covering heritage, specialist capabilities, operational differentiators, horizontal stages, process timeline, client testimonials, and latest insights.
-- **Dedicated Portfolio Gallery (`#/portfolio`):**
+- **Dedicated About Page (`#/about`):**
+  - Origin story, core leadership principles, and 7-stage production philosophy.
+  - Interactive board of directors profile matrix and production statistics.
+- **Dedicated Services Catalog (`#/services`):**
+  - 9 turnkey specialist practices (Corporate Events, Conferences, Product Launches, Trade Shows, Award Ceremonies, Entertainment, Team Building, Celebrations, Virtual & Hybrid).
+  - 9 interactive category filter pills with live count indicators.
+  - Alternating layout cards with detailed scope of work, technical inclusions, and direct quote requests.
+- **Dedicated Portfolio Page (`#/portfolio`):**
   - Full-page showcase featuring 12 milestone productions across 6 categories.
   - Interactive category filter tabs with dynamic count badges (`Corporate Events 3`, `Conferences 3`, `Product Launches 2`, etc.).
   - Breadcrumb navigation (`Home / Portfolio`) and bottom proposal banner.
+- **Dedicated Clients & Case Studies Page (`#/clients`):**
+  - 16-corporate-client identity matrix with sector tags and monogram badges.
+  - 4 featured deep-dive case studies with key business metric pills.
+  - 6 verified client testimonials with 5-star ratings.
+  - 6 national industry affiliations and production standards badges.
+- **Dedicated Event Gallery (`#/gallery`):**
+  - 4-column responsive masonry photo and video grid.
+  - 6 category tabs (`All`, `Photo Gallery`, `Video Gallery`, `Event Highlights`, `Event Photos`, `Behind The Scenes`).
+  - Interactive HD Cinema Video Player modal with scrub bar, play/pause, timecode, and volume controls.
+  - High-res photo lightbox with keyboard navigation (`Esc`, Next/Prev chevrons).
+- **Dedicated Contact Us Page (`#/contact`):**
+  - Executive headquarters desk information with direct phone, email, and Kolkata address.
+  - Interactive contact inquiry form with automatic WhatsApp / mailto message formatting.
+  - Custom SVG social media badges (Instagram 5-color radial gradient squircle, LinkedIn, Facebook, YouTube).
 - **Multi-Step Proposal & RFP Engine (`#/request-a-quote`):**
   - 3-step interactive onboarding flow:
     - **Step 1:** Event nature (9 options) + multi-select required services (10 tags).
@@ -32,12 +63,12 @@ An ultra-modern, high-converting digital platform engineered for a premier corpo
 ### 3. Specialized Interactive Components
 - **Smart Navbar:** Auto-hides on downward scroll, smoothly reappears on upward scroll, with mobile navigation drawer and active page tracking.
 - **Hero Crossfade Canvas:** Auto-cycling high-res slider with staggered line-by-line entrance typography animations on fresh page load.
-- **Service Rows:** Horizontal practice cards with strictly scoped cursor-following thumbnail preview popups.
+- **Service Rows:** Horizontal practice cards with strictly scoped cursor-following thumbnail preview popups and direct `Explore services ↗` routing.
 - **Why Choose Us Section:** IntersectionObserver-driven counter animating from 0 to 72, accompanied by interactive feature cards with dynamic hover states.
 - **Horizontal Scroll Carousel:** Pinned 340vh viewport tracking 6 panoramic stage cards moving horizontally on vertical scroll.
 - **Testimonial Slider:** Prev/Next controls, active counter indicator (`01 / 06`), and 6 segmented progress tracking bars.
 - **Floating Controls:** Smooth circular Scroll-to-Top button paired with an instant WhatsApp concierge widget.
-- **Footer:** Pre-footer headline banner, 4-column directory, newsletter subscription pill input, and a giant `17vw` brand watermark.
+- **Footer:** Pre-footer headline banner, 4-column directory, newsletter subscription pill input, high-contrast social badges, and a giant `17vw` brand watermark.
 
 ---
 
@@ -57,11 +88,15 @@ An ultra-modern, high-converting digital platform engineered for a premier corpo
 ├── public/                 # Static assets & favicon
 ├── src/
 │   ├── components/         # Modular React UI components
-│   │   ├── AboutSection.jsx        # Agency story & metrics
+│   │   ├── AboutPage.jsx           # Dedicated About Us multi-page component
+│   │   ├── AboutSection.jsx        # Agency story & metrics (Homepage)
 │   │   ├── BookingModal.jsx        # Quick proposal drawer modal
+│   │   ├── ClientsPage.jsx         # Dedicated 16-client matrix & case studies page
+│   │   ├── ContactPage.jsx         # Dedicated Contact Us & inquiry form page
 │   │   ├── CostCalculator.jsx      # Standalone estimation utility
 │   │   ├── FeaturedEvents.jsx      # Horizontal scroll stage showcase
 │   │   ├── Footer.jsx              # Pre-footer CTA, directory & watermark
+│   │   ├── GalleryPage.jsx         # Dedicated 4-col masonry gallery & video player
 │   │   ├── Hero.jsx                # Full-bleed slider with entrance reveals
 │   │   ├── IndustriesSection.jsx   # 12 industry sectors with gold hover
 │   │   ├── InsightsSection.jsx     # Editorial articles & guides
@@ -71,6 +106,7 @@ An ultra-modern, high-converting digital platform engineered for a premier corpo
 │   │   ├── ProcessSection.jsx      # 5-stage production methodology
 │   │   ├── ProposalBanner.jsx      # Bottom proposal card + 4-col contact desk
 │   │   ├── ProposalPage.jsx        # 3-step interactive RFP proposal flow
+│   │   ├── ServicesPage.jsx        # Dedicated 9-practice services catalog
 │   │   ├── ServicesSection.jsx     # Row strips with hover image popups
 │   │   ├── TestimonialsSection.jsx # Editorial quote slider & brand marquee
 │   │   ├── WhatsAppButton.jsx      # Floating WhatsApp & Scroll-To-Top button
@@ -98,8 +134,8 @@ Make sure you have [Node.js](https://nodejs.org/) installed (version 18 or highe
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/lumora-events-web.git
-   cd lumora-events-web
+   git clone https://github.com/craftingwebb/Builder_web.git
+   cd Builder_web
    ```
 
 2. Install dependencies:
@@ -133,16 +169,10 @@ npm run preview
 ## 🌐 Deployment Guide
 
 ### Deploying to Vercel (Recommended)
-1. Push your code to a GitHub repository.
-2. Sign in to [Vercel](https://vercel.com/) and click **"Add New Project"**.
-3. Import your GitHub repository.
-4. Leave build settings as default (Framework Preset: **Vite**, Build Command: `npm run build`, Output Directory: `dist`).
-5. Click **"Deploy"**. The included `vercel.json` ensures all SPA routes function seamlessly.
-
-### Deploying to Netlify
-1. Connect your repository on [Netlify](https://www.netlify.com/).
-2. The included `netlify.toml` automatically configures the build command (`npm run build`), publish directory (`dist`), and SPA redirect rules.
-3. Deploy site with one click.
+1. Push your code to the GitHub repository: `https://github.com/craftingwebb/Builder_web.git`.
+2. Connect your repo in [Vercel](https://vercel.com/).
+3. Framework Preset: **Vite**, Build Command: `npm run build`, Output Directory: `dist`.
+4. Click **"Deploy"**. The included `vercel.json` ensures all SPA routes function seamlessly.
 
 ---
 
