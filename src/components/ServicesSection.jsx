@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { ArrowRight, ArrowUpRight, Check, Building2, Heart, Users } from 'lucide-react';
 import { CORPORATE_SERVICES, WEDDING_SERVICES, MANPOWER_ROSTER } from '../data/eventsData';
 
-export default function ServicesSection({ onSelectService }) {
+export default function ServicesSection({ onSelectService, onNavigateServices }) {
   const [activeTab, setActiveTab] = useState('corporate');
   const [hoveredIdx, setHoveredIdx] = useState(null);
   const [expandedId, setExpandedId] = useState(null);
@@ -112,7 +112,13 @@ export default function ServicesSection({ onSelectService }) {
           {/* Top-Right 'All services ↗' Button from original reference site! */}
           <div className="shrink-0">
             <button
-              onClick={() => onSelectService({ title: "All Specialist Practices", category: activeTab })}
+              onClick={() => {
+                if (onNavigateServices) {
+                  onNavigateServices();
+                } else {
+                  window.location.hash = '#/services';
+                }
+              }}
               className="btn-ghost-light !px-6 !py-3 text-xs uppercase tracking-wider font-semibold flex items-center gap-2 cursor-pointer hover:border-gold hover:text-gold transition-all"
             >
               <span>Explore services</span>

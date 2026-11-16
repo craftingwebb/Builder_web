@@ -216,7 +216,10 @@ export default function App() {
           />
 
           {/* WHAT WE DO */}
-          <ServicesSection onSelectService={(service) => handleOpenModal(service)} />
+          <ServicesSection
+            onSelectService={(service) => handleOpenModal(service)}
+            onNavigateServices={() => handleNavigate('services')}
+          />
 
           {/* WHY CHOOSE US */}
           <WhyChooseUs />
