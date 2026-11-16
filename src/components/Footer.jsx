@@ -49,7 +49,7 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
               onClick={onOpenQuoteModal}
               className="btn-gold cursor-pointer !py-3.5 !px-7 font-semibold text-sm"
             >
-              <span>Inquire for an event</span>
+              <span>Start your proposal</span>
               <ArrowUpRight className="size-4" />
             </button>
             <a
