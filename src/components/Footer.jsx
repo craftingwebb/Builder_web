@@ -78,16 +78,16 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
   };
 
   return (
-    <footer id="contact" className="grain relative overflow-hidden bg-ink text-white">
-      {/* Subtle Iris Ambient Glow behind Pre-footer */}
+    <footer id="contact" className="grain relative overflow-hidden bg-[#130308] text-white">
+      {/* Subtle Ruby Wine Ambient Glow behind Pre-footer */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[60rem] -translate-x-1/2 rounded-full bg-[#6d5efc]/20 blur-[120px]"
+        className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[60rem] -translate-x-1/2 rounded-full bg-[#991435]/25 blur-[120px]"
       />
 
       <div className="site-container relative">
         {/* 1. Pre-footer CTA Section (Screenshot 3) */}
-        <div className="flex flex-col gap-8 border-b border-white/10 py-16 lg:flex-row lg:items-end lg:justify-between lg:py-24">
+        <div className="flex flex-col gap-8 border-b border-[#c9a96a]/15 py-16 lg:flex-row lg:items-end lg:justify-between lg:py-24">
           <div>
             <h2 className="display max-w-3xl text-[2.6rem] sm:text-6xl lg:text-7xl font-semibold leading-[1.08] tracking-tight">
               Let’s engineer something{' '}
@@ -377,7 +377,7 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
         </div>
 
         {/* 4. Copyright & Legal Bar */}
-        <div className="flex flex-col gap-4 border-t border-white/10 py-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-4 border-t border-[#c9a96a]/15 py-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 S. A Event&apos;s and Manpower Service. All rights reserved.</p>
           
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">

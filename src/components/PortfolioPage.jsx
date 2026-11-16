@@ -280,10 +280,10 @@ export default function PortfolioPage({ onNavigateHome, onOpenProposalModal }) {
               className="absolute inset-0 -z-20 h-full w-full object-cover opacity-20 filter grayscale contrast-125 pointer-events-none"
             />
 
-            {/* Radial Ambient Purple / Iris Glow */}
+            {/* Radial Ambient Ruby Wine Glow */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 h-[32rem] w-[32rem] rounded-full bg-[#6d5efc]/25 blur-[120px] -z-10"
+              className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 h-[32rem] w-[32rem] rounded-full bg-[#991435]/25 blur-[120px] -z-10"
             />
 
             {/* Eyebrow */}

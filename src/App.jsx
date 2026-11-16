@@ -141,7 +141,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#08090d] text-[#e2e8f0] relative selection:bg-[#c9a96a] selection:text-black">
+    <div className="min-h-screen bg-[#130308] text-[#e2e8f0] relative selection:bg-[#c9a96a] selection:text-black">
       {/* 1. Header / Navbar with Multi-Page Navigation */}
       <Navbar
         currentPage={currentPage}

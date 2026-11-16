@@ -126,9 +126,9 @@ export default function WhyChooseUs() {
                 {/* 
                   Uniform icon badge for ALL cards:
                   Normal: bg-ink text-gold (Dark Navy box with gold icon)
-                  Hover: group-hover:!bg-[#6d5efc] group-hover:!text-white (Turns Iris Royal Blue with White icon!)
+                  Hover: group-hover:!bg-[#871834] group-hover:!text-white (Turns Imperial Maroon with White icon!)
                 */}
-                <span className="flex size-12 items-center justify-center rounded-2xl bg-ink text-gold transition-all duration-500 shadow-sm group-hover:!bg-[#6d5efc] group-hover:!text-white group-hover:scale-110">
+                <span className="flex size-12 items-center justify-center rounded-2xl bg-ink text-gold transition-all duration-500 shadow-sm group-hover:!bg-[#871834] group-hover:!text-white group-hover:scale-110">
                   {item.icon}
                 </span>
 

@@ -5,9 +5,11 @@
   --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
   --color-gold: #c9a96a;
   --color-gold-soft: #e2c488;
-  --color-ink: #070b1f;
+  --color-ink: #130308;
   --color-ivory: #f7f5f0;
-  --color-iris: #6d5efc;
+  --color-iris: #991435;
+  --color-maroon: #480918;
+  --color-maroon-dark: #130308;
 }
 
 @layer base {
@@ -162,10 +164,10 @@ footer[id] {
   width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #070b1f;
+  background: #130308;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e243d;
+  background: #380713;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {

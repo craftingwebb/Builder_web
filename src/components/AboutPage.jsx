@@ -264,11 +264,11 @@ export default function AboutPage({
       {/* ========================================================= */}
       {/* 3. COMPANY ACHIEVEMENTS & METRICS (Screenshot 3: media_1794851667260_d5956930.jpg) */}
       {/* ========================================================= */}
-      <section className="bg-[#080c1d] py-20 sm:py-28 text-white relative overflow-hidden">
-        {/* Subtle iris background radial glow */}
+      <section className="bg-[#130308] py-20 sm:py-28 text-white relative overflow-hidden">
+        {/* Subtle ruby wine background radial glow */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -right-32 top-1/3 h-96 w-96 rounded-full bg-[#6d5efc]/15 blur-[120px]"
+          className="pointer-events-none absolute -right-32 top-1/3 h-96 w-96 rounded-full bg-[#991435]/20 blur-[120px]"
         />
 
         <div className="site-container relative">
@@ -505,11 +505,11 @@ export default function AboutPage({
       {/* ========================================================= */}
       <section className="bg-ivory pb-20 sm:pb-28">
         <div className="site-container">
-          <div className="relative overflow-hidden rounded-[2rem] bg-[#090d21] p-8 sm:p-14 lg:p-16 text-white shadow-2xl border border-white/10">
+          <div className="relative overflow-hidden rounded-[2rem] bg-[#130308] p-8 sm:p-14 lg:p-16 text-white shadow-2xl border border-gold/20">
             {/* Background Texture & Ambient Radial Glow */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 h-[32rem] w-[32rem] rounded-full bg-[#6d5efc]/25 blur-[120px] -z-10"
+              className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 h-[32rem] w-[32rem] rounded-full bg-[#991435]/25 blur-[120px] -z-10"
             />
             <img
               src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=1200&q=80"

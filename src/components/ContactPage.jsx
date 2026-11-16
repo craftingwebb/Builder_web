@@ -453,7 +453,7 @@ export default function ContactPage({
             <div className="lg:col-span-5 space-y-6">
               
               {/* Top Dark Card: Head Office & Official Social Connect */}
-              <div className="rounded-3xl bg-[#090d21] p-8 sm:p-10 text-white shadow-xl border border-white/10">
+              <div className="rounded-3xl bg-[#130308] p-8 sm:p-10 text-white shadow-xl border border-gold/20">
                 <div className="flex items-center gap-2 mb-4">
                   <span className="w-8 h-px bg-gold" />
                   <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">

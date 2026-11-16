@@ -250,7 +250,7 @@ export default function ClientsPage({
             className="h-full w-full object-cover opacity-20 filter contrast-125 brightness-75"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-ink/90 via-ink/80 to-ink" />
-          <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 h-96 w-[50rem] rounded-full bg-[#6d5efc]/20 blur-[130px]" />
+          <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 h-96 w-[50rem] rounded-full bg-[#991435]/25 blur-[130px]" />
         </div>
 
         <div className="site-container relative">
@@ -340,9 +340,9 @@ export default function ClientsPage({
       {/* ========================================================= */}
       {/* 3. CLIENT SUCCESS STORIES (Screenshots 3 & 6) */}
       {/* ========================================================= */}
-      <section className="bg-[#090d21] py-16 sm:py-28 text-white relative overflow-hidden">
+      <section className="bg-[#130308] py-16 sm:py-28 text-white relative overflow-hidden">
         {/* Subtle Ambient Radial Glow */}
-        <div className="pointer-events-none absolute -top-40 right-1/4 h-[30rem] w-[30rem] rounded-full bg-[#6d5efc]/15 blur-[120px]" />
+        <div className="pointer-events-none absolute -top-40 right-1/4 h-[30rem] w-[30rem] rounded-full bg-[#991435]/20 blur-[120px]" />
 
         <div className="site-container relative">
           {/* Eyebrow */}
@@ -376,7 +376,7 @@ export default function ClientsPage({
                       alt={study.title}
                       className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#090d21] via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#130308] via-transparent to-transparent pointer-events-none" />
                   </div>
 
                   {/* Card Content */}
@@ -525,7 +525,7 @@ export default function ClientsPage({
                 className="flex items-center gap-4 rounded-2xl bg-white p-5 shadow-sm border border-black/5 transition hover:shadow-md"
               >
                 {/* Dark Acronym Pill Badge */}
-                <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-[#090d21] text-white font-bold text-xs tracking-wider">
+                <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-[#130308] text-gold border border-gold/20 font-bold text-xs tracking-wider">
                   {assoc.code}
                 </div>
                 <div>
@@ -547,11 +547,11 @@ export default function ClientsPage({
       {/* ========================================================= */}
       <section className="bg-ivory pb-20 sm:pb-28">
         <div className="site-container">
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-[#090d21] p-8 sm:p-14 lg:p-16 text-white shadow-2xl border border-white/10">
+          <div className="relative overflow-hidden rounded-[2.5rem] bg-[#130308] p-8 sm:p-14 lg:p-16 text-white shadow-2xl border border-gold/20">
             {/* Background Texture & Ambient Radial Glow */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 h-[32rem] w-[32rem] rounded-full bg-[#6d5efc]/25 blur-[120px] -z-10"
+              className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 h-[32rem] w-[32rem] rounded-full bg-[#991435]/25 blur-[120px] -z-10"
             />
             <img
               src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1800&q=80"

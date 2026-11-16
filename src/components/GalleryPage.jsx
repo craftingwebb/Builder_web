@@ -308,7 +308,7 @@ export default function GalleryPage({
       {/* ========================================================= */}
       {/* 1. HERO HEADER (Screenshot 1: media_1794857895565_d2576078.jpg) */}
       {/* ========================================================= */}
-      <section className="relative overflow-hidden bg-[#090d21] pt-32 pb-20 sm:pt-40 sm:pb-28 text-white">
+      <section className="relative overflow-hidden bg-[#130308] pt-32 pb-20 sm:pt-40 sm:pb-28 text-white">
         {/* Background Image & Texture */}
         <div className="absolute inset-0 z-0">
           <img
@@ -316,8 +316,8 @@ export default function GalleryPage({
             alt="Event Atmosphere Backdrop"
             className="h-full w-full object-cover opacity-20 filter contrast-125 brightness-75"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#090d21]/90 via-[#090d21]/80 to-[#090d21]" />
-          <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 h-96 w-[50rem] rounded-full bg-[#6d5efc]/20 blur-[130px]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#130308]/95 via-[#130308]/85 to-[#130308]" />
+          <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 h-96 w-[50rem] rounded-full bg-[#991435]/25 blur-[130px]" />
         </div>
 
         <div className="site-container relative z-10">
@@ -498,7 +498,7 @@ export default function GalleryPage({
         >
           {/* Main Modal Dialog */}
           <div
-            className="relative w-full max-w-5xl overflow-hidden rounded-3xl bg-[#090d21] border border-white/15 text-white shadow-2xl"
+            className="relative w-full max-w-5xl overflow-hidden rounded-3xl bg-[#130308] border border-gold/25 text-white shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
@@ -646,11 +646,11 @@ export default function GalleryPage({
       {/* ========================================================= */}
       <section className="bg-ivory pb-20 sm:pb-28 pt-8">
         <div className="site-container">
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-[#090d21] p-8 sm:p-14 lg:p-16 text-white shadow-2xl border border-white/10">
+          <div className="relative overflow-hidden rounded-[2.5rem] bg-[#130308] p-8 sm:p-14 lg:p-16 text-white shadow-2xl border border-gold/20">
             {/* Background Texture & Ambient Radial Glow */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 h-[32rem] w-[32rem] rounded-full bg-[#6d5efc]/25 blur-[120px] -z-10"
+              className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 h-[32rem] w-[32rem] rounded-full bg-[#991435]/25 blur-[120px] -z-10"
             />
             <img
               src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1800&q=80"

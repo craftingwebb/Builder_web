@@ -46,10 +46,10 @@ export default function ProposalBanner({ onOpenProposalModal }) {
             className="absolute inset-0 -z-20 h-full w-full object-cover opacity-20 filter grayscale contrast-125 pointer-events-none"
           />
 
-          {/* Radial Ambient Purple / Iris Glow */}
+          {/* Radial Ambient Ruby Wine Glow */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 h-[32rem] w-[32rem] rounded-full bg-[#6d5efc]/25 blur-[120px] -z-10"
+            className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 h-[32rem] w-[32rem] rounded-full bg-[#991435]/25 blur-[120px] -z-10"
           />
 
           {/* Eyebrow */}
@@ -96,7 +96,7 @@ export default function ProposalBanner({ onOpenProposalModal }) {
               className="group bg-ivory p-6 sm:p-7 transition-colors duration-300 hover:bg-white flex flex-col justify-start min-w-0"
             >
               {/* Circle Icon Badge */}
-              <span className="flex size-11 items-center justify-center rounded-full bg-ink text-gold transition-colors duration-300 group-hover:bg-[#6d5efc] group-hover:text-white">
+              <span className="flex size-11 items-center justify-center rounded-full bg-ink text-gold transition-colors duration-300 group-hover:bg-[#871834] group-hover:text-white">
                 <item.icon className="size-[1.15rem]" />
               </span>
 
@@ -108,14 +108,14 @@ export default function ProposalBanner({ onOpenProposalModal }) {
               {/* Value Text */}
               {item.label === 'EXECUTIVE INBOX' ? (
                 <p
-                  className="mt-2 text-xs sm:text-[0.78rem] xl:text-[0.82rem] leading-snug font-medium text-ink tracking-tight truncate group-hover:text-[#6d5efc] transition-colors"
+                  className="mt-2 text-xs sm:text-[0.78rem] xl:text-[0.82rem] leading-snug font-medium text-ink tracking-tight truncate group-hover:text-[#871834] transition-colors"
                   title={item.value}
                 >
                   {item.value}
                 </p>
               ) : (
                 <p
-                  className="mt-2 text-sm xl:text-[0.95rem] leading-snug font-semibold text-ink group-hover:text-[#6d5efc] transition-colors"
+                  className="mt-2 text-sm xl:text-[0.95rem] leading-snug font-semibold text-ink group-hover:text-[#871834] transition-colors"
                   title={item.value}
                 >
                   {item.value}

@@ -163,7 +163,7 @@ export default function ProposalPage({ onNavigateHome }) {
             className="h-full w-full object-cover opacity-15 filter contrast-125"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/80 to-ink" />
-          <div className="absolute -top-40 -left-40 size-[45rem] rounded-full bg-[#6d5efc]/15 blur-[140px]" />
+          <div className="absolute -top-40 -left-40 size-[45rem] rounded-full bg-[#991435]/20 blur-[140px]" />
         </div>
 
         <div className="site-container">
