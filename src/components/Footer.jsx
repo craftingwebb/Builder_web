@@ -264,10 +264,21 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
           {/* 3. Bottom Rounded Contact Desk Card (Screenshot 4) */}
           <div className="md:col-span-2 lg:col-span-12 xl:col-span-12">
             <div className="grid gap-4 rounded-3xl border border-white/10 bg-white/[0.03] p-6 sm:grid-cols-3 text-sm text-white/70">
-              <p className="flex items-start gap-3">
-                <MapPin className="mt-0.5 size-4 shrink-0 text-gold" />
-                <span>14th Floor, Lumora House, Bandra Kurla Complex, Mumbai 400051</span>
-              </p>
+              <a
+                href="https://www.instagram.com/s.aeventsandmanpowerservice/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 hover:text-white transition-colors"
+              >
+                <span className="flex size-6 shrink-0 items-center justify-center rounded-lg bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white shadow-sm">
+                  <svg className="size-3.5 fill-none stroke-currentColor stroke-2" viewBox="0 0 24 24">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                  </svg>
+                </span>
+                <span className="truncate">@s.aeventsandmanpowerservice</span>
+              </a>
               <a
                 href="tel:+917600149422"
                 className="flex items-center gap-3 hover:text-white transition-colors"
@@ -306,9 +317,9 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
           <div className="flex gap-2">
             {/* Instagram */}
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/s.aeventsandmanpowerservice/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="Instagram"
               className="flex size-9 items-center justify-center rounded-full border border-white/10 text-white/60 transition hover:border-gold hover:text-gold"
             >

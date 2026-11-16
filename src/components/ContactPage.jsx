@@ -398,24 +398,43 @@ export default function ContactPage({
             {/* ------------------------------------------------------- */}
             <div className="lg:col-span-5 space-y-6">
               
-              {/* Top Dark Card: Head Office Info */}
+              {/* Top Dark Card: Official Social Connect */}
               <div className="rounded-3xl bg-[#090d21] p-8 sm:p-10 text-white shadow-xl border border-white/10">
                 <div className="flex items-center gap-2 mb-4">
                   <span className="w-8 h-px bg-gold" />
                   <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
-                    HEAD OFFICE
+                    OFFICIAL INSTAGRAM &amp; SOCIALS
                   </span>
                 </div>
 
-                <div className="flex items-start gap-3 mt-4">
-                  <MapPin className="size-5 shrink-0 text-gold mt-1" />
-                  <p className="text-base sm:text-lg font-medium leading-snug text-white/90">
-                    14th Floor, Lumora House, Bandra Kurla Complex, Mumbai 400051
-                  </p>
-                </div>
+                <a
+                  href="https://www.instagram.com/s.aeventsandmanpowerservice/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-4 mt-4 group"
+                >
+                  <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white shadow-lg group-hover:scale-105 transition-transform">
+                    <SocialIcon type="instagram" />
+                  </div>
+                  <div>
+                    <p className="text-base sm:text-lg font-bold leading-tight text-white group-hover:text-gold transition-colors">
+                      @s.aeventsandmanpowerservice
+                    </p>
+                    <p className="text-xs text-white/60 mt-1">S.A EVENTS &amp; MANPOWER SERVICE</p>
+                  </div>
+                </a>
 
                 {/* Social Badges Row */}
                 <div className="mt-8 flex items-center gap-3">
+                  <a
+                    href="https://www.instagram.com/s.aeventsandmanpowerservice/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    className="flex size-10 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/15 hover:border-gold/50 transition-all cursor-pointer"
+                  >
+                    <SocialIcon type="instagram" />
+                  </a>
                   <a
                     href="https://linkedin.com"
                     target="_blank"
@@ -424,15 +443,6 @@ export default function ContactPage({
                     className="flex size-10 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/15 hover:border-gold/50 transition-all cursor-pointer"
                   >
                     <SocialIcon type="linkedin" />
-                  </a>
-                  <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="Instagram"
-                    className="flex size-10 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/15 hover:border-gold/50 transition-all cursor-pointer"
-                  >
-                    <SocialIcon type="instagram" />
                   </a>
                   <a
                     href="https://facebook.com"
@@ -455,28 +465,53 @@ export default function ContactPage({
                 </div>
               </div>
 
-              {/* Middle Card: Map Representation */}
-              <div className="relative overflow-hidden rounded-3xl border border-black/5 bg-zinc-100 shadow-sm aspect-[16/10]">
-                {/* Visual Map Render with Google Maps Style Pin */}
-                <iframe
-                  title="Lumora Events BKC Office Map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15082.72322315746!2d72.85764495!3d19.06676345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8e123f350b9%3A0x6b9ef7753e8a4a58!2sBandra%20Kurla%20Complex%2C%20Bandra%20East%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-                  className="h-full w-full border-0 grayscale contrast-125"
-                  loading="lazy"
-                />
-                
-                {/* Floating Map Label Badge */}
-                <div className="absolute top-4 left-4 rounded-xl bg-white/95 p-3.5 shadow-md backdrop-blur-md border border-black/5 max-w-[15rem]">
-                  <p className="text-xs font-bold text-ink">Bandra Kurla Complex</p>
-                  <p className="text-[10px] text-ink/60 mt-0.5">Bandra East, Mumbai</p>
+              {/* Middle Card: Official Instagram Profile Card */}
+              <div className="relative overflow-hidden rounded-3xl border border-black/5 bg-white p-7 shadow-sm text-ink">
+                <div className="flex items-center gap-4">
+                  {/* Profile Badge Avatar */}
+                  <div className="flex size-16 shrink-0 items-center justify-center rounded-full bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] p-1 shadow-md">
+                    <div className="flex h-full w-full items-center justify-center rounded-full bg-black text-gold font-bold text-base tracking-tighter">
+                      SA
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-base font-bold text-ink">S.A EVENTS</h3>
+                    <a
+                      href="https://www.instagram.com/s.aeventsandmanpowerservice/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-indigo-600 hover:underline font-semibold block"
+                    >
+                      @s.aeventsandmanpowerservice
+                    </a>
+                    <p className="text-[11px] text-ink/50 mt-0.5">Event Planner &amp; Production Collective</p>
+                  </div>
+                </div>
+
+                {/* Bio text from profile */}
+                <p className="mt-5 text-xs text-ink/75 leading-relaxed bg-zinc-50 rounded-xl p-3.5 border border-black/5">
+                  &ldquo;WARM GREETINGS FROM S.A EVENT&rsquo;S AND MANPOWER SERVICE. THANK YOU FOR CHOOSING US.&rdquo;
+                </p>
+
+                {/* CTA buttons */}
+                <div className="mt-5 flex items-center gap-3">
                   <a
-                    href="https://maps.google.com/?q=Bandra+Kurla+Complex+Mumbai"
+                    href="https://www.instagram.com/s.aeventsandmanpowerservice/"
                     target="_blank"
-                    rel="noreferrer"
-                    className="mt-2 inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-2.5 py-1 text-[11px] font-medium text-white shadow hover:bg-indigo-700 transition"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-[#0095f6] hover:bg-[#1877f2] py-2.5 px-4 text-xs font-semibold text-white shadow-sm transition"
                   >
-                    <ExternalLink className="size-3" />
-                    <span>Open in Maps</span>
+                    <span>Follow on Instagram</span>
+                    <ExternalLink className="size-3.5" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/s.aeventsandmanpowerservice/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-xl bg-zinc-100 hover:bg-zinc-200 py-2.5 px-4 text-xs font-semibold text-ink transition"
+                  >
+                    Direct DM
                   </a>
                 </div>
               </div>
