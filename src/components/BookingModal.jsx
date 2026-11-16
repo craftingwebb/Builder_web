@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { X, Check, MessageCircle, Sparkles, Send } from 'lucide-react';
+import { X, Check, Send } from 'lucide-react';
+import { sanitizeString, sanitizePhone, isValidEmail, safeOpenExternal } from '../utils/security';
 
 export default function BookingModal({ isOpen, onClose, initialData }) {
   const [formData, setFormData] = useState({
@@ -12,9 +13,12 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
     date: '',
     guestCount: '200-500',
     notes: '',
+    _hp_website: '',
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [modalError, setModalError] = useState('');
 
   useEffect(() => {
     if (initialData) {
@@ -35,11 +39,33 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const cleanName = formData.name.trim().slice(0, 100);
-    const cleanPhone = formData.phone.trim().slice(0, 30);
-    const cleanEmail = formData.email.trim().slice(0, 120);
-    const cleanCity = formData.city.trim().slice(0, 100);
-    const cleanNotes = formData.notes.trim().slice(0, 1500);
+    if (isSubmitting) return;
+
+    // Honeypot check
+    if (formData._hp_website) {
+      console.warn('[Security] Bot submission blocked.');
+      setSubmitted(true);
+      return;
+    }
+
+    const cleanName = sanitizeString(formData.name, 100);
+    const cleanPhone = sanitizePhone(formData.phone, 25);
+    const cleanEmail = sanitizeString(formData.email, 120);
+    const cleanCity = sanitizeString(formData.city, 100);
+    const cleanNotes = sanitizeString(formData.notes, 1500);
+
+    if (!cleanName || !cleanPhone) {
+      setModalError('Please enter your full name and phone number.');
+      return;
+    }
+
+    if (cleanEmail && !isValidEmail(cleanEmail)) {
+      setModalError('Please enter a valid email address.');
+      return;
+    }
+
+    setModalError('');
+    setIsSubmitting(true);
 
     const rawText =
       `*New Event Booking Request - S. A Event's and Manpower Service*\n\n` +
@@ -55,8 +81,9 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
       `Please provide an official quote and feasibility confirmation.`;
 
     const waUrl = `https://wa.me/917600149422?text=${encodeURIComponent(rawText)}`;
-    window.open(waUrl, '_blank', 'noopener,noreferrer');
+    safeOpenExternal(waUrl);
     setSubmitted(true);
+    setTimeout(() => setIsSubmitting(false), 3000);
   };
 
   return (
@@ -86,6 +113,24 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Anti-Bot Security Honeypot */}
+              <input
+                type="text"
+                name="_hp_website"
+                value={formData._hp_website}
+                onChange={handleChange}
+                style={{ display: 'none', position: 'absolute', opacity: 0, zIndex: -1 }}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
+
+              {modalError && (
+                <div className="rounded-xl bg-red-950/80 border border-red-500/40 p-2.5 text-xs text-red-300 font-medium">
+                  {modalError}
+                </div>
+              )}
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-[11px] font-medium text-zinc-300 mb-1">Full Name *</label>

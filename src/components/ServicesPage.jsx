@@ -166,7 +166,7 @@ export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onN
     const text = encodeURIComponent(
       `Hello S. A Event's and Manpower Service, I would like to inquire about *${serviceTitle}*. Please share details and pricing options.`
     );
-    window.open(`https://wa.me/917600149422?text=${text}`, '_blank');
+    window.open(`https://wa.me/917600149422?text=${text}`, '_blank', 'noopener,noreferrer');
   };
 
   return (

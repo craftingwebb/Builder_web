@@ -8,6 +8,7 @@ import {
   Mail,
   CheckCircle2,
 } from 'lucide-react';
+import { isValidEmail, sanitizeString } from '../utils/security';
 
 export function InstagramLogo({ className = "size-5" }) {
   return (
@@ -66,7 +67,8 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
 
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
-    if (email) {
+    const cleanEmail = sanitizeString(email, 120);
+    if (isValidEmail(cleanEmail)) {
       setIsSubscribed(true);
       setTimeout(() => {
         setIsSubscribed(false);
@@ -408,7 +410,7 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
             <a
               href="https://linkedin.com"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="LinkedIn"
               title="Connect on LinkedIn"
               className="flex size-9 items-center justify-center rounded-xl bg-[#0A66C2] text-white shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"
@@ -422,7 +424,7 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
             <a
               href="https://facebook.com"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="Facebook"
               title="Follow on Facebook"
               className="flex size-9 items-center justify-center rounded-xl bg-[#1877F2] text-white shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"
@@ -436,7 +438,7 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
             <a
               href="https://youtube.com"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="YouTube"
               title="Subscribe on YouTube"
               className="flex size-9 items-center justify-center rounded-xl bg-[#FF0000] text-white shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"

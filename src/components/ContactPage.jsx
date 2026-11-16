@@ -10,6 +10,7 @@ import {
   CheckCircle2,
   ExternalLink,
 } from 'lucide-react';
+import { sanitizeString, sanitizePhone, isValidEmail, safeOpenExternal } from '../utils/security';
 
 // Social Icon SVGs
 function SocialIcon({ type }) {
@@ -60,19 +61,43 @@ export default function ContactPage({
     phone: '',
     subject: 'General enquiry',
     message: '',
+    _hp_website: '',
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const cleanName = formData.name.trim().slice(0, 100);
-    const cleanEmail = formData.email.trim().slice(0, 120);
-    const cleanMessage = formData.message.trim().slice(0, 2000);
-    const cleanPhone = formData.phone.trim().slice(0, 30);
-    const cleanCompany = formData.company.trim().slice(0, 120);
+    if (isSubmitting) return;
 
-    if (!cleanName || !cleanEmail || !cleanMessage) return;
+    // Bot detection via honeypot field
+    if (formData._hp_website) {
+      console.warn('[Security] Automated submission discarded.');
+      setIsSubmitted(true);
+      return;
+    }
+
+    const cleanName = sanitizeString(formData.name, 100);
+    const cleanEmail = sanitizeString(formData.email, 120);
+    const cleanMessage = sanitizeString(formData.message, 2000);
+    const cleanPhone = sanitizePhone(formData.phone, 25);
+    const cleanCompany = sanitizeString(formData.company, 120);
+    const cleanSubject = sanitizeString(formData.subject, 100);
+
+    if (!cleanName || !cleanEmail || !cleanMessage) {
+      setErrorMessage('Please fill in your name, email, and message.');
+      return;
+    }
+
+    if (!isValidEmail(cleanEmail)) {
+      setErrorMessage('Please provide a valid email address.');
+      return;
+    }
+
+    setErrorMessage('');
+    setIsSubmitting(true);
 
     // Securely encode message payload to prevent query-string injection
     const rawText =
@@ -81,13 +106,14 @@ export default function ContactPage({
       `*Company:* ${cleanCompany || 'Not Specified'}\n` +
       `*Email:* ${cleanEmail}\n` +
       `*Phone:* ${cleanPhone || 'Not Specified'}\n` +
-      `*Subject:* ${formData.subject}\n\n` +
+      `*Subject:* ${cleanSubject}\n\n` +
       `*Message:*\n${cleanMessage}\n\n` +
       `Please contact the sender.`;
 
     const waUrl = `https://wa.me/917600149422?text=${encodeURIComponent(rawText)}`;
-    window.open(waUrl, '_blank', 'noopener,noreferrer');
+    safeOpenExternal(waUrl);
     setIsSubmitted(true);
+    setTimeout(() => setIsSubmitting(false), 3000);
   };
 
   return (
@@ -271,6 +297,26 @@ export default function ContactPage({
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="mt-8 space-y-6">
+                  {/* Anti-Bot Security Honeypot */}
+                  <input
+                    type="text"
+                    name="_hp_website"
+                    value={formData._hp_website}
+                    onChange={(e) =>
+                      setFormData({ ...formData, _hp_website: e.target.value })
+                    }
+                    style={{ display: 'none', position: 'absolute', opacity: 0, zIndex: -1 }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                  />
+
+                  {errorMessage && (
+                    <div className="rounded-xl bg-red-50 border border-red-200 p-3 text-xs text-red-700 font-medium">
+                      {errorMessage}
+                    </div>
+                  )}
+
                   {/* Row 1: Name & Company */}
                   <div className="grid gap-6 sm:grid-cols-2">
                     <div>
@@ -457,7 +503,7 @@ export default function ContactPage({
                   <a
                     href="https://linkedin.com"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     aria-label="LinkedIn"
                     title="Connect on LinkedIn"
                     className="flex size-10 items-center justify-center rounded-xl bg-[#0A66C2] text-white shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"
@@ -467,7 +513,7 @@ export default function ContactPage({
                   <a
                     href="https://facebook.com"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     aria-label="Facebook"
                     title="Follow on Facebook"
                     className="flex size-10 items-center justify-center rounded-xl bg-[#1877F2] text-white shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"
@@ -477,7 +523,7 @@ export default function ContactPage({
                   <a
                     href="https://youtube.com"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     aria-label="YouTube"
                     title="Subscribe on YouTube"
                     className="flex size-10 items-center justify-center rounded-xl bg-[#FF0000] text-white shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"

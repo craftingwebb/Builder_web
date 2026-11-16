@@ -210,18 +210,18 @@ export default function InsightsPage({
   return (
     <div className="min-h-screen bg-ivory text-ink">
       {/* ========================================================= */}
-      {/* 1. HERO HEADER SECTION (Screenshot 1: media_1794859418582_d0808385.jpg) */}
+      {/* 1. HERO HEADER SECTION (Royal Maroon & Antique Gold) */}
       {/* ========================================================= */}
-      <section className="relative overflow-hidden bg-[#090d21] pt-32 pb-20 sm:pt-40 sm:pb-28 text-white">
-        {/* Background Image & Ambient Radial Violet Glow */}
+      <section className="relative overflow-hidden bg-[#130308] pt-32 pb-20 sm:pt-40 sm:pb-28 text-white">
+        {/* Background Image & Ambient Radial Crimson/Wine Glow */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
             src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=2000&q=80"
             alt="Audience Atmosphere"
             className="h-full w-full object-cover opacity-20 filter contrast-125 brightness-75"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#090d21]/90 via-[#090d21]/80 to-[#090d21]" />
-          <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 h-96 w-[50rem] rounded-full bg-[#6d5efc]/20 blur-[130px]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#130308]/95 via-[#130308]/85 to-[#130308]" />
+          <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 h-96 w-[50rem] rounded-full bg-[#991435]/25 blur-[130px]" />
         </div>
 
         <div className="site-container relative z-10">
@@ -274,7 +274,7 @@ export default function InsightsPage({
                     onClick={() => setActiveCategory(cat)}
                     className={`rounded-full px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-semibold tracking-tight transition-all duration-300 cursor-pointer ${
                       isActive
-                        ? 'bg-[#0d1330] text-white shadow-md ring-1 ring-white/10 scale-102'
+                        ? 'bg-[#480918] text-white shadow-lg ring-1 ring-gold/40 scale-102'
                         : 'bg-white text-ink/70 hover:text-ink hover:bg-white/90 border border-black/5 shadow-xs'
                     }`}
                   >
@@ -332,7 +332,7 @@ export default function InsightsPage({
               <div className="lg:col-span-6 p-8 sm:p-12 flex flex-col justify-between">
                 <div>
                   {/* Category Pill Tag */}
-                  <span className="inline-block rounded-full bg-[#0d1330] px-3.5 py-1 text-xs font-semibold text-white tracking-wide mb-4">
+                  <span className="inline-block rounded-full bg-[#380713] text-[#e2c488] ring-1 ring-gold/30 px-3.5 py-1 text-xs font-semibold tracking-wide mb-4">
                     {FEATURED_ARTICLE.category}
                   </span>
 
@@ -472,7 +472,7 @@ export default function InsightsPage({
           >
             {/* Modal Header */}
             <div className="sticky top-0 z-20 flex items-center justify-between border-b border-black/10 bg-white/95 px-6 py-4 backdrop-blur-md">
-              <span className="rounded-full bg-[#0d1330] px-3 py-1 text-xs font-semibold text-white">
+              <span className="rounded-full bg-[#380713] text-[#e2c488] ring-1 ring-gold/30 px-3 py-1 text-xs font-semibold">
                 {selectedArticle.category}
               </span>
 
@@ -531,7 +531,7 @@ export default function InsightsPage({
               </div>
 
               {/* Bottom In-Modal CTA */}
-              <div className="mt-10 rounded-2xl bg-[#0d1330] p-6 text-white flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="mt-10 rounded-2xl bg-gradient-to-r from-[#20050e] via-[#2c0812] to-[#150308] border border-gold/25 p-6 text-white flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
                 <div>
                   <h4 className="text-base font-bold text-white">
                     Planning your next corporate stage?
@@ -557,15 +557,15 @@ export default function InsightsPage({
       )}
 
       {/* ========================================================= */}
-      {/* 6. BOTTOM PROPOSAL BANNER (Screenshot 6: media_1794859467826_af3db5d9.jpg) */}
+      {/* 6. BOTTOM PROPOSAL BANNER (Royal Maroon & Antique Gold) */}
       {/* ========================================================= */}
       <section className="bg-ivory pb-20 sm:pb-28 pt-8">
         <div className="site-container">
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-[#090d21] p-8 sm:p-14 lg:p-16 text-white shadow-2xl border border-white/10">
+          <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#18040b] via-[#24060f] to-[#120207] p-8 sm:p-14 lg:p-16 text-white shadow-2xl border border-gold/20">
             {/* Background Texture & Ambient Radial Glow */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 h-[32rem] w-[32rem] rounded-full bg-[#6d5efc]/25 blur-[120px] -z-10"
+              className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 h-[32rem] w-[32rem] rounded-full bg-[#991435]/25 blur-[120px] -z-10"
             />
             <img
               src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1800&q=80"

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Check, MessageCircle } from 'lucide-react';
+import { sanitizeString, sanitizePhone, safeOpenExternal } from '../utils/security';
 
 const EVENT_TYPES = [
   { id: 'corporate-conf', label: 'Corporate Conference / Summit', basePrice: 150000 },
@@ -76,6 +77,10 @@ export default function CostCalculator() {
   };
 
   const handleWhatsAppQuote = () => {
+    const cleanCity = sanitizeString(eventCity, 80);
+    const cleanPhone = sanitizePhone(clientPhone, 25);
+    const cleanDate = sanitizeString(eventDate, 50);
+
     const selectedMpNames = selectedManpower
       .map((id) => MANPOWER_OPTIONS.find((m) => m.id === id)?.label)
       .filter(Boolean)
@@ -86,18 +91,20 @@ export default function CostCalculator() {
       .filter(Boolean)
       .join(', ');
 
-    const message = `*S. A Event's and Manpower Service - Instant Estimate Request*%0A%0A` +
-      `*Event Type:* ${currentEventType.label}%0A` +
-      `*Expected Guests:* ${guestCount}%0A` +
-      `*Tentative Date:* ${eventDate || 'To be decided'}%0A` +
-      `*Event City:* ${eventCity || 'Not specified'}%0A` +
-      `*Contact:* ${clientPhone || 'Direct Inquiry'}%0A%0A` +
-      `*Manpower Required:*%0A${selectedMpNames || 'None selected'}%0A%0A` +
-      `*Production & Tech Required:*%0A${selectedProdNames || 'None selected'}%0A%0A` +
-      `*Estimated Range:* ${formatCurrency(minEstimate)} - ${formatCurrency(maxEstimate)}%0A%0A` +
+    const rawMessage =
+      `*S. A Event's and Manpower Service - Instant Estimate Request*\n\n` +
+      `*Event Type:* ${currentEventType.label}\n` +
+      `*Expected Guests:* ${Math.max(10, Math.min(10000, Number(guestCount) || 100))}\n` +
+      `*Tentative Date:* ${cleanDate || 'To be decided'}\n` +
+      `*Event City:* ${cleanCity || 'Not specified'}\n` +
+      `*Contact:* ${cleanPhone || 'Direct Inquiry'}\n\n` +
+      `*Manpower Required:*\n${selectedMpNames || 'None selected'}\n\n` +
+      `*Production & Tech Required:*\n${selectedProdNames || 'None selected'}\n\n` +
+      `*Estimated Range:* ${formatCurrency(minEstimate)} - ${formatCurrency(maxEstimate)}\n\n` +
       `Please contact me with a finalized formal proposal.`;
 
-    window.open(`https://wa.me/917600149422?text=${message}`, '_blank');
+    const waUrl = `https://wa.me/917600149422?text=${encodeURIComponent(rawMessage)}`;
+    safeOpenExternal(waUrl);
   };
 
   return (

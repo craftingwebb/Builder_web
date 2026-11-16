@@ -10,6 +10,7 @@ import {
   Check,
   CheckCircle2,
 } from 'lucide-react';
+import { sanitizeString, sanitizePhone, isValidEmail, safeOpenExternal } from '../utils/security';
 
 const EVENT_TYPES = [
   'Corporate Event Management',
@@ -63,6 +64,9 @@ export default function ProposalPage({ onNavigateHome }) {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [requireNda, setRequireNda] = useState(false);
+  const [hpBotCheck, setHpBotCheck] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formError, setFormError] = useState('');
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -95,15 +99,35 @@ export default function ProposalPage({ onNavigateHome }) {
 
   const handleFinalSubmit = (e) => {
     e.preventDefault();
-    const cleanName = fullName.trim().slice(0, 100);
-    const cleanEmail = email.trim().slice(0, 120);
-    const cleanPhone = phone.trim().slice(0, 30);
-    const cleanCompany = company.trim().slice(0, 120);
-    const cleanCity = city.trim().slice(0, 100);
-    const cleanTargetDate = targetDate.trim().slice(0, 100);
-    const cleanNotes = briefNotes.trim().slice(0, 2000);
+    if (isSubmitting) return;
 
-    if (!cleanName || !cleanEmail || !cleanPhone) return;
+    // Discard automated bot submissions
+    if (hpBotCheck) {
+      console.warn('[Security] Dropped automated submission.');
+      setIsSubmitted(true);
+      return;
+    }
+
+    const cleanName = sanitizeString(fullName, 100);
+    const cleanEmail = sanitizeString(email, 120);
+    const cleanPhone = sanitizePhone(phone, 25);
+    const cleanCompany = sanitizeString(company, 120);
+    const cleanCity = sanitizeString(city, 100);
+    const cleanTargetDate = sanitizeString(targetDate, 100);
+    const cleanNotes = sanitizeString(briefNotes, 2000);
+
+    if (!cleanName || !cleanEmail || !cleanPhone) {
+      setFormError('Please enter your name, email, and phone number.');
+      return;
+    }
+
+    if (!isValidEmail(cleanEmail)) {
+      setFormError('Please enter a valid work email address.');
+      return;
+    }
+
+    setFormError('');
+    setIsSubmitting(true);
 
     // Construct formal WhatsApp submission with safe URI encoding
     const rawMessage =
@@ -121,8 +145,9 @@ export default function ProposalPage({ onNavigateHome }) {
       `Please assign a senior director and share the concept deck.`;
 
     const waUrl = `https://wa.me/917600149422?text=${encodeURIComponent(rawMessage)}`;
-    window.open(waUrl, '_blank', 'noopener,noreferrer');
+    safeOpenExternal(waUrl);
     setIsSubmitted(true);
+    setTimeout(() => setIsSubmitting(false), 3000);
   };
 
   return (
@@ -209,7 +234,7 @@ export default function ProposalPage({ onNavigateHome }) {
                   <a
                     href="https://wa.me/917600149422?text=Hi!%20I'd%20like%20to%20discuss%20a%20corporate%20event."
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 text-[#25D366] hover:brightness-110 transition"
                   >
                     <MessageCircle className="size-4 fill-current" />
@@ -476,6 +501,24 @@ export default function ProposalPage({ onNavigateHome }) {
                     {/* STEP 3: Contact & Proposal Dispatch */}
                     {currentStep === 3 && (
                       <form onSubmit={handleFinalSubmit} className="space-y-6">
+                        {/* Anti-Bot Security Honeypot */}
+                        <input
+                          type="text"
+                          name="_hp_bot_check"
+                          value={hpBotCheck}
+                          onChange={(e) => setHpBotCheck(e.target.value)}
+                          style={{ display: 'none', position: 'absolute', opacity: 0, zIndex: -1 }}
+                          tabIndex={-1}
+                          autoComplete="off"
+                          aria-hidden="true"
+                        />
+
+                        {formError && (
+                          <div className="rounded-xl bg-red-50 border border-red-200 p-3 text-xs text-red-700 font-medium">
+                            {formError}
+                          </div>
+                        )}
+
                         <div>
                           <h2 className="text-2xl sm:text-[1.75rem] font-bold text-ink">
                             Where should we send the deck?

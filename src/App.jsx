@@ -22,6 +22,7 @@ import ProposalBanner from './components/ProposalBanner';
 import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
 import WhatsAppButton from './components/WhatsAppButton';
+import { isSafeCssId } from './utils/security';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'portfolio' | 'proposal'
@@ -79,7 +80,7 @@ export default function App() {
     } else if (page === 'services') {
       window.location.hash = '#/services';
       setCurrentPage('services');
-      if (sectionHref && sectionHref.startsWith('#')) {
+      if (isSafeCssId(sectionHref)) {
         setTimeout(() => {
           const target = document.querySelector(sectionHref);
           if (target) {
@@ -116,7 +117,7 @@ export default function App() {
     } else {
       window.location.hash = '';
       setCurrentPage('home');
-      if (sectionHref && sectionHref.startsWith('#')) {
+      if (isSafeCssId(sectionHref)) {
         setTimeout(() => {
           const target = document.querySelector(sectionHref);
           if (target) {
