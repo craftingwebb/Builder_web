@@ -8,6 +8,7 @@ import FeaturedEvents from './components/FeaturedEvents';
 import PortfolioSection from './components/PortfolioSection';
 import PortfolioPage from './components/PortfolioPage';
 import ProposalPage from './components/ProposalPage';
+import AboutPage from './components/AboutPage';
 import IndustriesSection from './components/IndustriesSection';
 import ProcessSection from './components/ProcessSection';
 import TestimonialsSection from './components/TestimonialsSection';
@@ -26,7 +27,10 @@ export default function App() {
   useEffect(() => {
     const handleHashSync = () => {
       const hash = window.location.hash;
-      if (hash === '#/portfolio' || hash === '#portfolio') {
+      if (hash === '#/about' || hash === '#about') {
+        setCurrentPage('about');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (hash === '#/portfolio' || hash === '#portfolio') {
         setCurrentPage('portfolio');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (
@@ -48,7 +52,11 @@ export default function App() {
   }, []);
 
   const handleNavigate = (page, sectionHref = null) => {
-    if (page === 'portfolio') {
+    if (page === 'about') {
+      window.location.hash = '#/about';
+      setCurrentPage('about');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (page === 'portfolio') {
       window.location.hash = '#/portfolio';
       setCurrentPage('portfolio');
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -92,7 +100,16 @@ export default function App() {
       />
 
       {/* 2. Main View Switcher */}
-      {currentPage === 'portfolio' ? (
+      {currentPage === 'about' ? (
+        /* Dedicated About Us Page (Screenshots 1-7) */
+        <main>
+          <AboutPage
+            onNavigateHome={() => handleNavigate('home')}
+            onOpenProposalModal={() => handleNavigate('proposal')}
+            onViewPortfolio={() => handleNavigate('portfolio')}
+          />
+        </main>
+      ) : currentPage === 'portfolio' ? (
         /* Dedicated Portfolio Page (Screenshots 1-6) */
         <main>
           <PortfolioPage
@@ -117,7 +134,10 @@ export default function App() {
           />
 
           {/* WHO WE ARE Section */}
-          <AboutSection onOpenProposalModal={() => handleNavigate('proposal')} />
+          <AboutSection
+            onOpenProposalModal={() => handleNavigate('proposal')}
+            onNavigateAbout={() => handleNavigate('about')}
+          />
 
           {/* WHAT WE DO */}
           <ServicesSection onSelectService={(service) => handleOpenModal(service)} />
@@ -155,7 +175,10 @@ export default function App() {
       )}
 
       {/* Comprehensive Pre-Footer & Directory Footer (Shared across all pages) */}
-      <Footer onOpenQuoteModal={() => handleNavigate('proposal')} />
+      <Footer
+        onOpenQuoteModal={() => handleNavigate('proposal')}
+        onNavigate={handleNavigate}
+      />
 
       {/* Quick Inquiries Drawer / Modal */}
       <BookingModal

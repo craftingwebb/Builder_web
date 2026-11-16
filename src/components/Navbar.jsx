@@ -61,7 +61,7 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
   }, [lastScrollY]);
 
   const links = [
-    { label: 'About', href: '#about' },
+    { label: 'About', href: '#/about', isPage: true },
     { label: 'Services', href: '#services' },
     { label: 'Portfolio', href: '#/portfolio', isPage: true },
     { label: 'Clients', href: '#testimonials' },
@@ -74,7 +74,9 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
     e.preventDefault();
     setMobileOpen(false);
 
-    if (link.isPage || link.label === 'Portfolio') {
+    if (link.label === 'About') {
+      onNavigate?.('about');
+    } else if (link.label === 'Portfolio') {
       onNavigate?.('portfolio');
     } else {
       onNavigate?.('home', link.href);
@@ -105,16 +107,18 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
         {/* Center Nav links */}
         <nav className="ml-auto hidden items-center gap-1 lg:flex" aria-label="Main">
           {links.map((link) => {
-            const isPortfolioActive = currentPage === 'portfolio' && link.label === 'Portfolio';
+            const isActive =
+              (currentPage === 'about' && link.label === 'About') ||
+              (currentPage === 'portfolio' && link.label === 'Portfolio');
             return (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link)}
-                className={`relative rounded-full px-3.5 py-2 text-[0.85rem] font-medium transition-colors ${
-                  isPortfolioActive
+                className={`relative rounded-full px-3.5 py-2 text-[0.85rem] transition-colors ${
+                  isActive
                     ? 'text-white font-semibold underline decoration-gold decoration-2 underline-offset-8'
-                    : 'text-white/75 hover:text-white'
+                    : 'text-white/75 font-medium hover:text-white'
                 }`}
               >
                 {link.label}
@@ -158,16 +162,18 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
         <div className="lg:hidden bg-ink/95 border-none px-6 py-6 backdrop-blur-2xl animate-in slide-in-from-top-3">
           <div className="flex flex-col gap-3">
             {links.map((link) => {
-              const isPortfolioActive = currentPage === 'portfolio' && link.label === 'Portfolio';
+              const isActive =
+                (currentPage === 'about' && link.label === 'About') ||
+                (currentPage === 'portfolio' && link.label === 'Portfolio');
               return (
                 <a
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link)}
-                  className={`text-sm font-medium py-2 ${
-                    isPortfolioActive
+                  className={`text-sm py-2 ${
+                    isActive
                       ? 'text-gold font-bold'
-                      : 'text-white/80 hover:text-white'
+                      : 'text-white/80 font-medium hover:text-white'
                   }`}
                 >
                   {link.label}

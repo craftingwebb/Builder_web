@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
-export default function AboutSection({ onOpenProposalModal }) {
+export default function AboutSection({ onOpenProposalModal, onNavigateAbout }) {
   return (
     <section id="about" className="relative bg-ivory py-28 text-ink lg:py-36">
       <div className="site-container">
@@ -37,7 +37,7 @@ export default function AboutSection({ onOpenProposalModal }) {
             </div>
 
             <button
-              onClick={onOpenProposalModal}
+              onClick={onNavigateAbout || onOpenProposalModal}
               className="btn-outline-ink mt-10 cursor-pointer"
             >
               <span>Our journey</span>

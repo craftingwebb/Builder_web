@@ -9,7 +9,7 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 
-export default function Footer({ onOpenQuoteModal }) {
+export default function Footer({ onOpenQuoteModal, onNavigate }) {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
 
@@ -170,32 +170,44 @@ export default function Footer({ onOpenQuoteModal }) {
             </h4>
             <ul className="mt-5 space-y-3 text-sm text-white/60">
               <li>
-                <a href="#about" className="hover:text-gold transition-colors">
+                <button
+                  onClick={() => onNavigate?.('about')}
+                  className="hover:text-gold transition-colors cursor-pointer text-left"
+                >
                   About Us
-                </a>
-              </li>
-              <li>
-                <a href="#clients" className="hover:text-gold transition-colors">
-                  Our Clients
-                </a>
-              </li>
-              <li>
-                <a href="#partners" className="hover:text-gold transition-colors">
-                  Partners
-                </a>
+                </button>
               </li>
               <li>
                 <button
-                  onClick={onOpenQuoteModal}
+                  onClick={() => onNavigate?.('home', '#testimonials')}
+                  className="hover:text-gold transition-colors cursor-pointer text-left"
+                >
+                  Our Clients
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onNavigate?.('home', '#testimonials')}
+                  className="hover:text-gold transition-colors cursor-pointer text-left"
+                >
+                  Partners
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onNavigate?.('proposal')}
                   className="hover:text-gold transition-colors cursor-pointer text-left"
                 >
                   Become a Partner
                 </button>
               </li>
               <li>
-                <a href="#contact" className="hover:text-gold transition-colors">
+                <button
+                  onClick={() => onNavigate?.('home', '#contact')}
+                  className="hover:text-gold transition-colors cursor-pointer text-left"
+                >
                   Contact
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -207,28 +219,40 @@ export default function Footer({ onOpenQuoteModal }) {
             </h4>
             <ul className="mt-5 space-y-3 text-sm text-white/60">
               <li>
-                <a href="#portfolio" className="hover:text-gold transition-colors">
+                <button
+                  onClick={() => onNavigate?.('portfolio')}
+                  className="hover:text-gold transition-colors cursor-pointer text-left"
+                >
                   Portfolio
-                </a>
-              </li>
-              <li>
-                <a href="#featured" className="hover:text-gold transition-colors">
-                  Gallery
-                </a>
-              </li>
-              <li>
-                <a href="#insights" className="hover:text-gold transition-colors">
-                  Insights
-                </a>
-              </li>
-              <li>
-                <a href="#portfolio" className="hover:text-gold transition-colors">
-                  Case Studies
-                </a>
+                </button>
               </li>
               <li>
                 <button
-                  onClick={onOpenQuoteModal}
+                  onClick={() => onNavigate?.('home', '#featured-stages')}
+                  className="hover:text-gold transition-colors cursor-pointer text-left"
+                >
+                  Gallery
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onNavigate?.('home', '#insights')}
+                  className="hover:text-gold transition-colors cursor-pointer text-left"
+                >
+                  Insights
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onNavigate?.('portfolio')}
+                  className="hover:text-gold transition-colors cursor-pointer text-left"
+                >
+                  Case Studies
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onNavigate?.('proposal')}
                   className="hover:text-gold transition-colors cursor-pointer text-left"
                 >
                   Request a Quote
