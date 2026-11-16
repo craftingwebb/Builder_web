@@ -295,21 +295,21 @@ export default function AboutPage({
               return (
                 <div
                   key={item.num}
-                  className={`group relative rounded-2xl border border-white/10 bg-[#10162e]/80 p-6 sm:p-7 backdrop-blur-sm transition-all duration-300 hover:border-gold/50 hover:bg-[#141b38] ${
+                  className={`group relative rounded-2xl border border-gold/20 bg-gradient-to-br from-[#22060f]/95 via-[#2a0813]/90 to-[#18040b]/95 p-6 sm:p-7 backdrop-blur-sm transition-all duration-300 hover:border-gold/50 hover:bg-[#340917] shadow-xl ${
                     idx === 3 ? "lg:col-start-1" : ""
                   }`}
                 >
                   <div className="flex items-start gap-4">
                     {/* Award / Medal Icon badge */}
-                    <div className="flex size-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-gold group-hover:scale-105 transition-transform">
+                    <div className="flex size-11 shrink-0 items-center justify-center rounded-xl border border-gold/25 bg-[#3a0a18] text-gold group-hover:scale-105 group-hover:bg-[#480c1e] transition-all">
                       <IconComp className="size-5" />
                     </div>
 
                     <div>
-                      <span className="text-xs font-mono text-white/40 block mb-1">
+                      <span className="text-xs font-mono text-gold/60 block mb-1">
                         {item.num}
                       </span>
-                      <p className="text-sm sm:text-[0.95rem] font-medium leading-snug text-white/90">
+                      <p className="text-sm sm:text-[0.95rem] font-medium leading-snug text-white/95">
                         {item.title}
                       </p>
                     </div>

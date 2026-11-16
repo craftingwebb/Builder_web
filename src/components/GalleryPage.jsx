@@ -384,7 +384,7 @@ export default function GalleryPage({
                   onClick={() => setActiveFilter(tab.id)}
                   className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs sm:text-sm font-semibold tracking-tight transition-all duration-300 cursor-pointer ${
                     isActive
-                      ? 'bg-[#0d1330] text-white shadow-md ring-1 ring-white/10 scale-102'
+                      ? 'bg-[#480918] text-white shadow-lg ring-1 ring-gold/40 scale-102'
                       : 'bg-white text-ink/70 hover:text-ink hover:bg-white/90 border border-black/5 shadow-xs'
                   }`}
                 >
@@ -616,7 +616,7 @@ export default function GalleryPage({
             </div>
 
             {/* Modal Footer Info */}
-            <div className="p-6 bg-[#0d1330] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="p-6 bg-gradient-to-r from-[#20050e] via-[#2c0812] to-[#150308] border-t border-gold/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
                 <h4 className="text-xl font-bold text-white tracking-tight">{selectedItem.title}</h4>
                 <p className="mt-1 text-sm text-white/70 leading-relaxed max-w-2xl">

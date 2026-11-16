@@ -88,7 +88,7 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="relative w-full max-w-lg bg-[#11131a] border border-zinc-800 rounded-3xl p-6 sm:p-8 shadow-2xl overflow-y-auto max-h-[90vh]">
+      <div className="relative w-full max-w-lg bg-gradient-to-br from-[#18040b] via-[#22060f] to-[#120207] border border-gold/30 rounded-3xl p-6 sm:p-8 shadow-2xl overflow-y-auto max-h-[90vh]">
         
         {/* Close Button */}
         <button
