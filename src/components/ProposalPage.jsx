@@ -254,14 +254,14 @@ export default function ProposalPage({ onNavigateHome }) {
                   <div className="flex items-center gap-2.5">
                     <span
                       className={`flex size-7 items-center justify-center rounded-full text-xs font-bold transition-colors ${
-                        currentStep >= 1 ? 'bg-ink text-white' : 'bg-ink/10 text-ink/40'
+                        currentStep >= 1 ? 'bg-[#801436] text-white shadow-sm' : 'bg-ink/10 text-ink/40'
                       }`}
                     >
                       {currentStep > 1 ? <Check className="size-3.5 stroke-[3]" /> : '1'}
                     </span>
                     <span
                       className={`text-xs font-semibold tracking-wide ${
-                        currentStep === 1 ? 'text-ink' : 'text-ink/40'
+                        currentStep === 1 ? 'text-[#801436]' : 'text-ink/40'
                       }`}
                     >
                       Your event
@@ -274,14 +274,14 @@ export default function ProposalPage({ onNavigateHome }) {
                   <div className="flex items-center gap-2.5">
                     <span
                       className={`flex size-7 items-center justify-center rounded-full text-xs font-bold transition-colors ${
-                        currentStep >= 2 ? 'bg-ink text-white' : 'bg-ink/10 text-ink/40'
+                        currentStep >= 2 ? 'bg-[#801436] text-white shadow-sm' : 'bg-ink/10 text-ink/40'
                       }`}
                     >
                       {currentStep > 2 ? <Check className="size-3.5 stroke-[3]" /> : '2'}
                     </span>
                     <span
                       className={`text-xs font-semibold tracking-wide ${
-                        currentStep === 2 ? 'text-ink' : 'text-ink/40'
+                        currentStep === 2 ? 'text-[#801436]' : 'text-ink/40'
                       }`}
                     >
                       Details
@@ -294,14 +294,14 @@ export default function ProposalPage({ onNavigateHome }) {
                   <div className="flex items-center gap-2.5">
                     <span
                       className={`flex size-7 items-center justify-center rounded-full text-xs font-bold transition-colors ${
-                        currentStep === 3 ? 'bg-ink text-white' : 'bg-ink/10 text-ink/40'
+                        currentStep === 3 ? 'bg-[#801436] text-white shadow-sm' : 'bg-ink/10 text-ink/40'
                       }`}
                     >
                       3
                     </span>
                     <span
                       className={`text-xs font-semibold tracking-wide ${
-                        currentStep === 3 ? 'text-ink' : 'text-ink/40'
+                        currentStep === 3 ? 'text-[#801436]' : 'text-ink/40'
                       }`}
                     >
                       Contact
@@ -334,19 +334,19 @@ export default function ProposalPage({ onNavigateHome }) {
                                 onClick={() => setSelectedEventType(type)}
                                 className={`flex items-center justify-between rounded-xl border p-3.5 text-left text-xs sm:text-[0.82rem] font-semibold transition-all cursor-pointer ${
                                   isSelected
-                                    ? 'border-ink bg-ink text-white shadow-sm'
-                                    : 'border-ink/[0.12] bg-[#fdfdfd] text-ink hover:border-ink/40 hover:bg-zinc-50'
+                                    ? 'border-[#801436] bg-[#801436] text-white shadow-md ring-1 ring-[#c9a96a]/40'
+                                    : 'border-ink/[0.12] bg-[#fdfdfd] text-ink hover:border-[#801436]/40 hover:bg-zinc-50'
                                 }`}
                               >
                                 <span className="pr-2 leading-snug">{type}</span>
                                 <span
                                   className={`size-4 rounded-full border flex items-center justify-center shrink-0 ${
                                     isSelected
-                                      ? 'border-white bg-white text-ink'
+                                      ? 'border-white bg-white text-[#801436]'
                                       : 'border-ink/20 bg-white'
                                   }`}
                                 >
-                                  {isSelected && <span className="size-1.5 rounded-full bg-ink" />}
+                                  {isSelected && <span className="size-1.5 rounded-full bg-[#801436]" />}
                                 </span>
                               </button>
                             );
@@ -369,8 +369,8 @@ export default function ProposalPage({ onNavigateHome }) {
                                   onClick={() => toggleService(srv)}
                                   className={`rounded-full px-3.5 py-1.5 text-xs font-medium transition-all cursor-pointer ${
                                     isChecked
-                                      ? 'bg-ink text-white shadow-sm'
-                                      : 'border border-ink/15 bg-white text-ink/75 hover:border-ink/40 hover:text-ink'
+                                      ? 'bg-[#801436] text-white shadow-md ring-1 ring-[#c9a96a]/40'
+                                      : 'border border-ink/15 bg-white text-ink/75 hover:border-[#801436]/40 hover:text-ink'
                                   }`}
                                 >
                                   {srv}
@@ -388,7 +388,7 @@ export default function ProposalPage({ onNavigateHome }) {
 
                           <button
                             type="submit"
-                            className="inline-flex items-center gap-2 rounded-full bg-zinc-600 hover:bg-ink text-white px-7 py-3 text-xs font-bold tracking-wide transition-all shadow-md cursor-pointer hover:shadow-lg"
+                            className="inline-flex items-center gap-2 rounded-full bg-[#801436] hover:bg-[#991435] text-white px-7 py-3 text-xs font-bold tracking-wide transition-all shadow-md shadow-[#801436]/30 cursor-pointer hover:shadow-lg"
                           >
                             <span>Continue</span>
                             <ArrowRight className="size-4" />
@@ -422,8 +422,8 @@ export default function ProposalPage({ onNavigateHome }) {
                                 onClick={() => setGuestCount(rng)}
                                 className={`rounded-xl border p-2.5 text-center text-xs font-semibold transition cursor-pointer ${
                                   guestCount === rng
-                                    ? 'border-ink bg-ink text-white'
-                                    : 'border-ink/15 bg-white text-ink/70 hover:border-ink/30'
+                                    ? 'border-[#801436] bg-[#801436] text-white shadow-md ring-1 ring-[#c9a96a]/40'
+                                    : 'border-ink/15 bg-white text-ink/70 hover:border-[#801436]/30'
                                 }`}
                               >
                                 {rng}
@@ -489,7 +489,7 @@ export default function ProposalPage({ onNavigateHome }) {
 
                           <button
                             type="submit"
-                            className="inline-flex items-center gap-2 rounded-full bg-zinc-600 hover:bg-ink text-white px-7 py-3 text-xs font-bold tracking-wide transition-all shadow-md cursor-pointer hover:shadow-lg"
+                            className="inline-flex items-center gap-2 rounded-full bg-[#801436] hover:bg-[#991435] text-white px-7 py-3 text-xs font-bold tracking-wide transition-all shadow-md shadow-[#801436]/30 cursor-pointer hover:shadow-lg"
                           >
                             <span>Continue to Contact</span>
                             <ArrowRight className="size-4" />

@@ -93,7 +93,7 @@ export default function ServicesSection({ onSelectService, onNavigateServices })
     <section id="services" className="relative overflow-hidden bg-ink py-24 text-white lg:py-36">
       
       {/* Background ambient radial glow */}
-      <div className="pointer-events-none absolute top-1/3 -right-40 size-[40rem] rounded-full bg-[rgba(109,94,252,0.12)] blur-[140px]" />
+      <div className="pointer-events-none absolute top-1/3 -right-40 size-[40rem] rounded-full bg-[rgba(153,20,53,0.18)] blur-[140px]" />
 
       <div className="site-container">
         
@@ -133,7 +133,7 @@ export default function ServicesSection({ onSelectService, onNavigateServices })
             onClick={() => { setActiveTab('corporate'); setExpandedId(null); setHoveredIdx(null); }}
             className={`flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-semibold tracking-wide transition-all cursor-pointer whitespace-nowrap ${
               activeTab === 'corporate'
-                ? 'bg-gold text-ink font-bold shadow-lg shadow-gold/25'
+                ? 'bg-[#801436] text-white font-bold shadow-lg shadow-[#801436]/40 ring-1 ring-gold/50 scale-102'
                 : 'bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/10'
             }`}
           >
@@ -145,7 +145,7 @@ export default function ServicesSection({ onSelectService, onNavigateServices })
             onClick={() => { setActiveTab('wedding'); setExpandedId(null); setHoveredIdx(null); }}
             className={`flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-semibold tracking-wide transition-all cursor-pointer whitespace-nowrap ${
               activeTab === 'wedding'
-                ? 'bg-gold text-ink font-bold shadow-lg shadow-gold/25'
+                ? 'bg-[#801436] text-white font-bold shadow-lg shadow-[#801436]/40 ring-1 ring-gold/50 scale-102'
                 : 'bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/10'
             }`}
           >
@@ -157,7 +157,7 @@ export default function ServicesSection({ onSelectService, onNavigateServices })
             onClick={() => { setActiveTab('manpower'); setExpandedId(null); setHoveredIdx(null); }}
             className={`flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-semibold tracking-wide transition-all cursor-pointer whitespace-nowrap ${
               activeTab === 'manpower'
-                ? 'bg-gold text-ink font-bold shadow-lg shadow-gold/25'
+                ? 'bg-[#801436] text-white font-bold shadow-lg shadow-[#801436]/40 ring-1 ring-gold/50 scale-102'
                 : 'bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/10'
             }`}
           >

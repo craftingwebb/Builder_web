@@ -172,9 +172,9 @@ export default function TestimonialsSection() {
                   <span
                     className={`block h-full transition-all duration-300 ${
                       idx === activeIndex
-                        ? 'w-full bg-ink'
+                        ? 'w-full bg-[#801436]'
                         : idx < activeIndex
-                        ? 'w-full bg-ink/30'
+                        ? 'w-full bg-[#801436]/40'
                         : 'w-0'
                     }`}
                   />

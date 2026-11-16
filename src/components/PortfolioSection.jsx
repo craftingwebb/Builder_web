@@ -97,10 +97,10 @@ export default function PortfolioSection({ onOpenQuoteModal, onViewFullPortfolio
               <button
                 key={key}
                 onClick={() => setActiveCategory(key)}
-                className={`shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition cursor-pointer ${
+                className={`shrink-0 rounded-full border px-4.5 py-2 text-sm font-semibold transition-all duration-300 cursor-pointer ${
                   activeCategory === key
-                    ? 'border-ink bg-ink text-white shadow-md'
-                    : 'border-ink/15 text-ink/70 hover:border-ink/40 hover:text-ink'
+                    ? 'border-[#801436] bg-[#801436] text-white shadow-lg shadow-[#801436]/40 ring-1 ring-[#c9a96a]/50 scale-102'
+                    : 'border-ink/15 text-ink/70 hover:border-ink/40 hover:text-ink hover:bg-black/5'
                 }`}
               >
                 {label}

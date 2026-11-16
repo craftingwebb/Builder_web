@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MANPOWER_ROSTER } from '../data/eventsData';
-import { Users, Shield, Music, Sparkles, Check, ChevronRight, Phone, MessageSquare, AlertCircle } from 'lucide-react';
+import { Users, Shield, Sparkles, ChevronRight } from 'lucide-react';
 
 export default function ManpowerSection({ onSelectManpower }) {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -55,7 +55,7 @@ export default function ManpowerSection({ onSelectManpower }) {
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 py-2 rounded-xl text-xs font-semibold tracking-wide transition-all cursor-pointer whitespace-nowrap ${
                 selectedCategory === cat
-                  ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/25'
+                  ? 'bg-gradient-to-r from-[#801436] to-[#991435] text-white shadow-lg shadow-[#801436]/30'
                   : 'bg-zinc-900/80 text-zinc-400 hover:text-white hover:bg-zinc-800 border border-zinc-800'
               }`}
             >
@@ -115,7 +115,7 @@ export default function ManpowerSection({ onSelectManpower }) {
               {/* Bottom Action */}
               <button
                 onClick={() => onSelectManpower(item)}
-                className="w-full py-2.5 rounded-lg bg-zinc-800/90 hover:bg-blue-600 text-zinc-200 hover:text-white text-xs font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer border border-zinc-700/60 hover:border-blue-500"
+                className="w-full py-2.5 rounded-lg bg-zinc-800/90 hover:bg-[#801436] text-zinc-200 hover:text-white text-xs font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer border border-zinc-700/60 hover:border-[#991435]"
               >
                 <span>Book This Crew</span>
                 <ChevronRight className="w-3.5 h-3.5" />

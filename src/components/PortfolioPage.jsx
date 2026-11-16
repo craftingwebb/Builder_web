@@ -199,7 +199,7 @@ export default function PortfolioPage({ onNavigateHome, onOpenProposalModal }) {
                   onClick={() => setActiveTab(tab.key)}
                   className={`flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-semibold tracking-wide transition-all duration-300 cursor-pointer whitespace-nowrap ${
                     isActive
-                      ? 'bg-ink text-white shadow-md'
+                      ? 'bg-[#801436] text-white shadow-lg shadow-[#801436]/40 ring-1 ring-[#c9a96a]/50 scale-102'
                       : 'bg-white border border-ink/10 text-ink/70 hover:border-ink/30 hover:text-ink hover:bg-white/80'
                   }`}
                 >
@@ -207,7 +207,7 @@ export default function PortfolioPage({ onNavigateHome, onOpenProposalModal }) {
                   <span
                     className={`rounded-full px-2 py-0.5 text-[10px] font-mono font-bold ${
                       isActive
-                        ? 'bg-white/20 text-white'
+                        ? 'bg-black/30 text-white ring-1 ring-white/20'
                         : 'bg-ink/5 text-ink/60'
                     }`}
                   >

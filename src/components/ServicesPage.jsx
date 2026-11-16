@@ -228,7 +228,7 @@ export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onN
                 onClick={() => handlePillClick(s.id)}
                 className={`rounded-full border px-4 py-2 text-xs font-medium backdrop-blur-sm transition-all cursor-pointer ${
                   activeFilter === s.id
-                    ? 'border-gold bg-gold/20 text-gold shadow-sm'
+                    ? 'border-gold bg-[#801436] text-white shadow-md ring-1 ring-gold/40'
                     : 'border-white/15 bg-white/5 text-white/80 hover:border-gold hover:bg-white/10 hover:text-white'
                 }`}
               >

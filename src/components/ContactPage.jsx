@@ -261,7 +261,7 @@ export default function ContactPage({
                 <button
                   type="button"
                   onClick={onOpenProposalModal}
-                  className="font-medium text-indigo-600 hover:text-indigo-800 underline underline-offset-4 cursor-pointer"
+                  className="font-medium text-[#801436] hover:text-[#991435] underline underline-offset-4 cursor-pointer"
                 >
                   Request a quote
                 </button>
@@ -551,7 +551,7 @@ export default function ContactPage({
                       href="https://www.instagram.com/s.aeventsandmanpowerservice/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-indigo-600 hover:underline font-semibold block"
+                      className="text-xs text-[#801436] hover:text-[#991435] hover:underline font-semibold block"
                     >
                       @s.aeventsandmanpowerservice
                     </a>

@@ -274,7 +274,7 @@ export default function InsightsPage({
                     onClick={() => setActiveCategory(cat)}
                     className={`rounded-full px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-semibold tracking-tight transition-all duration-300 cursor-pointer ${
                       isActive
-                        ? 'bg-[#480918] text-white shadow-lg ring-1 ring-gold/40 scale-102'
+                        ? 'bg-[#801436] text-white shadow-lg shadow-[#801436]/40 ring-1 ring-[#c9a96a]/50 scale-102'
                         : 'bg-white text-ink/70 hover:text-ink hover:bg-white/90 border border-black/5 shadow-xs'
                     }`}
                   >

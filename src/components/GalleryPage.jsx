@@ -384,15 +384,15 @@ export default function GalleryPage({
                   onClick={() => setActiveFilter(tab.id)}
                   className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs sm:text-sm font-semibold tracking-tight transition-all duration-300 cursor-pointer ${
                     isActive
-                      ? 'bg-[#480918] text-white shadow-lg ring-1 ring-gold/40 scale-102'
+                      ? 'bg-[#801436] text-white shadow-lg shadow-[#801436]/40 ring-1 ring-[#c9a96a]/50 scale-102'
                       : 'bg-white text-ink/70 hover:text-ink hover:bg-white/90 border border-black/5 shadow-xs'
                   }`}
                 >
-                  <Icon className={`size-3.5 sm:size-4 ${isActive ? 'text-gold' : 'text-ink/40'}`} />
+                  <Icon className={`size-3.5 sm:size-4 ${isActive ? 'text-[#f5deb3]' : 'text-ink/40'}`} />
                   <span>{tab.label}</span>
                   <span
-                    className={`ml-1 text-[11px] px-1.5 py-0.5 rounded-full font-mono ${
-                      isActive ? 'bg-white/15 text-white/90' : 'bg-black/5 text-ink/50'
+                    className={`ml-1 text-[11px] px-2 py-0.5 rounded-full font-mono font-bold ${
+                      isActive ? 'bg-black/30 text-white ring-1 ring-white/20' : 'bg-black/5 text-ink/50'
                     }`}
                   >
                     {count}
