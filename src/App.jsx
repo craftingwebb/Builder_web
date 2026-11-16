@@ -9,6 +9,7 @@ import PortfolioSection from './components/PortfolioSection';
 import PortfolioPage from './components/PortfolioPage';
 import ProposalPage from './components/ProposalPage';
 import AboutPage from './components/AboutPage';
+import ServicesPage from './components/ServicesPage';
 import ContactPage from './components/ContactPage';
 import IndustriesSection from './components/IndustriesSection';
 import ProcessSection from './components/ProcessSection';
@@ -30,6 +31,9 @@ export default function App() {
       const hash = window.location.hash;
       if (hash === '#/contact' || hash === '#contact') {
         setCurrentPage('contact');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (hash === '#/services' || hash === '#services') {
+        setCurrentPage('services');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (hash === '#/about' || hash === '#about') {
         setCurrentPage('about');
@@ -60,6 +64,19 @@ export default function App() {
       window.location.hash = '#/contact';
       setCurrentPage('contact');
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (page === 'services') {
+      window.location.hash = '#/services';
+      setCurrentPage('services');
+      if (sectionHref && sectionHref.startsWith('#')) {
+        setTimeout(() => {
+          const target = document.querySelector(sectionHref);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 120);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     } else if (page === 'about') {
       window.location.hash = '#/about';
       setCurrentPage('about');
@@ -114,6 +131,15 @@ export default function App() {
           <ContactPage
             onNavigateHome={() => handleNavigate('home')}
             onOpenProposalModal={() => handleNavigate('proposal')}
+          />
+        </main>
+      ) : currentPage === 'services' ? (
+        /* Dedicated Services Catalog Page (Screenshots 1-12) */
+        <main>
+          <ServicesPage
+            onNavigateHome={() => handleNavigate('home')}
+            onOpenProposalModal={() => handleNavigate('proposal')}
+            onViewPortfolio={() => handleNavigate('portfolio')}
           />
         </main>
       ) : currentPage === 'about' ? (

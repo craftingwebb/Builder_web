@@ -54,7 +54,7 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
 
   const links = [
     { label: 'About', href: '#/about', isPage: true },
-    { label: 'Services', href: '#services' },
+    { label: 'Services', href: '#/services', isPage: true },
     { label: 'Portfolio', href: '#/portfolio', isPage: true },
     { label: 'Clients', href: '#testimonials' },
     { label: 'Gallery', href: '#featured-stages' },
@@ -68,6 +68,8 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
 
     if (link.label === 'About') {
       onNavigate?.('about');
+    } else if (link.label === 'Services') {
+      onNavigate?.('services');
     } else if (link.label === 'Portfolio') {
       onNavigate?.('portfolio');
     } else if (link.label === 'Contact') {
@@ -103,6 +105,7 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
           {links.map((link) => {
             const isActive =
               (currentPage === 'about' && link.label === 'About') ||
+              (currentPage === 'services' && link.label === 'Services') ||
               (currentPage === 'portfolio' && link.label === 'Portfolio') ||
               (currentPage === 'contact' && link.label === 'Contact');
             return (
@@ -159,6 +162,7 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
             {links.map((link) => {
               const isActive =
                 (currentPage === 'about' && link.label === 'About') ||
+                (currentPage === 'services' && link.label === 'Services') ||
                 (currentPage === 'portfolio' && link.label === 'Portfolio') ||
                 (currentPage === 'contact' && link.label === 'Contact');
               return (

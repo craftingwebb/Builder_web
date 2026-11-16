@@ -167,49 +167,76 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
             </h4>
             <ul className="mt-5 space-y-3 text-sm text-white/60">
               <li>
-                <a href="#services" className="hover:text-gold transition-colors">
+                <button
+                  onClick={() => onNavigate?.('services', '#service-01')}
+                  className="hover:text-gold transition-colors cursor-pointer text-left"
+                >
                   Corporate Event Management
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#services" className="hover:text-gold transition-colors">
+                <button
+                  onClick={() => onNavigate?.('services', '#service-02')}
+                  className="hover:text-gold transition-colors cursor-pointer text-left"
+                >
                   Conference &amp; Seminar Management
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#services" className="hover:text-gold transition-colors">
+                <button
+                  onClick={() => onNavigate?.('services', '#service-03')}
+                  className="hover:text-gold transition-colors cursor-pointer text-left"
+                >
                   Product Launch Events
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#services" className="hover:text-gold transition-colors">
+                <button
+                  onClick={() => onNavigate?.('services', '#service-04')}
+                  className="hover:text-gold transition-colors cursor-pointer text-left"
+                >
                   Exhibition &amp; Trade Shows
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#services" className="hover:text-gold transition-colors">
+                <button
+                  onClick={() => onNavigate?.('services', '#service-05')}
+                  className="hover:text-gold transition-colors cursor-pointer text-left"
+                >
                   Award Ceremonies
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#services" className="hover:text-gold transition-colors">
+                <button
+                  onClick={() => onNavigate?.('services', '#service-06')}
+                  className="hover:text-gold transition-colors cursor-pointer text-left"
+                >
                   Corporate Entertainment
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#services" className="hover:text-gold transition-colors">
+                <button
+                  onClick={() => onNavigate?.('services', '#service-07')}
+                  className="hover:text-gold transition-colors cursor-pointer text-left"
+                >
                   Team Building Events
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#services" className="hover:text-gold transition-colors">
+                <button
+                  onClick={() => onNavigate?.('services', '#service-08')}
+                  className="hover:text-gold transition-colors cursor-pointer text-left"
+                >
                   Corporate Celebrations
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#services" className="hover:text-gold transition-colors">
+                <button
+                  onClick={() => onNavigate?.('services', '#service-09')}
+                  className="hover:text-gold transition-colors cursor-pointer text-left"
+                >
                   Virtual &amp; Hybrid Events
-                </a>
+                </button>
               </li>
             </ul>
           </div>
