@@ -93,7 +93,7 @@ export default function ProposalBanner({ onOpenProposalModal }) {
               href={item.href}
               target={item.isExternal ? '_blank' : undefined}
               rel={item.isExternal ? 'noreferrer' : undefined}
-              className="group bg-ivory p-7 transition-colors duration-300 hover:bg-white flex flex-col justify-between"
+              className="group bg-ivory p-7 transition-colors duration-300 hover:bg-white flex flex-col justify-between min-w-0"
             >
               {/* Circle Icon Badge */}
               <div>
@@ -106,8 +106,17 @@ export default function ProposalBanner({ onOpenProposalModal }) {
               </div>
 
               {/* Value Text */}
-              <p className="mt-2 text-[0.95rem] leading-snug font-semibold text-ink">
-                {item.value}
+              <p
+                className="mt-2 text-sm xl:text-[0.95rem] leading-snug font-semibold text-ink"
+                title={item.value}
+              >
+                {item.label === 'EXECUTIVE INBOX' ? (
+                  <span className="break-all [overflow-wrap:anywhere]">
+                    s.aeventsandmanpowerservice<wbr />@gmail.com
+                  </span>
+                ) : (
+                  item.value
+                )}
               </p>
             </a>
           ))}

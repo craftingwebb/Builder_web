@@ -162,7 +162,7 @@ export default function ContactPage({
             {/* Card 2: EMAIL US */}
             <a
               href="mailto:s.aeventsandmanpowerservice@gmail.com"
-              className="group rounded-3xl bg-white p-7 shadow-lg border border-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
+              className="group rounded-3xl bg-white p-7 shadow-lg border border-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer min-w-0"
             >
               <div className="flex size-11 items-center justify-center rounded-full bg-ink text-gold group-hover:scale-105 transition-transform">
                 <Mail className="size-5" />
@@ -170,8 +170,10 @@ export default function ContactPage({
               <p className="mt-6 text-[0.7rem] font-bold uppercase tracking-[0.15em] text-ink/50">
                 EMAIL US
               </p>
-              <p className="mt-1 text-sm sm:text-[0.95rem] font-bold text-ink truncate" title="s.aeventsandmanpowerservice@gmail.com">
-                s.aeventsandmanpowerservice@gmail.com
+              <p className="mt-1 text-sm font-bold text-ink leading-snug break-all [overflow-wrap:anywhere]" title="s.aeventsandmanpowerservice@gmail.com">
+                <span>s.aeventsandmanpowerservice</span>
+                <wbr />
+                <span className="text-ink/80">@gmail.com</span>
               </p>
             </a>
 
