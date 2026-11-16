@@ -27,7 +27,7 @@ const GALLERY_ITEMS = [
     categoryLabel: 'Event Highlights',
     type: 'photo',
     aspect: 'aspect-[4/5]',
-    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=1200&q=80',
     location: 'Goa Grand Ballroom',
     caption: 'Turnkey stagecraft with curved 4K ultra-fine LED wall and intelligent beam arrays for 850 automotive directors.',
   },
@@ -39,7 +39,7 @@ const GALLERY_ITEMS = [
     type: 'video',
     videoDuration: '02:45',
     aspect: 'aspect-[16/10]',
-    image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=1200&q=80',
     location: 'Mumbai BKC Arena',
     caption: 'Official aftermovie cut of the synchronized silk-drop unveil with 360-degree laser tracking and surround acoustics.',
   },
@@ -50,7 +50,7 @@ const GALLERY_ITEMS = [
     categoryLabel: 'Event Photos',
     type: 'photo',
     aspect: 'aspect-[3/4]',
-    image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80',
     location: 'Hyderabad HITEX Center',
     caption: 'Dual plenary auditorium hosting 1,200 delegates with real-time digital polling and multi-language translation feeds.',
   },
@@ -73,7 +73,7 @@ const GALLERY_ITEMS = [
     type: 'video',
     videoDuration: '03:15',
     aspect: 'aspect-[4/5]',
-    image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80',
     location: 'Bengaluru Open Grounds',
     caption: '3,500 corporate associates celebrating company milestone with headlining arena artists and synchronized wristbands.',
   },
@@ -84,7 +84,7 @@ const GALLERY_ITEMS = [
     categoryLabel: 'Event Photos',
     type: 'photo',
     aspect: 'aspect-[16/10]',
-    image: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80',
     location: 'The Taj Palace, New Delhi',
     caption: 'Black-tie gala table architecture featuring crystal candelabras, customized ambient uplighting, and 5-course VIP dining.',
   },
@@ -95,7 +95,7 @@ const GALLERY_ITEMS = [
     categoryLabel: 'Behind The Scenes',
     type: 'photo',
     aspect: 'aspect-[3/4]',
-    image: 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1200&q=80',
     location: 'Stage Hangar Rigging',
     caption: 'Structural engineers and rigging specialists securing high-load aluminum trusses 14 meters above the main stage.',
   },
@@ -107,7 +107,7 @@ const GALLERY_ITEMS = [
     type: 'video',
     videoDuration: '01:50',
     aspect: 'aspect-[4/3]',
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1200&q=80',
     location: 'Mumbai Jio World Convention',
     caption: 'Keynote spotlight on holographic market analytics with 200 sq. m. seamless P2.5 LED canvas.',
   },
@@ -118,7 +118,7 @@ const GALLERY_ITEMS = [
     categoryLabel: 'Event Photos',
     type: 'photo',
     aspect: 'aspect-[4/5]',
-    image: 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80',
     location: 'Pragati Maidan, New Delhi',
     caption: 'High-density business expo pavilion designed with modular glass meeting pods and digital lead capture stations.',
   },
@@ -130,7 +130,7 @@ const GALLERY_ITEMS = [
     type: 'video',
     videoDuration: '04:10',
     aspect: 'aspect-[16/10]',
-    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?auto=format&fit=crop&w=1200&q=80',
     location: 'Lake Pichola Grounds, Udaipur',
     caption: '500 synchronized aerial drones spelling brand logos and animations against the night sky, followed by cold pyro.',
   },
@@ -142,7 +142,7 @@ const GALLERY_ITEMS = [
     type: 'video',
     videoDuration: '02:10',
     aspect: 'aspect-[3/4]',
-    image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1200&q=80',
     location: 'Acoustic Control Booth',
     caption: 'Audio engineers tuning line-array speaker arrays with pink noise generators for pristine 360-degree vocal clarity.',
   },
@@ -164,7 +164,7 @@ const GALLERY_ITEMS = [
     categoryLabel: 'Event Photos',
     type: 'photo',
     aspect: 'aspect-[16/10]',
-    image: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80',
     location: 'Leela Palace, Bengaluru',
     caption: 'Intimate CEO roundtable designed with plush leather armchairs, acoustic wood baffling, and wireless delegate mics.',
   },
@@ -176,7 +176,7 @@ const GALLERY_ITEMS = [
     type: 'video',
     videoDuration: '01:25',
     aspect: 'aspect-[4/5]',
-    image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80',
     location: 'Kolkata Science City Auditorium',
     caption: 'Continuous CO2 jets and biodegradable metallic confetti blasts marking the foundation anniversary milestone.',
   },
@@ -187,7 +187,7 @@ const GALLERY_ITEMS = [
     categoryLabel: 'Behind The Scenes',
     type: 'photo',
     aspect: 'aspect-[3/4]',
-    image: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80',
     location: 'Floor Cam Position',
     caption: 'Broadcast camera operators tracking executive walkouts with stabilized rigs for 4K live broadcast.',
   },
@@ -198,7 +198,7 @@ const GALLERY_ITEMS = [
     categoryLabel: 'Event Highlights',
     type: 'photo',
     aspect: 'aspect-[4/3]',
-    image: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=80',
     location: 'Welcome Arcade, Mumbai',
     caption: 'Interactive 30-meter walk-through LED archway with responsive floor graphics greeting guests at arrival.',
   },
@@ -221,7 +221,7 @@ const GALLERY_ITEMS = [
     type: 'video',
     videoDuration: '03:40',
     aspect: 'aspect-[16/10]',
-    image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80',
     location: 'Delhi Convention Center',
     caption: 'Follow-spot operators and sound technicians ensuring seamless multi-speaker keynote handoffs without audio dips.',
   },
@@ -232,7 +232,7 @@ const GALLERY_ITEMS = [
     categoryLabel: 'Behind The Scenes',
     type: 'photo',
     aspect: 'aspect-[3/4]',
-    image: 'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80',
     location: 'Backstage Suite',
     caption: 'Executive lounge with bespoke catering, hair-and-makeup mirrors, teleprompter review screens, and quiet zones.',
   },
@@ -244,7 +244,7 @@ const GALLERY_ITEMS = [
     type: 'video',
     videoDuration: '02:15',
     aspect: 'aspect-[4/3]',
-    image: 'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1200&q=80',
     location: 'JW Marriott Grand Hall',
     caption: 'Live 40-piece symphony orchestra performing synchronized anthems during the national dealer award presentations.',
   },
@@ -313,7 +313,7 @@ export default function GalleryPage({
         {/* Background Image & Texture */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=2000&q=80"
+            src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=2000&q=80"
             alt="Event Atmosphere Backdrop"
             className="h-full w-full object-cover opacity-20 filter contrast-125 brightness-75"
           />
@@ -654,7 +654,7 @@ export default function GalleryPage({
               className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 h-[32rem] w-[32rem] rounded-full bg-[#6d5efc]/25 blur-[120px] -z-10"
             />
             <img
-              src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1800&q=80"
+              src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1800&q=80"
               alt=""
               className="absolute inset-0 -z-20 h-full w-full object-cover opacity-15 filter grayscale pointer-events-none"
             />

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, Star } from 'lucide-react';
 
 const HERO_IMAGES = [
-  'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=2000&q=85',
-  'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=2000&q=85',
-  'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=2000&q=85',
+  'https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=2000&q=85',
+  'https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=2000&q=85',
+  'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=2000&q=85',
 ];
 
 export default function Hero({ onOpenProposalModal, onViewPortfolio }) {
@@ -107,17 +107,17 @@ export default function Hero({ onOpenProposalModal, onViewPortfolio }) {
             <div className="flex items-center gap-3">
               <div className="flex -space-x-2">
                 <img
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80"
+                  src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=100&q=80"
                   alt=""
                   className="size-9 rounded-full object-cover ring-2 ring-ink"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80"
+                  src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80"
                   alt=""
                   className="size-9 rounded-full object-cover ring-2 ring-ink"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80"
+                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&q=80"
                   alt=""
                   className="size-9 rounded-full object-cover ring-2 ring-ink"
                 />

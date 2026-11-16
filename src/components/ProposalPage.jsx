@@ -124,7 +124,7 @@ export default function ProposalPage({ onNavigateHome }) {
         {/* Background photo of concert / keynote with dark gradient */}
         <div className="absolute inset-0 -z-10 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=2000&q=85"
+            src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=2000&q=85"
             alt=""
             className="h-full w-full object-cover opacity-15 filter contrast-125"
           />

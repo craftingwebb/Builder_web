@@ -36,7 +36,7 @@ export default function IndustriesSection({ onOpenProposalModal }) {
       {/* Background audience silhouette image with dark overlay matching reference */}
       <div className="absolute inset-0 pointer-events-none -z-10">
         <img
-          src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=2000&q=80"
+          src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=2000&q=80"
           alt=""
           className="h-full w-full object-cover opacity-10"
         />

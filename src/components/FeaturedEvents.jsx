@@ -9,7 +9,7 @@ const FEATURED_STAGES = [
     meta: "850 guests · Goa · Oct 2026",
     title: "Apex Mobility National Conclave 2026",
     summary: "A three-day strategic dealer assembly and honors gala for 850 trade partners, culminating in a dramatic new EV line unveiling.",
-    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1400&q=85",
+    image: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=1400&q=85",
   },
   {
     id: "stage-2",
@@ -18,7 +18,7 @@ const FEATURED_STAGES = [
     meta: "600 guests · Hyderabad · Aug 2026",
     title: "Novalis LifeSciences Executive Forum",
     summary: "A high-level symposium for 600 global directors featuring keynote addresses, interactive panel debates, and live delegate polling.",
-    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1400&q=85",
+    image: "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=1400&q=85",
   },
   {
     id: "stage-3",
@@ -27,7 +27,7 @@ const FEATURED_STAGES = [
     meta: "1,200 guests · Mumbai · Jun 2026",
     title: "Aura Financial Tech Grand Unveil",
     summary: "An expansive hybrid launch streamed to 50,000 live participants, driven by interactive digital canvases and global press coverage.",
-    image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1400&q=85",
+    image: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1400&q=85",
   },
   {
     id: "stage-4",
@@ -36,7 +36,7 @@ const FEATURED_STAGES = [
     meta: "15,000 guests · New Delhi · Apr 2026",
     title: "Global Infra Expo — Flagship Pavilion",
     summary: "A sprawling 600 sq. m. turnkey showcase featuring modular experiential zones designed for high-value B2B engagement.",
-    image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=1400&q=85",
+    image: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1400&q=85",
   },
   {
     id: "stage-5",
@@ -45,7 +45,7 @@ const FEATURED_STAGES = [
     meta: "900 guests · Mumbai · Feb 2026",
     title: "Vanguard Capital Annual Honors Night",
     summary: "A formal black-tie banquet celebrating standout leadership with bespoke stage architecture and a 40-piece live symphony.",
-    image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1400&q=85",
+    image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1400&q=85",
   },
   {
     id: "stage-6",
@@ -54,7 +54,7 @@ const FEATURED_STAGES = [
     meta: "3,500 guests · Bengaluru · Dec 2025",
     title: "Stratosphere Digital Carnival",
     summary: "An electrifying company celebration for 3,500 associates featuring headlining arena musicians and an illuminated aerial drone finale.",
-    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1400&q=85",
+    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1400&q=85",
   },
 ];
 

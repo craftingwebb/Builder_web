@@ -94,7 +94,7 @@ export default function ContactPage({
         {/* Background Image of Meeting / Strategy Room with Dark Gradient */}
         <div className="absolute inset-0 -z-10 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=2000&q=85"
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=85"
             alt=""
             className="h-full w-full object-cover opacity-20 filter contrast-125 brightness-75"
           />

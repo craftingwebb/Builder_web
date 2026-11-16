@@ -51,7 +51,7 @@ export default function AboutSection({ onOpenProposalModal, onNavigateAbout }) {
             {/* Main Stage Image */}
             <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl bg-zinc-800">
               <img
-                src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1000&q=85"
+                src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=1000&q=85"
                 alt="Corporate town hall in the round"
                 className="h-full w-full object-cover"
               />
@@ -69,7 +69,7 @@ export default function AboutSection({ onOpenProposalModal, onNavigateAbout }) {
             {/* Overlapping Small Panel Image */}
             <div className="absolute -bottom-6 -left-4 w-40 sm:w-52 overflow-hidden rounded-3xl border-[6px] border-ivory shadow-2xl aspect-square z-10 bg-zinc-800">
               <img
-                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=600&q=85"
+                src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=600&q=85"
                 alt="Keynote presentation"
                 className="h-full w-full object-cover"
               />

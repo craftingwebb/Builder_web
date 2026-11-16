@@ -22,7 +22,7 @@ export const SERVICES_CATALOG = [
     id: 'service-01',
     title: 'Corporate Event Management',
     icon: Briefcase,
-    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=85',
+    image: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=1200&q=85',
     description:
       'Annual events, AGMs, dealer meets and leadership gatherings delivered end-to-end. Every engagement is led by a dedicated event director with transparent, line-item costing.',
     features: [
@@ -38,7 +38,7 @@ export const SERVICES_CATALOG = [
     id: 'service-02',
     title: 'Conference & Seminar Management',
     icon: Presentation,
-    image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=85',
+    image: 'https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=1200&q=85',
     description:
       'Multi-track summits, technical conferences and academic symposia engineered for seamless speaker flow, delegate immersion and live broadcast.',
     features: [
@@ -54,7 +54,7 @@ export const SERVICES_CATALOG = [
     id: 'service-03',
     title: 'Product Launch Events',
     icon: Rocket,
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=85',
+    image: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1200&q=85',
     description:
       'Reveal moments engineered for media, partners and social amplification. Every engagement is led by a dedicated event director with transparent, line-item costing.',
     features: [
@@ -69,7 +69,7 @@ export const SERVICES_CATALOG = [
     id: 'service-04',
     title: 'Exhibition & Trade Shows',
     icon: Store,
-    image: 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=1200&q=85',
+    image: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=85',
     description:
       'Booths that stop footfall, and show operations that convert it into pipeline. Every engagement is led by a dedicated event director with transparent, line-item costing.',
     features: [
@@ -84,7 +84,7 @@ export const SERVICES_CATALOG = [
     id: 'service-05',
     title: 'Award Ceremonies',
     icon: Trophy,
-    image: 'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=85',
+    image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=85',
     description:
       'Gala nights that honour achievement with cinematic production and impeccable flow. Every engagement is led by a dedicated event director with transparent, line-item costing.',
     features: [
@@ -98,7 +98,7 @@ export const SERVICES_CATALOG = [
     id: 'service-06',
     title: 'Corporate Entertainment',
     icon: Music,
-    image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=85',
+    image: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1200&q=85',
     description:
       'Celebrity, live music and curated performances that elevate every agenda. Every engagement is led by a dedicated event director with transparent, line-item costing.',
     features: [
@@ -113,7 +113,7 @@ export const SERVICES_CATALOG = [
     id: 'service-07',
     title: 'Team Building Events',
     icon: Users,
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=85',
+    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=85',
     description:
       'Offsites and engagement programmes that strengthen culture and collaboration. Every engagement is led by a dedicated event director with transparent, line-item costing.',
     features: [
@@ -128,7 +128,7 @@ export const SERVICES_CATALOG = [
     id: 'service-08',
     title: 'Corporate Celebrations',
     icon: PartyPopper,
-    image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=85',
+    image: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=85',
     description:
       'Milestones, anniversaries and festivals celebrated with warmth and polish. Every engagement is led by a dedicated event director with transparent, line-item costing.',
     features: [
@@ -181,7 +181,7 @@ export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onN
         {/* Background Image of Event Hall Stage with Lighting */}
         <div className="absolute inset-0 -z-10 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=2000&q=85"
+            src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=2000&q=85"
             alt=""
             className="h-full w-full object-cover opacity-20 filter contrast-125 brightness-75"
           />
@@ -355,7 +355,7 @@ export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onN
               className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 h-[32rem] w-[32rem] rounded-full bg-[#6d5efc]/25 blur-[120px] -z-10"
             />
             <img
-              src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1800&q=80"
+              src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1800&q=80"
               alt=""
               className="absolute inset-0 -z-20 h-full w-full object-cover opacity-15 filter grayscale pointer-events-none"
             />

@@ -9,7 +9,7 @@ const INSIGHTS = [
     readTime: '5 min read',
     title: 'Engineering High-Retention Keynote Stages for 2,000+ Enterprise Delegates',
     excerpt: 'From ultra-wide immersive pixel canvases to focused directional acoustics \u2014 inside the production mechanics of India’s premier tech summits.',
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1200&q=80',
     link: '#',
   },
   {
@@ -19,7 +19,7 @@ const INSIGHTS = [
     readTime: '4 min read',
     title: 'The Psychology of First Impressions: Transforming Grand Entrances into Brand Equity',
     excerpt: 'How tactile arrival corridors, atmospheric light sequencing, and spatial reveals elevate attendee perception and social amplifications.',
-    image: 'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80',
     link: '#',
   },
   {
@@ -29,7 +29,7 @@ const INSIGHTS = [
     readTime: '6 min read',
     title: 'Institutional Event Security: Deploying Multi-Tiered Protocols at High-Profile Gatherings',
     excerpt: 'Best practices for VIP transit lanes, accredited crowd stewardship, and silent communication networks at large-scale national summits.',
-    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=1200&q=80',
     link: '#',
   },
 ];

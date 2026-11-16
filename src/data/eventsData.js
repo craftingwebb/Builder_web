@@ -7,7 +7,7 @@ export const CORPORATE_SERVICES = [
     tagline: "High-impact brand impressions that drive real footfall",
     category: "Corporate",
     badge: "High ROI",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1200&q=80",
     description: "From experiential marketing roadshows to transit advertising and high-converting mall activations, we amplify your brand visibility where your buyers actually are.",
     features: [
       "Mall & Tech Park Activations",
@@ -23,7 +23,7 @@ export const CORPORATE_SERVICES = [
     tagline: "Spectacular unveilings that dominate news & social media",
     category: "Corporate",
     badge: "Signature",
-    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=1200&q=80",
     description: "Creating goosebump moments with synchronized hydraulic reveals, 3D projection mapping, laser choreography, and keynote stagecraft for tech, automotive, and retail.",
     features: [
       "Hydraulic & Silk Drop Reveal Stages",
@@ -39,7 +39,7 @@ export const CORPORATE_SERVICES = [
     tagline: "Seamless summits for 50 to 5,000+ business leaders",
     category: "Corporate",
     badge: "Enterprise",
-    image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80",
     description: "Multi-track convention management with professional registration desks, badge printing, audio-visual engineering, simultaneous translation, and VIP lounges.",
     features: [
       "RFID / QR Code Registration Kiosks",
@@ -55,7 +55,7 @@ export const CORPORATE_SERVICES = [
     tagline: "Bespoke booth fabrication that stops attendees in their tracks",
     category: "Corporate",
     badge: "Custom Build",
-    image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80",
     description: "3D architectural stall fabrication, interactive gaming zones, brand merchandise counters, and trained stall hostesses that double your qualified booth leads.",
     features: [
       "3D Custom Stall Architecture & Signage",
@@ -71,7 +71,7 @@ export const CORPORATE_SERVICES = [
     tagline: "Massive campus arena concerts with rockstar turnouts",
     category: "Corporate",
     badge: "Popular",
-    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
     description: "Comprehensive campus fest turnkey management: Mega outdoor concert stages, heavy line-array sound systems, artist booking, crowd barricading, and security coordination.",
     features: [
       "Celebrity Artist & Bollywood Singer Booking",
@@ -119,7 +119,7 @@ export const CORPORATE_SERVICES = [
     tagline: "Glitz, glamour, and recognition that boosts employee pride",
     category: "Corporate",
     badge: "Luxury",
-    image: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80",
     description: "Black-tie corporate award ceremonies with red carpet photo-ops, custom trophy reveals, choreographed dance entries, and high-energy live entertainment.",
     features: [
       "Red Carpet Media Wall & 360 Photobooth",
@@ -138,7 +138,7 @@ export const WEDDING_SERVICES = [
     tagline: "Grand visual poetry crafted with exotic flowers and fabrics",
     category: "Wedding",
     badge: "Royal Luxury",
-    image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80",
     description: "From regal Rajasthani palace motifs and European pastel glasshouses to modern minimalist botanical wonderlands tailored to your exact taste.",
     features: [
       "Imported Dutch & Bangalore Fresh Florals",
@@ -154,7 +154,7 @@ export const WEDDING_SERVICES = [
     tagline: "The monumental centerpiece where your lifetime memories are made",
     category: "Wedding",
     badge: "Architectural",
-    image: "https://images.unsplash.com/photo-1545232979-8bf68ee9b1af?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80",
     description: "Engineered mandaps over water bodies, royal dome canopies, multi-level stages with floral chandeliers, and cantilevered ceremonial thrones.",
     features: [
       "Waterfront & Floating Mandap Engineering",
@@ -170,7 +170,7 @@ export const WEDDING_SERVICES = [
     tagline: "Acoustic brilliance and arena-grade lighting fixtures",
     category: "Wedding",
     badge: "Concert Grade",
-    image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1200&q=80",
     description: "Stadium-grade line-array sound systems, Sharpy moving heads, follow spots, haze atmospheres, and warm architectural uplighting highlighting your venue.",
     features: [
       "L-Acoustics & RCF Line-Array Audio",
@@ -186,7 +186,7 @@ export const WEDDING_SERVICES = [
     tagline: "Exclusive access and negotiable rates at premier 5-star properties",
     category: "Wedding",
     badge: "Concierge",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1200&q=80",
     description: "Palaces in Udaipur, beach resorts in Goa, luxury hotels in metro hubs, and heritage forts booked with maximum privileges and zero vendor penalty clauses.",
     features: [
       "Preferred Partner Rates at Marriott, Taj, Oberoi",
@@ -202,7 +202,7 @@ export const WEDDING_SERVICES = [
     tagline: "Vibrant yellow marigolds, festive photobooths & mela games",
     category: "Wedding",
     badge: "Celebration",
-    image: "https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
     description: "Bohemian seating, brass urli floral tubs for haldi baths, colorful umbrella canopies, live lac bangle makers, parrot astrologers, and folk dancers.",
     features: [
       "Handcrafted Brass Urli & Flower Petal Showers",
@@ -218,7 +218,7 @@ export const WEDDING_SERVICES = [
     tagline: "Electric concert stage with family choreography & celebrity DJs",
     category: "Wedding",
     badge: "Party Peak",
-    image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1200&q=80",
     description: "Transform your Sangeet into an award-show spectacle with professional Mumbai choreographers, LED background visuals, and non-stop party anthems.",
     features: [
       "Mumbai Celebrity Choreographer Training",
@@ -234,7 +234,7 @@ export const WEDDING_SERVICES = [
     tagline: "Unforgettable arrivals with cold pyro, hydraulic stages & vintage rides",
     category: "Wedding",
     badge: "Showstopper",
-    image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80",
     description: "Hydraulic entry stages, low-fog dry ice clouds, cold pyrotechnic fountains, antique vintage cars, royal palkis, and traditional chadar carried by brothers.",
     features: [
       "Hydraulic Revolving Elevation Stages",
@@ -250,7 +250,7 @@ export const WEDDING_SERVICES = [
     tagline: "Seamless visuals from pre-wedding films to live multicam feeds",
     category: "Wedding",
     badge: "Tech Brilliance",
-    image: "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1200&q=80",
     description: "Curved and seamless high-refresh-rate indoor and outdoor LED walls displaying 4K live camera feeds, visual audio loops, and couple love stories.",
     features: [
       "P2.5 & P3 High-Nit Outdoor Day-Visible LEDs",
@@ -282,7 +282,7 @@ export const WEDDING_SERVICES = [
     tagline: "Auspicious baby naming and first solid food blessings",
     category: "Wedding",
     badge: "Traditional",
-    image: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
     description: "Authentic Annaprashan ceremonies with silver thali setups, traditional conch shell blowing, floral sanctorum, and comfortable family seating.",
     features: [
       "Pure Silverware Puja & Thali Setups",
@@ -485,7 +485,7 @@ export const PORTFOLIO_PROJECTS = [
     client: "NexGen Cloud Systems",
     location: "Jio World Convention Centre, Mumbai",
     attendees: "3,200 Delegates",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1200&q=80",
     tags: ["3D Curved LED", "120 Bouncers & Ushers", "Simultaneous Translation", "Live 4K Stream"]
   },
   {
@@ -495,7 +495,7 @@ export const PORTFOLIO_PROJECTS = [
     client: "Singhania & Mehta Families",
     location: "Jagmandir Island Palace, Udaipur",
     attendees: "650 Royal Guests",
-    image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80",
     tags: ["Heritage Mandap", "Varanasi Ganga Aarti", "Russian Violinists", "Drone Show"]
   },
   {
@@ -505,7 +505,7 @@ export const PORTFOLIO_PROJECTS = [
     client: "VoltMotors India",
     location: "Aerocity, New Delhi",
     attendees: "900 Dealers & Press",
-    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=1200&q=80",
     tags: ["Hydraulic Turntable", "Projection Mapping", "30 Hostesses", "Cold Pyro Fountains"]
   },
   {
@@ -515,7 +515,7 @@ export const PORTFOLIO_PROJECTS = [
     client: "The Kapoor Nuptials",
     location: "Alibaug Beachfront Villa",
     attendees: "400 Guests",
-    image: "https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
     tags: ["Marigold Urli Bathtubs", "Punjab Live Dhol", "DJ Concert Sound", "Cocktail Mixologists"]
   },
   {
@@ -525,7 +525,7 @@ export const PORTFOLIO_PROJECTS = [
     client: "Apex University Inter-College Council",
     location: "Bengaluru Grounds",
     attendees: "8,500 Students",
-    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
     tags: ["Arena German Truss", "Bollywood Singer Live", "Police Liaison", "50 Armed Guards"]
   },
   {
@@ -535,7 +535,7 @@ export const PORTFOLIO_PROJECTS = [
     client: "Banerjee Family",
     location: "ITC Sonar, Kolkata",
     attendees: "250 Family Guests",
-    image: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
     tags: ["Pure Silver Thali Setups", "Conch Shell Aarti", "Live Shehnai", "Candid Photo Studio"]
   }
 ];

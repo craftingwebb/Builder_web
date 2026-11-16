@@ -7,7 +7,7 @@ const TESTIMONIALS_DATA = [
     name: "Nikhil Bose",
     designation: "Managing Director, BluePeak Capital",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+    avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80",
     quote: "Composed, exacting, and profoundly dependable. Exactly what a closed-door sovereign wealth conclave demands.",
   },
   {
@@ -15,7 +15,7 @@ const TESTIMONIALS_DATA = [
     name: "Vikram Malhotra",
     designation: "VP Corporate Communications, FinEdge Technologies",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+    avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80",
     quote: "Coordinating 2,500 enterprise delegates across simultaneous plenary ballrooms without a solitary audio glitch or schedule slip is true technical mastery.",
   },
   {
@@ -23,7 +23,7 @@ const TESTIMONIALS_DATA = [
     name: "Dr. Ananya & Raghav Sethi",
     designation: "Jaipur Destination Royal Gala",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+    avatar: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=200&q=80",
     quote: "The cinematic floral revelry, illuminated ambient corridors, and ceremonial Vedic aarti elevated our destination celebrations beyond our wildest dreams.",
   },
   {
@@ -31,7 +31,7 @@ const TESTIMONIALS_DATA = [
     name: "Siddharth Verma",
     designation: "Head of Experiential Marketing, Nexus AutoCorp",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80",
+    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80",
     quote: "From emergency accreditation protocols to seamless VIP security details and kinetic stage reveals, their execution was synchronized like clockwork.",
   },
   {
@@ -39,7 +39,7 @@ const TESTIMONIALS_DATA = [
     name: "Priya Nambiar",
     designation: "Director of Brand & Communications, Novalis Pharma",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
+    avatar: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=200&q=80",
     quote: "From compliance-sensitive scientific seminars to our multi-sensory awards evening, their dual-redundant production gave our board absolute confidence.",
   },
   {

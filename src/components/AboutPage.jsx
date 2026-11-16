@@ -67,14 +67,14 @@ const LEADERS = [
     name: "Aarav Mehra",
     role: "Founder & CEO",
     bio: "Two decades producing marquee corporate experiences across India and the Middle East.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=85",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=85",
     linkedin: "https://linkedin.com",
   },
   {
     name: "Ishita Kapoor",
     role: "Chief Operating Officer",
     bio: "Runs a 120-member delivery engine with an uncompromising eye for detail.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=85",
+    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=85",
     linkedin: "https://linkedin.com",
     hasBadge: true,
   },
@@ -82,14 +82,14 @@ const LEADERS = [
     name: "Vikram Rao",
     role: "Head of Operations",
     bio: "Has led on-ground operations for summits of up to 10,000 delegates.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=85",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=85",
     linkedin: "https://linkedin.com",
   },
   {
     name: "Ananya Iyer",
     role: "Creative Director",
     bio: "Turns business objectives into narratives, stages and unforgettable moments.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=85",
+    image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=800&q=85",
     linkedin: "https://linkedin.com",
   },
 ];
@@ -99,12 +99,12 @@ const SPECIALISTS = [
   {
     name: "Rohan Malhotra",
     role: "Head of Sales",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=85",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=85",
   },
   {
     name: "Neha Sharma",
     role: "Senior Account Manager",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=85",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=85",
   },
   {
     name: "Arjun Desai",
@@ -166,7 +166,7 @@ export default function AboutPage({
         {/* Background Image of Grand Ballroom / Chandelier with Dark Vignette */}
         <div className="absolute inset-0 -z-10 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=2000&q=85"
+            src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=2000&q=85"
             alt=""
             className="h-full w-full object-cover opacity-20 filter contrast-125 brightness-90"
           />
@@ -222,7 +222,7 @@ export default function AboutPage({
             <div className="lg:col-span-6">
               <div className="relative overflow-hidden rounded-[1.75rem] shadow-2xl bg-zinc-900 aspect-[4/3] group">
                 <img
-                  src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=85"
+                  src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1200&q=85"
                   alt="S. A Event's and Manpower Service corporate auditorium arena"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -518,7 +518,7 @@ export default function AboutPage({
               className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 h-[32rem] w-[32rem] rounded-full bg-[#6d5efc]/25 blur-[120px] -z-10"
             />
             <img
-              src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80"
+              src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=1200&q=80"
               alt=""
               className="absolute inset-0 -z-20 h-full w-full object-cover opacity-15 filter grayscale pointer-events-none"
             />
