@@ -174,19 +174,20 @@ export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onN
       {/* ========================================================= */}
       {/* 1. HERO HEADER SECTION (Screenshot 3: media_1794856868447_ca415645.jpg) */}
       {/* ========================================================= */}
-      <section className="relative overflow-hidden bg-ink pt-36 pb-28 sm:pt-44 sm:pb-36 text-white">
-        {/* Background Image of Event Hall Stage with Lighting */}
-        <div className="absolute inset-0 -z-10 pointer-events-none">
+      <section className="relative overflow-hidden bg-[#130308] pt-36 pb-28 sm:pt-44 sm:pb-36 text-white">
+        {/* Background Image of Event Hall Stage with Center Ambient Glow */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
           <img
             src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=2000&q=85"
             alt=""
             className="h-full w-full object-cover opacity-20 filter contrast-125 brightness-75"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink/90 via-ink/80 to-ink" />
-          <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 h-96 w-[50rem] rounded-full bg-[#991435]/25 blur-[130px]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#130308]/90 via-[#130308]/75 to-[#130308]" />
+          <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 h-[26rem] w-[55rem] rounded-full bg-[#991435]/35 blur-[130px]" />
+          <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 h-64 w-[32rem] rounded-full bg-[#c9a96a]/15 blur-[110px]" />
         </div>
 
-        <div className="site-container relative">
+        <div className="site-container relative z-10">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-medium text-white/50 mb-8">
             <button

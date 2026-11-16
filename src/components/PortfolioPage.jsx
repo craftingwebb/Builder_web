@@ -138,18 +138,20 @@ export default function PortfolioPage({ onNavigateHome, onOpenProposalModal }) {
     <div className="bg-ivory text-ink min-h-screen">
       
       {/* 1. Hero / Header Section (Screenshot 2: media_1794850391657_4a5cf6ff.jpg) */}
-      <section className="relative overflow-hidden bg-ink pt-36 pb-20 sm:pt-44 sm:pb-28 text-white">
-        {/* Background Image of Concert / Stage */}
-        <div className="absolute inset-0 -z-10 pointer-events-none">
+      <section className="relative overflow-hidden bg-[#130308] pt-36 pb-20 sm:pt-44 sm:pb-28 text-white">
+        {/* Background Image of Concert / Stage with Center Ambient Glow */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
           <img
             src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=2000&q=85"
             alt=""
-            className="h-full w-full object-cover opacity-25 filter contrast-125"
+            className="h-full w-full object-cover opacity-20 filter contrast-125 brightness-75"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/75 to-ink/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#130308]/90 via-[#130308]/75 to-[#130308]" />
+          <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 h-[26rem] w-[55rem] rounded-full bg-[#991435]/35 blur-[130px]" />
+          <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 h-64 w-[32rem] rounded-full bg-[#c9a96a]/15 blur-[110px]" />
         </div>
 
-        <div className="site-container">
+        <div className="site-container relative z-10">
           {/* Breadcrumb Navigation */}
           <nav className="flex items-center gap-2 text-xs font-medium text-white/50 mb-6">
             <button
