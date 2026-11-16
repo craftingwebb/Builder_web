@@ -537,10 +537,12 @@ export default function ContactPage({
               <div className="relative overflow-hidden rounded-3xl border border-black/5 bg-white p-7 shadow-sm text-ink">
                 <div className="flex items-center gap-4">
                   {/* Profile Badge Avatar */}
-                  <div className="flex size-16 shrink-0 items-center justify-center rounded-full bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] p-1 shadow-md">
-                    <div className="flex h-full w-full items-center justify-center rounded-full bg-black text-gold font-bold text-base tracking-tighter">
-                      SA
-                    </div>
+                  <div className="flex size-16 shrink-0 items-center justify-center rounded-full bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] p-1 shadow-md overflow-hidden">
+                    <img
+                      src="/logo-emblem.png"
+                      alt="S. A Event's and Manpower Service"
+                      className="h-full w-full object-cover rounded-full bg-black"
+                    />
                   </div>
 
                   <div>

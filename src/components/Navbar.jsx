@@ -1,18 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, ArrowRight, Menu, X } from 'lucide-react';
 
-export function Logo() {
+export function Logo({ variant = 'emblem', showText = true }) {
   return (
-    <span className="inline-flex items-center gap-2.5">
-      <span className="inline-flex items-center justify-center size-9 rounded-[0.65rem] bg-[#11173a] ring-1 ring-[#c9a96a]/40 shrink-0 font-bold text-xs tracking-wider text-gold shadow-sm">
-        SA
+    <span className="inline-flex items-center gap-3">
+      {/* Enhanced Official Metallic Emblem Badge */}
+      <span className="relative flex items-center justify-center size-10 sm:size-11 rounded-full p-0.5 bg-gradient-to-tr from-[#c9a96a]/70 via-[#f5deb3] to-[#996515] shadow-lg shadow-black/40 ring-1 ring-gold/50 shrink-0 overflow-hidden">
+        <img
+          src={variant === 'full' ? '/logo.png' : '/logo-emblem.png'}
+          alt="S. A Event's and Manpower Service Emblem"
+          className="h-full w-full object-cover rounded-full filter contrast-110 brightness-105"
+        />
       </span>
-      <span className="text-[1.05rem] leading-none font-bold tracking-[-0.02em] text-white flex flex-wrap items-baseline gap-1">
-        <span>S. A Event&apos;s</span>
-        <span className="accent-serif text-[1.15rem] font-normal text-gold">
-          &amp; Manpower Service
+      {showText && (
+        <span className="text-[1.05rem] leading-none font-bold tracking-[-0.02em] text-white flex flex-wrap items-baseline gap-1">
+          <span>S. A Event&apos;s</span>
+          <span className="accent-serif text-[1.15rem] font-normal text-gold">
+            &amp; Manpower Service
+          </span>
         </span>
-      </span>
+      )}
     </span>
   );
 }
