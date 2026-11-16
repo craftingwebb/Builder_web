@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { InstagramLogo } from './Footer';
 import {
   Phone,
   Mail,
@@ -422,11 +423,10 @@ export default function ContactPage({
                   href="https://www.instagram.com/s.aeventsandmanpowerservice/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-4 mt-6 pt-6 border-t border-white/10 group"
+                  className="flex items-center gap-4 mt-6 pt-6 border-t border-white/10 group"
+                  title="Follow @s.aeventsandmanpowerservice on Instagram"
                 >
-                  <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white shadow-lg group-hover:scale-105 transition-transform">
-                    <SocialIcon type="instagram" />
-                  </div>
+                  <InstagramLogo className="size-11 shrink-0 rounded-2xl shadow-lg group-hover:scale-105 transition-transform duration-200" />
                   <div>
                     <p className="text-sm sm:text-base font-bold leading-tight text-white group-hover:text-gold transition-colors">
                       @s.aeventsandmanpowerservice
@@ -442,16 +442,18 @@ export default function ContactPage({
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
-                    className="flex size-10 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/15 hover:border-gold/50 transition-all cursor-pointer"
+                    title="Follow on Instagram"
+                    className="inline-flex transition-transform duration-200 hover:scale-110"
                   >
-                    <SocialIcon type="instagram" />
+                    <InstagramLogo className="size-10 rounded-xl shadow-md" />
                   </a>
                   <a
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noreferrer"
                     aria-label="LinkedIn"
-                    className="flex size-10 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/15 hover:border-gold/50 transition-all cursor-pointer"
+                    title="Connect on LinkedIn"
+                    className="flex size-10 items-center justify-center rounded-xl bg-[#0A66C2] text-white shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"
                   >
                     <SocialIcon type="linkedin" />
                   </a>
@@ -460,7 +462,8 @@ export default function ContactPage({
                     target="_blank"
                     rel="noreferrer"
                     aria-label="Facebook"
-                    className="flex size-10 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/15 hover:border-gold/50 transition-all cursor-pointer"
+                    title="Follow on Facebook"
+                    className="flex size-10 items-center justify-center rounded-xl bg-[#1877F2] text-white shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"
                   >
                     <SocialIcon type="facebook" />
                   </a>
@@ -469,7 +472,8 @@ export default function ContactPage({
                     target="_blank"
                     rel="noreferrer"
                     aria-label="YouTube"
-                    className="flex size-10 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white/70 hover:text-white hover:bg-white/15 hover:border-gold/50 transition-all cursor-pointer"
+                    title="Subscribe on YouTube"
+                    className="flex size-10 items-center justify-center rounded-xl bg-[#FF0000] text-white shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"
                   >
                     <SocialIcon type="youtube" />
                   </a>
