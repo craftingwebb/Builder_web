@@ -6,13 +6,7 @@ import {
   TrendingUp,
   Leaf,
   Compass,
-  Sparkles,
-  Sliders,
-  CheckCircle,
   ArrowUpRight,
-  ArrowRight,
-  MapPin,
-  Users
 } from 'lucide-react';
 
 // Official LinkedIn SVG Icon Badge
@@ -327,7 +321,7 @@ export default function AboutPage({
 
           {/* Bottom Statistics Row with dividers */}
           <div className="mt-20 pt-12 border-t border-white/10 grid grid-cols-2 gap-8 lg:grid-cols-4">
-            {STATS.map((stat, i) => (
+            {STATS.map((stat) => (
               <div key={stat.label} className="relative">
                 <p className="text-3xl sm:text-5xl lg:text-6xl font-bold font-mono tracking-tight text-white">
                   {stat.value}

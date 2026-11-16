@@ -12,6 +12,7 @@ import AboutPage from './components/AboutPage';
 import ServicesPage from './components/ServicesPage';
 import ClientsPage from './components/ClientsPage';
 import GalleryPage from './components/GalleryPage';
+import InsightsPage from './components/InsightsPage';
 import ContactPage from './components/ContactPage';
 import IndustriesSection from './components/IndustriesSection';
 import ProcessSection from './components/ProcessSection';
@@ -42,6 +43,9 @@ export default function App() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (hash === '#/gallery' || hash === '#gallery') {
         setCurrentPage('gallery');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (hash === '#/insights' || hash === '#insights') {
+        setCurrentPage('insights');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (hash === '#/about' || hash === '#about') {
         setCurrentPage('about');
@@ -92,6 +96,10 @@ export default function App() {
     } else if (page === 'gallery') {
       window.location.hash = '#/gallery';
       setCurrentPage('gallery');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (page === 'insights') {
+      window.location.hash = '#/insights';
+      setCurrentPage('insights');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (page === 'about') {
       window.location.hash = '#/about';
@@ -185,6 +193,15 @@ export default function App() {
             onViewPortfolio={() => handleNavigate('portfolio')}
           />
         </main>
+      ) : currentPage === 'insights' ? (
+        /* Dedicated Insights & Articles Page (Screenshots 1-8) */
+        <main>
+          <InsightsPage
+            onNavigateHome={() => handleNavigate('home')}
+            onOpenProposalModal={() => handleNavigate('proposal')}
+            onViewPortfolio={() => handleNavigate('portfolio')}
+          />
+        </main>
       ) : currentPage === 'portfolio' ? (
         /* Dedicated Portfolio Page (Screenshots 1-6) */
         <main>
@@ -246,7 +263,7 @@ export default function App() {
           <TestimonialsSection />
 
           {/* INSIGHTS */}
-          <InsightsSection />
+          <InsightsSection onNavigateInsights={() => handleNavigate('insights')} />
 
           {/* REQUEST A PROPOSAL & 4-COLUMN CONTACT DESK */}
           <ProposalBanner onOpenProposalModal={() => handleNavigate('proposal')} />

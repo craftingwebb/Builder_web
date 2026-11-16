@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, ArrowRight, Menu, X } from 'lucide-react';
 
-export function Logo({ light = true }) {
+export function Logo() {
   return (
     <span className="inline-flex items-center gap-2.5">
       <span className="inline-flex items-center justify-center size-9 rounded-[0.65rem] bg-[#11173a] ring-1 ring-[#c9a96a]/40 shrink-0 font-bold text-xs tracking-wider text-gold shadow-sm">
@@ -58,7 +58,7 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
     { label: 'Portfolio', href: '#/portfolio', isPage: true },
     { label: 'Clients', href: '#/clients', isPage: true },
     { label: 'Gallery', href: '#/gallery', isPage: true },
-    { label: 'Insights', href: '#insights' },
+    { label: 'Insights', href: '#/insights', isPage: true },
     { label: 'Contact', href: '#/contact', isPage: true },
   ];
 
@@ -76,6 +76,8 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
       onNavigate?.('clients');
     } else if (link.label === 'Gallery') {
       onNavigate?.('gallery');
+    } else if (link.label === 'Insights') {
+      onNavigate?.('insights');
     } else if (link.label === 'Contact') {
       onNavigate?.('contact');
     } else {
@@ -113,6 +115,7 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
               (currentPage === 'portfolio' && link.label === 'Portfolio') ||
               (currentPage === 'clients' && link.label === 'Clients') ||
               (currentPage === 'gallery' && link.label === 'Gallery') ||
+              (currentPage === 'insights' && link.label === 'Insights') ||
               (currentPage === 'contact' && link.label === 'Contact');
             return (
               <a
@@ -142,7 +145,7 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
           </a>
 
           <button
-            onClick={() => onNavigate?.('proposal')}
+            onClick={onOpenProposalModal || (() => onNavigate?.('proposal'))}
             className="btn-gold hidden !px-5 !py-2.5 sm:inline-flex cursor-pointer"
           >
             <span>Request a Proposal</span>
@@ -172,6 +175,7 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
                 (currentPage === 'portfolio' && link.label === 'Portfolio') ||
                 (currentPage === 'clients' && link.label === 'Clients') ||
                 (currentPage === 'gallery' && link.label === 'Gallery') ||
+                (currentPage === 'insights' && link.label === 'Insights') ||
                 (currentPage === 'contact' && link.label === 'Contact');
               return (
                 <a
@@ -201,7 +205,11 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
               <button
                 onClick={() => {
                   setMobileOpen(false);
-                  onNavigate?.('proposal');
+                  if (onOpenProposalModal) {
+                    onOpenProposalModal();
+                  } else {
+                    onNavigate?.('proposal');
+                  }
                 }}
                 className="btn-gold w-full text-center cursor-pointer"
               >

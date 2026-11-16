@@ -314,7 +314,7 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate?.('home', '#insights')}
+                  onClick={() => onNavigate?.('insights')}
                   className="hover:text-gold transition-colors cursor-pointer text-left"
                 >
                   Insights

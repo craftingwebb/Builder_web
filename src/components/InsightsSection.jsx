@@ -34,7 +34,15 @@ const INSIGHTS = [
   },
 ];
 
-export default function InsightsSection() {
+export default function InsightsSection({ onNavigateInsights }) {
+  const handleOpenInsights = () => {
+    if (onNavigateInsights) {
+      onNavigateInsights();
+    } else {
+      window.location.hash = '#/insights';
+    }
+  };
+
   return (
     <section id="insights" className="bg-ivory pt-24 pb-12 sm:pt-32 sm:pb-16 text-ink">
       <div className="site-container">
@@ -55,13 +63,13 @@ export default function InsightsSection() {
             </h2>
           </div>
 
-          <a
-            href="#insights"
-            className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-ink transition duration-300 hover:border-ink hover:bg-ink hover:text-white shrink-0 self-start md:self-end"
+          <button
+            onClick={handleOpenInsights}
+            className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-6 py-3 text-xs font-semibold uppercase tracking-wider text-ink transition duration-300 hover:border-ink hover:bg-ink hover:text-white shrink-0 self-start md:self-end cursor-pointer"
           >
             <span>Explore publications</span>
             <ArrowUpRight className="size-4" />
-          </a>
+          </button>
         </div>
 
         {/* 3 Articles Grid */}
@@ -69,6 +77,7 @@ export default function InsightsSection() {
           {INSIGHTS.map((item) => (
             <article
               key={item.id}
+              onClick={handleOpenInsights}
               className="group flex flex-col cursor-pointer"
             >
               {/* Image Container with Zoom Effect */}
