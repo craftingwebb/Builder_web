@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --color-gold: #c9a96a;
+  --color-gold-soft: #e2c488;
+  --color-ink: #070b1f;
+  --color-ivory: #f7f5f0;
+  --color-iris: #6d5efc;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-ink);
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id],
+footer[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+@media (min-width: 1024px) {
+  section[id],
+  footer[id] {
+    scroll-margin-top: 6.5rem;
+  }
+}
+
+/* Exact Lumora Theme Utilities */
+.site-container {
+  width: 100%;
+  max-width: 88rem;
+  padding-inline: 1.25rem;
+  margin-inline: auto;
+}
+@media (min-width: 640px) {
+  .site-container {
+    padding-inline: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .site-container {
+    padding-inline: 3rem;
+  }
+}
+
+
+.accent-serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-style: italic;
+}
+
+.display {
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  line-height: 0.98;
+}
+
+.eyebrow {
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  display: inline-flex;
+}
+
+.eyebrow:before {
+  content: "";
+  height: 1px;
+  width: 1.5rem;
+  opacity: 0.6;
+  background-color: currentColor;
+  display: inline-block;
+}
+
+.glass {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.btn-gold {
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-gold);
+  padding: 0.8rem 1.6rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  border-radius: 9999px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.2s ease;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.btn-gold:hover {
+  background-color: #d6b87b;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -6px rgba(201, 169, 106, 0.35);
+}
+
+.btn-ghost-light {
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+  padding: 0.8rem 1.6rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: inline-flex;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-ghost-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-outline-ink {
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(7, 11, 31, 0.2);
+  border-radius: 9999px;
+  padding: 0.8rem 1.6rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  display: inline-flex;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  cursor: pointer;
+}
+
+.btn-outline-ink:hover {
+  background-color: var(--color-ink);
+  color: #ffffff;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #070b1f;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e243d;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c9a96a;
+}
+
+/* Hero Entrance Animations matching GSAP SplitText & reveal */
+@keyframes heroLineUp {
+  0% {
+    transform: translateY(115%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes heroFadeUp {
+  0% {
+    transform: translateY(42px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-hero-line {
+  animation: heroLineUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-hero-fade {
+  animation: heroFadeUp 1.0s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
