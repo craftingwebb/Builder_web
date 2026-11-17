@@ -172,6 +172,7 @@ export default function ServicesSection({ onSelectService, onNavigateServices })
                 key={item.id}
                 src={item.image}
                 alt=""
+                onError={(e) => { e.currentTarget.style.opacity = '0'; }}
                 className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
                   hoveredIdx === idx ? 'opacity-100' : 'opacity-0'
                 }`}

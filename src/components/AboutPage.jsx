@@ -53,14 +53,14 @@ const LEADERS = [
     name: "Aarav Mehra",
     role: "Founder & CEO",
     bio: "Two decades producing marquee corporate experiences across India and the Middle East.",
-    image: "https://images.pexels.com/photos/7580917/pexels-photo-7580917.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
     contactEmail: "s.aeventsandmanpowerservice@gmail.com",
   },
   {
     name: "Ishita Kapoor",
     role: "Chief Operating Officer",
     bio: "Runs a 120-member delivery engine with an uncompromising eye for detail.",
-    image: "https://images.pexels.com/photos/7581113/pexels-photo-7581113.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
     contactEmail: "s.aeventsandmanpowerservice@gmail.com",
     hasBadge: true,
   },
@@ -68,14 +68,14 @@ const LEADERS = [
     name: "Vikram Rao",
     role: "Head of Operations",
     bio: "Has led on-ground operations for summits of up to 10,000 delegates.",
-    image: "https://images.pexels.com/photos/7580648/pexels-photo-7580648.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80",
     contactEmail: "s.aeventsandmanpowerservice@gmail.com",
   },
   {
     name: "Ananya Iyer",
     role: "Creative Director",
     bio: "Turns business objectives into narratives, stages and unforgettable moments.",
-    image: "https://images.pexels.com/photos/3394310/pexels-photo-3394310.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
     contactEmail: "s.aeventsandmanpowerservice@gmail.com",
   },
 ];
@@ -85,32 +85,32 @@ const SPECIALISTS = [
   {
     name: "Rohan Malhotra",
     role: "Head of Sales",
-    image: "https://images.pexels.com/photos/3785104/pexels-photo-3785104.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Neha Sharma",
     role: "Senior Account Manager",
-    image: "https://images.pexels.com/photos/2899738/pexels-photo-2899738.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Arjun Desai",
     role: "Technical Director",
-    image: "https://images.pexels.com/photos/2774197/pexels-photo-2774197.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Meera Nair",
     role: "Senior Event Manager",
-    image: "https://images.pexels.com/photos/3394314/pexels-photo-3394314.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Kabir Singh",
     role: "Business Development",
-    image: "https://images.pexels.com/photos/7580917/pexels-photo-7580917.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
   },
   {
     name: "Priya Menon",
     role: "Finance Controller",
-    image: "https://images.pexels.com/photos/7581113/pexels-photo-7581113.jpeg?auto=compress&cs=tinysrgb&w=800",
+    image: "https://images.unsplash.com/photo-1524824267900-2fa9cbf7a506?auto=format&fit=crop&w=800&q=80",
   },
 ];
 
@@ -152,7 +152,7 @@ export default function AboutPage({
         {/* Background Image of Grand Ballroom / Chandelier with Center Ambient Glow */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
-            src="https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=2000"
+            src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=2000&q=85"
             alt=""
             className="h-full w-full object-cover opacity-20 filter contrast-125 brightness-90"
           />

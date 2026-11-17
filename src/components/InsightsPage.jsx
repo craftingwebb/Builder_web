@@ -29,7 +29,7 @@ const FEATURED_ARTICLE = {
   date: '05 Nov 2026',
   readTime: '4 min read',
   image:
-    'https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80',
   content: [
     'Venue procurement is where events succeed or quietly bleed margin. Too many enterprise organizers evaluate ballrooms based on chandelier aesthetic and theoretical seating charts, completely ignoring load-in logistics, 3-phase power availability, and union rigging jurisdictions.',
     'Before transferring your venue advance or counter-signing a hotel master services agreement, run through the core 12-point technical discovery framework our lead directors deploy across Kolkata, Mumbai, Delhi, and Goa.',
@@ -70,7 +70,7 @@ const ARTICLES = [
       'Budgets are back, but expectations have changed. We break down the numbers and what they mean for your next event.',
     author: 'Aarav Mehra',
     image:
-      'https://images.pexels.com/photos/7581114/pexels-photo-7581114.jpeg?auto=compress&cs=tinysrgb&w=1000',
+      'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1000&q=80',
     content: [
       'The 2026 MICE (Meetings, Incentives, Conferences, and Exhibitions) outlook reveals a decisive pivot: enterprise budgets have rebounded, yet boards demand measurable digital reach and post-event lead tracking.',
       'Simultaneous physical and virtual broadcast feeds require studio-grade teleprompter operators, broadcast-quality audio isolation, and dedicated remote participant moderation to avoid treating digital attendees as second-class observers.',
@@ -102,7 +102,7 @@ const ARTICLES = [
       'Line items, contingencies and the hidden costs most planners miss — explained.',
     author: 'Priya Menon',
     image:
-      'https://images.pexels.com/photos/7581016/pexels-photo-7581016.jpeg?auto=compress&cs=tinysrgb&w=1000',
+      'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1000&q=80',
     content: [
       'The biggest trap in event production is the lump-sum estimate. Hidden overtime fees, municipal permissions, union liaison charges, and stage structural engineer certifications often result in unpleasant 25% budget overruns.',
       'Our transparent line-item budgeting methodology breaks down every rupee into production hardware, creative talent, hospitality logistics, and emergency contingency reserves, ensuring zero surprises for CFOs and finance controllers.',
@@ -118,7 +118,7 @@ const ARTICLES = [
       'Recognition works when it is specific. Eight formats that put the spotlight where it belongs.',
     author: 'Neha Sharma',
     image:
-      'https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=1000',
+      'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=80',
     content: [
       'Nobody wants to sit through 4 hours of monotone trophy handoffs and lukewarm applause. Award nights must be treated as emotional milestone cinema.',
       'Discover eight proven stage formats — from surprise peer video testimonials projected on motorized scrims to live orchestral flourishes synchronized with winner podium reveals — that turn corporate recognition into memories that motivate for years.',
@@ -150,7 +150,7 @@ const ARTICLES = [
       'From reusable staging to local sourcing, sustainability is moving from slide to standard.',
     author: 'Ishita Kapoor',
     image:
-      'https://images.pexels.com/photos/7580648/pexels-photo-7580648.jpeg?auto=compress&cs=tinysrgb&w=1000',
+      'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1000&q=80',
     content: [
       'ESG reporting has fundamentally altered corporate event production. Single-use plastic branding flexes and non-recyclable PVC stage backdrops are rapidly being replaced with modular aluminum architectural frames and low-power LED matrices.',
       'Here are five actionable guidelines our production team implements to reduce carbon footprint, eliminate single-use plastics, and donate surplus catering to verified local hunger relief NGOs.',
@@ -216,7 +216,7 @@ export default function InsightsPage({
         {/* Background Image & Ambient Radial Crimson/Wine Glow */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
-            src="https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=2000"
+            src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=2000&q=85"
             alt="Audience Atmosphere"
             className="h-full w-full object-cover opacity-20 filter contrast-125 brightness-75"
           />

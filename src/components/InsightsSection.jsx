@@ -19,7 +19,7 @@ const INSIGHTS = [
     readTime: '4 min read',
     title: 'The Psychology of First Impressions: Transforming Grand Entrances into Brand Equity',
     excerpt: 'How tactile arrival corridors, atmospheric light sequencing, and spatial reveals elevate attendee perception and social amplifications.',
-    image: 'https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80',
     link: '#/insights',
   },
   {
@@ -29,7 +29,7 @@ const INSIGHTS = [
     readTime: '6 min read',
     title: 'Institutional Event Security: Deploying Multi-Tiered Protocols at High-Profile Gatherings',
     excerpt: 'Best practices for VIP transit lanes, accredited crowd stewardship, and silent communication networks at large-scale national summits.',
-    image: 'https://images.pexels.com/photos/7709292/pexels-photo-7709292.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=80',
     link: '#/insights',
   },
 ];

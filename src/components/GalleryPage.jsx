@@ -4,27 +4,21 @@ import {
   Film,
   Sparkles,
   Image as ImageIcon,
-  Video,
   Clapperboard,
-  Play,
-  Pause,
   Maximize2,
   X,
   ChevronLeft,
   ChevronRight,
   ArrowUpRight,
-  Volume2,
-  VolumeX,
 } from 'lucide-react';
 
-// Comprehensive gallery dataset matching corporate event highlights, videos, photos, and behind-the-scenes
+// Comprehensive gallery dataset of authentic Indian event productions, royal weddings, grand stages, and behind-the-scenes
 const GALLERY_ITEMS = [
   {
     id: 'gal-01',
     title: 'Apex National Conclave Plenary',
     category: 'highlights',
     categoryLabel: 'Event Highlights',
-    type: 'photo',
     aspect: 'aspect-[4/5]',
     image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80',
     location: 'Goa Grand Ballroom',
@@ -32,35 +26,31 @@ const GALLERY_ITEMS = [
   },
   {
     id: 'gal-02',
-    title: 'Aura EV Grand Reveal Film',
-    category: 'video',
-    categoryLabel: 'Video Gallery',
-    type: 'video',
-    videoDuration: '02:45',
+    title: 'Aura EV National Grand Reveal Stage',
+    category: 'stages',
+    categoryLabel: 'Stages & Production',
     aspect: 'aspect-[16/10]',
     image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80',
     location: 'Mumbai Jio World Convention',
-    caption: 'Official aftermovie cut of the synchronized reveal with 360-degree laser tracking and surround acoustics.',
+    caption: 'Official reveal stage with synchronized 360-degree laser tracking, timecoded lighting cues, and surround acoustics.',
   },
   {
     id: 'gal-03',
-    title: 'Global Tech Leadership Summit',
-    category: 'event-photos',
-    categoryLabel: 'Event Photos',
-    type: 'photo',
+    title: 'Global Tech Leadership Summit & Expo',
+    category: 'stages',
+    categoryLabel: 'Stages & Production',
     aspect: 'aspect-[3/4]',
-    image: 'https://images.pexels.com/photos/7581114/pexels-photo-7581114.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80',
     location: 'Hyderabad HICC Center',
     caption: 'Dual plenary auditorium hosting 1,200 delegates with real-time digital polling and multi-language translation feeds.',
   },
   {
     id: 'gal-04',
-    title: 'Backstage AV Console & Cue Control',
+    title: 'Backstage Master AV Console & Timecode Control',
     category: 'behind-the-scenes',
     categoryLabel: 'Behind The Scenes',
-    type: 'photo',
     aspect: 'aspect-[4/3]',
-    image: 'https://images.pexels.com/photos/3062541/pexels-photo-3062541.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1200&q=80',
     location: 'Main Control Desk',
     caption: 'Show directors and master switchers cueing pyro, projection mapping, and audio timecodes second by second.',
   },
@@ -69,8 +59,6 @@ const GALLERY_ITEMS = [
     title: 'Stratosphere Festival Arena Night',
     category: 'highlights',
     categoryLabel: 'Event Highlights',
-    type: 'video',
-    videoDuration: '03:15',
     aspect: 'aspect-[4/5]',
     image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80',
     location: 'Bengaluru Open Grounds',
@@ -78,21 +66,19 @@ const GALLERY_ITEMS = [
   },
   {
     id: 'gal-06',
-    title: 'Vanguard Capital Honors Banquet',
-    category: 'event-photos',
-    categoryLabel: 'Event Photos',
-    type: 'photo',
+    title: 'Royal Udaipur Palace Illumination & Banquet',
+    category: 'weddings',
+    categoryLabel: 'Royal Weddings & Decor',
     aspect: 'aspect-[16/10]',
-    image: 'https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    location: 'The Taj Palace, New Delhi',
-    caption: 'Black-tie gala table architecture featuring crystal candelabras, customized ambient uplighting, and 5-course VIP dining.',
+    image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80',
+    location: 'Jagmandir Island Palace, Udaipur',
+    caption: 'Palace facade ambient uplighting, royal dining architecture, crystal candelabras, and 5-course VIP banquet.',
   },
   {
     id: 'gal-07',
-    title: 'Truss Rigging & Lighting Call',
+    title: 'Truss Rigging & Intelligent Lighting Call',
     category: 'behind-the-scenes',
     categoryLabel: 'Behind The Scenes',
-    type: 'photo',
     aspect: 'aspect-[3/4]',
     image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80',
     location: 'Stage Hangar Rigging',
@@ -100,22 +86,19 @@ const GALLERY_ITEMS = [
   },
   {
     id: 'gal-08',
-    title: 'Fintech Breakthrough Keynote',
-    category: 'video',
-    categoryLabel: 'Video Gallery',
-    type: 'video',
-    videoDuration: '01:50',
+    title: 'Fintech Breakthrough Keynote & Orator Podium',
+    category: 'stages',
+    categoryLabel: 'Stages & Production',
     aspect: 'aspect-[4/3]',
-    image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=80',
     location: 'Mumbai Jio World Convention',
     caption: 'Keynote spotlight on holographic market analytics with 200 sq. m. seamless P2.5 LED canvas.',
   },
   {
     id: 'gal-09',
-    title: 'Future Pavilion Expo Footfall',
-    category: 'event-photos',
-    categoryLabel: 'Event Photos',
-    type: 'photo',
+    title: 'Future Pavilion Expo Footfall & Modular Booths',
+    category: 'stages',
+    categoryLabel: 'Stages & Production',
     aspect: 'aspect-[4/5]',
     image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80',
     location: 'Bharat Mandapam, New Delhi',
@@ -123,11 +106,9 @@ const GALLERY_ITEMS = [
   },
   {
     id: 'gal-10',
-    title: 'Royal Baraat Entry & Theatrical Stage',
-    category: 'highlights',
-    categoryLabel: 'Event Highlights',
-    type: 'video',
-    videoDuration: '04:10',
+    title: 'Royal Palace Baraat Entry & Theatrical Fanfare',
+    category: 'weddings',
+    categoryLabel: 'Royal Weddings & Decor',
     aspect: 'aspect-[16/10]',
     image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80',
     location: 'Lake Pichola Palace Grounds, Udaipur',
@@ -138,32 +119,28 @@ const GALLERY_ITEMS = [
     title: 'Sound Check & Live Fusion Instrumentation',
     category: 'behind-the-scenes',
     categoryLabel: 'Behind The Scenes',
-    type: 'video',
-    videoDuration: '02:10',
     aspect: 'aspect-[3/4]',
-    image: 'https://images.pexels.com/photos/6899933/pexels-photo-6899933.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80',
     location: 'Acoustic Control Booth',
     caption: 'Audio engineers tuning line-array speaker arrays with sound generators for pristine 360-degree acoustic clarity.',
   },
   {
     id: 'gal-12',
     title: 'Annual Leadership Awards Gala',
-    category: 'event-photos',
-    categoryLabel: 'Event Photos',
-    type: 'photo',
+    category: 'highlights',
+    categoryLabel: 'Event Highlights',
     aspect: 'aspect-[4/3]',
-    image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80',
     location: 'ITC Sonar, Kolkata',
     caption: 'Gold trophy reveal on motorized rotating pedestals with dynamic kinetic ceiling light spheres.',
   },
   {
     id: 'gal-13',
     title: 'Innovators Roundtable & Executive Boardroom',
-    category: 'event-photos',
-    categoryLabel: 'Event Photos',
-    type: 'photo',
+    category: 'stages',
+    categoryLabel: 'Stages & Production',
     aspect: 'aspect-[16/10]',
-    image: 'https://images.pexels.com/photos/7581114/pexels-photo-7581114.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80',
     location: 'Leela Palace, Bengaluru',
     caption: 'Intimate CEO roundtable designed with plush leather armchairs, acoustic wood baffling, and wireless delegate mics.',
   },
@@ -172,90 +149,79 @@ const GALLERY_ITEMS = [
     title: 'Confetti Explosion & Milestone Launch',
     category: 'highlights',
     categoryLabel: 'Event Highlights',
-    type: 'video',
-    videoDuration: '01:25',
     aspect: 'aspect-[4/5]',
-    image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1517263904808-5dc91e3e7044?auto=format&fit=crop&w=1200&q=80',
     location: 'Kolkata Science City Auditorium',
     caption: 'Continuous CO2 jets and biodegradable metallic confetti blasts marking the foundation anniversary milestone.',
   },
   {
     id: 'gal-15',
-    title: 'Camera Crews & Steadicam Operators',
+    title: 'Camera Crews & 4K Live Broadcast Operators',
     category: 'behind-the-scenes',
     categoryLabel: 'Behind The Scenes',
-    type: 'photo',
     aspect: 'aspect-[3/4]',
-    image: 'https://images.pexels.com/photos/2774197/pexels-photo-2774197.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80',
     location: 'Floor Cam Position',
     caption: 'Broadcast camera operators tracking executive walkouts with stabilized rigs for 4K live broadcast.',
   },
   {
     id: 'gal-16',
-    title: 'Futuristic LED Tunnel Entrance',
-    category: 'highlights',
-    categoryLabel: 'Event Highlights',
-    type: 'photo',
+    title: 'Palatial Wedding Mandap Architecture & Florals',
+    category: 'weddings',
+    categoryLabel: 'Royal Weddings & Decor',
     aspect: 'aspect-[4/3]',
-    image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80',
-    location: 'Welcome Arcade, Mumbai',
-    caption: 'Interactive 30-meter walk-through LED archway with responsive floor graphics greeting guests at arrival.',
+    image: 'https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&w=1200&q=80',
+    location: 'Taj Palace, New Delhi',
+    caption: 'Handcrafted floral arches, royal carved pillars, and cascading jasmine chandeliers for the ceremonial mandap.',
   },
   {
     id: 'gal-17',
-    title: 'Brand Activation & Sampling Kiosk',
-    category: 'event-photos',
-    categoryLabel: 'Event Photos',
-    type: 'photo',
+    title: 'Authentic Banaras Ganga Aarti at Varmala',
+    category: 'weddings',
+    categoryLabel: 'Royal Weddings & Decor',
     aspect: 'aspect-[4/5]',
-    image: 'https://images.pexels.com/photos/7581016/pexels-photo-7581016.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    location: 'Phoenix Mall, Pune',
-    caption: 'Experiential consumer booth with real-time digital giveaways and automated photo-booth social uploads.',
+    image: 'https://images.unsplash.com/photo-1561359313-0639aad49ca6?auto=format&fit=crop&w=1200&q=80',
+    location: 'Varanasi Ghats / Destination Waterfront',
+    caption: 'Multi-tier brass lamp aarti with Vedic conch shells and sacred chants during the exchange of wedding garlands.',
   },
   {
     id: 'gal-18',
-    title: 'Keynote Speaker Spotlight',
-    category: 'video',
-    categoryLabel: 'Video Gallery',
-    type: 'video',
-    videoDuration: '03:40',
+    title: 'Sun-Drenched Haldi & Marigold Canopy Carnival',
+    category: 'weddings',
+    categoryLabel: 'Royal Weddings & Decor',
     aspect: 'aspect-[16/10]',
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80',
-    location: 'Bharat Mandapam, New Delhi',
-    caption: 'Follow-spot operators and sound technicians ensuring seamless multi-speaker keynote handoffs without audio dips.',
+    image: 'https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1200&q=80',
+    location: 'Heritage Courtyard, Jaipur',
+    caption: 'Brass urli tubs filled with fresh marigold petals, organic turmeric pastes, and celebratory folk music.',
   },
   {
     id: 'gal-19',
-    title: 'Green Room & VIP Welcome Setup',
-    category: 'behind-the-scenes',
-    categoryLabel: 'Behind The Scenes',
-    type: 'photo',
+    title: 'Punjabi & Nasik Live Dhol Baraat Procession',
+    category: 'highlights',
+    categoryLabel: 'Event Highlights',
     aspect: 'aspect-[3/4]',
-    image: 'https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    location: 'Backstage Suite',
-    caption: 'Executive lounge with bespoke catering, hair-and-makeup mirrors, teleprompter review screens, and quiet zones.',
+    image: 'https://images.unsplash.com/photo-1582233479366-6d38bc390a08?auto=format&fit=crop&w=1200&q=80',
+    location: 'Baraat Procession Boulevard',
+    caption: 'High-energy traditional Punjabi dhol percussionists in vibrant turbans leading the groom and corporate victory marches.',
   },
   {
     id: 'gal-20',
     title: 'Gala Evening Sitar & Live Fusion Band',
     category: 'highlights',
     categoryLabel: 'Event Highlights',
-    type: 'video',
-    videoDuration: '02:15',
     aspect: 'aspect-[4/3]',
-    image: 'https://images.pexels.com/photos/6899933/pexels-photo-6899933.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    image: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=80',
     location: 'ITC Sonar Grand Hall, Kolkata',
     caption: 'Live Indian classical and acoustic fusion ensemble performing during the national dealer award presentations.',
   },
 ];
 
-// Filter definitions matching Screenshot 2 (media_1794857914484_5edfde32.jpg)
+// Clean category tabs
 const FILTER_TABS = [
-  { id: 'all', label: 'All', icon: Sparkles },
-  { id: 'photo', label: 'Photo Gallery', icon: Camera },
-  { id: 'video', label: 'Video Gallery', icon: Film },
+  { id: 'all', label: 'All Photography', icon: Sparkles },
   { id: 'highlights', label: 'Event Highlights', icon: Sparkles },
-  { id: 'event-photos', label: 'Event Photos', icon: ImageIcon },
+  { id: 'stages', label: 'Stages & AV Production', icon: Camera },
+  { id: 'weddings', label: 'Royal Weddings & Decor', icon: ImageIcon },
   { id: 'behind-the-scenes', label: 'Behind The Scenes', icon: Clapperboard },
 ];
 
@@ -266,14 +232,10 @@ export default function GalleryPage({
 }) {
   const [activeFilter, setActiveFilter] = useState('all');
   const [selectedItem, setSelectedItem] = useState(null); // For lightbox/modal
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(false);
 
   // Filter items based on active pill
   const filteredItems = GALLERY_ITEMS.filter((item) => {
     if (activeFilter === 'all') return true;
-    if (activeFilter === 'photo') return item.type === 'photo';
-    if (activeFilter === 'video') return item.type === 'video';
     return item.category === activeFilter;
   });
 
@@ -306,13 +268,13 @@ export default function GalleryPage({
   return (
     <div className="min-h-screen bg-ivory text-ink">
       {/* ========================================================= */}
-      {/* 1. HERO HEADER (Screenshot 1: media_1794857895565_d2576078.jpg) */}
+      {/* 1. HERO HEADER */}
       {/* ========================================================= */}
       <section className="relative overflow-hidden bg-[#130308] pt-32 pb-20 sm:pt-40 sm:pb-28 text-white">
         {/* Background Image & Texture */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=2000"
+            src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=2000&q=85"
             alt="Event Atmosphere Backdrop"
             className="h-full w-full object-cover opacity-20 filter contrast-125 brightness-75"
           />
@@ -355,13 +317,13 @@ export default function GalleryPage({
 
           {/* Subtitle */}
           <p className="mt-5 max-w-2xl text-base sm:text-lg text-white/70 leading-relaxed font-normal">
-            Highlights, behind-the-scenes and films from recent conferences, launches and celebrations.
+            Highlights, behind-the-scenes and high-definition photography from recent Indian conferences, brand reveals, royal weddings and celebrations.
           </p>
         </div>
       </section>
 
       {/* ========================================================= */}
-      {/* 2. FILTER PILL TABS (Screenshot 2: media_1794857914484_5edfde32.jpg) */}
+      {/* 2. FILTER PILL TABS */}
       {/* ========================================================= */}
       <section className="bg-ivory pt-12 pb-6">
         <div className="site-container">
@@ -373,10 +335,6 @@ export default function GalleryPage({
               const count =
                 tab.id === 'all'
                   ? GALLERY_ITEMS.length
-                  : tab.id === 'photo'
-                  ? GALLERY_ITEMS.filter((i) => i.type === 'photo').length
-                  : tab.id === 'video'
-                  ? GALLERY_ITEMS.filter((i) => i.type === 'video').length
                   : GALLERY_ITEMS.filter((i) => i.category === tab.id).length;
 
               return (
@@ -406,7 +364,7 @@ export default function GalleryPage({
       </section>
 
       {/* ========================================================= */}
-      {/* 3. MASONRY GALLERY GRID (Screenshots 2, 3, 4) */}
+      {/* 3. MASONRY GALLERY GRID */}
       {/* ========================================================= */}
       <section className="bg-ivory py-8 sm:py-12">
         <div className="site-container">
@@ -434,39 +392,15 @@ export default function GalleryPage({
                   <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between pointer-events-none z-10">
                     {/* Category pill */}
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium tracking-wide uppercase bg-black/60 backdrop-blur-md text-white/90 border border-white/15 shadow-sm">
-                      {item.type === 'video' ? (
-                        <>
-                          <Video className="size-3 text-gold" />
-                          <span>Video</span>
-                        </>
-                      ) : (
-                        <>
-                          <Camera className="size-3 text-gold" />
-                          <span>{item.categoryLabel}</span>
-                        </>
-                      )}
+                      <Camera className="size-3 text-gold" />
+                      <span>{item.categoryLabel}</span>
                     </span>
 
-                    {/* Right badge: Duration if video, or Expand icon if photo */}
-                    {item.type === 'video' ? (
-                      <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium bg-black/60 backdrop-blur-md text-white/90 border border-white/15">
-                        {item.videoDuration}
-                      </span>
-                    ) : (
-                      <span className="size-7 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <Maximize2 className="size-3.5" />
-                      </span>
-                    )}
+                    {/* Expand icon on hover */}
+                    <span className="size-7 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <Maximize2 className="size-3.5" />
+                    </span>
                   </div>
-
-                  {/* Video Play Button (Prominent in screenshot 3 & 4) */}
-                  {item.type === 'video' && (
-                    <div className="absolute inset-0 flex items-center justify-center z-10">
-                      <div className="size-13 sm:size-14 rounded-full bg-white/95 text-ink shadow-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-115 group-hover:bg-[#c9a96a] group-hover:text-white">
-                        <Play className="size-5 fill-current ml-0.5 transition-colors" />
-                      </div>
-                    </div>
-                  )}
 
                   {/* Bottom Info on Hover / subtle preview */}
                   <div className="absolute bottom-0 inset-x-0 p-5 text-white z-10">
@@ -488,7 +422,7 @@ export default function GalleryPage({
       </section>
 
       {/* ========================================================= */}
-      {/* 4. LIGHTBOX / MODAL VIEW FOR PHOTOS AND VIDEOS */}
+      {/* 4. LIGHTBOX / MODAL VIEW FOR PHOTOS */}
       {/* ========================================================= */}
       {selectedItem && (
         <div
@@ -506,7 +440,7 @@ export default function GalleryPage({
             <div className="flex items-center justify-between border-b border-white/10 px-6 py-4 bg-black/40">
               <div className="flex items-center gap-3">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-gold/15 text-gold border border-gold/30">
-                  {selectedItem.type === 'video' ? 'Video Player' : selectedItem.categoryLabel}
+                  {selectedItem.categoryLabel}
                 </span>
                 <span className="text-xs text-white/50">{selectedItem.location}</span>
               </div>
@@ -522,75 +456,14 @@ export default function GalleryPage({
             </div>
 
             {/* Media Content Area */}
-            <div className="relative bg-black flex items-center justify-center max-h-[65vh] overflow-hidden">
-              {selectedItem.type === 'video' ? (
-                // Simulated High-Definition Video Player
-                <div className="relative w-full aspect-video bg-black flex flex-col justify-between overflow-hidden group/player">
-                  <img
-                    src={selectedItem.image}
-                    alt={selectedItem.title}
-                    className="absolute inset-0 h-full w-full object-cover filter brightness-90"
-                  />
-                  <div className="absolute inset-0 bg-black/30" />
-
-                  {/* Center Play/Pause Overlay */}
-                  <div className="relative z-10 flex-1 flex items-center justify-center">
-                    <button
-                      onClick={() => setIsPlaying(!isPlaying)}
-                      className="size-16 sm:size-20 rounded-full bg-gold/90 hover:bg-gold text-ink shadow-2xl flex items-center justify-center transition-transform hover:scale-110 cursor-pointer"
-                    >
-                      {isPlaying ? (
-                        <Pause className="size-8 fill-current" />
-                      ) : (
-                        <Play className="size-8 fill-current ml-1" />
-                      )}
-                    </button>
-                  </div>
-
-                  {/* Player Controls Bar */}
-                  <div className="relative z-10 p-4 bg-gradient-to-t from-black/95 via-black/70 to-transparent">
-                    {/* Progress Bar */}
-                    <div className="w-full h-1.5 bg-white/20 rounded-full overflow-hidden mb-3 cursor-pointer">
-                      <div className="h-full bg-gold rounded-full w-2/5 animate-pulse" />
-                    </div>
-
-                    <div className="flex items-center justify-between text-xs text-white/80">
-                      <div className="flex items-center gap-4">
-                        <button
-                          onClick={() => setIsPlaying(!isPlaying)}
-                          className="hover:text-gold transition-colors cursor-pointer"
-                        >
-                          {isPlaying ? <Pause className="size-4" /> : <Play className="size-4" />}
-                        </button>
-                        <button
-                          onClick={() => setIsMuted(!isMuted)}
-                          className="hover:text-gold transition-colors cursor-pointer"
-                        >
-                          {isMuted ? <VolumeX className="size-4" /> : <Volume2 className="size-4" />}
-                        </button>
-                        <span className="font-mono text-[11px] text-white/60">
-                          01:10 / {selectedItem.videoDuration || '03:00'}
-                        </span>
-                      </div>
-
-                      <div className="flex items-center gap-2">
-                        <span className="text-[11px] font-semibold tracking-wider text-gold uppercase px-2 py-0.5 rounded bg-white/10">
-                          HD 1080P
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                // High-Resolution Photo Viewer
-                <div className="relative w-full h-[65vh] flex items-center justify-center p-2">
-                  <img
-                    src={selectedItem.image}
-                    alt={selectedItem.title}
-                    className="max-h-full max-w-full object-contain rounded-lg"
-                  />
-                </div>
-              )}
+            <div className="relative bg-black flex items-center justify-center max-h-[70vh] overflow-hidden">
+              <div className="relative w-full h-[65vh] flex items-center justify-center p-2">
+                <img
+                  src={selectedItem.image}
+                  alt={selectedItem.title}
+                  className="max-h-full max-w-full object-contain rounded-lg"
+                />
+              </div>
 
               {/* Prev / Next Chevrons */}
               <button

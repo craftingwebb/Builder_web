@@ -18,7 +18,7 @@ const FEATURED_STAGES = [
     meta: "600 guests · Hyderabad · Aug 2026",
     title: "Novalis LifeSciences Executive Forum",
     summary: "A high-level symposium for 600 Indian business leaders and directors featuring keynote addresses, interactive panel debates, and live polling.",
-    image: "https://images.pexels.com/photos/7581114/pexels-photo-7581114.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1400&q=85",
   },
   {
     id: "stage-3",
@@ -45,7 +45,7 @@ const FEATURED_STAGES = [
     meta: "900 guests · Udaipur · Feb 2026",
     title: "Vanguard Heritage Annual Honors Night",
     summary: "A formal black-tie banquet celebrating standout leadership with bespoke palace stage architecture and a 40-piece live symphony.",
-    image: "https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1400&q=85",
   },
   {
     id: "stage-6",

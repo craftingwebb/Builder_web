@@ -120,7 +120,7 @@ const CASE_STUDIES = [
     description:
       'A strategy summit for 600 senior leaders featuring 14 keynotes, 6 breakout tracks and live polling.',
     image:
-      'https://images.pexels.com/photos/7581114/pexels-photo-7581114.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=85',
     metrics: ['NPS 72', '600 attendees', '0 safety incidents'],
   },
   {
@@ -153,7 +153,7 @@ const TESTIMONIALS = [
     name: 'Rajiv Khanna',
     role: 'Chief Marketing Officer, Helios Motors',
     avatar:
-      'https://images.pexels.com/photos/7580917/pexels-photo-7580917.jpeg?auto=compress&cs=tinysrgb&w=200',
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
   },
   {
     quote:
@@ -161,7 +161,7 @@ const TESTIMONIALS = [
     name: 'Sameer Gupta',
     role: 'Head of Corporate Communications, Orbit Fintech',
     avatar:
-      'https://images.pexels.com/photos/3785104/pexels-photo-3785104.jpeg?auto=compress&cs=tinysrgb&w=200',
+      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
   },
   {
     quote:
@@ -169,7 +169,7 @@ const TESTIMONIALS = [
     name: 'Nikhil Bose',
     role: 'Managing Director, BluePeak Capital',
     avatar:
-      'https://images.pexels.com/photos/7580648/pexels-photo-7580648.jpeg?auto=compress&cs=tinysrgb&w=200',
+      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80',
   },
   {
     quote:
@@ -177,7 +177,7 @@ const TESTIMONIALS = [
     name: 'Dr. Kavita Rao',
     role: 'VP, Medical Affairs, Kairos Healthcare',
     avatar:
-      'https://images.pexels.com/photos/7581113/pexels-photo-7581113.jpeg?auto=compress&cs=tinysrgb&w=200',
+      'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
   },
   {
     quote:
@@ -185,7 +185,7 @@ const TESTIMONIALS = [
     name: 'Vikramaditya Singhania',
     role: 'Chief People Officer, Novaline Telecom',
     avatar:
-      'https://images.pexels.com/photos/2774197/pexels-photo-2774197.jpeg?auto=compress&cs=tinysrgb&w=200',
+      'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=200&q=80',
   },
   {
     quote:
@@ -193,7 +193,7 @@ const TESTIMONIALS = [
     name: 'Ananya Roy',
     role: 'Head of Growth, Indus Steel & Power',
     avatar:
-      'https://images.pexels.com/photos/2899738/pexels-photo-2899738.jpeg?auto=compress&cs=tinysrgb&w=200',
+      'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=200&q=80',
   },
 ];
 
@@ -245,7 +245,7 @@ export default function ClientsPage({
         {/* Background Image of Event Audience / Hall with Center Ambient Glow */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
-            src="https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=2000"
+            src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=2000&q=85"
             alt=""
             className="h-full w-full object-cover opacity-20 filter contrast-125 brightness-75"
           />

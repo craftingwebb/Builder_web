@@ -17,7 +17,7 @@ const PORTFOLIO_ITEMS = [
     categoryLabel: "Leadership Summit",
     title: "Novalis LifeSciences Executive Forum",
     location: "Hyderabad",
-    image: "https://images.pexels.com/photos/7581114/pexels-photo-7581114.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80",
     summary: "A high-level symposium for 600 Indian business leaders featuring keynote addresses, interactive panel debates, and live delegate polling.",
   },
   {
@@ -44,7 +44,7 @@ const PORTFOLIO_ITEMS = [
     categoryLabel: "Honors Gala",
     title: "Vanguard Capital Annual Honors Night",
     location: "Udaipur",
-    image: "https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80",
     summary: "A formal black-tie banquet celebrating standout leadership with bespoke palace stage architecture and a 40-piece live symphony.",
   },
   {

@@ -133,7 +133,7 @@ export default function ContactPage({
         {/* Background Image of Meeting / Strategy Room with Center Ambient Glow */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
-            src="https://images.pexels.com/photos/7581114/pexels-photo-7581114.jpeg?auto=compress&cs=tinysrgb&w=2000"
+            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=2000&q=85"
             alt=""
             className="h-full w-full object-cover opacity-20 filter contrast-125 brightness-75"
           />

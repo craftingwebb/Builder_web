@@ -17,7 +17,7 @@ export const ALL_PORTFOLIO_EVENTS = [
     categoryLabel: "Conference",
     title: "Novalis LifeSciences Executive Forum",
     location: "Hyderabad",
-    image: "https://images.pexels.com/photos/7581114/pexels-photo-7581114.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80",
     summary: "A high-level symposium for 600 Indian business leaders featuring keynote addresses, interactive panel debates, and live delegate polling.",
   },
   {
@@ -44,7 +44,7 @@ export const ALL_PORTFOLIO_EVENTS = [
     categoryLabel: "Award Ceremony",
     title: "Vanguard Capital Annual Honors Night",
     location: "Udaipur",
-    image: "https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80",
     summary: "A formal black-tie banquet celebrating standout leadership with bespoke palace stage architecture and a 40-piece live symphony.",
   },
   {
@@ -62,7 +62,7 @@ export const ALL_PORTFOLIO_EVENTS = [
     categoryLabel: "Corporate Event",
     title: "Quanta Logistics Leadership Retreat",
     location: "Udaipur",
-    image: "https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80",
     summary: "An immersive 4-day executive retreat across heritage lakeside palace grounds with bespoke team strategy sessions.",
   },
   {
@@ -71,7 +71,7 @@ export const ALL_PORTFOLIO_EVENTS = [
     categoryLabel: "Conference",
     title: "BluePeak Capital Sovereign Investor Conclave",
     location: "Mumbai",
-    image: "https://images.pexels.com/photos/7580917/pexels-photo-7580917.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
     summary: "A closed-door sovereign wealth conclave gathering 250 institutional fund partners with high-security delegate corridors.",
   },
   {
@@ -89,7 +89,7 @@ export const ALL_PORTFOLIO_EVENTS = [
     categoryLabel: "Conference",
     title: "Kairos Healthcare Medical Congress",
     location: "Chennai",
-    image: "https://images.pexels.com/photos/7581114/pexels-photo-7581114.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=80",
     summary: "A multi-track medical symposium bringing together 1,200 clinicians, featuring live surgical broadcast feeds and exhibition kiosks.",
   },
   {
@@ -107,7 +107,7 @@ export const ALL_PORTFOLIO_EVENTS = [
     categoryLabel: "Corporate Event",
     title: "Aster Consumer Brands National Sales Kick-Off",
     location: "Pune",
-    image: "https://images.pexels.com/photos/7580648/pexels-photo-7580648.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80",
     summary: "Energizing 1,500 national distributors with dynamic interactive staging, award ceremonies, and motivational keynote productions.",
   },
 ];
@@ -142,7 +142,7 @@ export default function PortfolioPage({ onNavigateHome, onOpenProposalModal }) {
         {/* Background Image of Concert / Stage with Center Ambient Glow */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
-            src="https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=2000"
+            src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=2000&q=85"
             alt=""
             className="h-full w-full object-cover opacity-20 filter contrast-125 brightness-75"
           />

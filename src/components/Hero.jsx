@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, Star } from 'lucide-react';
 
 const HERO_IMAGES = [
-  'https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=2000',
   'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=2000&q=85',
+  'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=2000&q=85',
   'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=2000&q=85',
 ];
 
@@ -107,17 +107,17 @@ export default function Hero({ onOpenProposalModal, onViewPortfolio }) {
             <div className="flex items-center gap-3">
               <div className="flex -space-x-2">
                 <img
-                  src="https://images.pexels.com/photos/7580917/pexels-photo-7580917.jpeg?auto=compress&cs=tinysrgb&w=100"
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80"
                   alt="Indian Corporate Executive"
                   className="size-9 rounded-full object-cover ring-2 ring-ink"
                 />
                 <img
-                  src="https://images.pexels.com/photos/7581113/pexels-photo-7581113.jpeg?auto=compress&cs=tinysrgb&w=100"
+                  src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=100&q=80"
                   alt="Indian Corporate Leader"
                   className="size-9 rounded-full object-cover ring-2 ring-ink"
                 />
                 <img
-                  src="https://images.pexels.com/photos/3785104/pexels-photo-3785104.jpeg?auto=compress&cs=tinysrgb&w=100"
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80"
                   alt="Indian Enterprise Partner"
                   className="size-9 rounded-full object-cover ring-2 ring-ink"
                 />
