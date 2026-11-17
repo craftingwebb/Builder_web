@@ -275,17 +275,17 @@ export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onN
                 <div
                   key={service.id}
                   id={service.id}
-                  className={`group relative overflow-hidden rounded-3xl bg-white shadow-sm border transition-all duration-500 hover:shadow-2xl ${
+                  className={`group relative overflow-hidden rounded-3xl bg-white shadow-sm border transition-all duration-500 hover:shadow-2xl lg:h-[460px] xl:h-[470px] w-full ${
                     isHighlighted
                       ? 'border-gold ring-4 ring-gold/40 shadow-2xl scale-[1.01]'
                       : 'border-black/5 hover:border-gold/30'
                   }`}
                 >
-                  <div className="grid lg:grid-cols-12 items-stretch min-h-[440px]">
+                  <div className="grid lg:grid-cols-12 h-full items-stretch">
                     
-                    {/* IMAGE COLUMN (6 cols) */}
+                    {/* IMAGE COLUMN (Exact 50% width & 100% height, pinned with absolute inset-0) */}
                     <div
-                      className={`relative min-h-[280px] sm:min-h-[360px] lg:min-h-[460px] lg:col-span-6 overflow-hidden ${
+                      className={`relative h-64 sm:h-80 lg:h-full lg:col-span-6 overflow-hidden ${
                         isReversed ? 'lg:order-2' : 'lg:order-1'
                       }`}
                     >
@@ -293,11 +293,11 @@ export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onN
                         src={service.image}
                         alt={service.title}
                         loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
                       
                       {/* Gradient overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent pointer-events-none" />
 
                       {/* Watermark Serial Number */}
                       <span className="absolute top-6 left-6 font-bold text-6xl sm:text-7xl lg:text-8xl text-white/35 select-none tracking-tighter leading-none pointer-events-none font-serif drop-shadow-sm">
@@ -305,8 +305,8 @@ export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onN
                       </span>
 
                       {/* Floating Badges */}
-                      <div className="absolute top-6 right-6 flex flex-col items-end gap-2">
-                        <span className="rounded-full bg-black/65 backdrop-blur-md px-3.5 py-1 text-[11px] font-semibold text-gold border border-gold/30 uppercase tracking-wider shadow-sm">
+                      <div className="absolute top-6 right-6 flex flex-col items-end gap-2 z-10">
+                        <span className="rounded-full bg-black/70 backdrop-blur-md px-3.5 py-1 text-[11px] font-semibold text-gold border border-gold/30 uppercase tracking-wider shadow-sm">
                           {service.pillarLabel}
                         </span>
                         {service.badge && (
@@ -317,48 +317,48 @@ export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onN
                       </div>
                     </div>
 
-                    {/* CONTENT COLUMN (6 cols) */}
+                    {/* CONTENT COLUMN (Exact 50% width & 100% height, strictly uniform spacing) */}
                     <div
-                      className={`flex flex-col justify-between p-7 sm:p-10 lg:p-12 lg:col-span-6 ${
+                      className={`flex flex-col justify-between p-6 sm:p-8 lg:p-9 xl:p-10 lg:col-span-6 h-full overflow-hidden ${
                         isReversed ? 'lg:order-1' : 'lg:order-2'
                       }`}
                     >
                       <div>
                         {/* Header with Icon and Tagline */}
-                        <div className="flex items-center gap-3.5">
-                          <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-[#130308] text-gold border border-gold/20 shadow-md">
+                        <div className="flex items-center gap-3">
+                          <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-[#130308] text-gold border border-gold/20 shadow-md">
                             <IconComponent className="size-5" />
                           </div>
-                          <div>
-                            <span className="text-[11px] font-bold uppercase tracking-wider text-amber-800">
+                          <div className="min-w-0 flex-1">
+                            <span className="text-[11px] font-bold uppercase tracking-wider text-amber-800 block">
                               {service.pillarLabel}
                             </span>
                             {service.tagline && (
-                              <p className="text-xs text-ink/60 font-medium line-clamp-1">
+                              <p className="text-xs text-ink/60 font-medium truncate">
                                 {service.tagline}
                               </p>
                             )}
                           </div>
                         </div>
 
-                        {/* Service Title */}
-                        <h2 className="mt-4 text-2xl sm:text-3xl lg:text-3.5xl font-bold tracking-tight text-ink">
+                        {/* Service Title - Normalized to 1 line on desktop */}
+                        <h2 className="mt-3.5 text-xl sm:text-2xl lg:text-[1.65rem] font-bold tracking-tight text-ink line-clamp-1" title={service.title}>
                           {service.title}
                         </h2>
 
-                        {/* Description */}
-                        <p className="mt-3.5 text-sm sm:text-base text-ink/75 leading-relaxed">
+                        {/* Description - Normalized to 2-3 lines */}
+                        <p className="mt-2.5 text-xs sm:text-sm text-ink/75 leading-relaxed line-clamp-2 sm:line-clamp-3">
                           {service.description}
                         </p>
 
-                        {/* Features Checkpoints */}
-                        <div className="mt-6 sm:mt-7 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                          {service.features.map((feature, fIdx) => (
-                            <div key={fIdx} className="flex items-start gap-2.5">
+                        {/* Features Checkpoints - Exactly 4 concise bullets */}
+                        <div className="mt-4 sm:mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
+                          {service.features.slice(0, 4).map((feature, fIdx) => (
+                            <div key={fIdx} className="flex items-start gap-2 min-w-0">
                               <span className="flex size-4 shrink-0 items-center justify-center rounded-full bg-[#f4e8d1] text-amber-800 mt-0.5">
                                 <Check className="size-2.5 stroke-[3]" />
                               </span>
-                              <span className="text-xs sm:text-[0.85rem] font-medium text-ink/85 leading-snug">
+                              <span className="text-xs font-medium text-ink/85 truncate" title={feature}>
                                 {feature}
                               </span>
                             </div>
@@ -366,11 +366,11 @@ export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onN
                         </div>
                       </div>
 
-                      {/* Bottom Action Buttons */}
-                      <div className="mt-8 pt-6 border-t border-black/5 flex flex-wrap items-center gap-3">
+                      {/* Bottom Action Buttons - Uniformly pinned to bottom */}
+                      <div className="mt-4 pt-4 border-t border-black/5 flex flex-wrap items-center gap-2.5 sm:gap-3">
                         <button
                           onClick={() => handleServiceWhatsApp(service.title)}
-                          className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-xs sm:text-sm font-semibold text-white shadow-md transition-all hover:bg-[#20ba59] hover:shadow-lg cursor-pointer active:scale-95"
+                          className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-white shadow-md transition-all hover:bg-[#20ba59] hover:shadow-lg cursor-pointer active:scale-95"
                         >
                           <WhatsAppIcon className="size-4" />
                           <span>Inquire on WhatsApp</span>
@@ -378,7 +378,7 @@ export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onN
 
                         <button
                           onClick={() => onOpenProposalModal?.(service.title)}
-                          className="inline-flex items-center gap-1.5 rounded-full border border-black/15 bg-white px-5 py-3 text-xs sm:text-sm font-semibold text-ink transition-all hover:border-ink hover:bg-zinc-50 cursor-pointer active:scale-95"
+                          className="inline-flex items-center gap-1.5 rounded-full border border-black/15 bg-white px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-ink transition-all hover:border-ink hover:bg-zinc-50 cursor-pointer active:scale-95"
                         >
                           <span>Get a proposal</span>
                           <ArrowUpRight className="size-3.5" />
