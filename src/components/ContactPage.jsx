@@ -15,12 +15,12 @@ import {
 import { sanitizeString, sanitizePhone, isValidEmail } from '../utils/security';
 import { saveInquiryToRegistry, openWhatsAppWithDetection } from '../utils/inquiryStorage';
 
-// 4 Regional Production Offices
+// Operational Hubs & Service Areas
 const OFFICES = [
   { name: 'Kolkata (HQ)', subtitle: '22/a gora chand lane' },
-  { name: 'Mumbai', subtitle: 'Production office' },
-  { name: 'Delhi NCR', subtitle: 'Production office' },
-  { name: 'Bengaluru', subtitle: 'Production office' },
+  { name: 'Greater Kolkata & WB', subtitle: 'Regional production office' },
+  { name: 'Delhi NCR', subtitle: 'Key deployment hub' },
+  { name: 'Eastern Region Hubs', subtitle: 'On-demand production network' },
 ];
 
 export default function ContactPage({

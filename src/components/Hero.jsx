@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, Star } from 'lucide-react';
 
 const HERO_IMAGES = [
-  'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=2000&q=85',
-  'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=2000&q=85',
   'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=2000&q=85',
+  'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=2000&q=85',
+  'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=2000&q=85',
 ];
 
 export default function Hero({ onOpenProposalModal, onViewPortfolio }) {
@@ -177,16 +177,14 @@ export default function Hero({ onOpenProposalModal, onViewPortfolio }) {
             ))}
           </div>
 
-          <div className="hidden sm:flex items-center gap-4 text-white/60">
-            <span>Mumbai (HQ)</span>
+          <div className="hidden sm:flex items-center gap-3 sm:gap-4 text-white/60 text-xs sm:text-sm">
+            <span className="font-semibold text-gold">Kolkata (HQ)</span>
+            <span>&bull;</span>
+            <span>Greater Kolkata</span>
             <span>&bull;</span>
             <span>Delhi NCR</span>
             <span>&bull;</span>
-            <span>Bengaluru</span>
-            <span>&bull;</span>
-            <span>Hyderabad</span>
-            <span>&bull;</span>
-            <span>Dubai</span>
+            <span>Neighboring Regions</span>
           </div>
         </div>
 

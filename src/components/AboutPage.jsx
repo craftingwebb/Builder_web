@@ -193,7 +193,7 @@ export default function AboutPage({
           {/* Paragraph */}
           <p className="mt-6 max-w-3xl text-base sm:text-lg text-white/70 leading-relaxed font-normal">
             S. A Event&apos;s and Manpower Service is a full-service event management and certified manpower collective
-            headquartered at 22/a gora chand lane, Kolkata, West Bengal, with production operations across India.
+            headquartered at 22/a gora chand lane, Kolkata, West Bengal, managing turnkey productions across Kolkata, neighboring regions, and Delhi NCR.
             We partner with leadership, HR, corporate marketers, and private organizers to plan and execute conferences, launches, award
             nights, weddings, and bespoke gatherings — on brief, on brand and on budget.
           </p>

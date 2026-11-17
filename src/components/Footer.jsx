@@ -131,7 +131,7 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
             <div>
               <Logo light={true} />
               <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/55">
-                End-to-end creative direction, stage engineering, and turnkey production for landmark conferences, brand reveals, and gala evenings across India and abroad.
+                End-to-end creative direction, stage engineering, and turnkey production for landmark conferences, brand reveals, and gala evenings across Kolkata, neighboring regions, and Delhi NCR.
               </p>
             </div>
 

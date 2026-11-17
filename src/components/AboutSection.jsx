@@ -15,7 +15,7 @@ export default function AboutSection({ onOpenProposalModal, onNavigateAbout }) {
             </p>
 
             <p className="mt-8 text-[1.65rem] leading-[1.35] font-medium tracking-[-0.02em] text-ink sm:text-[2.2rem]">
-              S. A Event&apos;s and Manpower Service is an integrated experiential design and turnkey event production collective headquartered at 22/a gora chand lane, Kolkata, with dedicated operations across India. We collaborate with visionary corporate leaders, brand custodians, and celebratory families to orchestrate high-impact conferences, weddings, awards galas, and bespoke summits &mdash; flawlessly aligned with your vision, your brand, and your budget.
+              S. A Event&apos;s and Manpower Service is an integrated experiential design and turnkey event production collective headquartered at 22/a gora chand lane, Kolkata, with dedicated operations across Kolkata, neighboring regions, and Delhi NCR. We collaborate with visionary corporate leaders, brand custodians, and celebratory families to orchestrate high-impact conferences, weddings, awards galas, and bespoke summits &mdash; flawlessly aligned with your vision, your brand, and your budget.
             </p>
 
             {/* 3 Metric Stats */}
@@ -51,7 +51,7 @@ export default function AboutSection({ onOpenProposalModal, onNavigateAbout }) {
             {/* Main Stage Image */}
             <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl bg-zinc-800">
               <img
-                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1000&q=85"
+                src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1000&q=85"
                 alt="Corporate town hall in the round"
                 className="h-full w-full object-cover"
               />

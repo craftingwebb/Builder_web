@@ -14,6 +14,7 @@ An ultra-modern, high-converting digital platform engineered for **S. A Event's 
 
 * **Company Name:** S. A Event's and Manpower Service
 * **Studio & Headquarters:** 22/a gora chand lane, Kolkata, West Bengal
+* **Operational Footprint:** Headquartered in Kolkata (HQ); actively managing turnkey productions and certified manpower across Greater Kolkata, neighboring Eastern regions, and Delhi NCR.
 * **Direct Hotline / WhatsApp:** [+91 76001 49422](https://wa.me/917600149422)
 * **Executive Inbox:** [s.aeventsandmanpowerservice@gmail.com](mailto:s.aeventsandmanpowerservice@gmail.com)
 * **Official Instagram:** [@s.aeventsandmanpowerservice](https://www.instagram.com/s.aeventsandmanpowerservice/)
