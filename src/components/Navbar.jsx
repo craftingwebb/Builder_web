@@ -153,7 +153,7 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
 
           <button
             onClick={onOpenProposalModal || (() => onNavigate?.('proposal'))}
-            className="btn-gold hidden !px-5 !py-2.5 sm:inline-flex cursor-pointer"
+            className="!hidden sm:!inline-flex btn-gold !px-5 !py-2.5 cursor-pointer"
           >
             <span>Request a Proposal</span>
             <ArrowRight className="size-4" />

@@ -99,67 +99,69 @@ footer[id] {
   -webkit-backdrop-filter: blur(24px);
 }
 
-.btn-gold {
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: var(--color-gold);
-  padding: 0.8rem 1.6rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--color-ink);
-  border-radius: 9999px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.2s ease;
-  display: inline-flex;
-  cursor: pointer;
-}
+@layer components {
+  .btn-gold {
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-gold);
+    padding: 0.8rem 1.6rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-ink);
+    border-radius: 9999px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.2s ease;
+    display: inline-flex;
+    cursor: pointer;
+  }
 
-.btn-gold:hover {
-  background-color: #d6b87b;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px -6px rgba(201, 169, 106, 0.35);
-}
+  .btn-gold:hover {
+    background-color: #d6b87b;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -6px rgba(201, 169, 106, 0.35);
+  }
 
-.btn-ghost-light {
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 9999px;
-  padding: 0.8rem 1.6rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #ffffff;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  display: inline-flex;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-  cursor: pointer;
-}
+  .btn-ghost-light {
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 9999px;
+    padding: 0.8rem 1.6rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #ffffff;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: inline-flex;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+  }
 
-.btn-ghost-light:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.5);
-}
+  .btn-ghost-light:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
 
-.btn-outline-ink {
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  border: 1px solid rgba(7, 11, 31, 0.2);
-  border-radius: 9999px;
-  padding: 0.8rem 1.6rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--color-ink);
-  display: inline-flex;
-  transition: background-color 0.25s ease, color 0.25s ease;
-  cursor: pointer;
-}
+  .btn-outline-ink {
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid rgba(7, 11, 31, 0.2);
+    border-radius: 9999px;
+    padding: 0.8rem 1.6rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-ink);
+    display: inline-flex;
+    transition: background-color 0.25s ease, color 0.25s ease;
+    cursor: pointer;
+  }
 
-.btn-outline-ink:hover {
-  background-color: var(--color-ink);
-  color: #ffffff;
+  .btn-outline-ink:hover {
+    background-color: var(--color-ink);
+    color: #ffffff;
+  }
 }
 
 /* Custom scrollbar */
