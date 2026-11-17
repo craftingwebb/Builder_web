@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { ArrowUpRight, ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 const FEATURED_STAGES = [
   {
@@ -59,53 +59,83 @@ const FEATURED_STAGES = [
 ];
 
 export default function FeaturedEvents({ onOpenProposalModal, onViewPortfolio }) {
+  const containerRef = useRef(null);
   const trackRef = useRef(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-
-  const checkScroll = () => {
-    if (!trackRef.current) return;
-    const { scrollLeft, scrollWidth, clientWidth } = trackRef.current;
-    setCanScrollLeft(scrollLeft > 10);
-    setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 15);
-  };
+  const [translateX, setTranslateX] = useState(0);
+  const [isDesktop, setIsDesktop] = useState(typeof window !== 'undefined' ? window.innerWidth >= 1024 : true);
 
   useEffect(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    checkScroll();
-    el.addEventListener('scroll', checkScroll, { passive: true });
-    window.addEventListener('resize', checkScroll);
-    return () => {
-      el.removeEventListener('scroll', checkScroll);
-      window.removeEventListener('resize', checkScroll);
+    const handleResize = () => {
+      const desktop = window.innerWidth >= 1024;
+      setIsDesktop(desktop);
+      if (!desktop) {
+        setTranslateX(0);
+      }
     };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const scrollByCard = (direction) => {
-    if (!trackRef.current) return;
-    const card = trackRef.current.firstElementChild;
-    const scrollAmount = card ? card.clientWidth + 20 : 360;
-    trackRef.current.scrollBy({
-      left: direction === 'next' ? scrollAmount : -scrollAmount,
-      behavior: 'smooth',
-    });
-  };
+  useEffect(() => {
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (window.innerWidth < 1024) return;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (!containerRef.current || !trackRef.current) return;
+
+          const rect = containerRef.current.getBoundingClientRect();
+          const totalDistance = rect.height - window.innerHeight;
+
+          if (totalDistance <= 0) return;
+
+          // Compute scroll progress from 0 (when top of section hits top of viewport) to 1 (when bottom exits)
+          const scrolled = -rect.top;
+          const progress = Math.min(Math.max(scrolled / totalDistance, 0), 1);
+
+          // Total horizontal translation needed: track's scroll width minus visible screen width + offset
+          const maxTranslate = Math.max(trackRef.current.scrollWidth - window.innerWidth + 90, 0);
+          setTranslateX(progress * maxTranslate);
+
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
 
   return (
     <section
       id="featured-stages"
-      className="relative overflow-hidden bg-ink py-20 sm:py-28 lg:py-32 text-white"
+      ref={containerRef}
+      className={`relative bg-ink text-white ${
+        isDesktop ? '' : 'py-16 sm:py-20 overflow-hidden'
+      }`}
+      style={isDesktop ? { height: '340vh' } : { height: 'auto' }}
     >
-      {/* Background ambient radial glow */}
+      {/* Viewport frame: sticky on desktop, normal flow on mobile */}
       <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-40 right-1/4 h-[32rem] w-[32rem] rounded-full bg-[#991435]/20 blur-[130px]"
-      />
-
-      <div className="site-container">
+        className={
+          isDesktop
+            ? "sticky top-0 flex h-screen w-full flex-col justify-center overflow-hidden py-10 lg:py-14"
+            : "relative flex w-full flex-col overflow-hidden"
+        }
+      >
         {/* Section Header */}
-        <div className="mb-8 sm:mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+        <div className="site-container mb-8 flex items-end justify-between gap-6 shrink-0 lg:mb-10">
           <div>
             <p className="eyebrow text-gold mb-3">Milestone productions</p>
             <h2 className="display text-[2.2rem] sm:text-5xl lg:text-6xl text-white">
@@ -116,111 +146,96 @@ export default function FeaturedEvents({ onOpenProposalModal, onViewPortfolio })
             </h2>
           </div>
 
-          {/* Right Action: Case studies link & Prev/Next Arrow buttons */}
-          <div className="flex items-center gap-3 self-start sm:self-auto shrink-0">
-            <button
-              onClick={onViewPortfolio || (() => onOpenProposalModal?.({ title: "Full Portfolio Inquiries" }))}
-              className="btn-ghost-light !px-5 !py-2.5 text-xs font-semibold uppercase tracking-wider flex items-center gap-2 cursor-pointer hover:border-gold hover:text-gold transition-all"
-            >
-              <span>View case studies</span>
-              <ArrowUpRight className="size-4" />
-            </button>
-
-            {/* Carousel Navigation Arrows */}
-            <div className="flex items-center gap-2 ml-1">
-              <button
-                onClick={() => scrollByCard('prev')}
-                disabled={!canScrollLeft}
-                aria-label="Previous milestone"
-                className={`flex size-10 items-center justify-center rounded-full border transition-all cursor-pointer ${
-                  canScrollLeft
-                    ? 'border-white/20 bg-white/5 text-white hover:border-gold hover:text-gold hover:bg-white/10 active:scale-95'
-                    : 'border-white/10 bg-transparent text-white/30 cursor-not-allowed opacity-40'
-                }`}
-              >
-                <ArrowLeft className="size-4" />
-              </button>
-              <button
-                onClick={() => scrollByCard('next')}
-                disabled={!canScrollRight}
-                aria-label="Next milestone"
-                className={`flex size-10 items-center justify-center rounded-full border transition-all cursor-pointer ${
-                  canScrollRight
-                    ? 'border-white/20 bg-white/5 text-white hover:border-gold hover:text-gold hover:bg-white/10 active:scale-95'
-                    : 'border-white/10 bg-transparent text-white/30 cursor-not-allowed opacity-40'
-                }`}
-              >
-                <ArrowRight className="size-4" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Horizontal Moving Track / Native Snap Carousel */}
-      <div
-        ref={trackRef}
-        className="flex items-stretch gap-5 sm:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none pl-[max(1.25rem,calc((100vw-88rem)/2+1.25rem))] pr-6 sm:pr-12 pb-4 pt-1"
-      >
-        {FEATURED_STAGES.map((event) => (
-          <div
-            key={event.id}
-            onClick={() => onOpenProposalModal?.(event)}
-            className="group relative w-[82vw] sm:w-[55vw] lg:w-[38vw] xl:w-[32vw] shrink-0 snap-start overflow-hidden rounded-2xl sm:rounded-[2rem] bg-zinc-900 cursor-pointer shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/10 transition-all duration-500 hover:border-gold/40 flex flex-col justify-end"
+          <button
+            onClick={onViewPortfolio || (() => onOpenProposalModal?.({ title: "Full Portfolio Inquiries" }))}
+            className="btn-ghost-light hidden sm:inline-flex cursor-pointer hover:border-gold hover:text-gold transition-all"
           >
-            {/* Big Photo Container (Aspect 4/3) */}
-            <div className="aspect-[4/3] overflow-hidden bg-ink w-full relative">
-              <img
-                src={event.image}
-                alt={event.title}
-                loading="lazy"
-                className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-105"
-              />
+            <span>View case studies</span>
+            <ArrowUpRight className="size-4" />
+          </button>
+        </div>
 
-              {/* Gradient overlays */}
+        {/* Horizontal Track: Translated on desktop with scroll, native touch snap on mobile */}
+        <div
+          ref={trackRef}
+          className={`flex items-center gap-5 sm:gap-6 pl-[max(1.25rem,calc((100vw-88rem)/2+1.25rem))] pr-16 sm:pr-24 ${
+            isDesktop
+              ? 'will-change-transform'
+              : 'overflow-x-auto snap-x snap-mandatory scrollbar-none pb-4 pt-1'
+          }`}
+          style={
+            isDesktop
+              ? {
+                  transform: `translate3d(-${translateX}px, 0, 0)`,
+                  transition: 'transform 0.08s cubic-bezier(0.25, 1, 0.5, 1)',
+                }
+              : {
+                  transform: 'none',
+                }
+          }
+        >
+          {FEATURED_STAGES.map((event) => (
+            <div
+              key={event.id}
+              onClick={() => onOpenProposalModal?.(event)}
+              className="group relative w-[82vw] shrink-0 snap-start overflow-hidden rounded-[2rem] sm:w-[58vw] lg:w-[40vw] xl:w-[35vw] cursor-pointer shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/10 transition-transform duration-500 hover:border-gold/40"
+            >
+              {/* Big Photo Container (Aspect 4/3 matching reference exactly) */}
+              <div className="aspect-[4/3] overflow-hidden bg-ink">
+                <img
+                  src={event.image}
+                  alt={event.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition duration-[1.2s] ease-out group-hover:scale-105"
+                />
+              </div>
+
+              {/* Gradient overlays matching reference */}
               <div className="absolute inset-x-0 top-0 h-2/5 bg-gradient-to-b from-ink/80 via-ink/30 to-transparent pointer-events-none" />
               <div className="absolute inset-0 bg-gradient-to-t from-ink from-15% via-ink/80 via-50% to-transparent to-85% pointer-events-none" />
 
               {/* Number Badge (01 / 06) */}
-              <span className="absolute top-4 left-5 sm:top-6 sm:left-7 text-xs sm:text-sm font-semibold tracking-[0.2em] text-white/80 tabular-nums font-mono">
+              <span className="absolute top-5 left-6 text-xs sm:text-sm font-semibold tracking-[0.2em] text-white/80 tabular-nums sm:top-7 sm:left-8 font-mono">
                 {event.num}
               </span>
-            </div>
 
-            {/* Card Content */}
-            <div className="p-5 sm:p-7 bg-ink">
-              <div className="flex flex-wrap items-center gap-2 text-xs text-white/80">
-                <span className="glass rounded-full px-3 py-1 font-semibold text-white">
-                  {event.category}
-                </span>
-                <span className="text-white/60 font-medium">
-                  {event.meta}
-                </span>
+              {/* Card Bottom Meta & Content */}
+              <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+                <div className="flex flex-wrap items-center gap-2 text-xs text-white/80">
+                  <span className="glass rounded-full px-3 py-1 font-semibold text-white">
+                    {event.category}
+                  </span>
+                  <span className="text-white/60 font-medium">
+                    {event.meta}
+                  </span>
+                </div>
+
+                <h3 className="mt-3 text-xl font-bold tracking-tight text-white sm:text-2xl lg:text-[1.7rem] line-clamp-1 group-hover:text-gold-soft transition-colors">
+                  {event.title}
+                </h3>
+
+                <p className="mt-2 line-clamp-2 max-w-lg text-xs sm:text-sm leading-relaxed text-white/65">
+                  {event.summary}
+                </p>
               </div>
-
-              <h3 className="mt-3 text-lg sm:text-xl lg:text-[1.5rem] font-bold tracking-tight text-white line-clamp-1 group-hover:text-gold-soft transition-colors">
-                {event.title}
-              </h3>
-
-              <p className="mt-2 line-clamp-2 text-xs sm:text-sm leading-relaxed text-white/65">
-                {event.summary}
-              </p>
             </div>
-          </div>
-        ))}
+          ))}
 
-        {/* End Card: View All Projects */}
-        <div
-          onClick={() => onOpenProposalModal?.({ title: "All Projects & Archive" })}
-          className="group flex aspect-[4/3] w-[70vw] sm:w-[45vw] lg:w-[26vw] xl:w-[22vw] shrink-0 snap-start flex-col items-center justify-center rounded-2xl sm:rounded-[2rem] border border-white/10 bg-white/[0.03] text-center cursor-pointer transition-all duration-500 hover:bg-white/[0.07] hover:border-gold/40 shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
-        >
-          <span className="flex size-14 sm:size-18 items-center justify-center rounded-full bg-gold text-ink transition duration-500 group-hover:scale-110 group-hover:rotate-45 shadow-lg shadow-gold/30">
-            <ArrowUpRight className="size-6 sm:size-7 stroke-[2.5]" />
-          </span>
-          <span className="mt-4 sm:mt-5 text-base sm:text-lg font-semibold text-white group-hover:text-gold transition-colors">
-            View all projects
-          </span>
+          {/* End Card: View All Projects (Exact from reference image 3) */}
+          <div
+            onClick={() => onOpenProposalModal?.({ title: "All Projects & Archive" })}
+            className="group flex aspect-[4/3] w-[70vw] shrink-0 snap-start flex-col items-center justify-center rounded-[2rem] border border-white/10 bg-white/[0.03] text-center sm:w-[45vw] lg:w-[26vw] xl:w-[22vw] cursor-pointer transition-all duration-500 hover:bg-white/[0.07] hover:border-gold/40 shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+          >
+            <span className="flex size-16 sm:size-20 items-center justify-center rounded-full bg-gold text-ink transition duration-500 group-hover:scale-110 group-hover:rotate-45 shadow-lg shadow-gold/30">
+              <ArrowUpRight className="size-8 stroke-[2.5]" />
+            </span>
+            <span className="mt-5 sm:mt-6 text-lg sm:text-xl font-semibold text-white group-hover:text-gold transition-colors">
+              View all projects
+            </span>
+          </div>
+
         </div>
+
       </div>
     </section>
   );
