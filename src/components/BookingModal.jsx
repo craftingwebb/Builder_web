@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { X, Check, Send } from 'lucide-react';
-import { sanitizeString, sanitizePhone, isValidEmail, safeOpenExternal } from '../utils/security';
+import { X, Check, Send, AlertCircle, Mail, MessageSquare } from 'lucide-react';
+import { sanitizeString, sanitizePhone, isValidEmail } from '../utils/security';
+import { saveInquiryToRegistry, openWhatsAppWithDetection } from '../utils/inquiryStorage';
+import WhatsAppIcon from './WhatsAppIcon';
 
 export default function BookingModal({ isOpen, onClose, initialData }) {
   const [formData, setFormData] = useState({
@@ -19,22 +21,38 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [modalError, setModalError] = useState('');
+  const [referenceId, setReferenceId] = useState('');
+  const [popupBlocked, setPopupBlocked] = useState(false);
+  const [lastWaUrl, setLastWaUrl] = useState('');
 
+  // Whenever modal opens or initialData changes, reset submitted state!
   useEffect(() => {
+    if (isOpen) {
+      setSubmitted(false);
+      setModalError('');
+      setPopupBlocked(false);
+    }
     if (initialData) {
-      setFormData(prev => ({
+      setFormData((prev) => ({
         ...prev,
         eventType: initialData.category || 'Corporate Event',
         serviceTitle: initialData.title || initialData.name || '',
       }));
     }
-  }, [initialData]);
+  }, [isOpen, initialData]);
 
   if (!isOpen) return null;
 
+  const handleClose = () => {
+    setSubmitted(false);
+    setModalError('');
+    setPopupBlocked(false);
+    onClose();
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
@@ -67,8 +85,26 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
     setModalError('');
     setIsSubmitting(true);
 
+    // 1. Automatically save to local inquiries registry
+    const savedRecord = saveInquiryToRegistry({
+      type: 'Booking Modal Quote',
+      typePrefix: 'BK',
+      clientName: cleanName,
+      phone: cleanPhone,
+      email: cleanEmail || null,
+      eventType: formData.eventType,
+      serviceTitle: formData.serviceTitle || 'Full Turnkey Event',
+      city: cleanCity || null,
+      date: formData.date || null,
+      guestCount: formData.guestCount,
+      notes: cleanNotes || null,
+    });
+
+    setReferenceId(savedRecord.refId);
+
     const rawText =
-      `*New Event Booking Request - S. A Event's and Manpower Service*\n\n` +
+      `*New Event Booking Request - S. A Event's and Manpower Service*\n` +
+      `*Ref ID:* #${savedRecord.refId}\n\n` +
       `*Client Name:* ${cleanName}\n` +
       `*Phone:* ${cleanPhone}\n` +
       `*Email:* ${cleanEmail || 'N/A'}\n` +
@@ -81,19 +117,44 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
       `Please provide an official quote and feasibility confirmation.`;
 
     const waUrl = `https://wa.me/917600149422?text=${encodeURIComponent(rawText)}`;
-    safeOpenExternal(waUrl);
+    setLastWaUrl(waUrl);
+
+    // 2. Open WhatsApp and detect whether pop-up was blocked
+    const { isBlocked } = openWhatsAppWithDetection(waUrl);
+    setPopupBlocked(isBlocked);
+
     setSubmitted(true);
-    setTimeout(() => setIsSubmitting(false), 3000);
+    setTimeout(() => setIsSubmitting(false), 2000);
+  };
+
+  const getEmailFallback = () => {
+    const subject = encodeURIComponent(`Booking Inquiry [${referenceId || 'New'}]: ${formData.serviceTitle || formData.eventType}`);
+    const body = encodeURIComponent(
+      `Hi S. A Event's and Manpower Service,\n\n` +
+      `Reference: #${referenceId}\n` +
+      `Client Name: ${formData.name}\n` +
+      `Phone: ${formData.phone}\n` +
+      `Email: ${formData.email}\n` +
+      `Category: ${formData.eventType}\n` +
+      `Service: ${formData.serviceTitle}\n` +
+      `City: ${formData.city}\n` +
+      `Date: ${formData.date}\n` +
+      `Guests: ${formData.guestCount}\n` +
+      `Notes: ${formData.notes}\n\n` +
+      `Please get in touch with an itemized quote.`
+    );
+    return `mailto:s.aeventsandmanpowerservice@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
       <div className="relative w-full max-w-lg bg-gradient-to-br from-[#18040b] via-[#22060f] to-[#120207] border border-gold/30 rounded-3xl p-6 sm:p-8 shadow-2xl overflow-y-auto max-h-[90vh]">
         
-        {/* Close Button */}
+        {/* Close Button - Always resets submitted state */}
         <button
-          onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-full text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
+          onClick={handleClose}
+          className="absolute top-5 right-5 p-2 rounded-full text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors cursor-pointer"
+          aria-label="Close modal"
         >
           <X className="w-5 h-5" />
         </button>
@@ -108,7 +169,7 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
                 Request Formal Quotation
               </h3>
               <p className="text-xs text-zinc-400 mt-1">
-                Tell us about your event. Our team will verify date availability and send an itemized estimate.
+                Tell us about your event. Your inquiry will be saved in our system and forwarded directly to WhatsApp.
               </p>
             </div>
 
@@ -160,6 +221,34 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
+                  <label className="block text-[11px] font-medium text-zinc-300 mb-1">Email Address</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="name@company.com"
+                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-base sm:text-xs text-white focus:outline-none focus:border-amber-500"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[11px] font-medium text-zinc-300 mb-1">Expected Guests</label>
+                  <select
+                    name="guestCount"
+                    value={formData.guestCount}
+                    onChange={handleChange}
+                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-base sm:text-xs text-white focus:outline-none focus:border-amber-500"
+                  >
+                    <option value="50-150">50 – 150 Guests</option>
+                    <option value="150-500">150 – 500 Guests</option>
+                    <option value="500-1500">500 – 1,500 Guests</option>
+                    <option value="1500+">1,500 – 5,000+ Guests</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
                   <label className="block text-[11px] font-medium text-zinc-300 mb-1">Event Category</label>
                   <select
                     name="eventType"
@@ -189,7 +278,7 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-[11px] font-medium text-zinc-300 mb-1">Event City *</label>
                   <input
@@ -198,7 +287,7 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
                     name="city"
                     value={formData.city}
                     onChange={handleChange}
-                    placeholder="e.g. Mumbai"
+                    placeholder="e.g. Mumbai, Surat, Delhi"
                     className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-base sm:text-xs text-white focus:outline-none focus:border-amber-500"
                   />
                 </div>
@@ -212,62 +301,95 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
                     className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-base sm:text-xs text-white focus:outline-none focus:border-amber-500"
                   />
                 </div>
-                <div>
-                  <label className="block text-[11px] font-medium text-zinc-300 mb-1">Guests</label>
-                  <select
-                    name="guestCount"
-                    value={formData.guestCount}
-                    onChange={handleChange}
-                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-base sm:text-xs text-white focus:outline-none focus:border-amber-500"
-                  >
-                    <option value="Under 100">Under 100</option>
-                    <option value="100 - 300">100 - 300</option>
-                    <option value="300 - 800">300 - 800</option>
-                    <option value="800 - 2000">800 - 2,000</option>
-                    <option value="2000+">2,000+ (Arena)</option>
-                  </select>
-                </div>
               </div>
 
               <div>
-                <label className="block text-[11px] font-medium text-zinc-300 mb-1">Additional Requirements / Brief</label>
+                <label className="block text-[11px] font-medium text-zinc-300 mb-1">Specific Requirements / Brief</label>
                 <textarea
-                  rows="3"
                   name="notes"
+                  rows="2"
                   value={formData.notes}
                   onChange={handleChange}
-                  placeholder="Tell us about your stage requirements, timings, specific artist preferences, or budget parameters..."
+                  placeholder="Share stage size, venue details, or required crew shifts..."
                   className="w-full bg-zinc-900 border border-zinc-800 rounded-xl p-3 text-base sm:text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-amber-500"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 text-black font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20 hover:scale-[1.01] cursor-pointer"
+                disabled={isSubmitting}
+                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 text-black font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20 hover:scale-[1.01] cursor-pointer disabled:opacity-50"
               >
                 <Send className="w-4 h-4" />
-                <span>Submit &amp; Open WhatsApp Confirmation</span>
+                <span>{isSubmitting ? 'Recording Inquiry...' : 'Submit & Connect via WhatsApp'}</span>
               </button>
             </form>
           </div>
         ) : (
-          <div className="text-center py-8">
-            <div className="w-14 h-14 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto mb-4">
-              <Check className="w-8 h-8" />
+          /* Transparent 2-step confirmation view */
+          <div className="text-center py-6 space-y-4">
+            <div className="size-14 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto">
+              <Check className="size-7" />
             </div>
-            <h4 className="text-2xl font-bold text-white font-display">Inquiry Transmitted!</h4>
-            <p className="text-xs text-zinc-300 mt-2 max-w-sm mx-auto">
-              Your inquiry has been forwarded to our WhatsApp operations desk. A senior event director will review your requirements and respond within 15 minutes.
-            </p>
-            <button
-              onClick={() => {
-                setSubmitted(false);
-                onClose();
-              }}
-              className="mt-6 px-6 py-2.5 rounded-lg bg-zinc-800 text-white text-xs font-semibold hover:bg-zinc-700"
-            >
-              Close Window
-            </button>
+
+            <div>
+              <span className="inline-block px-3 py-1 rounded-full bg-gold/15 text-gold border border-gold/30 text-[11px] font-mono font-bold tracking-wider mb-2">
+                REF #{referenceId}
+              </span>
+              <h4 className="text-2xl font-bold text-white font-display">Inquiry Saved to System</h4>
+              <p className="text-xs text-zinc-300 mt-1 max-w-sm mx-auto">
+                Your quote request is recorded in our central system registry.
+              </p>
+            </div>
+
+            {/* Step 2 WhatsApp Notice */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-4 text-left space-y-2">
+              <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400">
+                <MessageSquare className="size-4 shrink-0" />
+                <span>Step 2 of 2: Please press Send in WhatsApp</span>
+              </div>
+              <p className="text-[11px] text-white/70 leading-relaxed">
+                We have generated a pre-filled message with your requirements. If the WhatsApp window did not open automatically, tap below to launch your chat with our desk director.
+              </p>
+            </div>
+
+            {popupBlocked && (
+              <div className="flex items-center gap-2 rounded-xl bg-amber-950/70 border border-amber-500/30 p-2.5 text-xs text-amber-300 text-left">
+                <AlertCircle className="size-4 shrink-0" />
+                <span>Your browser paused the pop-up window. Tap the button below to open WhatsApp.</span>
+              </div>
+            )}
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+              {lastWaUrl && (
+                <a
+                  href={lastWaUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#25D366] text-white text-xs font-bold hover:bg-[#20ba59] transition shadow-md"
+                >
+                  <WhatsAppIcon className="size-4" />
+                  <span>Open WhatsApp Chat</span>
+                </a>
+              )}
+
+              <a
+                href={getEmailFallback()}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 border border-white/15 text-white text-xs font-semibold hover:bg-white/15 transition"
+              >
+                <Mail className="size-4 text-gold" />
+                <span>Send via Email</span>
+              </a>
+            </div>
+
+            <div className="pt-2">
+              <button
+                onClick={handleClose}
+                className="px-6 py-2 rounded-lg bg-zinc-800 text-white text-xs font-semibold hover:bg-zinc-700 transition cursor-pointer"
+              >
+                Done / Close Window
+              </button>
+            </div>
           </div>
         )}
 

@@ -7,8 +7,11 @@ import {
   Phone,
   Mail,
   CheckCircle2,
+  AlertCircle,
 } from 'lucide-react';
 import { isValidEmail, sanitizeString } from '../utils/security';
+import { saveNewsletterSubscriber } from '../utils/inquiryStorage';
+import LegalModal from './LegalModal';
 
 export function InstagramLogo({ className = "size-5" }) {
   return (
@@ -64,17 +67,27 @@ export function InstagramLogo({ className = "size-5" }) {
 export default function Footer({ onOpenQuoteModal, onNavigate }) {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
+  const [newsletterFeedback, setNewsletterFeedback] = useState({ text: '', isDuplicate: false });
+  const [legalModal, setLegalModal] = useState({ isOpen: false, type: 'privacy' });
 
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
     const cleanEmail = sanitizeString(email, 120);
-    if (isValidEmail(cleanEmail)) {
+    if (!cleanEmail || !isValidEmail(cleanEmail)) {
+      setNewsletterFeedback({ text: 'Please enter a valid email address.', isDuplicate: false });
       setIsSubscribed(true);
-      setTimeout(() => {
-        setIsSubscribed(false);
-        setEmail('');
-      }, 4000);
+      return;
     }
+
+    // Automatically save subscriber to local storage registry
+    const result = saveNewsletterSubscriber(cleanEmail);
+    setNewsletterFeedback({ text: result.message, isDuplicate: result.isDuplicate });
+    setIsSubscribed(true);
+    setEmail('');
+
+    setTimeout(() => {
+      setIsSubscribed(false);
+    }, 6000);
   };
 
   return (
@@ -154,10 +167,14 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
               </div>
 
               {isSubscribed && (
-                <p className="mt-2.5 flex items-center gap-1.5 text-xs text-emerald-400">
-                  <CheckCircle2 className="size-3.5" />
-                  <span>Thank you for subscribing to S. A Event&apos;s and Manpower Service Insights!</span>
-                </p>
+                <div className={`mt-2.5 flex items-start gap-1.5 text-xs ${newsletterFeedback.isDuplicate ? 'text-amber-400' : 'text-emerald-400'}`}>
+                  {newsletterFeedback.isDuplicate ? (
+                    <AlertCircle className="size-3.5 shrink-0 mt-0.5" />
+                  ) : (
+                    <CheckCircle2 className="size-3.5 shrink-0 mt-0.5" />
+                  )}
+                  <span>{newsletterFeedback.text}</span>
+                </div>
               )}
             </form>
           </div>
@@ -381,15 +398,24 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
           <p>© 2026 S. A Event&apos;s and Manpower Service. All rights reserved.</p>
           
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <a href="#" className="hover:text-white transition-colors">
+            <button
+              onClick={() => setLegalModal({ isOpen: true, type: 'privacy' })}
+              className="hover:text-white transition-colors cursor-pointer text-left"
+            >
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
+            </button>
+            <button
+              onClick={() => setLegalModal({ isOpen: true, type: 'terms' })}
+              className="hover:text-white transition-colors cursor-pointer text-left"
+            >
               Terms of Production
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
+            </button>
+            <button
+              onClick={() => setLegalModal({ isOpen: true, type: 'sitemap' })}
+              className="hover:text-white transition-colors cursor-pointer text-left"
+            >
               Sitemap
-            </a>
+            </button>
           </div>
 
           {/* Official Social Links */}
@@ -408,11 +434,11 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
 
             {/* LinkedIn */}
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/s-a-events-and-manpower-service"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              title="Connect on LinkedIn"
+              title="Connect with S. A Event's on LinkedIn"
               className="flex size-9 items-center justify-center rounded-xl bg-[#0A66C2] text-white shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"
             >
               <svg className="size-4.5 fill-current" viewBox="0 0 24 24">
@@ -422,11 +448,11 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
 
             {/* Facebook */}
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/search/top?q=S.A%20Events%20and%20Manpower%20Service"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              title="Follow on Facebook"
+              title="Follow S. A Event's on Facebook"
               className="flex size-9 items-center justify-center rounded-xl bg-[#1877F2] text-white shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"
             >
               <svg className="size-4.5 fill-current" viewBox="0 0 24 24">
@@ -436,11 +462,11 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
 
             {/* YouTube */}
             <a
-              href="https://youtube.com"
+              href="https://www.youtube.com/results?search_query=S.+A+Events+%26+Manpower+Service"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
-              title="Subscribe on YouTube"
+              title="Watch S. A Event's on YouTube"
               className="flex size-9 items-center justify-center rounded-xl bg-[#FF0000] text-white shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"
             >
               <svg className="size-4.5 fill-current" viewBox="0 0 24 24">
@@ -458,6 +484,14 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
       >
         S.A EVENTS
       </div>
+
+      {/* Legal & Sitemap Modal */}
+      <LegalModal
+        isOpen={legalModal.isOpen}
+        onClose={() => setLegalModal({ isOpen: false, type: 'privacy' })}
+        modalType={legalModal.type}
+        onNavigate={onNavigate}
+      />
     </footer>
   );
 }

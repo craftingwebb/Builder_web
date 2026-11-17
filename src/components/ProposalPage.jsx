@@ -9,8 +9,12 @@ import {
   ArrowLeft,
   Check,
   CheckCircle2,
+  AlertCircle,
+  MessageSquare,
+  Mail,
 } from 'lucide-react';
-import { sanitizeString, sanitizePhone, isValidEmail, safeOpenExternal } from '../utils/security';
+import { sanitizeString, sanitizePhone, isValidEmail } from '../utils/security';
+import { saveInquiryToRegistry, openWhatsAppWithDetection } from '../utils/inquiryStorage';
 
 const EVENT_TYPES = [
   'Corporate Conferences & Summits',
@@ -75,8 +79,10 @@ export default function ProposalPage({ onNavigateHome }) {
   const [hpBotCheck, setHpBotCheck] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formError, setFormError] = useState('');
-
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [referenceId, setReferenceId] = useState('');
+  const [popupBlocked, setPopupBlocked] = useState(false);
+  const [lastWaUrl, setLastWaUrl] = useState('');
 
   const toggleService = (srv) => {
     if (selectedServices.includes(srv)) {
@@ -137,9 +143,29 @@ export default function ProposalPage({ onNavigateHome }) {
     setFormError('');
     setIsSubmitting(true);
 
-    // Construct formal WhatsApp submission with safe URI encoding
+    // 1. Save to local storage registry
+    const savedRecord = saveInquiryToRegistry({
+      type: 'Formal RFP Proposal Request',
+      typePrefix: 'RFP',
+      clientName: cleanName,
+      company: cleanCompany || null,
+      email: cleanEmail,
+      phone: cleanPhone,
+      eventType: selectedEventType,
+      services: selectedServices,
+      city: cleanCity || null,
+      targetDate: cleanTargetDate || null,
+      guestCount,
+      requireNda,
+      notes: cleanNotes || null,
+    });
+
+    setReferenceId(savedRecord.refId);
+
+    // 2. Construct formal WhatsApp submission with safe URI encoding
     const rawMessage =
-      `*New RFP Proposal Request - S. A Event's and Manpower Service*\n\n` +
+      `*New RFP Proposal Request - S. A Event's and Manpower Service*\n` +
+      `*Ref ID:* #${savedRecord.refId}\n\n` +
       `*Client:* ${cleanName} (${cleanCompany || 'Corporate Client'})\n` +
       `*Work Email:* ${cleanEmail}\n` +
       `*Phone:* ${cleanPhone}\n` +
@@ -153,9 +179,34 @@ export default function ProposalPage({ onNavigateHome }) {
       `Please assign a senior director and share the concept deck.`;
 
     const waUrl = `https://wa.me/917600149422?text=${encodeURIComponent(rawMessage)}`;
-    safeOpenExternal(waUrl);
+    setLastWaUrl(waUrl);
+
+    // 3. Open WhatsApp and detect whether popup was blocked
+    const { isBlocked } = openWhatsAppWithDetection(waUrl);
+    setPopupBlocked(isBlocked);
+
     setIsSubmitted(true);
-    setTimeout(() => setIsSubmitting(false), 3000);
+    setTimeout(() => setIsSubmitting(false), 2000);
+  };
+
+  const getEmailFallback = () => {
+    const subject = encodeURIComponent(`RFP Proposal Request [${referenceId || 'New'}]: ${selectedEventType}`);
+    const body = encodeURIComponent(
+      `Hi S. A Event's and Manpower Service,\n\n` +
+      `Reference: #${referenceId}\n` +
+      `Client: ${fullName} (${company || 'Client'})\n` +
+      `Work Email: ${email}\n` +
+      `Phone: ${phone}\n` +
+      `Event Type: ${selectedEventType}\n` +
+      `Required Services: ${selectedServices.join(', ')}\n` +
+      `Destination City: ${city}\n` +
+      `Target Timeline: ${targetDate}\n` +
+      `Estimated Delegates: ${guestCount}\n` +
+      `NDA Requested: ${requireNda ? 'YES' : 'NO'}\n` +
+      `Production Brief: ${briefNotes}\n\n` +
+      `Please assign a senior director and share the concept deck.`
+    );
+    return `mailto:s.aeventsandmanpowerservice@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -633,26 +684,80 @@ export default function ProposalPage({ onNavigateHome }) {
                     )}
                   </div>
                 ) : (
-                  /* Success State */
-                  <div className="py-12 text-center animate-in fade-in duration-500">
-                    <div className="mx-auto flex size-16 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 mb-5">
+                  /* Transparent 2-step Confirmation View */
+                  <div className="py-8 text-center animate-in fade-in duration-500 space-y-4">
+                    <div className="mx-auto flex size-16 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 mb-2">
                       <CheckCircle2 className="size-10" />
                     </div>
 
-                    <h3 className="text-2xl font-bold text-ink">
-                      Proposal Request Dispatched!
-                    </h3>
+                    <div>
+                      <span className="inline-block px-3.5 py-1 rounded-full bg-gold/15 text-amber-900 border border-gold/40 text-[11px] font-mono font-bold tracking-wider mb-2">
+                        REF #{referenceId}
+                      </span>
+                      <h3 className="text-2xl font-bold text-ink">
+                        Proposal Request Logged in System
+                      </h3>
+                      <p className="mt-1 text-xs sm:text-sm text-ink/70 max-w-md mx-auto leading-relaxed">
+                        Thank you, <strong className="text-ink">{fullName}</strong>. Your brief has been saved in our registry and an event director has been assigned.
+                      </p>
+                    </div>
 
-                    <p className="mt-2 text-sm text-ink/65 max-w-md mx-auto leading-relaxed">
-                      Thank you, <strong className="text-ink">{fullName}</strong>. A dedicated event director has received your brief. We will review venue options and deliver your concept deck within 48 hours.
-                    </p>
+                    {/* Step 2 WhatsApp Notice */}
+                    <div className="bg-zinc-50 border border-black/10 rounded-2xl p-4 text-left space-y-1.5 max-w-lg mx-auto shadow-sm">
+                      <div className="flex items-center gap-2 text-xs font-bold text-emerald-700">
+                        <MessageSquare className="size-4 shrink-0" />
+                        <span>Step 2 of 2: Please tap &quot;Send&quot; in WhatsApp</span>
+                      </div>
+                      <p className="text-xs text-ink/70 leading-relaxed">
+                        Your concept deck request has been formatted into WhatsApp with Reference #{referenceId}. If your browser did not open WhatsApp automatically, use the button below to connect with our production director.
+                      </p>
+                    </div>
 
-                    <div className="mt-8 flex justify-center gap-4">
+                    {popupBlocked && (
+                      <div className="max-w-lg mx-auto flex items-center gap-2 rounded-xl bg-amber-50 border border-amber-300 p-3 text-xs text-amber-800 text-left">
+                        <AlertCircle className="size-4 shrink-0" />
+                        <span>Your browser paused the pop-up window. Tap below to launch your WhatsApp chat.</span>
+                      </div>
+                    )}
+
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+                      {lastWaUrl && (
+                        <a
+                          href={lastWaUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#25D366] text-white text-xs font-bold hover:bg-[#20ba59] transition shadow-md cursor-pointer"
+                        >
+                          <WhatsAppIcon className="size-4" />
+                          <span>Open WhatsApp Chat</span>
+                        </a>
+                      )}
+
+                      <a
+                        href={getEmailFallback()}
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white border border-black/15 text-ink text-xs font-semibold hover:bg-zinc-100 transition cursor-pointer"
+                      >
+                        <Mail className="size-4 text-amber-800" />
+                        <span>Send Copy via Email</span>
+                      </a>
+                    </div>
+
+                    <div className="mt-6 flex flex-wrap items-center justify-center gap-4 pt-2">
                       <button
                         onClick={onNavigateHome}
                         className="btn-outline-ink !border-ink !bg-ink !text-white hover:!bg-gold hover:!text-ink text-xs font-bold px-6 py-3 rounded-full cursor-pointer"
                       >
                         Return to Homepage
+                      </button>
+
+                      <button
+                        onClick={() => {
+                          setIsSubmitted(false);
+                          setCurrentStep(1);
+                        }}
+                        className="text-xs text-ink/60 hover:text-ink font-medium underline underline-offset-4 cursor-pointer"
+                      >
+                        Submit another brief
                       </button>
                     </div>
                   </div>

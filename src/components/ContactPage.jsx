@@ -9,8 +9,11 @@ import {
   Send,
   CheckCircle2,
   ExternalLink,
+  AlertCircle,
+  MessageSquare,
 } from 'lucide-react';
-import { sanitizeString, sanitizePhone, isValidEmail, safeOpenExternal } from '../utils/security';
+import { sanitizeString, sanitizePhone, isValidEmail } from '../utils/security';
+import { saveInquiryToRegistry, openWhatsAppWithDetection } from '../utils/inquiryStorage';
 
 // Social Icon SVGs
 function SocialIcon({ type }) {
@@ -67,6 +70,9 @@ export default function ContactPage({
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [referenceId, setReferenceId] = useState('');
+  const [popupBlocked, setPopupBlocked] = useState(false);
+  const [lastWaUrl, setLastWaUrl] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -99,9 +105,24 @@ export default function ContactPage({
     setErrorMessage('');
     setIsSubmitting(true);
 
-    // Securely encode message payload to prevent query-string injection
+    // 1. Automatically save to local inquiries registry
+    const savedRecord = saveInquiryToRegistry({
+      type: 'Contact Page Inquiry',
+      typePrefix: 'CT',
+      clientName: cleanName,
+      company: cleanCompany || null,
+      email: cleanEmail,
+      phone: cleanPhone || null,
+      subject: cleanSubject,
+      notes: cleanMessage,
+    });
+
+    setReferenceId(savedRecord.refId);
+
+    // 2. Build WhatsApp text
     const rawText =
-      `*New Contact Message from Website*\n\n` +
+      `*New Contact Message - S. A Event's and Manpower Service*\n` +
+      `*Ref ID:* #${savedRecord.refId}\n\n` +
       `*Name:* ${cleanName}\n` +
       `*Company:* ${cleanCompany || 'Not Specified'}\n` +
       `*Email:* ${cleanEmail}\n` +
@@ -111,9 +132,29 @@ export default function ContactPage({
       `Please contact the sender.`;
 
     const waUrl = `https://wa.me/917600149422?text=${encodeURIComponent(rawText)}`;
-    safeOpenExternal(waUrl);
+    setLastWaUrl(waUrl);
+
+    // 3. Open WhatsApp and detect pop-up blocking
+    const { isBlocked } = openWhatsAppWithDetection(waUrl);
+    setPopupBlocked(isBlocked);
+
     setIsSubmitted(true);
-    setTimeout(() => setIsSubmitting(false), 3000);
+    setTimeout(() => setIsSubmitting(false), 2000);
+  };
+
+  const getEmailFallback = () => {
+    const subject = encodeURIComponent(`Contact Inquiry [${referenceId || 'New'}]: ${formData.subject}`);
+    const body = encodeURIComponent(
+      `Hi S. A Event's and Manpower Service,\n\n` +
+      `Reference: #${referenceId}\n` +
+      `Name: ${formData.name}\n` +
+      `Company: ${formData.company}\n` +
+      `Email: ${formData.email}\n` +
+      `Phone: ${formData.phone}\n` +
+      `Subject: ${formData.subject}\n\n` +
+      `Message:\n${formData.message}\n`
+    );
+    return `mailto:s.aeventsandmanpowerservice@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -270,32 +311,82 @@ export default function ContactPage({
               </p>
 
               {isSubmitted ? (
-                <div className="mt-8 rounded-2xl bg-emerald-50 border border-emerald-200 p-8 text-center animate-in fade-in">
-                  <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-emerald-600 text-white">
-                    <CheckCircle2 className="size-6" />
+                <div className="mt-8 rounded-3xl bg-zinc-50 border border-black/10 p-8 text-center animate-in fade-in space-y-4">
+                  <div className="mx-auto flex size-14 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-600 border border-emerald-500/30">
+                    <CheckCircle2 className="size-8" />
                   </div>
-                  <h3 className="mt-4 text-xl font-bold text-emerald-950">
-                    Message Dispatched Successfully!
-                  </h3>
-                  <p className="mt-2 text-sm text-emerald-800 max-w-md mx-auto">
-                    Your inquiry has been transferred to our corporate concierge desk. One of our event directors will review your brief and connect shortly.
-                  </p>
-                  <button
-                    onClick={() => {
-                      setIsSubmitted(false);
-                      setFormData({
-                        name: '',
-                        company: '',
-                        email: '',
-                        phone: '',
-                        subject: 'General enquiry',
-                        message: '',
-                      });
-                    }}
-                    className="btn-outline-ink mt-6 !text-xs !py-2.5 !px-5 cursor-pointer"
-                  >
-                    Send another message
-                  </button>
+
+                  <div>
+                    <span className="inline-block px-3.5 py-1 rounded-full bg-gold/15 text-amber-900 border border-gold/40 text-[11px] font-mono font-bold tracking-wider mb-2">
+                      REF #{referenceId}
+                    </span>
+                    <h3 className="text-2xl font-bold text-ink">
+                      Inquiry Saved to Central Registry
+                    </h3>
+                    <p className="mt-1 text-xs sm:text-sm text-ink/70 max-w-md mx-auto">
+                      Your message has been securely recorded. To complete transmission to our desk director, please confirm on WhatsApp.
+                    </p>
+                  </div>
+
+                  {/* Step 2 WhatsApp Notice */}
+                  <div className="bg-white border border-black/10 rounded-2xl p-4 text-left space-y-1.5 max-w-lg mx-auto shadow-sm">
+                    <div className="flex items-center gap-2 text-xs font-bold text-emerald-700">
+                      <MessageSquare className="size-4 shrink-0" />
+                      <span>Step 2 of 2: Please tap &quot;Send&quot; in WhatsApp</span>
+                    </div>
+                    <p className="text-xs text-ink/70 leading-relaxed">
+                      We pre-filled the chat with your details and Reference #{referenceId}. If your browser didn&apos;t open WhatsApp automatically, use the button below.
+                    </p>
+                  </div>
+
+                  {popupBlocked && (
+                    <div className="max-w-lg mx-auto flex items-center gap-2 rounded-xl bg-amber-50 border border-amber-300 p-3 text-xs text-amber-800 text-left">
+                      <AlertCircle className="size-4 shrink-0" />
+                      <span>Your browser paused the pop-up window. Tap below to launch your WhatsApp chat.</span>
+                    </div>
+                  )}
+
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+                    {lastWaUrl && (
+                      <a
+                        href={lastWaUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#25D366] text-white text-xs font-bold hover:bg-[#20ba59] transition shadow-md cursor-pointer"
+                      >
+                        <WhatsAppIcon className="size-4" />
+                        <span>Open WhatsApp Chat</span>
+                      </a>
+                    )}
+
+                    <a
+                      href={getEmailFallback()}
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white border border-black/15 text-ink text-xs font-semibold hover:bg-zinc-100 transition cursor-pointer"
+                    >
+                      <Mail className="size-4 text-amber-800" />
+                      <span>Send Copy via Email</span>
+                    </a>
+                  </div>
+
+                  <div className="pt-2">
+                    <button
+                      onClick={() => {
+                        setIsSubmitted(false);
+                        setFormData({
+                          name: '',
+                          company: '',
+                          email: '',
+                          phone: '',
+                          subject: 'General enquiry',
+                          message: '',
+                          _hp_website: '',
+                        });
+                      }}
+                      className="text-xs text-ink/60 hover:text-ink font-medium underline underline-offset-4 cursor-pointer"
+                    >
+                      Send another message
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="mt-8 space-y-6">
