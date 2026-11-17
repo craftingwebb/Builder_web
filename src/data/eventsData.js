@@ -261,19 +261,35 @@ export const WEDDING_SERVICES = [
     ]
   },
   {
-    id: "wed-social",
-    title: "Milestone Anniversaries & Birthday Galas",
-    tagline: "Cherishing decades of love and joyous milestone birthdays",
+    id: "wed-anniversary",
+    title: "Milestone Anniversaries & Silver Jubilees",
+    tagline: "Cherishing decades of enduring love with timeless elegance",
     category: "Wedding",
     badge: "Memorable",
     image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1200&q=80",
-    description: "Whether it is a 25th Silver Jubilee vow renewal or an opulent 50th golden birthday celebration, we curate timeless, sophisticated experiences.",
+    description: "Whether it is a 25th Silver Jubilee vow renewal or an opulent 50th Golden Anniversary celebration, we curate timeless, sophisticated experiences.",
     features: [
       "Nostalgic Memory Walkway & Timeline Displays",
-      "Custom Themed Cakes & Gourmet Dessert Bars",
+      "Vow Renewal Stage Architecture & Crystal Decor",
       "Acoustic Live Retro Singers & Jazz Quartets",
-      "Dedicated Children Entertainment Zones",
-      "Personalized Giveaways & Luxury Keepsakes"
+      "Personalized Keepsakes & Guest Gift Packaging",
+      "Cinematic Milestone Love-Story Documentary"
+    ]
+  },
+  {
+    id: "wed-birthday",
+    title: "Luxury Birthday Parties & Theme Bashes",
+    tagline: "Spectacular milestone birthday celebrations tailored to every age",
+    category: "Wedding",
+    badge: "Celebration",
+    image: "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1200&q=80",
+    description: "From lavish 1st birthday wonderlands and 18th debutante balls to landmark 50th celebrations with custom themes, interactive entertainment, and dessert bars.",
+    features: [
+      "Bespoke 3D Theme Backdrops & Balloon Architecture",
+      "Custom Designer Tiered Cakes & Candy Stations",
+      "Magicians, Game Hosts & Interactive Emcees",
+      "Kids Fun Zone & Dedicated Nanny Supervision",
+      "Live Instant Photo Booths with Fun Props"
     ]
   },
   {
@@ -344,6 +360,16 @@ export const MANPOWER_ROSTER = [
     experience: "Ex-Defense / High-Level Security",
     roles: ["Celebrity Greenroom Management", "Convoy Entry & Exit Clearing", "Private Lounge Access Control", "Personal Escorts"],
     description: "Discreet and authoritative marshals specialized in dignitary protection, ministers, CEOs, and film stars."
+  },
+  {
+    id: "mp-security",
+    name: "Event Security Marshals & Uniformed Guards",
+    category: "Security",
+    uniform: "Armed & Unarmed Security Uniforms with Badges",
+    headcount: "Detachments of 4 to 80+ Guards",
+    experience: "Ex-Servicemen / PSARA Certified Security",
+    roles: ["Metal Detector DFMD Frisking", "Perimeter & Parking Vigilance", "Bag Checks & Asset Protection", "24/7 Night Watch Shift"],
+    description: "Licensed, certified, and disciplined security personnel ensuring complete venue sanctity, visitor screening, and asset safety."
   },
   {
     id: "mp-bouncers",
@@ -464,6 +490,16 @@ export const MANPOWER_ROSTER = [
     experience: "Targeted Field Activations",
     roles: ["Pamphlet & Brochure Handover", "Sample Distribution", "Survey Form Submissions", "Street Corner Buzz Generation"],
     description: "Enthusiastic youth teams trained in elevator pitches to maximize direct customer reach across high-traffic intersections."
+  },
+  {
+    id: "mp-marketing",
+    name: "Direct Marketing & Field Survey Fleets",
+    category: "Marketing",
+    uniform: "Smart Formal Monogrammed Attire",
+    headcount: "Teams of 6 to 40 Field Executives",
+    experience: "B2B & B2C Lead Generation",
+    roles: ["Door-to-Door & Shop-to-Shop Outreach", "Digital Survey & Tablet Data Collection", "Product Demonstrations", "Consumer Feedback Audits"],
+    description: "Data-driven marketing teams executing disciplined door-to-door, store-to-store, and corporate park campaigns with GPS-tracked reporting."
   },
   {
     id: "mp-artistmgmt",
