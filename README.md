@@ -3,6 +3,7 @@
 [![React](https://img.shields.io/badge/React-19.3-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-8.3-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.3-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Repository](https://img.shields.io/badge/GitHub-s.a__events-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/craftingwebb/s.a_events)
 [![License](https://img.shields.io/badge/License-MIT-gold?style=for-the-badge)](LICENSE)
 
 An ultra-modern, high-converting digital platform engineered for **S. A Event's and Manpower Service** — Kolkata's premier corporate event management, stage engineering, and turnkey experiential production collective. Designed with an editorial luxury aesthetic, cinematic dark-mode palette, GPU-accelerated scroll animations, and interactive client conversion funnels.
@@ -13,72 +14,88 @@ An ultra-modern, high-converting digital platform engineered for **S. A Event's 
 
 * **Company Name:** S. A Event's and Manpower Service
 * **Studio & Headquarters:** 22/a gora chand lane, Kolkata, West Bengal
-* **Direct Hotline / WhatsApp:** [+91 76001 49422](tel:+917600149422)
+* **Direct Hotline / WhatsApp:** [+91 76001 49422](https://wa.me/917600149422)
 * **Executive Inbox:** [s.aeventsandmanpowerservice@gmail.com](mailto:s.aeventsandmanpowerservice@gmail.com)
 * **Official Instagram:** [@s.aeventsandmanpowerservice](https://www.instagram.com/s.aeventsandmanpowerservice/)
+* **Official GitHub Repository:** [https://github.com/craftingwebb/s.a_events](https://github.com/craftingwebb/s.a_events)
 
 ---
 
-## ✨ Key Highlights & Features
+## 📖 How to Use This Website (Visitor & Client Guide)
 
-### 1. Cinematic Visual Architecture
-- **Editorial Typography:** Harmonious pairing of *Plus Jakarta Sans* for contemporary legibility and *Instrument Serif* for luxury editorial elegance.
-- **Warm Light/Dark Rhythm:** Seamless transitions between deep navy/midnight ink (`#070b1f`), champagne gold accents (`#c9a96a`), and warm tactile ivory (`#f7f5f0`).
-- **Micro-Interactions & Transitions:** Hover elevation physics, image scaling (`scale-105`), iris glow radials, and synchronized entrance reveals.
+This website is designed for corporate executives, brand custodians, exhibition organizers, and wedding families looking for turnkey event production and certified manpower across India.
 
-### 2. Multi-Page Architecture (Client-Side Hash Routing)
-- **Home Page (`/`):** Full agency showcase covering heritage, specialist capabilities, operational differentiators, horizontal stages, process timeline, client testimonials, and latest insights.
-- **Dedicated About Page (`#/about`):**
-  - Origin story, core leadership principles, and 7-stage production philosophy.
-  - Interactive board of directors profile matrix and production statistics.
-- **Dedicated Services Catalog (`#/services`):**
-  - 9 turnkey specialist practices (Corporate Events, Conferences, Product Launches, Trade Shows, Award Ceremonies, Entertainment, Team Building, Celebrations, Virtual & Hybrid).
-  - 9 interactive category filter pills with live count indicators.
-  - Alternating layout cards with detailed scope of work, technical inclusions, and direct quote requests.
-- **Dedicated Portfolio Page (`#/portfolio`):**
-  - Full-page showcase featuring 12 milestone productions across 6 categories.
-  - Interactive category filter tabs with dynamic count badges (`Corporate Events 3`, `Conferences 3`, `Product Launches 2`, etc.).
-  - Breadcrumb navigation (`Home / Portfolio`) and bottom proposal banner.
-- **Dedicated Clients & Case Studies Page (`#/clients`):**
-  - 16-corporate-client identity matrix with sector tags and monogram badges.
-  - 4 featured deep-dive case studies with key business metric pills.
-  - 6 verified client testimonials with 5-star ratings.
-  - 6 national industry affiliations and production standards badges.
-- **Dedicated Event Gallery (`#/gallery`):**
-  - 4-column responsive masonry photo and video grid.
-  - 6 category tabs (`All`, `Photo Gallery`, `Video Gallery`, `Event Highlights`, `Event Photos`, `Behind The Scenes`).
-  - Interactive HD Cinema Video Player modal with scrub bar, play/pause, timecode, and volume controls.
-  - High-res photo lightbox with keyboard navigation (`Esc`, Next/Prev chevrons).
-- **Dedicated Contact Us Page (`#/contact`):**
-  - Executive headquarters desk information with direct phone, email, and Kolkata address.
-  - Interactive contact inquiry form with automatic WhatsApp / mailto message formatting.
-  - Custom SVG social media badges (Instagram 5-color radial gradient squircle, LinkedIn, Facebook, YouTube).
-- **Multi-Step Proposal & RFP Engine (`#/request-a-quote`):**
-  - 3-step interactive onboarding flow:
-    - **Step 1:** Event nature (9 options) + multi-select required services (10 tags).
-    - **Step 2:** Scale, guest capacity chips, destination city, target dates, and custom brief notes.
-    - **Step 3:** Contact details, NDA requirement toggle, and instant dispatch via WhatsApp/Email.
-  - Live trust guarantees and direct concierge hotlines.
+### 1. Navigating the Site
+* **Smart Header Navbar:** The header stays out of the way while scrolling down and reappears immediately when scrolling up. Use the top menu to jump between **About**, **Services**, **Portfolio**, **Clients**, **Gallery**, **Insights**, and **Contact**.
+* **Direct Proposal CTA:** The golden `Request a Proposal →` button in the top header is accessible on every page and opens the multi-step RFP builder.
 
-### 3. Specialized Interactive Components
-- **Smart Navbar:** Auto-hides on downward scroll, smoothly reappears on upward scroll, with mobile navigation drawer and active page tracking.
-- **Hero Crossfade Canvas:** Auto-cycling high-res slider with staggered line-by-line entrance typography animations on fresh page load.
-- **Service Rows:** Horizontal practice cards with strictly scoped cursor-following thumbnail preview popups and direct `Explore services ↗` routing.
-- **Why Choose Us Section:** IntersectionObserver-driven counter animating from 0 to 72, accompanied by interactive feature cards with dynamic hover states.
-- **Horizontal Scroll Carousel:** Pinned 340vh viewport tracking 6 panoramic stage cards moving horizontally on vertical scroll.
-- **Testimonial Slider:** Prev/Next controls, active counter indicator (`01 / 06`), and 6 segmented progress tracking bars.
-- **Floating Controls:** Smooth circular Scroll-to-Top button paired with an instant WhatsApp concierge widget.
-- **Footer:** Pre-footer headline banner, 4-column directory, newsletter subscription pill input, high-contrast social badges, and a giant `17vw` brand watermark.
+### 2. Exploring the Services Catalog (`#/services`)
+* **3 Master Service Streams (39 Total Services):**
+  - **Corporate Events (8 Services):** Product launches, summits, AGMs, BTL activations, exhibition stalls, college fests, school annual days, and roadshows.
+  - **Weddings & Social Celebrations (11 Services):** Thematic floral decor, palatial mandaps, concert AV lighting, Udaipur/heritage venue liaisons, vibrant Haldi & Mehndi carnivals, royal entries, curved LED walls, and traditional Annaprashan ceremonies.
+  - **Manpower & Certified Staffing (20 Services):** 5-star hotel hospitality squads, dance troupes, hostesses, floor managers, VIP protocol marshals, armed/unarmed security guards, male/female bouncers, banquet waiters, DJs, emcees, Varanasi Ganga Aarti priests, Punjabi live dholis, drone/candid photographers, cinematographers, models, and live fusion bands.
+* **Layout Switcher:** Toggle between **Executive Grid** (balanced 2-column cards) and **Editorial Split** (classic alternating widescreen layout) based on your reading preference.
+* **Instant WhatsApp Inquiries:** Every single service tile includes a direct `Inquire on WhatsApp` green button with prefilled service titles for fast quote turnaround.
+
+### 3. Reviewing Selected Work & Portfolio (`#/portfolio`)
+* Filter across 12 milestone productions using category tabs (*Conferences*, *Product Launches*, *Exhibitions*, *Award Ceremonies*, *Entertainment*, *Corporate Retreats*).
+* View attendee numbers, venue locations (Mumbai Jio World Centre, New Delhi Bharat Mandapam, Hyderabad HICC, Udaipur Palaces, Kolkata ITC Sonar), and technical scope tags.
+
+### 4. Viewing the Photography Showcase (`#/gallery`)
+* **Pure High-Definition Photography:** Browse authentic photography of actual Indian stages, LED canvas reveals, royal palace lighting, cultural ceremonies, and behind-the-scenes control booths.
+* **Category Filters:** Filter by *All Photography*, *Event Highlights*, *Stages & AV Production*, *Royal Weddings & Decor*, and *Behind The Scenes*.
+* **Fullscreen Lightbox Viewer:** Click on any photo to open a crystal-clear lightbox with venue metadata, production story, and navigation chevrons (`Prev` / `Next` or `Esc` key).
+
+### 5. Requesting a Quote & Proposal Funnel (`#/request-a-quote`)
+* **Step 1 — Event Scope:** Select event format (Conference, Product Launch, Gala, Wedding, etc.) and required disciplines (Staging, Sound & Lights, Manpower, Venue, Artists).
+* **Step 2 — Scale & Logistics:** Choose guest capacity, destination city, target dates, and custom brief notes.
+* **Step 3 — Final Submission:** Enter your corporate credentials, toggle NDA requirement if necessary, and dispatch directly to the director via WhatsApp or email.
+
+### 6. Floating Concierge & Quick Controls
+* **Floating WhatsApp Button:** Available in the bottom-right corner of every screen for instant direct communication with production directors.
+* **Scroll-to-Top Button:** Pops up automatically when scrolling past the first screen to quickly return to the top.
+
+---
+
+## 🚀 Recent Updates & Major Architecture Improvements
+
+### 1. 100% Authentic Indian Visuals
+* Purged all foreign stock imagery, foreign models, and unrelated landscapes (such as overseas tourist rocks, Greek architecture, and foreign business executives).
+* Standardized 100% of the media across the entire application on verified, high-resolution **Indian production photography**:
+  - Varanasi Dashashwamedh Ghat Ganga Aarti with brass fire lamps.
+  - Udaipur Lake Palace and heritage venue night illuminations.
+  - Authentic Punjabi and Nasik live Dhol players in traditional turbans.
+  - Traditional Indian Haldi ceremonies with yellow marigold canopies and brass urli tubs.
+  - High-level Indian corporate leadership summits, auditorium conferences, and delegate keynotes.
+  - Disciplined Indian event security marshals, protocol officers, and groomed hospitality hostesses in designer sarees.
+
+### 2. Removal of Fake Video Players in Gallery
+* Removed simulated video cards, dummy durations (`02:45`, `02:10`), and non-functioning play/pause overlays that frustrated users.
+* Refactored `GalleryPage.jsx` into a clean, authentic, high-definition photo gallery with an elegant fullscreen lightbox viewer.
+
+### 3. Content Security Policy (CSP) & CDN Reliability Fix
+* Resolved the browser security issue where external image CDNs were being silently blocked, resulting in black backgrounds and broken image icons.
+* Verified that all image assets return clean `HTTP 200 OK` status and load instantaneously without hotlink restrictions.
+
+### 4. Services Section Hover Previews
+* Fixed the cursor-following floating preview inside `ServicesSection.jsx` to render verified image assets seamlessly without triggering broken image icons.
+* Implemented graceful fallback error handling on all dynamic image elements.
+
+### 5. Repository Migration
+* Updated remote tracking from the legacy repository name to the official repository:
+  ```text
+  https://github.com/craftingwebb/s.a_events.git
+  ```
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Framework:** [React 19](https://react.dev/)
-- **Build Tool:** [Vite 8](https://vitejs.dev/) with Fast Refresh
-- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) with `@theme` token customization
-- **Iconography:** [Lucide React](https://lucide.dev/)
-- **Linter:** [Oxlint](https://oxc.rs/)
+* **Framework:** [React 19](https://react.dev/)
+* **Build Tool:** [Vite 8](https://vitejs.dev/) with Fast Refresh & Rolldown engine
+* **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) with custom `@theme` tokens
+* **Iconography:** [Lucide React](https://lucide.dev/) + Custom SVG emblems
+* **Type of Routing:** Client-Side Hash Routing (zero server-side route rewrites needed)
 
 ---
 
@@ -88,35 +105,36 @@ An ultra-modern, high-converting digital platform engineered for **S. A Event's 
 ├── public/                 # Static assets & favicon
 ├── src/
 │   ├── components/         # Modular React UI components
-│   │   ├── AboutPage.jsx           # Dedicated About Us multi-page component
+│   │   ├── AboutPage.jsx           # Dedicated About Us page with leadership matrix
 │   │   ├── AboutSection.jsx        # Agency story & metrics (Homepage)
-│   │   ├── BookingModal.jsx        # Quick proposal drawer modal
-│   │   ├── ClientsPage.jsx         # Dedicated 16-client matrix & case studies page
-│   │   ├── ContactPage.jsx         # Dedicated Contact Us & inquiry form page
-│   │   ├── CostCalculator.jsx      # Standalone estimation utility
-│   │   ├── FeaturedEvents.jsx      # Horizontal scroll stage showcase
-│   │   ├── Footer.jsx              # Pre-footer CTA, directory & watermark
-│   │   ├── GalleryPage.jsx         # Dedicated 4-col masonry gallery & video player
-│   │   ├── Hero.jsx                # Full-bleed slider with entrance reveals
-│   │   ├── IndustriesSection.jsx   # 12 industry sectors with gold hover
-│   │   ├── InsightsSection.jsx     # Editorial articles & guides
+│   │   ├── BookingModal.jsx        # Quick booking drawer modal
+│   │   ├── ClientsPage.jsx         # 16-client matrix & case studies page
+│   │   ├── ContactPage.jsx         # Contact Us page with direct inquiry form
+│   │   ├── FeaturedEvents.jsx      # Dynamic horizontal scroll stage showcase
+│   │   ├── Footer.jsx              # Pre-footer CTA, directory, social links & watermark
+│   │   ├── GalleryPage.jsx         # Authentic Indian photography masonry & lightbox
+│   │   ├── Hero.jsx                # Full-bleed cinematic slider with entrance typography
+│   │   ├── IndustriesSection.jsx   # 12 industry sectors with gold hover effects
+│   │   ├── InsightsPage.jsx        # Comprehensive production intelligence articles
+│   │   ├── InsightsSection.jsx     # Homepage editorial insights preview
 │   │   ├── Navbar.jsx              # Smart auto-hide navigation header
-│   │   ├── PortfolioPage.jsx       # Dedicated 12-event portfolio page
+│   │   ├── PortfolioPage.jsx       # Dedicated 12-event portfolio showcase
 │   │   ├── PortfolioSection.jsx    # Homepage selected portfolio preview
-│   │   ├── ProcessSection.jsx      # 5-stage production methodology
+│   │   ├── ProcessSection.jsx      # 5-stage turnkey production methodology
 │   │   ├── ProposalBanner.jsx      # Bottom proposal card + 4-col contact desk
 │   │   ├── ProposalPage.jsx        # 3-step interactive RFP proposal flow
-│   │   ├── ServicesPage.jsx        # Dedicated 9-practice services catalog
-│   │   ├── ServicesSection.jsx     # Row strips with hover image popups
-│   │   ├── TestimonialsSection.jsx # Editorial quote slider & brand marquee
+│   │   ├── ServicesPage.jsx        # Unified master catalog of 39 services
+│   │   ├── ServicesSection.jsx     # Row strips with cursor-following preview popups
+│   │   ├── TestimonialsSection.jsx # Editorial quote slider & client brand marquee
 │   │   ├── WhatsAppButton.jsx      # Floating WhatsApp & Scroll-To-Top button
+│   │   ├── WhatsAppIcon.jsx        # Official WhatsApp vector graphic emblem
 │   │   └── WhyChooseUs.jsx         # NPS counter & operational edge cards
 │   ├── data/
-│   │   └── eventsData.js           # Structured datasets & practice specs
-│   ├── App.jsx                     # Root application with hash routing
-│   ├── index.css                   # Global Tailwind theme tokens & fonts
+│   │   └── eventsData.js           # Master datasets for Corporate, Weddings & Manpower
+│   ├── App.jsx                     # Root application with hash routing & modal states
+│   ├── index.css                   # Global Tailwind CSS theme tokens & styling
 │   └── main.jsx                    # Application entry point
-├── index.html              # HTML shell with Google Fonts & meta tags
+├── index.html              # HTML shell with Google Fonts, CSP & SEO meta tags
 ├── netlify.toml            # Netlify deployment configuration
 ├── vercel.json             # Vercel deployment configuration
 ├── vite.config.js          # Vite build & plugin settings
@@ -134,8 +152,8 @@ Make sure you have [Node.js](https://nodejs.org/) installed (version 18 or highe
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/craftingwebb/Builder_web.git
-   cd Builder_web
+   git clone https://github.com/craftingwebb/s.a_events.git
+   cd s.a_events
    ```
 
 2. Install dependencies:
@@ -143,7 +161,7 @@ Make sure you have [Node.js](https://nodejs.org/) installed (version 18 or highe
    npm install
    ```
 
-3. Launch development server:
+3. Launch the development server:
    ```bash
    npm run dev
    ```
@@ -169,7 +187,7 @@ npm run preview
 ## 🌐 Deployment Guide
 
 ### Deploying to Vercel (Recommended)
-1. Push your code to the GitHub repository: `https://github.com/craftingwebb/Builder_web.git`.
+1. Push your code to the GitHub repository: `https://github.com/craftingwebb/s.a_events.git`.
 2. Connect your repo in [Vercel](https://vercel.com/).
 3. Framework Preset: **Vite**, Build Command: `npm run build`, Output Directory: `dist`.
 4. Click **"Deploy"**. The included `vercel.json` ensures all SPA routes function seamlessly.
