@@ -1,170 +1,113 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   Briefcase,
-  Presentation,
-  Rocket,
-  Store,
-  Trophy,
-  Music,
+  Heart,
   Users,
-  PartyPopper,
-  MonitorPlay,
+  ShieldCheck,
+  Music,
+  Camera,
   Check,
-  ArrowUpRight
+  ArrowUpRight,
+  Search,
+  X,
+  Sparkles,
+  PhoneCall,
+  Crown
 } from 'lucide-react';
-
-export const SERVICES_CATALOG = [
-  {
-    num: '01',
-    id: 'service-01',
-    title: 'Corporate Event Management',
-    icon: Briefcase,
-    image: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=1200&q=85',
-    description:
-      'Annual events, AGMs, dealer meets and leadership gatherings delivered end-to-end. Every engagement is led by a dedicated event director with transparent, line-item costing.',
-    features: [
-      'Annual Corporate Events',
-      'Annual General Meetings (AGM)',
-      'Corporate Meetings',
-      'Dealer Meets',
-      'Business Networking Events',
-    ],
-  },
-  {
-    num: '02',
-    id: 'service-02',
-    title: 'Conference & Seminar Management',
-    icon: Presentation,
-    image: 'https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=1200&q=85',
-    description:
-      'Multi-track summits, technical conferences and academic symposia engineered for seamless speaker flow, delegate immersion and live broadcast.',
-    features: [
-      'Multi-track Summits',
-      'Keynote & Panel Production',
-      'Delegate Registration & Badging',
-      'Speaker Green Rooms',
-      'Simultaneous Interpretation',
-    ],
-  },
-  {
-    num: '03',
-    id: 'service-03',
-    title: 'Product Launch Events',
-    icon: Rocket,
-    image: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1200&q=85',
-    description:
-      'Reveal moments engineered for media, partners and social amplification. Every engagement is led by a dedicated event director with transparent, line-item costing.',
-    features: [
-      'New Product Launch',
-      'Brand Launch',
-      'Media Launch',
-      'Press Conferences',
-    ],
-  },
-  {
-    num: '04',
-    id: 'service-04',
-    title: 'Exhibition & Trade Shows',
-    icon: Store,
-    image: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=85',
-    description:
-      'Booths that stop footfall, and show operations that convert it into pipeline. Every engagement is led by a dedicated event director with transparent, line-item costing.',
-    features: [
-      'Exhibition Management',
-      'Stall & Booth Design',
-      'Trade Fairs',
-      'Business Expo',
-    ],
-  },
-  {
-    num: '05',
-    id: 'service-05',
-    title: 'Award Ceremonies',
-    icon: Trophy,
-    image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=85',
-    description:
-      'Gala nights that honour achievement with cinematic production and impeccable flow. Every engagement is led by a dedicated event director with transparent, line-item costing.',
-    features: [
-      'Corporate Award Nights',
-      'Employee Recognition',
-      'Achievement Celebrations',
-    ],
-  },
-  {
-    num: '06',
-    id: 'service-06',
-    title: 'Corporate Entertainment',
-    icon: Music,
-    image: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1200&q=85',
-    description:
-      'Celebrity, live music and curated performances that elevate every agenda. Every engagement is led by a dedicated event director with transparent, line-item costing.',
-    features: [
-      'Celebrity Management',
-      'Live Music & Performances',
-      'Celebrity Guest Management',
-      'Entertainment Shows',
-    ],
-  },
-  {
-    num: '07',
-    id: 'service-07',
-    title: 'Team Building Events',
-    icon: Users,
-    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=85',
-    description:
-      'Offsites and engagement programmes that strengthen culture and collaboration. Every engagement is led by a dedicated event director with transparent, line-item costing.',
-    features: [
-      'Corporate Outings',
-      'Team Activities',
-      'Employee Engagement',
-      'Corporate Retreats',
-    ],
-  },
-  {
-    num: '08',
-    id: 'service-08',
-    title: 'Corporate Celebrations',
-    icon: PartyPopper,
-    image: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=85',
-    description:
-      'Milestones, anniversaries and festivals celebrated with warmth and polish. Every engagement is led by a dedicated event director with transparent, line-item costing.',
-    features: [
-      'Foundation Day',
-      'Company Anniversary',
-      'Festival Celebrations',
-      'Office Parties',
-    ],
-  },
-  {
-    num: '09',
-    id: 'service-09',
-    title: 'Virtual & Hybrid Events',
-    icon: MonitorPlay,
-    image: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1200&q=85',
-    description:
-      'Studio-grade streaming and engagement platforms for distributed audiences. Every engagement is led by a dedicated event director with transparent, line-item costing.',
-    features: [
-      'Virtual Conferences',
-      'Hybrid Meetings',
-      'Live Streaming Management',
-    ],
-  },
-];
+import {
+  CORPORATE_SERVICES,
+  WEDDING_SERVICES,
+  MANPOWER_ROSTER,
+} from '../data/eventsData';
+import WhatsAppIcon from './WhatsAppIcon';
 
 export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onNavigateHome }) {
-  const [activeFilter, setActiveFilter] = useState(null);
+  const [activeTab, setActiveTab] = useState('all'); // 'all' | 'corporate' | 'wedding' | 'manpower'
+  const [searchQuery, setSearchQuery] = useState('');
+  const [highlightedId, setHighlightedId] = useState(null);
+
+  // Normalize all 3 streams into a unified master catalog of 39 services
+  const unifiedCatalog = useMemo(() => {
+    const corporate = CORPORATE_SERVICES.map((s) => ({
+      id: s.id,
+      pillar: 'corporate',
+      pillarLabel: 'Corporate Event',
+      badge: s.badge || 'High Impact',
+      title: s.title,
+      tagline: s.tagline,
+      description: s.description,
+      features: s.features,
+      image: s.image,
+      icon: Briefcase,
+    }));
+
+    const weddings = WEDDING_SERVICES.map((s) => ({
+      id: s.id,
+      pillar: 'wedding',
+      pillarLabel: 'Wedding & Social',
+      badge: s.badge || 'Royal Luxury',
+      title: s.title,
+      tagline: s.tagline,
+      description: s.description,
+      features: s.features,
+      image: s.image,
+      icon: Heart,
+    }));
+
+    const manpower = MANPOWER_ROSTER.map((s) => ({
+      id: s.id,
+      pillar: 'manpower',
+      pillarLabel: 'Manpower & Artists',
+      badge: s.badge || s.category,
+      title: s.name,
+      tagline: `${s.headcount} · Uniform: ${s.uniform}`,
+      description: s.description,
+      features: [
+        ...s.roles,
+        `Standards: ${s.experience}`
+      ],
+      image: s.image,
+      icon: s.category === 'Security' ? ShieldCheck : s.category === 'Artists' || s.category === 'Cultural' ? Music : s.category === 'Production' ? Camera : Users,
+    }));
+
+    return [...corporate, ...weddings, ...manpower];
+  }, []);
+
+  // Filter based on active tab and search query
+  const filteredServices = useMemo(() => {
+    let list = unifiedCatalog;
+
+    if (activeTab !== 'all') {
+      list = list.filter((item) => item.pillar === activeTab);
+    }
+
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase().trim();
+      list = list.filter((item) => {
+        const inTitle = item.title.toLowerCase().includes(q);
+        const inDesc = item.description.toLowerCase().includes(q);
+        const inTag = item.tagline?.toLowerCase().includes(q);
+        const inBadge = item.badge?.toLowerCase().includes(q);
+        const inFeatures = item.features?.some((f) => f.toLowerCase().includes(q));
+        return inTitle || inDesc || inTag || inBadge || inFeatures;
+      });
+    }
+
+    return list;
+  }, [unifiedCatalog, activeTab, searchQuery]);
 
   const handlePillClick = (id) => {
-    setActiveFilter(id);
     const target = document.getElementById(id);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setHighlightedId(id);
+      setTimeout(() => setHighlightedId(null), 2500);
     }
   };
 
   const handleServiceWhatsApp = (serviceTitle) => {
     const text = encodeURIComponent(
-      `Hello S. A Event's and Manpower Service, I would like to inquire about *${serviceTitle}*. Please share details and pricing options.`
+      `Hello S. A Event's and Manpower Service, I would like to inquire about *${serviceTitle}*. Please share packages, team availability, and pricing details.`
     );
     window.open(`https://wa.me/917600149422?text=${text}`, '_blank', 'noopener,noreferrer');
   };
@@ -172,10 +115,10 @@ export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onN
   return (
     <div className="bg-ivory text-ink min-h-screen">
       {/* ========================================================= */}
-      {/* 1. HERO HEADER SECTION (Screenshot 3: media_1794856868447_ca415645.jpg) */}
+      {/* 1. HERO HEADER SECTION */}
       {/* ========================================================= */}
-      <section className="relative overflow-hidden bg-[#130308] pt-36 pb-28 sm:pt-44 sm:pb-36 text-white">
-        {/* Background Image of Event Hall Stage with Center Ambient Glow */}
+      <section className="relative overflow-hidden bg-[#130308] pt-36 pb-24 sm:pt-44 sm:pb-32 text-white">
+        {/* Background Image with Ambient Glow */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
             src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=2000&q=85"
@@ -204,149 +147,259 @@ export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onN
           <div className="flex items-center gap-2 mb-4">
             <span className="w-8 h-px bg-gold" />
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
-              OUR SERVICES
+              OUR COMPLETE SERVICE CATALOG
             </span>
           </div>
 
           {/* Heading */}
-          <h1 className="max-w-4xl text-3xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-semibold tracking-tight leading-[1.1] text-white">
-            Every format of corporate event,{' '}
+          <h1 className="max-w-4xl text-3xl sm:text-5xl lg:text-6xl xl:text-[4.2rem] font-semibold tracking-tight leading-[1.1] text-white">
+            Every format of event & certified manpower,{' '}
             <span className="accent-serif italic font-serif text-[#c9a96a]">
               under one roof.
             </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-6 max-w-2xl text-base sm:text-lg text-white/70 leading-relaxed">
-            From AGMs and dealer meets to award nights, product launches and hybrid summits — choose a single service or the full stack.
+          <p className="mt-6 max-w-3xl text-base sm:text-lg text-white/70 leading-relaxed">
+            From high-stakes corporate conventions and nationwide BTL activations to royal palace weddings and 24/7 certified manpower deployments — explore our full 39 turnkey capabilities below.
           </p>
 
-          {/* Horizontal Filter Pills (Screenshot 3) */}
-          <div className="mt-8 sm:mt-10 -mx-4 px-4 sm:mx-0 sm:px-0 flex items-center gap-2.5 overflow-x-auto pb-2 scrollbar-none sm:flex-wrap">
-            {SERVICES_CATALOG.map((s) => (
-              <button
-                key={s.id}
-                onClick={() => handlePillClick(s.id)}
-                className={`rounded-full border px-4 py-2 text-xs font-medium backdrop-blur-sm transition-all cursor-pointer shrink-0 whitespace-nowrap ${
-                  activeFilter === s.id
-                    ? 'border-gold bg-[#801436] text-white shadow-md ring-1 ring-gold/40'
-                    : 'border-white/15 bg-white/5 text-white/80 hover:border-gold hover:bg-white/10 hover:text-white'
-                }`}
-              >
-                {s.title}
-              </button>
-            ))}
+          {/* Category Filter Tabs */}
+          <div className="mt-8 flex flex-wrap items-center gap-2.5 sm:gap-3">
+            {[
+              { id: 'all', label: 'All Services (39)', icon: Sparkles },
+              { id: 'corporate', label: 'Corporate Events (8)', icon: Briefcase },
+              { id: 'wedding', label: 'Wedding & Social (11)', icon: Heart },
+              { id: 'manpower', label: 'Manpower & Artists (20)', icon: Users },
+            ].map((tab) => {
+              const TabIcon = tab.icon;
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs sm:text-sm font-semibold transition-all cursor-pointer shadow-sm ${
+                    isActive
+                      ? 'bg-gold text-[#130308] ring-2 ring-gold/40 shadow-lg font-bold'
+                      : 'bg-white/10 text-white/80 hover:bg-white/15 hover:text-white border border-white/10'
+                  }`}
+                >
+                  <TabIcon className="size-4 shrink-0" />
+                  <span>{tab.label}</span>
+                </button>
+              );
+            })}
           </div>
+
+          {/* Real-time Search Box */}
+          <div className="mt-6 max-w-xl relative">
+            <div className="relative flex items-center">
+              <Search className="absolute left-4 size-4 text-white/40 pointer-events-none" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search services (e.g. Bouncers, Haldi, Ganga Aarti, LED Wall, Product Launch)..."
+                className="w-full rounded-2xl bg-white/10 border border-white/15 py-3 pl-11 pr-10 text-xs sm:text-sm text-white placeholder-white/40 backdrop-blur-md transition-all focus:border-gold focus:bg-white/15 focus:outline-none focus:ring-1 focus:ring-gold"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-3.5 text-white/40 hover:text-white transition-colors cursor-pointer"
+                  title="Clear search"
+                >
+                  <X className="size-4" />
+                </button>
+              )}
+            </div>
+            {searchQuery && (
+              <p className="mt-2 text-xs text-gold/90 font-medium">
+                Found {filteredServices.length} matching service{filteredServices.length === 1 ? '' : 's'}
+              </p>
+            )}
+          </div>
+
+          {/* Horizontal Quick-Jump Pills */}
+          {filteredServices.length > 0 && (
+            <div className="mt-8 -mx-4 px-4 sm:mx-0 sm:px-0 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none sm:flex-wrap">
+              <span className="text-[11px] uppercase tracking-wider font-semibold text-white/40 shrink-0 mr-1 hidden sm:inline">
+                Quick Jump:
+              </span>
+              {filteredServices.map((s) => (
+                <button
+                  key={s.id}
+                  onClick={() => handlePillClick(s.id)}
+                  className="rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-[11px] sm:text-xs font-medium text-white/80 hover:border-gold hover:bg-white/15 hover:text-white backdrop-blur-sm transition-all cursor-pointer shrink-0 whitespace-nowrap active:scale-95"
+                >
+                  {s.title}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
       {/* ========================================================= */}
-      {/* 2. SERVICES CATALOG (9 Full Alternating Cards on Ivory) */}
+      {/* 2. SERVICES CATALOG (39 Alternating Luxury Cards) */}
       {/* ========================================================= */}
-      <section className="bg-ivory py-10 sm:py-14">
-        <div className="site-container space-y-6">
-          {SERVICES_CATALOG.map((service, idx) => {
-            const isReversed = idx % 2 !== 0; // Alternates image left / right
-            const IconComponent = service.icon;
-
-            return (
-              <div
-                key={service.id}
-                id={service.id}
-                className="group relative overflow-hidden rounded-3xl bg-white shadow-sm border border-black/5 transition-all duration-300 hover:shadow-xl"
-              >
-                <div className="grid lg:grid-cols-12 items-stretch min-h-[420px]">
-                  
-                  {/* IMAGE COLUMN (6 cols) */}
-                  <div
-                    className={`relative min-h-[280px] sm:min-h-[360px] lg:min-h-[460px] lg:col-span-6 overflow-hidden ${
-                      isReversed ? 'lg:order-2' : 'lg:order-1'
-                    }`}
-                  >
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                    />
-                    
-                    {/* Dark gradient overlay for text readability */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none" />
-
-                    {/* Watermark Number in top-left corner (Screenshots 4, 5, 6, 7, 8, 9, 10, 11) */}
-                    <span className="absolute top-6 left-6 font-bold text-6xl sm:text-7xl lg:text-8xl text-white/40 select-none tracking-tighter leading-none pointer-events-none font-serif drop-shadow-sm">
-                      {service.num}
-                    </span>
-                  </div>
-
-                  {/* CONTENT COLUMN (6 cols) */}
-                  <div
-                    className={`flex flex-col justify-between p-8 sm:p-12 lg:p-14 lg:col-span-6 ${
-                      isReversed ? 'lg:order-1' : 'lg:order-2'
-                    }`}
-                  >
-                    <div>
-                      {/* Royal Maroon Square Icon Badge */}
-                      <div className="flex size-12 items-center justify-center rounded-2xl bg-[#130308] text-gold border border-gold/20 shadow-md">
-                        <IconComponent className="size-5" />
-                      </div>
-
-                      {/* Service Title */}
-                      <h2 className="mt-5 text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-ink">
-                        {service.title}
-                      </h2>
-
-                      {/* Description */}
-                      <p className="mt-4 text-sm sm:text-base text-ink/70 leading-relaxed">
-                        {service.description}
-                      </p>
-
-                      {/* 2-Column Checkpoints Grid */}
-                      <div className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                        {service.features.map((feature, fIdx) => (
-                          <div key={fIdx} className="flex items-center gap-2.5">
-                            <span className="flex size-4 shrink-0 items-center justify-center rounded-full bg-[#f4e8d1] text-amber-800">
-                              <Check className="size-2.5 stroke-[3]" />
-                            </span>
-                            <span className="text-xs sm:text-[0.875rem] font-medium text-ink/85">
-                              {feature}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Bottom Action Buttons */}
-                    <div className="mt-8 pt-6 border-t border-black/5 flex flex-wrap items-center gap-3">
-                      <button
-                        onClick={() => handleServiceWhatsApp(service.title)}
-                        className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 text-xs sm:text-sm font-semibold text-white shadow-md transition-all hover:bg-black hover:shadow-lg cursor-pointer active:scale-95"
-                      >
-                        <span>Explore service</span>
-                        <ArrowUpRight className="size-4" />
-                      </button>
-
-                      <button
-                        onClick={() => onOpenProposalModal?.(service.title)}
-                        className="rounded-full border border-black/15 bg-white px-6 py-3.5 text-xs sm:text-sm font-semibold text-ink transition-all hover:border-ink hover:bg-zinc-50 cursor-pointer active:scale-95"
-                      >
-                        Get a quote
-                      </button>
-                    </div>
-                  </div>
-
-                </div>
+      <section className="bg-ivory py-10 sm:py-16">
+        <div className="site-container space-y-8">
+          
+          {filteredServices.length === 0 ? (
+            <div className="text-center py-20 bg-white rounded-3xl border border-black/5 shadow-sm p-8">
+              <div className="size-16 rounded-full bg-gold/10 text-gold flex items-center justify-center mx-auto mb-4">
+                <Search className="size-8" />
               </div>
-            );
-          })}
+              <h3 className="text-2xl font-bold text-ink">No services found</h3>
+              <p className="mt-2 text-ink/70 max-w-md mx-auto text-sm sm:text-base">
+                We couldn't find any service matching "{searchQuery}". Try searching for terms like "Bouncers", "Haldi", "Hostesses", "LED Wall", or "Product Launch".
+              </p>
+              <button
+                onClick={() => {
+                  setSearchQuery('');
+                  setActiveTab('all');
+                }}
+                className="mt-6 btn-gold px-6 py-2.5 text-xs font-semibold"
+              >
+                Reset filters & view all 39 services
+              </button>
+            </div>
+          ) : (
+            filteredServices.map((service, idx) => {
+              const isReversed = idx % 2 !== 0; // Alternates image left / right
+              const IconComponent = service.icon;
+              const isHighlighted = highlightedId === service.id;
+              const serialNum = String(idx + 1).padStart(2, '0');
+
+              return (
+                <div
+                  key={service.id}
+                  id={service.id}
+                  className={`group relative overflow-hidden rounded-3xl bg-white shadow-sm border transition-all duration-500 hover:shadow-2xl ${
+                    isHighlighted
+                      ? 'border-gold ring-4 ring-gold/40 shadow-2xl scale-[1.01]'
+                      : 'border-black/5 hover:border-gold/30'
+                  }`}
+                >
+                  <div className="grid lg:grid-cols-12 items-stretch min-h-[440px]">
+                    
+                    {/* IMAGE COLUMN (6 cols) */}
+                    <div
+                      className={`relative min-h-[280px] sm:min-h-[360px] lg:min-h-[460px] lg:col-span-6 overflow-hidden ${
+                        isReversed ? 'lg:order-2' : 'lg:order-1'
+                      }`}
+                    >
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      />
+                      
+                      {/* Gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent pointer-events-none" />
+
+                      {/* Watermark Serial Number */}
+                      <span className="absolute top-6 left-6 font-bold text-6xl sm:text-7xl lg:text-8xl text-white/35 select-none tracking-tighter leading-none pointer-events-none font-serif drop-shadow-sm">
+                        {serialNum}
+                      </span>
+
+                      {/* Floating Badges */}
+                      <div className="absolute top-6 right-6 flex flex-col items-end gap-2">
+                        <span className="rounded-full bg-black/65 backdrop-blur-md px-3.5 py-1 text-[11px] font-semibold text-gold border border-gold/30 uppercase tracking-wider shadow-sm">
+                          {service.pillarLabel}
+                        </span>
+                        {service.badge && (
+                          <span className="rounded-full bg-white/95 backdrop-blur-md px-3 py-1 text-[11px] font-bold text-[#130308] shadow-sm">
+                            {service.badge}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* CONTENT COLUMN (6 cols) */}
+                    <div
+                      className={`flex flex-col justify-between p-7 sm:p-10 lg:p-12 lg:col-span-6 ${
+                        isReversed ? 'lg:order-1' : 'lg:order-2'
+                      }`}
+                    >
+                      <div>
+                        {/* Header with Icon and Tagline */}
+                        <div className="flex items-center gap-3.5">
+                          <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-[#130308] text-gold border border-gold/20 shadow-md">
+                            <IconComponent className="size-5" />
+                          </div>
+                          <div>
+                            <span className="text-[11px] font-bold uppercase tracking-wider text-amber-800">
+                              {service.pillarLabel}
+                            </span>
+                            {service.tagline && (
+                              <p className="text-xs text-ink/60 font-medium line-clamp-1">
+                                {service.tagline}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Service Title */}
+                        <h2 className="mt-4 text-2xl sm:text-3xl lg:text-3.5xl font-bold tracking-tight text-ink">
+                          {service.title}
+                        </h2>
+
+                        {/* Description */}
+                        <p className="mt-3.5 text-sm sm:text-base text-ink/75 leading-relaxed">
+                          {service.description}
+                        </p>
+
+                        {/* Features Checkpoints */}
+                        <div className="mt-6 sm:mt-7 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          {service.features.map((feature, fIdx) => (
+                            <div key={fIdx} className="flex items-start gap-2.5">
+                              <span className="flex size-4 shrink-0 items-center justify-center rounded-full bg-[#f4e8d1] text-amber-800 mt-0.5">
+                                <Check className="size-2.5 stroke-[3]" />
+                              </span>
+                              <span className="text-xs sm:text-[0.85rem] font-medium text-ink/85 leading-snug">
+                                {feature}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Bottom Action Buttons */}
+                      <div className="mt-8 pt-6 border-t border-black/5 flex flex-wrap items-center gap-3">
+                        <button
+                          onClick={() => handleServiceWhatsApp(service.title)}
+                          className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-xs sm:text-sm font-semibold text-white shadow-md transition-all hover:bg-[#20ba59] hover:shadow-lg cursor-pointer active:scale-95"
+                        >
+                          <WhatsAppIcon className="size-4" />
+                          <span>Inquire on WhatsApp</span>
+                        </button>
+
+                        <button
+                          onClick={() => onOpenProposalModal?.(service.title)}
+                          className="inline-flex items-center gap-1.5 rounded-full border border-black/15 bg-white px-5 py-3 text-xs sm:text-sm font-semibold text-ink transition-all hover:border-ink hover:bg-zinc-50 cursor-pointer active:scale-95"
+                        >
+                          <span>Get a proposal</span>
+                          <ArrowUpRight className="size-3.5" />
+                        </button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              );
+            })
+          )}
         </div>
       </section>
 
       {/* ========================================================= */}
-      {/* 3. BOTTOM BANNER CARD (Screenshots 2 & 12: Have an event on the horizon?) */}
+      {/* 3. BOTTOM BANNER CARD */}
       {/* ========================================================= */}
       <section className="bg-ivory pb-20 sm:pb-28">
         <div className="site-container">
-          <div className="relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] bg-[#130308] p-5 sm:p-14 lg:p-16 text-white shadow-2xl border border-gold/20">
+          <div className="relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] bg-[#130308] p-6 sm:p-14 lg:p-16 text-white shadow-2xl border border-gold/20">
             {/* Background Texture & Ambient Radial Glow */}
             <div
               aria-hidden="true"
@@ -368,12 +421,12 @@ export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onN
 
             {/* Headline */}
             <h2 className="max-w-2xl text-2xl min-[400px]:text-3xl sm:text-5xl lg:text-[3.5rem] font-semibold tracking-tight leading-[1.15] text-white">
-              Have an event on the horizon?
+              Have an event or manpower requirement?
             </h2>
 
             {/* Subtitle */}
             <p className="mt-4 sm:mt-5 max-w-xl text-sm sm:text-lg text-white/70 leading-relaxed">
-              Share a few details and receive a tailored concept note with indicative budget in 48 hours.
+              Share your dates, venue, and required manpower headcount — receive a line-item concept note with indicative budget in 24 to 48 hours.
             </p>
 
             {/* Action Buttons */}
