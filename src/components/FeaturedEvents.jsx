@@ -130,12 +130,12 @@ export default function FeaturedEvents({ onOpenProposalModal, onViewPortfolio })
       <div
         className={
           isDesktop
-            ? "sticky top-0 flex h-screen w-full flex-col justify-center overflow-hidden py-10 lg:py-14"
+            ? "sticky top-0 flex h-screen w-full flex-col justify-center overflow-hidden pt-20 lg:pt-24 pb-8 lg:pb-10"
             : "relative flex w-full flex-col overflow-hidden"
         }
       >
         {/* Section Header */}
-        <div className="site-container mb-8 flex items-end justify-between gap-6 shrink-0 lg:mb-10">
+        <div className="site-container mb-6 sm:mb-8 flex items-end justify-between gap-6 shrink-0 lg:mb-10">
           <div>
             <p className="eyebrow text-gold mb-3">Milestone productions</p>
             <h2 className="display text-[2.2rem] sm:text-5xl lg:text-6xl text-white">
@@ -178,10 +178,10 @@ export default function FeaturedEvents({ onOpenProposalModal, onViewPortfolio })
             <div
               key={event.id}
               onClick={() => onOpenProposalModal?.(event)}
-              className="group relative w-[82vw] shrink-0 snap-start overflow-hidden rounded-[2rem] sm:w-[58vw] lg:w-[40vw] xl:w-[35vw] cursor-pointer shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/10 transition-transform duration-500 hover:border-gold/40"
+              className="group relative w-[82vw] shrink-0 snap-start overflow-hidden rounded-[2rem] sm:w-[58vw] lg:w-[38vw] xl:w-[32vw] cursor-pointer shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/10 transition-transform duration-500 hover:border-gold/40"
             >
-              {/* Big Photo Container (Aspect 4/3 matching reference exactly) */}
-              <div className="aspect-[4/3] overflow-hidden bg-ink">
+              {/* Big Photo Container (Aspect 4/3) */}
+              <div className="aspect-[4/3] max-h-[46vh] overflow-hidden bg-ink">
                 <img
                   src={event.image}
                   alt={event.title}
