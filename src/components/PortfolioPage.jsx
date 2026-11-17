@@ -8,7 +8,7 @@ export const ALL_PORTFOLIO_EVENTS = [
     categoryLabel: "Corporate Event",
     title: "Apex Mobility National Conclave 2026",
     location: "Goa",
-    image: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80",
     summary: "A three-day strategic dealer assembly and honors gala for 850 trade partners, culminating in a dramatic new EV line unveiling.",
   },
   {
@@ -17,8 +17,8 @@ export const ALL_PORTFOLIO_EVENTS = [
     categoryLabel: "Conference",
     title: "Novalis LifeSciences Executive Forum",
     location: "Hyderabad",
-    image: "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=1200&q=80",
-    summary: "A high-level symposium for 600 global directors featuring keynote addresses, interactive panel debates, and live delegate polling.",
+    image: "https://images.pexels.com/photos/7581114/pexels-photo-7581114.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    summary: "A high-level symposium for 600 Indian business leaders featuring keynote addresses, interactive panel debates, and live delegate polling.",
   },
   {
     id: "port-orbit",
@@ -26,8 +26,8 @@ export const ALL_PORTFOLIO_EVENTS = [
     categoryLabel: "Product Launch",
     title: "Aura Financial Tech Grand Unveil",
     location: "Mumbai",
-    image: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80",
-    summary: "An expansive hybrid launch streamed to 50,000 live participants, driven by interactive digital canvases and global press coverage.",
+    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80",
+    summary: "An expansive hybrid launch at Jio World Centre streamed to 50,000 live participants, driven by interactive digital canvases and national press coverage.",
   },
   {
     id: "port-indiabuild",
@@ -35,17 +35,17 @@ export const ALL_PORTFOLIO_EVENTS = [
     categoryLabel: "Exhibition",
     title: "Global Infra Expo — Flagship Pavilion",
     location: "New Delhi",
-    image: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80",
-    summary: "A sprawling 600 sq. m. turnkey showcase featuring modular experiential zones designed for high-value B2B engagement.",
+    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+    summary: "A sprawling 600 sq. m. turnkey showcase at Bharat Mandapam featuring modular experiential zones designed for high-value B2B engagement.",
   },
   {
     id: "port-crestline",
     category: "award",
     categoryLabel: "Award Ceremony",
     title: "Vanguard Capital Annual Honors Night",
-    location: "Mumbai",
-    image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80",
-    summary: "A formal black-tie banquet celebrating standout leadership with bespoke stage architecture and a 40-piece live symphony.",
+    location: "Udaipur",
+    image: "https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    summary: "A formal black-tie banquet celebrating standout leadership with bespoke palace stage architecture and a 40-piece live symphony.",
   },
   {
     id: "port-novaline",
@@ -53,7 +53,7 @@ export const ALL_PORTFOLIO_EVENTS = [
     categoryLabel: "Entertainment",
     title: "Stratosphere Digital Carnival",
     location: "Bengaluru",
-    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80",
     summary: "An electrifying company celebration for 3,500 associates featuring headlining arena musicians and an illuminated aerial drone finale.",
   },
   {
@@ -62,7 +62,7 @@ export const ALL_PORTFOLIO_EVENTS = [
     categoryLabel: "Corporate Event",
     title: "Quanta Logistics Leadership Retreat",
     location: "Udaipur",
-    image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=1200",
     summary: "An immersive 4-day executive retreat across heritage lakeside palace grounds with bespoke team strategy sessions.",
   },
   {
@@ -71,7 +71,7 @@ export const ALL_PORTFOLIO_EVENTS = [
     categoryLabel: "Conference",
     title: "BluePeak Capital Sovereign Investor Conclave",
     location: "Mumbai",
-    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.pexels.com/photos/7580917/pexels-photo-7580917.jpeg?auto=compress&cs=tinysrgb&w=1200",
     summary: "A closed-door sovereign wealth conclave gathering 250 institutional fund partners with high-security delegate corridors.",
   },
   {
@@ -80,7 +80,7 @@ export const ALL_PORTFOLIO_EVENTS = [
     categoryLabel: "Entertainment",
     title: "Tarang Media Annual Festive Gala",
     location: "Kolkata",
-    image: "https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80",
     summary: "An extravagant cultural festival celebrating 20 years of broadcasting with 4,000 guests, live celebrity musicians and laser shows.",
   },
   {
@@ -89,7 +89,7 @@ export const ALL_PORTFOLIO_EVENTS = [
     categoryLabel: "Conference",
     title: "Kairos Healthcare Medical Congress",
     location: "Chennai",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.pexels.com/photos/7581114/pexels-photo-7581114.jpeg?auto=compress&cs=tinysrgb&w=1200",
     summary: "A multi-track medical symposium bringing together 1,200 clinicians, featuring live surgical broadcast feeds and exhibition kiosks.",
   },
   {
@@ -98,7 +98,7 @@ export const ALL_PORTFOLIO_EVENTS = [
     categoryLabel: "Product Launch",
     title: "Meridian Realty Project Reveal",
     location: "Gurugram",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80",
     summary: "A high-net-worth property unveiling featuring architectural 3D hologram models and VIP hospitality banquet.",
   },
   {
@@ -107,7 +107,7 @@ export const ALL_PORTFOLIO_EVENTS = [
     categoryLabel: "Corporate Event",
     title: "Aster Consumer Brands National Sales Kick-Off",
     location: "Pune",
-    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.pexels.com/photos/7580648/pexels-photo-7580648.jpeg?auto=compress&cs=tinysrgb&w=1200",
     summary: "Energizing 1,500 national distributors with dynamic interactive staging, award ceremonies, and motivational keynote productions.",
   },
 ];
@@ -142,7 +142,7 @@ export default function PortfolioPage({ onNavigateHome, onOpenProposalModal }) {
         {/* Background Image of Concert / Stage with Center Ambient Glow */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=2000&q=85"
+            src="https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=2000"
             alt=""
             className="h-full w-full object-cover opacity-20 filter contrast-125 brightness-75"
           />

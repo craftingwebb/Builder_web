@@ -107,18 +107,18 @@ export default function Hero({ onOpenProposalModal, onViewPortfolio }) {
             <div className="flex items-center gap-3">
               <div className="flex -space-x-2">
                 <img
-                  src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=100&q=80"
-                  alt=""
+                  src="https://images.pexels.com/photos/7580917/pexels-photo-7580917.jpeg?auto=compress&cs=tinysrgb&w=100"
+                  alt="Indian Corporate Executive"
                   className="size-9 rounded-full object-cover ring-2 ring-ink"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80"
-                  alt=""
+                  src="https://images.pexels.com/photos/7581113/pexels-photo-7581113.jpeg?auto=compress&cs=tinysrgb&w=100"
+                  alt="Indian Corporate Leader"
                   className="size-9 rounded-full object-cover ring-2 ring-ink"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&q=80"
-                  alt=""
+                  src="https://images.pexels.com/photos/3785104/pexels-photo-3785104.jpeg?auto=compress&cs=tinysrgb&w=100"
+                  alt="Indian Enterprise Partner"
                   className="size-9 rounded-full object-cover ring-2 ring-ink"
                 />
               </div>

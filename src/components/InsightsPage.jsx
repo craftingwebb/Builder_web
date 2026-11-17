@@ -29,7 +29,7 @@ const FEATURED_ARTICLE = {
   date: '05 Nov 2026',
   readTime: '4 min read',
   image:
-    'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80',
+    'https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=1200',
   content: [
     'Venue procurement is where events succeed or quietly bleed margin. Too many enterprise organizers evaluate ballrooms based on chandelier aesthetic and theoretical seating charts, completely ignoring load-in logistics, 3-phase power availability, and union rigging jurisdictions.',
     'Before transferring your venue advance or counter-signing a hotel master services agreement, run through the core 12-point technical discovery framework our lead directors deploy across Kolkata, Mumbai, Delhi, and Goa.',
@@ -54,7 +54,7 @@ const ARTICLES = [
       'From purpose-led offsites to immersive culture nights — fresh formats that drive real engagement.',
     author: 'Rohan Malhotra',
     image:
-      'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1000&q=80',
     content: [
       'The era of mandatory weekend lectures in stale conference ballrooms is over. High-performing teams in 2026 demand events that honor their personal time, challenge their creativity, and build authentic connections.',
       'From interactive culinary masterclasses led by Michelin-mentored chefs to hackathon-style rapid innovation jams with live musical interludes, discover how modern enterprises are transforming employee gatherings from obligatory attendance into viral company moments.',
@@ -70,7 +70,7 @@ const ARTICLES = [
       'Budgets are back, but expectations have changed. We break down the numbers and what they mean for your next event.',
     author: 'Aarav Mehra',
     image:
-      'https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1000&q=80',
+      'https://images.pexels.com/photos/7581114/pexels-photo-7581114.jpeg?auto=compress&cs=tinysrgb&w=1000',
     content: [
       'The 2026 MICE (Meetings, Incentives, Conferences, and Exhibitions) outlook reveals a decisive pivot: enterprise budgets have rebounded, yet boards demand measurable digital reach and post-event lead tracking.',
       'Simultaneous physical and virtual broadcast feeds require studio-grade teleprompter operators, broadcast-quality audio isolation, and dedicated remote participant moderation to avoid treating digital attendees as second-class observers.',
@@ -86,7 +86,7 @@ const ARTICLES = [
       'Inside the strategy, stagecraft and logistics behind one of the year’s most talked-about dealer meets.',
     author: 'Vikram Rao',
     image:
-      'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1000&q=80',
     content: [
       'Helios Motors needed to rally 850 national franchise owners around their flagship electric commercial vehicle launch in Goa. The brief was simple yet daunting: eliminate fatigue, maintain high energy across 3 days, and produce an unforgettable reveal.',
       'By designing a circular amphitheater stage with synchronized 360-degree laser tracking and customized regional cuisine stations, we delivered a record 98.4% dealer satisfaction index and accelerated advance retail bookings by 42%.',
@@ -102,7 +102,7 @@ const ARTICLES = [
       'Line items, contingencies and the hidden costs most planners miss — explained.',
     author: 'Priya Menon',
     image:
-      'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=80',
+      'https://images.pexels.com/photos/7581016/pexels-photo-7581016.jpeg?auto=compress&cs=tinysrgb&w=1000',
     content: [
       'The biggest trap in event production is the lump-sum estimate. Hidden overtime fees, municipal permissions, union liaison charges, and stage structural engineer certifications often result in unpleasant 25% budget overruns.',
       'Our transparent line-item budgeting methodology breaks down every rupee into production hardware, creative talent, hospitality logistics, and emergency contingency reserves, ensuring zero surprises for CFOs and finance controllers.',
@@ -118,7 +118,7 @@ const ARTICLES = [
       'Recognition works when it is specific. Eight formats that put the spotlight where it belongs.',
     author: 'Neha Sharma',
     image:
-      'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1000&q=80',
+      'https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=1000',
     content: [
       'Nobody wants to sit through 4 hours of monotone trophy handoffs and lukewarm applause. Award nights must be treated as emotional milestone cinema.',
       'Discover eight proven stage formats — from surprise peer video testimonials projected on motorized scrims to live orchestral flourishes synchronized with winner podium reveals — that turn corporate recognition into memories that motivate for years.',
@@ -134,7 +134,7 @@ const ARTICLES = [
       'How we designed a launch that worked as well on a phone screen as it did in the room.',
     author: 'Arjun Desai',
     image:
-      'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1000&q=80',
     content: [
       'When Orbit Fintech unveiled their next-generation payments engine, they needed to bridge a live audience of 500 venture capitalists in Mumbai with over 48,000 digital attendees across 18 countries.',
       'By integrating multi-camera optical tracking, zero-latency cloud streaming, and real-time live polling graphics directly into the keynote presenter display, we achieved an average viewer retention of 24.8 minutes.',
@@ -150,7 +150,7 @@ const ARTICLES = [
       'From reusable staging to local sourcing, sustainability is moving from slide to standard.',
     author: 'Ishita Kapoor',
     image:
-      'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1000&q=80',
+      'https://images.pexels.com/photos/7580648/pexels-photo-7580648.jpeg?auto=compress&cs=tinysrgb&w=1000',
     content: [
       'ESG reporting has fundamentally altered corporate event production. Single-use plastic branding flexes and non-recyclable PVC stage backdrops are rapidly being replaced with modular aluminum architectural frames and low-power LED matrices.',
       'Here are five actionable guidelines our production team implements to reduce carbon footprint, eliminate single-use plastics, and donate surplus catering to verified local hunger relief NGOs.',
@@ -166,7 +166,7 @@ const ARTICLES = [
       'From ultra-wide immersive pixel canvases to focused directional acoustics — inside stagecraft mechanics.',
     author: 'Kabir Singh',
     image:
-      'https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1000&q=80',
     content: [
       'In a 2,000-seat plenary auditorium, attendee attention spans begin deteriorating after just 18 minutes unless the stage environment constantly stimulates auditory and visual senses.',
       'We examine how calibrated line-array speaker timing, curved high-contrast P2.5 LED canvases, and programmed warm-white key lighting prevent eye strain and keep executives engaged throughout a demanding summit schedule.',
@@ -216,7 +216,7 @@ export default function InsightsPage({
         {/* Background Image & Ambient Radial Crimson/Wine Glow */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=2000&q=80"
+            src="https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=2000"
             alt="Audience Atmosphere"
             className="h-full w-full object-cover opacity-20 filter contrast-125 brightness-75"
           />

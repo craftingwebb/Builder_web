@@ -99,7 +99,7 @@ export default function WhyChooseUs() {
             className="group relative min-h-[22rem] overflow-hidden rounded-[1.75rem] bg-ink md:col-span-2 lg:row-span-2 shadow-sm cursor-pointer"
           >
             <img
-              src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1200&q=80"
+              src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80"
               alt="Conference auditorium production"
               className="absolute inset-0 h-full w-full object-cover opacity-80 transition duration-700 ease-out group-hover:scale-105"
             />

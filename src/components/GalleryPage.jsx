@@ -312,7 +312,7 @@ export default function GalleryPage({
         {/* Background Image & Texture */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=2000&q=80"
+            src="https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=2000"
             alt="Event Atmosphere Backdrop"
             className="h-full w-full object-cover opacity-20 filter contrast-125 brightness-75"
           />

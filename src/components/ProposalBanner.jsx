@@ -41,7 +41,7 @@ export default function ProposalBanner({ onOpenProposalModal }) {
         <div className="relative isolate overflow-hidden rounded-2xl sm:rounded-[2.5rem] bg-ink px-5 py-12 sm:px-14 sm:py-20 text-white shadow-2xl">
           {/* Background Image of Concert / Event Crowd */}
           <img
-            src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1800&q=80"
+            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1800&q=80"
             alt="Crowd background"
             aria-hidden="true"
             className="absolute inset-0 -z-20 h-full w-full object-cover opacity-20 filter grayscale contrast-125 pointer-events-none"
