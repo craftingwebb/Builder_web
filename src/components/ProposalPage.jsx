@@ -180,13 +180,10 @@ export default function ProposalPage({ onNavigateHome }) {
 
     const waUrl = `https://wa.me/917600149422?text=${encodeURIComponent(rawMessage)}`;
     setLastWaUrl(waUrl);
-
-    // 3. Open WhatsApp and detect whether popup was blocked
-    const { isBlocked } = openWhatsAppWithDetection(waUrl);
-    setPopupBlocked(isBlocked);
+    setPopupBlocked(false);
 
     setIsSubmitted(true);
-    setTimeout(() => setIsSubmitting(false), 2000);
+    setIsSubmitting(false);
   };
 
   const getEmailFallback = () => {
@@ -695,30 +692,23 @@ export default function ProposalPage({ onNavigateHome }) {
                         REF #{referenceId}
                       </span>
                       <h3 className="text-2xl font-bold text-ink">
-                        Proposal Request Logged in System
+                        RFP Proposal Successfully Submitted
                       </h3>
                       <p className="mt-1 text-xs sm:text-sm text-ink/70 max-w-md mx-auto leading-relaxed">
-                        Thank you, <strong className="text-ink">{fullName}</strong>. Your brief has been saved in our registry and an event director has been assigned.
+                        Thank you, <strong className="text-ink">{fullName}</strong>. Your request for an official event proposal has been successfully registered in our centralized concierge system. An executive event producer will evaluate your specifications and reach out with a preliminary concept deck within 2-4 business hours.
                       </p>
                     </div>
 
-                    {/* Step 2 WhatsApp Notice */}
+                    {/* Optional Instant Communication Box */}
                     <div className="bg-zinc-50 border border-black/10 rounded-2xl p-4 text-left space-y-1.5 max-w-lg mx-auto shadow-sm">
-                      <div className="flex items-center gap-2 text-xs font-bold text-emerald-700">
-                        <MessageSquare className="size-4 shrink-0" />
-                        <span>Step 2 of 2: Please tap &quot;Send&quot; in WhatsApp</span>
+                      <div className="flex items-center gap-2 text-xs font-bold text-amber-900">
+                        <MessageSquare className="size-4 shrink-0 text-gold" />
+                        <span>Prefer Immediate Discussion?</span>
                       </div>
                       <p className="text-xs text-ink/70 leading-relaxed">
-                        Your concept deck request has been formatted into WhatsApp with Reference #{referenceId}. If your browser did not open WhatsApp automatically, use the button below to connect with our production director.
+                        Your RFP is already saved in our system. If you would like to fast-track your inquiry or have urgent date holds, you can connect directly with our production director below.
                       </p>
                     </div>
-
-                    {popupBlocked && (
-                      <div className="max-w-lg mx-auto flex items-center gap-2 rounded-xl bg-amber-50 border border-amber-300 p-3 text-xs text-amber-800 text-left">
-                        <AlertCircle className="size-4 shrink-0" />
-                        <span>Your browser paused the pop-up window. Tap below to launch your WhatsApp chat.</span>
-                      </div>
-                    )}
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
                       {lastWaUrl && (

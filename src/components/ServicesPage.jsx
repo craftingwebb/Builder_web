@@ -12,7 +12,9 @@ import {
   X,
   Sparkles,
   PhoneCall,
-  Crown
+  Crown,
+  LayoutGrid,
+  List
 } from 'lucide-react';
 import {
   CORPORATE_SERVICES,
@@ -23,6 +25,7 @@ import WhatsAppIcon from './WhatsAppIcon';
 
 export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onNavigateHome }) {
   const [activeTab, setActiveTab] = useState('all'); // 'all' | 'corporate' | 'wedding' | 'manpower'
+  const [viewMode, setViewMode] = useState('grid'); // 'grid' | 'split'
   const [searchQuery, setSearchQuery] = useState('');
   const [highlightedId, setHighlightedId] = useState(null);
 
@@ -240,11 +243,51 @@ export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onN
       </section>
 
       {/* ========================================================= */}
-      {/* 2. SERVICES CATALOG (39 Alternating Luxury Cards) */}
+      {/* 2. SERVICES CATALOG (Responsive Grid & Editorial Views) */}
       {/* ========================================================= */}
       <section className="bg-ivory py-10 sm:py-16">
-        <div className="site-container space-y-8">
+        <div className="site-container">
           
+          {/* Catalog Top Toolbar: Results count & View Mode Switcher */}
+          <div className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-black/10 pb-5">
+            <div>
+              <p className="text-xs uppercase tracking-wider font-bold text-amber-800">
+                Turnkey Event Solutions &amp; Manpower
+              </p>
+              <h2 className="text-xl sm:text-2xl font-bold text-ink mt-0.5">
+                Showing {filteredServices.length} verified production services
+              </h2>
+            </div>
+
+            <div className="flex items-center gap-2 self-start sm:self-auto">
+              <span className="text-xs font-semibold text-ink/60 mr-1 hidden sm:inline">Layout:</span>
+              <button
+                onClick={() => setViewMode('grid')}
+                className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                  viewMode === 'grid'
+                    ? 'bg-ink text-white shadow-sm'
+                    : 'bg-white border border-black/10 text-ink/70 hover:text-ink'
+                }`}
+                title="Grid View (Balanced 2-Column)"
+              >
+                <LayoutGrid className="size-3.5" />
+                <span>Executive Grid</span>
+              </button>
+              <button
+                onClick={() => setViewMode('split')}
+                className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                  viewMode === 'split'
+                    ? 'bg-ink text-white shadow-sm'
+                    : 'bg-white border border-black/10 text-ink/70 hover:text-ink'
+                }`}
+                title="Editorial Split View"
+              >
+                <List className="size-3.5" />
+                <span>Editorial Split</span>
+              </button>
+            </div>
+          </div>
+
           {filteredServices.length === 0 ? (
             <div className="text-center py-20 bg-white rounded-3xl border border-black/5 shadow-sm p-8">
               <div className="size-16 rounded-full bg-gold/10 text-gold flex items-center justify-center mx-auto mb-4">
@@ -252,7 +295,7 @@ export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onN
               </div>
               <h3 className="text-2xl font-bold text-ink">No services found</h3>
               <p className="mt-2 text-ink/70 max-w-md mx-auto text-sm sm:text-base">
-                We couldn't find any service matching "{searchQuery}". Try searching for terms like "Bouncers", "Haldi", "Hostesses", "LED Wall", or "Product Launch".
+                We couldn&apos;t find any service matching &ldquo;{searchQuery}&rdquo;. Try searching for terms like &ldquo;Bouncers&rdquo;, &ldquo;Haldi&rdquo;, &ldquo;Hostesses&rdquo;, &ldquo;LED Wall&rdquo;, or &ldquo;Product Launch&rdquo;.
               </p>
               <button
                 onClick={() => {
@@ -261,73 +304,63 @@ export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onN
                 }}
                 className="mt-6 btn-gold px-6 py-2.5 text-xs font-semibold"
               >
-                Reset filters & view all 39 services
+                Reset filters &amp; view all 39 services
               </button>
             </div>
-          ) : (
-            filteredServices.map((service, idx) => {
-              const isReversed = idx % 2 !== 0; // Alternates image left / right
-              const IconComponent = service.icon;
-              const isHighlighted = highlightedId === service.id;
-              const serialNum = String(idx + 1).padStart(2, '0');
+          ) : viewMode === 'grid' ? (
+            /* ======================================================== */
+            /* EXECUTIVE 2-COLUMN BALANCED GRID (Symmetric on Desktop) */
+            /* ======================================================== */
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-7 lg:gap-8 items-stretch">
+              {filteredServices.map((service, idx) => {
+                const IconComponent = service.icon;
+                const isHighlighted = highlightedId === service.id;
+                const serialNum = String(idx + 1).padStart(2, '0');
 
-              return (
-                <div
-                  key={service.id}
-                  id={service.id}
-                  className={`group relative overflow-hidden rounded-3xl bg-white shadow-sm border transition-all duration-500 hover:shadow-2xl lg:h-[460px] xl:h-[470px] w-full ${
-                    isHighlighted
-                      ? 'border-gold ring-4 ring-gold/40 shadow-2xl scale-[1.01]'
-                      : 'border-black/5 hover:border-gold/30'
-                  }`}
-                >
-                  <div className="grid lg:grid-cols-12 h-full items-stretch">
-                    
-                    {/* IMAGE COLUMN (Exact 50% width & 100% height, pinned with absolute inset-0) */}
-                    <div
-                      className={`relative h-64 sm:h-80 lg:h-full lg:col-span-6 overflow-hidden ${
-                        isReversed ? 'lg:order-2' : 'lg:order-1'
-                      }`}
-                    >
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        loading="lazy"
-                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                      />
-                      
-                      {/* Gradient overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent pointer-events-none" />
-
-                      {/* Watermark Serial Number */}
-                      <span className="absolute top-6 left-6 font-bold text-6xl sm:text-7xl lg:text-8xl text-white/35 select-none tracking-tighter leading-none pointer-events-none font-serif drop-shadow-sm">
-                        {serialNum}
-                      </span>
-
-                      {/* Floating Badges */}
-                      <div className="absolute top-6 right-6 flex flex-col items-end gap-2 z-10">
-                        <span className="rounded-full bg-black/70 backdrop-blur-md px-3.5 py-1 text-[11px] font-semibold text-gold border border-gold/30 uppercase tracking-wider shadow-sm">
-                          {service.pillarLabel}
+                return (
+                  <div
+                    key={service.id}
+                    id={service.id}
+                    className={`group flex flex-col justify-between overflow-hidden rounded-3xl bg-white shadow-sm border transition-all duration-500 hover:shadow-2xl h-full ${
+                      isHighlighted
+                        ? 'border-gold ring-4 ring-gold/40 shadow-2xl scale-[1.01]'
+                        : 'border-black/5 hover:border-gold/30'
+                    }`}
+                  >
+                    <div>
+                      {/* Top Image banner with strictly uniform height */}
+                      <div className="relative h-60 sm:h-68 w-full overflow-hidden bg-ink">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          loading="lazy"
+                          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent pointer-events-none" />
+                        
+                        {/* Serial Number Watermark */}
+                        <span className="absolute top-5 left-5 font-bold text-5xl sm:text-6xl text-white/35 select-none tracking-tighter leading-none pointer-events-none font-serif">
+                          {serialNum}
                         </span>
-                        {service.badge && (
-                          <span className="rounded-full bg-white/95 backdrop-blur-md px-3 py-1 text-[11px] font-bold text-[#130308] shadow-sm">
-                            {service.badge}
-                          </span>
-                        )}
-                      </div>
-                    </div>
 
-                    {/* CONTENT COLUMN (Exact 50% width & 100% height, strictly uniform spacing) */}
-                    <div
-                      className={`flex flex-col justify-between p-6 sm:p-8 lg:p-9 xl:p-10 lg:col-span-6 h-full overflow-hidden ${
-                        isReversed ? 'lg:order-1' : 'lg:order-2'
-                      }`}
-                    >
-                      <div>
-                        {/* Header with Icon and Tagline */}
+                        {/* Top-Right Badges */}
+                        <div className="absolute top-5 right-5 flex flex-col items-end gap-1.5 z-10">
+                          <span className="rounded-full bg-black/75 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-gold border border-gold/30 uppercase tracking-wider shadow-sm">
+                            {service.pillarLabel}
+                          </span>
+                          {service.badge && (
+                            <span className="rounded-full bg-white/95 px-2.5 py-0.5 text-[10px] font-bold text-[#130308] shadow-sm">
+                              {service.badge}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Content Area */}
+                      <div className="p-6 sm:p-7">
                         <div className="flex items-center gap-3">
-                          <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-[#130308] text-gold border border-gold/20 shadow-md">
-                            <IconComponent className="size-5" />
+                          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#130308] text-gold border border-gold/20 shadow-md">
+                            <IconComponent className="size-4.5" />
                           </div>
                           <div className="min-w-0 flex-1">
                             <span className="text-[11px] font-bold uppercase tracking-wider text-amber-800 block">
@@ -341,22 +374,19 @@ export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onN
                           </div>
                         </div>
 
-                        {/* Service Title - Normalized to 1 line on desktop */}
-                        <h2 className="mt-3.5 text-xl sm:text-2xl lg:text-[1.65rem] font-bold tracking-tight text-ink line-clamp-1" title={service.title}>
+                        <h3 className="mt-3 text-lg sm:text-xl font-bold tracking-tight text-ink line-clamp-1" title={service.title}>
                           {service.title}
-                        </h2>
+                        </h3>
 
-                        {/* Description - Normalized to 2-3 lines */}
-                        <p className="mt-2.5 text-xs sm:text-sm text-ink/75 leading-relaxed line-clamp-2 sm:line-clamp-3">
+                        <p className="mt-2 text-xs sm:text-sm text-ink/75 leading-relaxed line-clamp-2">
                           {service.description}
                         </p>
 
-                        {/* Features Checkpoints - Exactly 4 concise bullets */}
-                        <div className="mt-4 sm:mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
+                        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
                           {service.features.slice(0, 4).map((feature, fIdx) => (
-                            <div key={fIdx} className="flex items-start gap-2 min-w-0">
-                              <span className="flex size-4 shrink-0 items-center justify-center rounded-full bg-[#f4e8d1] text-amber-800 mt-0.5">
-                                <Check className="size-2.5 stroke-[3]" />
+                            <div key={fIdx} className="flex items-start gap-1.5 min-w-0">
+                              <span className="flex size-3.5 shrink-0 items-center justify-center rounded-full bg-[#f4e8d1] text-amber-800 mt-0.5">
+                                <Check className="size-2 stroke-[3]" />
                               </span>
                               <span className="text-xs font-medium text-ink/85 truncate" title={feature}>
                                 {feature}
@@ -365,31 +395,161 @@ export default function ServicesPage({ onOpenProposalModal, onViewPortfolio, onN
                           ))}
                         </div>
                       </div>
-
-                      {/* Bottom Action Buttons - Uniformly pinned to bottom */}
-                      <div className="mt-4 pt-4 border-t border-black/5 flex flex-wrap items-center gap-2.5 sm:gap-3">
-                        <button
-                          onClick={() => handleServiceWhatsApp(service.title)}
-                          className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-white shadow-md transition-all hover:bg-[#20ba59] hover:shadow-lg cursor-pointer active:scale-95"
-                        >
-                          <WhatsAppIcon className="size-4" />
-                          <span>Inquire on WhatsApp</span>
-                        </button>
-
-                        <button
-                          onClick={() => onOpenProposalModal?.(service.title)}
-                          className="inline-flex items-center gap-1.5 rounded-full border border-black/15 bg-white px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-ink transition-all hover:border-ink hover:bg-zinc-50 cursor-pointer active:scale-95"
-                        >
-                          <span>Get a proposal</span>
-                          <ArrowUpRight className="size-3.5" />
-                        </button>
-                      </div>
                     </div>
 
+                    {/* Bottom Action Buttons */}
+                    <div className="p-6 sm:p-7 pt-0 border-t border-black/5 mt-4 flex flex-wrap items-center gap-2.5">
+                      <button
+                        onClick={() => handleServiceWhatsApp(service.title)}
+                        className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-2.5 text-xs font-semibold text-white shadow-md transition-all hover:bg-[#20ba59] hover:shadow-lg cursor-pointer active:scale-95"
+                      >
+                        <WhatsAppIcon className="size-3.5" />
+                        <span>Inquire on WhatsApp</span>
+                      </button>
+
+                      <button
+                        onClick={() => onOpenProposalModal?.(service.title)}
+                        className="inline-flex items-center gap-1.5 rounded-full border border-black/15 bg-white px-4 py-2.5 text-xs font-semibold text-ink transition-all hover:border-ink hover:bg-zinc-50 cursor-pointer active:scale-95"
+                      >
+                        <span>Get a proposal</span>
+                        <ArrowUpRight className="size-3.5" />
+                      </button>
+                    </div>
                   </div>
-                </div>
-              );
-            })
+                );
+              })}
+            </div>
+          ) : (
+            /* ======================================================== */
+            /* EDITORIAL ALTERNATING SPLIT VIEW (Classic Full Row) */
+            /* ======================================================== */
+            <div className="space-y-8">
+              {filteredServices.map((service, idx) => {
+                const isReversed = idx % 2 !== 0; // Alternates image left / right
+                const IconComponent = service.icon;
+                const isHighlighted = highlightedId === service.id;
+                const serialNum = String(idx + 1).padStart(2, '0');
+
+                return (
+                  <div
+                    key={service.id}
+                    id={service.id}
+                    className={`group relative overflow-hidden rounded-3xl bg-white shadow-sm border transition-all duration-500 hover:shadow-2xl lg:h-[460px] xl:h-[470px] w-full ${
+                      isHighlighted
+                        ? 'border-gold ring-4 ring-gold/40 shadow-2xl scale-[1.01]'
+                        : 'border-black/5 hover:border-gold/30'
+                    }`}
+                  >
+                    <div className="grid lg:grid-cols-12 h-full items-stretch">
+                      
+                      {/* IMAGE COLUMN (Exact 50% width & 100% height, pinned with absolute inset-0) */}
+                      <div
+                        className={`relative h-64 sm:h-80 lg:h-full lg:col-span-6 overflow-hidden ${
+                          isReversed ? 'lg:order-2' : 'lg:order-1'
+                        }`}
+                      >
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          loading="lazy"
+                          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        />
+                        
+                        {/* Gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent pointer-events-none" />
+
+                        {/* Watermark Serial Number */}
+                        <span className="absolute top-6 left-6 font-bold text-6xl sm:text-7xl lg:text-8xl text-white/35 select-none tracking-tighter leading-none pointer-events-none font-serif drop-shadow-sm">
+                          {serialNum}
+                        </span>
+
+                        {/* Floating Badges */}
+                        <div className="absolute top-6 right-6 flex flex-col items-end gap-2 z-10">
+                          <span className="rounded-full bg-black/70 backdrop-blur-md px-3.5 py-1 text-[11px] font-semibold text-gold border border-gold/30 uppercase tracking-wider shadow-sm">
+                            {service.pillarLabel}
+                          </span>
+                          {service.badge && (
+                            <span className="rounded-full bg-white/95 backdrop-blur-md px-3 py-1 text-[11px] font-bold text-[#130308] shadow-sm">
+                              {service.badge}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* CONTENT COLUMN (Exact 50% width & 100% height, strictly uniform spacing) */}
+                      <div
+                        className={`flex flex-col justify-between p-6 sm:p-8 lg:p-9 xl:p-10 lg:col-span-6 h-full overflow-hidden ${
+                          isReversed ? 'lg:order-1' : 'lg:order-2'
+                        }`}
+                      >
+                        <div>
+                          {/* Header with Icon and Tagline */}
+                          <div className="flex items-center gap-3">
+                            <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-[#130308] text-gold border border-gold/20 shadow-md">
+                              <IconComponent className="size-5" />
+                            </div>
+                            <div className="min-w-0 flex-1">
+                              <span className="text-[11px] font-bold uppercase tracking-wider text-amber-800 block">
+                                {service.pillarLabel}
+                              </span>
+                              {service.tagline && (
+                                <p className="text-xs text-ink/60 font-medium truncate">
+                                  {service.tagline}
+                                </p>
+                              )}
+                            </div>
+                          </div>
+
+                          {/* Service Title - Normalized to 1 line on desktop */}
+                          <h2 className="mt-3.5 text-xl sm:text-2xl lg:text-[1.65rem] font-bold tracking-tight text-ink line-clamp-1" title={service.title}>
+                            {service.title}
+                          </h2>
+
+                          {/* Description - Normalized to 2-3 lines */}
+                          <p className="mt-2.5 text-xs sm:text-sm text-ink/75 leading-relaxed line-clamp-2 sm:line-clamp-3">
+                            {service.description}
+                          </p>
+
+                          {/* Features Checkpoints - Exactly 4 concise bullets */}
+                          <div className="mt-4 sm:mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
+                            {service.features.slice(0, 4).map((feature, fIdx) => (
+                              <div key={fIdx} className="flex items-start gap-2 min-w-0">
+                                <span className="flex size-4 shrink-0 items-center justify-center rounded-full bg-[#f4e8d1] text-amber-800 mt-0.5">
+                                  <Check className="size-2.5 stroke-[3]" />
+                                </span>
+                                <span className="text-xs font-medium text-ink/85 truncate" title={feature}>
+                                  {feature}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Bottom Action Buttons - Uniformly pinned to bottom */}
+                        <div className="mt-4 pt-4 border-t border-black/5 flex flex-wrap items-center gap-2.5 sm:gap-3">
+                          <button
+                            onClick={() => handleServiceWhatsApp(service.title)}
+                            className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-white shadow-md transition-all hover:bg-[#20ba59] hover:shadow-lg cursor-pointer active:scale-95"
+                          >
+                            <WhatsAppIcon className="size-4" />
+                            <span>Inquire on WhatsApp</span>
+                          </button>
+
+                          <button
+                            onClick={() => onOpenProposalModal?.(service.title)}
+                            className="inline-flex items-center gap-1.5 rounded-full border border-black/15 bg-white px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-ink transition-all hover:border-ink hover:bg-zinc-50 cursor-pointer active:scale-95"
+                          >
+                            <span>Get a proposal</span>
+                            <ArrowUpRight className="size-3.5" />
+                          </button>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           )}
         </div>
       </section>

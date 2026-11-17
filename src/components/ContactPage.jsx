@@ -133,13 +133,10 @@ export default function ContactPage({
 
     const waUrl = `https://wa.me/917600149422?text=${encodeURIComponent(rawText)}`;
     setLastWaUrl(waUrl);
-
-    // 3. Open WhatsApp and detect pop-up blocking
-    const { isBlocked } = openWhatsAppWithDetection(waUrl);
-    setPopupBlocked(isBlocked);
+    setPopupBlocked(false);
 
     setIsSubmitted(true);
-    setTimeout(() => setIsSubmitting(false), 2000);
+    setIsSubmitting(false);
   };
 
   const getEmailFallback = () => {
@@ -321,30 +318,23 @@ export default function ContactPage({
                       REF #{referenceId}
                     </span>
                     <h3 className="text-2xl font-bold text-ink">
-                      Inquiry Saved to Central Registry
+                      Message Successfully Registered
                     </h3>
-                    <p className="mt-1 text-xs sm:text-sm text-ink/70 max-w-md mx-auto">
-                      Your message has been securely recorded. To complete transmission to our desk director, please confirm on WhatsApp.
+                    <p className="mt-1 text-xs sm:text-sm text-ink/70 max-w-md mx-auto leading-relaxed">
+                      Thank you, <strong className="text-ink">{formData.name}</strong>. Your message is securely logged in our concierge system. A senior event director will review your brief and get back to you within 2-4 business hours.
                     </p>
                   </div>
 
-                  {/* Step 2 WhatsApp Notice */}
+                  {/* Optional Real-Time Contact Box */}
                   <div className="bg-white border border-black/10 rounded-2xl p-4 text-left space-y-1.5 max-w-lg mx-auto shadow-sm">
-                    <div className="flex items-center gap-2 text-xs font-bold text-emerald-700">
-                      <MessageSquare className="size-4 shrink-0" />
-                      <span>Step 2 of 2: Please tap &quot;Send&quot; in WhatsApp</span>
+                    <div className="flex items-center gap-2 text-xs font-bold text-amber-900">
+                      <MessageSquare className="size-4 shrink-0 text-gold" />
+                      <span>Prefer Instant Communication?</span>
                     </div>
                     <p className="text-xs text-ink/70 leading-relaxed">
-                      We pre-filled the chat with your details and Reference #{referenceId}. If your browser didn&apos;t open WhatsApp automatically, use the button below.
+                      Your submission is already recorded. If you require immediate real-time coordination, you may also message our operations director directly on WhatsApp or Email.
                     </p>
                   </div>
-
-                  {popupBlocked && (
-                    <div className="max-w-lg mx-auto flex items-center gap-2 rounded-xl bg-amber-50 border border-amber-300 p-3 text-xs text-amber-800 text-left">
-                      <AlertCircle className="size-4 shrink-0" />
-                      <span>Your browser paused the pop-up window. Tap below to launch your WhatsApp chat.</span>
-                    </div>
-                  )}
 
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
                     {lastWaUrl && (
@@ -581,47 +571,43 @@ export default function ContactPage({
                   </div>
                 </a>
 
-                {/* Social Badges Row */}
+                {/* Verified Direct Channels Row */}
                 <div className="mt-8 flex items-center gap-3">
                   <a
                     href="https://www.instagram.com/s.aeventsandmanpowerservice/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
-                    title="Follow on Instagram"
+                    title="Official Instagram: @s.aeventsandmanpowerservice"
                     className="inline-flex transition-transform duration-200 hover:scale-110"
                   >
                     <InstagramLogo className="size-10 rounded-xl shadow-md" />
                   </a>
                   <a
-                    href="https://linkedin.com"
+                    href="https://wa.me/917600149422?text=Hello%20S.%20A%20Event's,%20I%20would%20like%20to%20connect%20regarding%20an%20event."
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                    title="Connect on LinkedIn"
-                    className="flex size-10 items-center justify-center rounded-xl bg-[#0A66C2] text-white shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"
+                    aria-label="WhatsApp"
+                    title="Direct WhatsApp: +91 76001 49422"
+                    className="flex size-10 items-center justify-center rounded-xl bg-[#25D366] text-white shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"
                   >
-                    <SocialIcon type="linkedin" />
+                    <WhatsAppIcon className="size-5" />
                   </a>
                   <a
-                    href="https://facebook.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Facebook"
-                    title="Follow on Facebook"
-                    className="flex size-10 items-center justify-center rounded-xl bg-[#1877F2] text-white shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"
+                    href="tel:+917600149422"
+                    aria-label="Direct Phone"
+                    title="Call Operations: +91 76001 49422"
+                    className="flex size-10 items-center justify-center rounded-xl bg-gold text-[#130308] shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"
                   >
-                    <SocialIcon type="facebook" />
+                    <Phone className="size-5" />
                   </a>
                   <a
-                    href="https://youtube.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="YouTube"
-                    title="Subscribe on YouTube"
-                    className="flex size-10 items-center justify-center rounded-xl bg-[#FF0000] text-white shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"
+                    href="mailto:s.aeventsandmanpowerservice@gmail.com"
+                    aria-label="Direct Email"
+                    title="Email Concierge: s.aeventsandmanpowerservice@gmail.com"
+                    className="flex size-10 items-center justify-center rounded-xl bg-white/10 text-white border border-white/20 shadow-md transition-all duration-200 hover:scale-110 hover:bg-white/20"
                   >
-                    <SocialIcon type="youtube" />
+                    <Mail className="size-5" />
                   </a>
                 </div>
               </div>

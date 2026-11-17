@@ -1,5 +1,5 @@
-import React, { useRef, useEffect, useState } from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
+import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const FEATURED_STAGES = [
   {
@@ -59,86 +59,117 @@ const FEATURED_STAGES = [
 ];
 
 export default function FeaturedEvents({ onOpenProposalModal, onViewPortfolio }) {
-  const containerRef = useRef(null);
   const trackRef = useRef(null);
-  const [translateX, setTranslateX] = useState(0);
-  const [isDesktop, setIsDesktop] = useState(typeof window !== 'undefined' ? window.innerWidth >= 1024 : true);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  useEffect(() => {
-    const handleResize = () => {
-      const desktop = window.innerWidth >= 1024;
-      setIsDesktop(desktop);
-      if (!desktop) {
-        setTranslateX(0);
-      }
-    };
+  // Mouse drag to scroll state
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeftStart = useRef(0);
+  const hasMoved = useRef(false);
 
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+  const updateScrollState = useCallback(() => {
+    if (!trackRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = trackRef.current;
+    setCanScrollLeft(scrollLeft > 10);
+    setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10);
+
+    // Approximate active card index
+    const cardWidth = clientWidth * 0.4;
+    if (cardWidth > 0) {
+      const idx = Math.min(
+        Math.max(Math.round(scrollLeft / cardWidth), 0),
+        FEATURED_STAGES.length - 1
+      );
+      setActiveIndex(idx);
+    }
   }, []);
 
   useEffect(() => {
-    let ticking = false;
+    const el = trackRef.current;
+    if (!el) return;
 
-    const handleScroll = () => {
-      if (window.innerWidth < 1024) return;
-
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          if (!containerRef.current || !trackRef.current) return;
-
-          const rect = containerRef.current.getBoundingClientRect();
-          const totalDistance = rect.height - window.innerHeight;
-
-          if (totalDistance <= 0) return;
-
-          // Compute scroll progress from 0 (when top of section hits top of viewport) to 1 (when bottom exits)
-          const scrolled = -rect.top;
-          const progress = Math.min(Math.max(scrolled / totalDistance, 0), 1);
-
-          // Total horizontal translation needed: track's scroll width minus visible screen width + offset
-          const maxTranslate = Math.max(trackRef.current.scrollWidth - window.innerWidth + 90, 0);
-          setTranslateX(progress * maxTranslate);
-
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll);
-    handleScroll();
+    updateScrollState();
+    el.addEventListener('scroll', updateScrollState, { passive: true });
+    window.addEventListener('resize', updateScrollState);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
+      el.removeEventListener('scroll', updateScrollState);
+      window.removeEventListener('resize', updateScrollState);
     };
-  }, []);
+  }, [updateScrollState]);
+
+  const scrollByCard = (direction) => {
+    if (!trackRef.current) return;
+    const container = trackRef.current;
+    // Calculate card width dynamically from visible cards
+    const firstCard = container.querySelector('[data-card]');
+    const scrollAmount = firstCard
+      ? firstCard.getBoundingClientRect().width + 24
+      : container.clientWidth * 0.75;
+
+    container.scrollBy({
+      left: direction === 'next' ? scrollAmount : -scrollAmount,
+      behavior: 'smooth',
+    });
+  };
+
+  // Drag-to-scroll handlers for desktop
+  const handleMouseDown = (e) => {
+    isDragging.current = true;
+    hasMoved.current = false;
+    startX.current = e.pageX - trackRef.current.offsetLeft;
+    scrollLeftStart.current = trackRef.current.scrollLeft;
+    trackRef.current.style.cursor = 'grabbing';
+    trackRef.current.style.userSelect = 'none';
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging.current || !trackRef.current) return;
+    const x = e.pageX - trackRef.current.offsetLeft;
+    const walk = (x - startX.current) * 1.5;
+    if (Math.abs(walk) > 5) {
+      hasMoved.current = true;
+    }
+    trackRef.current.scrollLeft = scrollLeftStart.current - walk;
+  };
+
+  const handleMouseUpOrLeave = () => {
+    if (isDragging.current && trackRef.current) {
+      isDragging.current = false;
+      trackRef.current.style.cursor = 'grab';
+      trackRef.current.style.removeProperty('user-select');
+    }
+  };
+
+  const handleCardClick = (event) => {
+    // If the user was dragging, don't trigger modal click
+    if (hasMoved.current) {
+      hasMoved.current = false;
+      return;
+    }
+    onOpenProposalModal?.(event);
+  };
 
   return (
     <section
       id="featured-stages"
-      ref={containerRef}
-      className={`relative bg-ink text-white ${
-        isDesktop ? '' : 'py-16 sm:py-20 overflow-hidden'
-      }`}
-      style={isDesktop ? { height: '340vh' } : { height: 'auto' }}
+      className="relative overflow-hidden bg-ink py-16 sm:py-20 lg:py-28 text-white"
     >
-      {/* Viewport frame: sticky on desktop, normal flow on mobile */}
+      {/* Subtle ambient ruby glow behind track */}
       <div
-        className={
-          isDesktop
-            ? "sticky top-0 flex h-screen w-full flex-col justify-center overflow-hidden pt-20 lg:pt-24 pb-8 lg:pb-10"
-            : "relative flex w-full flex-col overflow-hidden"
-        }
-      >
+        aria-hidden="true"
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-[50rem] rounded-full bg-[#991435]/15 blur-[140px]"
+      />
+
+      <div className="relative">
         {/* Section Header */}
-        <div className="site-container mb-6 sm:mb-8 flex items-end justify-between gap-6 shrink-0 lg:mb-10">
+        <div className="site-container mb-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between lg:mb-12">
           <div>
             <p className="eyebrow text-gold mb-3">Milestone productions</p>
-            <h2 className="display text-[2.2rem] sm:text-5xl lg:text-6xl text-white">
+            <h2 className="display text-3xl sm:text-4xl lg:text-5xl text-white">
               Iconic arenas{' '}
               <span className="accent-serif text-gold-soft">
                 we’ve brought to life.
@@ -146,47 +177,75 @@ export default function FeaturedEvents({ onOpenProposalModal, onViewPortfolio })
             </h2>
           </div>
 
-          <button
-            onClick={onViewPortfolio || (() => onOpenProposalModal?.({ title: "Full Portfolio Inquiries" }))}
-            className="btn-ghost-light hidden sm:inline-flex cursor-pointer hover:border-gold hover:text-gold transition-all"
-          >
-            <span>View case studies</span>
-            <ArrowUpRight className="size-4" />
-          </button>
+          <div className="flex items-center gap-3 self-end sm:self-auto">
+            <button
+              onClick={onViewPortfolio || (() => onOpenProposalModal?.({ title: "Full Portfolio Inquiries" }))}
+              className="btn-ghost-light hidden sm:inline-flex cursor-pointer hover:border-gold hover:text-gold transition-all mr-2"
+            >
+              <span>View case studies</span>
+              <ArrowUpRight className="size-4" />
+            </button>
+
+            {/* Carousel Previous Button */}
+            <button
+              onClick={() => scrollByCard('prev')}
+              disabled={!canScrollLeft}
+              className={`flex size-11 items-center justify-center rounded-full border border-white/20 transition-all duration-300 ${
+                canScrollLeft
+                  ? 'bg-white/10 text-white hover:bg-gold hover:text-ink hover:border-gold cursor-pointer shadow-lg active:scale-95'
+                  : 'bg-white/5 text-white/25 border-white/10 cursor-not-allowed opacity-50'
+              }`}
+              aria-label="Previous slide"
+              title="Previous showcase"
+            >
+              <ChevronLeft className="size-5" />
+            </button>
+
+            {/* Carousel Next Button */}
+            <button
+              onClick={() => scrollByCard('next')}
+              disabled={!canScrollRight}
+              className={`flex size-11 items-center justify-center rounded-full border border-white/20 transition-all duration-300 ${
+                canScrollRight
+                  ? 'bg-white/10 text-white hover:bg-gold hover:text-ink hover:border-gold cursor-pointer shadow-lg active:scale-95'
+                  : 'bg-white/5 text-white/25 border-white/10 cursor-not-allowed opacity-50'
+              }`}
+              aria-label="Next slide"
+              title="Next showcase"
+            >
+              <ChevronRight className="size-5" />
+            </button>
+          </div>
         </div>
 
-        {/* Horizontal Track: Translated on desktop with scroll, native touch snap on mobile */}
+        {/* Horizontal Track: Butter-smooth carousel, draggable on desktop, swipeable on mobile */}
         <div
           ref={trackRef}
-          className={`flex items-center gap-5 sm:gap-6 pl-[max(1.25rem,calc((100vw-88rem)/2+1.25rem))] pr-16 sm:pr-24 ${
-            isDesktop
-              ? 'will-change-transform'
-              : 'overflow-x-auto snap-x snap-mandatory scrollbar-none pb-4 pt-1'
-          }`}
-          style={
-            isDesktop
-              ? {
-                  transform: `translate3d(-${translateX}px, 0, 0)`,
-                  transition: 'transform 0.08s cubic-bezier(0.25, 1, 0.5, 1)',
-                }
-              : {
-                  transform: 'none',
-                }
-          }
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUpOrLeave}
+          onMouseLeave={handleMouseUpOrLeave}
+          className="flex items-stretch gap-5 sm:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-4 pt-1 pl-[max(1.25rem,calc((100vw-88rem)/2+1.25rem))] pr-6 sm:pr-12 cursor-grab active:cursor-grabbing"
+          style={{
+            WebkitOverflowScrolling: 'touch',
+            scrollBehavior: 'smooth',
+          }}
         >
-          {FEATURED_STAGES.map((event) => (
+          {FEATURED_STAGES.map((event, idx) => (
             <div
               key={event.id}
-              onClick={() => onOpenProposalModal?.(event)}
-              className="group relative w-[82vw] shrink-0 snap-start overflow-hidden rounded-[2rem] sm:w-[58vw] lg:w-[38vw] xl:w-[32vw] cursor-pointer shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/10 transition-transform duration-500 hover:border-gold/40"
+              data-card
+              onClick={() => handleCardClick(event)}
+              className="group relative w-[84vw] shrink-0 snap-start overflow-hidden rounded-[2rem] sm:w-[56vw] lg:w-[38vw] xl:w-[32vw] cursor-pointer shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/10 transition-transform duration-500 hover:border-gold/40 hover:-translate-y-1"
             >
-              {/* Big Photo Container (Aspect 4/3) */}
+              {/* Photo Container */}
               <div className="aspect-[4/3] max-h-[46vh] overflow-hidden bg-ink">
                 <img
                   src={event.image}
                   alt={event.title}
                   loading="lazy"
-                  className="h-full w-full object-cover transition duration-[1.2s] ease-out group-hover:scale-105"
+                  draggable={false}
+                  className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-105 select-none"
                 />
               </div>
 
@@ -221,9 +280,10 @@ export default function FeaturedEvents({ onOpenProposalModal, onViewPortfolio })
             </div>
           ))}
 
-          {/* End Card: View All Projects (Exact from reference image 3) */}
+          {/* End Card: View All Projects */}
           <div
-            onClick={() => onOpenProposalModal?.({ title: "All Projects & Archive" })}
+            data-card
+            onClick={() => handleCardClick({ title: "All Projects & Archive" })}
             className="group flex aspect-[4/3] w-[70vw] shrink-0 snap-start flex-col items-center justify-center rounded-[2rem] border border-white/10 bg-white/[0.03] text-center sm:w-[45vw] lg:w-[26vw] xl:w-[22vw] cursor-pointer transition-all duration-500 hover:bg-white/[0.07] hover:border-gold/40 shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
           >
             <span className="flex size-16 sm:size-20 items-center justify-center rounded-full bg-gold text-ink transition duration-500 group-hover:scale-110 group-hover:rotate-45 shadow-lg shadow-gold/30">
@@ -233,9 +293,18 @@ export default function FeaturedEvents({ onOpenProposalModal, onViewPortfolio })
               View all projects
             </span>
           </div>
-
         </div>
 
+        {/* Mobile quick-link */}
+        <div className="site-container mt-6 flex justify-center sm:hidden">
+          <button
+            onClick={onViewPortfolio || (() => onOpenProposalModal?.({ title: "Full Portfolio Inquiries" }))}
+            className="btn-ghost-light w-full justify-center"
+          >
+            <span>View all case studies</span>
+            <ArrowUpRight className="size-4" />
+          </button>
+        </div>
       </div>
     </section>
   );

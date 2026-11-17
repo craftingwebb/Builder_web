@@ -84,10 +84,6 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
     setNewsletterFeedback({ text: result.message, isDuplicate: result.isDuplicate });
     setIsSubscribed(true);
     setEmail('');
-
-    setTimeout(() => {
-      setIsSubscribed(false);
-    }, 6000);
   };
 
   return (
@@ -398,27 +394,39 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
           <p>© 2026 S. A Event&apos;s and Manpower Service. All rights reserved.</p>
           
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <button
-              onClick={() => setLegalModal({ isOpen: true, type: 'privacy' })}
-              className="hover:text-white transition-colors cursor-pointer text-left"
+            <a
+              href="#/privacy"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate?.('privacy');
+              }}
+              className="hover:text-white transition-colors cursor-pointer"
             >
               Privacy Policy
-            </button>
-            <button
-              onClick={() => setLegalModal({ isOpen: true, type: 'terms' })}
-              className="hover:text-white transition-colors cursor-pointer text-left"
+            </a>
+            <a
+              href="#/terms"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate?.('terms');
+              }}
+              className="hover:text-white transition-colors cursor-pointer"
             >
               Terms of Production
-            </button>
-            <button
-              onClick={() => setLegalModal({ isOpen: true, type: 'sitemap' })}
-              className="hover:text-white transition-colors cursor-pointer text-left"
+            </a>
+            <a
+              href="#/sitemap"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate?.('sitemap');
+              }}
+              className="hover:text-white transition-colors cursor-pointer"
             >
               Sitemap
-            </button>
+            </a>
           </div>
 
-          {/* Official Social Links */}
+          {/* Official Direct Contact & Social Links (No Generic Homepages) */}
           <div className="flex items-center gap-2.5">
             {/* Instagram */}
             <a
@@ -432,46 +440,38 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
               <InstagramLogo className="size-9 rounded-xl shadow-md" />
             </a>
 
-            {/* LinkedIn */}
+            {/* WhatsApp Direct */}
             <a
-              href="https://www.linkedin.com/company/s-a-events-and-manpower-service"
+              href="https://wa.me/917600149422?text=Hello%20S.%20A%20Event's,%20I%20would%20like%20to%20inquire%20about%20your%20services."
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              title="Connect with S. A Event's on LinkedIn"
-              className="flex size-9 items-center justify-center rounded-xl bg-[#0A66C2] text-white shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"
+              aria-label="WhatsApp"
+              title="Chat with Concierge on WhatsApp"
+              className="flex size-9 items-center justify-center rounded-xl bg-[#25D366] text-white shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"
             >
               <svg className="size-4.5 fill-current" viewBox="0 0 24 24">
-                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z" />
               </svg>
             </a>
 
-            {/* Facebook */}
+            {/* Direct Phone */}
             <a
-              href="https://www.facebook.com/search/top?q=S.A%20Events%20and%20Manpower%20Service"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-              title="Follow S. A Event's on Facebook"
-              className="flex size-9 items-center justify-center rounded-xl bg-[#1877F2] text-white shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"
+              href="tel:+917600149422"
+              aria-label="Direct Phone"
+              title="Call Director: +91 76001 49422"
+              className="flex size-9 items-center justify-center rounded-xl bg-gold text-[#130308] shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"
             >
-              <svg className="size-4.5 fill-current" viewBox="0 0 24 24">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-              </svg>
+              <Phone className="size-4" />
             </a>
 
-            {/* YouTube */}
+            {/* Direct Email */}
             <a
-              href="https://www.youtube.com/results?search_query=S.+A+Events+%26+Manpower+Service"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="YouTube"
-              title="Watch S. A Event's on YouTube"
-              className="flex size-9 items-center justify-center rounded-xl bg-[#FF0000] text-white shadow-md transition-all duration-200 hover:scale-110 hover:brightness-110"
+              href="mailto:s.aeventsandmanpowerservice@gmail.com"
+              aria-label="Direct Email"
+              title="Email Concierge: s.aeventsandmanpowerservice@gmail.com"
+              className="flex size-9 items-center justify-center rounded-xl bg-white/10 text-white border border-white/20 shadow-md transition-all duration-200 hover:scale-110 hover:bg-white/20"
             >
-              <svg className="size-4.5 fill-current" viewBox="0 0 24 24">
-                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-              </svg>
+              <Mail className="size-4" />
             </a>
           </div>
         </div>

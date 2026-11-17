@@ -20,6 +20,9 @@ import TestimonialsSection from './components/TestimonialsSection';
 import InsightsSection from './components/InsightsSection';
 import ProposalBanner from './components/ProposalBanner';
 import Footer from './components/Footer';
+import PrivacyPage from './components/PrivacyPage';
+import TermsPage from './components/TermsPage';
+import SitemapPage from './components/SitemapPage';
 import BookingModal from './components/BookingModal';
 import WhatsAppButton from './components/WhatsAppButton';
 import { isSafeCssId } from './utils/security';
@@ -53,6 +56,25 @@ export default function App() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (hash === '#/portfolio' || hash === '#portfolio') {
         setCurrentPage('portfolio');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (
+        hash === '#/privacy' ||
+        hash === '#privacy' ||
+        hash === '#/privacy-policy' ||
+        hash === '#privacy-policy'
+      ) {
+        setCurrentPage('privacy');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (
+        hash === '#/terms' ||
+        hash === '#terms' ||
+        hash === '#/terms-of-production' ||
+        hash === '#terms-of-production'
+      ) {
+        setCurrentPage('terms');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (hash === '#/sitemap' || hash === '#sitemap') {
+        setCurrentPage('sitemap');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (
         hash === '#/request-a-quote' ||
@@ -109,6 +131,18 @@ export default function App() {
     } else if (page === 'portfolio') {
       window.location.hash = '#/portfolio';
       setCurrentPage('portfolio');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (page === 'privacy') {
+      window.location.hash = '#/privacy';
+      setCurrentPage('privacy');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (page === 'terms') {
+      window.location.hash = '#/terms';
+      setCurrentPage('terms');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (page === 'sitemap') {
+      window.location.hash = '#/sitemap';
+      setCurrentPage('sitemap');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (page === 'proposal' || page === 'quote') {
       window.location.hash = '#/request-a-quote';
@@ -211,6 +245,30 @@ export default function App() {
             onOpenProposalModal={() => handleNavigate('proposal')}
           />
         </main>
+      ) : currentPage === 'privacy' ? (
+        /* Dedicated Privacy Policy Page */
+        <main>
+          <PrivacyPage
+            onNavigateHome={() => handleNavigate('home')}
+            onOpenProposalModal={() => handleNavigate('proposal')}
+          />
+        </main>
+      ) : currentPage === 'terms' ? (
+        /* Dedicated Terms of Production Page */
+        <main>
+          <TermsPage
+            onNavigateHome={() => handleNavigate('home')}
+            onOpenProposalModal={() => handleNavigate('proposal')}
+          />
+        </main>
+      ) : currentPage === 'sitemap' ? (
+        /* Dedicated Sitemap Page */
+        <main>
+          <SitemapPage
+            onNavigateHome={() => handleNavigate('home')}
+            onNavigate={handleNavigate}
+          />
+        </main>
       ) : currentPage === 'proposal' ? (
         /* Dedicated Request a Quote / Proposal Page (User's Latest Screenshots) */
         <main>
@@ -277,12 +335,14 @@ export default function App() {
         onNavigate={handleNavigate}
       />
 
-      {/* Quick Inquiries Drawer / Modal */}
-      <BookingModal
-        isOpen={isProposalModalOpen}
-        onClose={handleCloseModal}
-        initialData={selectedService}
-      />
+      {/* Quick Inquiries Drawer / Modal - Fully unmounted when closed to eliminate any stale state */}
+      {isProposalModalOpen && (
+        <BookingModal
+          isOpen={isProposalModalOpen}
+          onClose={handleCloseModal}
+          initialData={selectedService}
+        />
+      )}
 
       {/* Floating Scroll to Top & WhatsApp Pill Widget */}
       <WhatsAppButton />

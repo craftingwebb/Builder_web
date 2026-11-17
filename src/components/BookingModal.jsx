@@ -116,15 +116,13 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
       `*Specific Requirements:* ${cleanNotes || 'None specified'}\n\n` +
       `Please provide an official quote and feasibility confirmation.`;
 
+    // 2. Build WhatsApp URL for optional user-initiated direct chat (NO auto-popup)
     const waUrl = `https://wa.me/917600149422?text=${encodeURIComponent(rawText)}`;
     setLastWaUrl(waUrl);
-
-    // 2. Open WhatsApp and detect whether pop-up was blocked
-    const { isBlocked } = openWhatsAppWithDetection(waUrl);
-    setPopupBlocked(isBlocked);
+    setPopupBlocked(false);
 
     setSubmitted(true);
-    setTimeout(() => setIsSubmitting(false), 2000);
+    setIsSubmitting(false);
   };
 
   const getEmailFallback = () => {
@@ -321,12 +319,12 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
                 className="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 text-black font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20 hover:scale-[1.01] cursor-pointer disabled:opacity-50"
               >
                 <Send className="w-4 h-4" />
-                <span>{isSubmitting ? 'Recording Inquiry...' : 'Submit & Connect via WhatsApp'}</span>
+                <span>{isSubmitting ? 'Submitting Request...' : 'Submit Quotation Request'}</span>
               </button>
             </form>
           </div>
         ) : (
-          /* Transparent 2-step confirmation view */
+          /* Transparent confirmed submission view */
           <div className="text-center py-6 space-y-4">
             <div className="size-14 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto">
               <Check className="size-7" />
@@ -336,20 +334,20 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
               <span className="inline-block px-3 py-1 rounded-full bg-gold/15 text-gold border border-gold/30 text-[11px] font-mono font-bold tracking-wider mb-2">
                 REF #{referenceId}
               </span>
-              <h4 className="text-2xl font-bold text-white font-display">Inquiry Saved to System</h4>
-              <p className="text-xs text-zinc-300 mt-1 max-w-sm mx-auto">
-                Your quote request is recorded in our central system registry.
+              <h4 className="text-2xl font-bold text-white font-display">Quotation Request Registered</h4>
+              <p className="text-xs text-zinc-300 mt-1.5 max-w-sm mx-auto leading-relaxed">
+                Thank you, <strong className="text-white">{formData.name}</strong>. Your quotation request has been logged into our concierge queue. A senior event director will review your event requirements and respond within 2-4 business hours.
               </p>
             </div>
 
-            {/* Step 2 WhatsApp Notice */}
+            {/* Optional Instant Communication Box */}
             <div className="bg-white/5 border border-white/10 rounded-2xl p-4 text-left space-y-2">
-              <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400">
+              <div className="flex items-center gap-2 text-xs font-semibold text-gold">
                 <MessageSquare className="size-4 shrink-0" />
-                <span>Step 2 of 2: Please press Send in WhatsApp</span>
+                <span>Need Instant Confirmation?</span>
               </div>
               <p className="text-[11px] text-white/70 leading-relaxed">
-                We have generated a pre-filled message with your requirements. If the WhatsApp window did not open automatically, tap below to launch your chat with our desk director.
+                Your request is already saved. If you prefer real-time chat with our dispatch team, you can optionally connect with us directly on WhatsApp or Email below.
               </p>
             </div>
 
