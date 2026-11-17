@@ -294,7 +294,7 @@ export default function ProposalPage({ onNavigateHome }) {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-[#25D366] hover:brightness-110 transition"
                   >
-                    <WhatsAppIcon className="size-4.5" bubbleColor="#25D366" phoneColor="#FFFFFF" />
+                    <WhatsAppIcon className="size-4.5 text-[#25D366]" />
                     <span>WhatsApp us</span>
                   </a>
                 </div>

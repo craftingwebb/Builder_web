@@ -133,7 +133,7 @@ export default function ContactPage({
         {/* Background Image of Meeting / Strategy Room with Center Ambient Glow */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=85"
+            src="https://images.pexels.com/photos/7581114/pexels-photo-7581114.jpeg?auto=compress&cs=tinysrgb&w=2000"
             alt=""
             className="h-full w-full object-cover opacity-20 filter contrast-125 brightness-75"
           />
@@ -226,7 +226,7 @@ export default function ContactPage({
               className="group rounded-3xl bg-white p-7 shadow-lg border border-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
             >
               <div className="flex size-11 items-center justify-center rounded-full bg-ink group-hover:scale-110 transition-transform shadow-md">
-                <WhatsAppIcon className="size-6" bubbleColor="#25D366" phoneColor="#FFFFFF" />
+                <WhatsAppIcon className="size-6 text-[#25D366]" />
               </div>
               <p className="mt-6 text-[0.7rem] font-bold uppercase tracking-[0.15em] text-ink/50">
                 WHATSAPP ENQUIRY

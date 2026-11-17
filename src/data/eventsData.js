@@ -7,8 +7,8 @@ export const CORPORATE_SERVICES = [
     tagline: "High-impact brand impressions that drive real footfall",
     category: "Corporate",
     badge: "High ROI",
-    image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1200&q=80",
-    description: "From experiential marketing roadshows to transit advertising and high-converting mall activations, we amplify your brand visibility where your buyers actually are.",
+    image: "https://images.pexels.com/photos/7581016/pexels-photo-7581016.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    description: "From experiential marketing roadshows to transit advertising and high-converting mall activations across metro hubs, we amplify your brand visibility where Indian consumers actually are.",
     features: [
       "Mall & Tech Park Activations",
       "Experiential Roadshows & Mobile Canters",
@@ -23,8 +23,8 @@ export const CORPORATE_SERVICES = [
     tagline: "Spectacular unveilings that dominate news & social media",
     category: "Corporate",
     badge: "Signature",
-    image: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=1200&q=80",
-    description: "Creating goosebump moments with synchronized hydraulic reveals, 3D projection mapping, laser choreography, and keynote stagecraft for tech, automotive, and retail.",
+    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80",
+    description: "Creating goosebump moments with synchronized hydraulic reveals, 3D projection mapping, laser choreography, and keynote stagecraft for tech, automotive, and retail leaders in India.",
     features: [
       "Hydraulic & Silk Drop Reveal Stages",
       "3D Projection Mapping & Holo-Screens",
@@ -39,8 +39,8 @@ export const CORPORATE_SERVICES = [
     tagline: "Seamless summits for 50 to 5,000+ business leaders",
     category: "Corporate",
     badge: "Enterprise",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80",
-    description: "Multi-track convention management with professional registration desks, badge printing, audio-visual engineering, simultaneous translation, and VIP lounges.",
+    image: "https://images.pexels.com/photos/7581114/pexels-photo-7581114.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    description: "Multi-track convention management at premier Indian convention centers (Jio World Centre, Bharat Mandapam, HICC) with RFID registration, AV engineering, and VIP hospitality.",
     features: [
       "RFID / QR Code Registration Kiosks",
       "Dual Curved LED Backdrops & Live Streaming",
@@ -55,8 +55,8 @@ export const CORPORATE_SERVICES = [
     tagline: "Bespoke booth fabrication that stops attendees in their tracks",
     category: "Corporate",
     badge: "Custom Build",
-    image: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80",
-    description: "3D architectural stall fabrication, interactive gaming zones, brand merchandise counters, and trained stall hostesses that double your qualified booth leads.",
+    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+    description: "3D architectural stall fabrication at major trade expos (Pragati Maidan, BIEC Bengaluru, Bombay Exhibition Centre) with interactive demos and bilingual Indian booth hosts.",
     features: [
       "3D Custom Stall Architecture & Signage",
       "Touchscreen Catalogs & AR/VR Demos",
@@ -72,7 +72,7 @@ export const CORPORATE_SERVICES = [
     category: "Corporate",
     badge: "Popular",
     image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80",
-    description: "Comprehensive campus fest turnkey management: Mega outdoor concert stages, heavy line-array sound systems, artist booking, crowd barricading, and security coordination.",
+    description: "Comprehensive Indian campus fest turnkey management: Mega outdoor concert stages, heavy line-array sound systems, Bollywood artist booking, and crowd barricading.",
     features: [
       "Celebrity Artist & Bollywood Singer Booking",
       "Heavy Duty German Hanger & Concert Truss",
@@ -88,7 +88,7 @@ export const CORPORATE_SERVICES = [
     category: "Corporate",
     badge: "Turnkey",
     image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80",
-    description: "Safe, disciplined, and visually breathtaking school functions featuring tiered seating, theatrical lighting, crystal-clear acoustics, and multi-cam broadcast.",
+    description: "Safe, disciplined, and visually breathtaking school functions across India featuring tiered seating, theatrical lighting, crystal-clear acoustics, and multi-cam broadcast.",
     features: [
       "Themed Theatrical Stage Backdrops",
       "Comfortable Tiered Seating & Canopies",
@@ -103,8 +103,8 @@ export const CORPORATE_SERVICES = [
     tagline: "Aggressive hyper-local campaigns that generate immediate demand",
     category: "Corporate",
     badge: "Direct Sales",
-    image: "https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=1200&q=80",
-    description: "Field marketing fleets deployed across target cities with branded vans, promo promoter teams, instant trial sampling, and digital CRM lead capture.",
+    image: "https://images.pexels.com/photos/7580648/pexels-photo-7580648.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    description: "Field marketing fleets deployed across Tier-1 and Tier-2 Indian cities with branded mobile canters, local language promoters, instant sampling, and digital CRM lead capture.",
     features: [
       "City-wide Route Planning & Fleet Branding",
       "Trained On-Ground Promotion Promoters",
@@ -119,8 +119,8 @@ export const CORPORATE_SERVICES = [
     tagline: "Glitz, glamour, and recognition that boosts employee pride",
     category: "Corporate",
     badge: "Luxury",
-    image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80",
-    description: "Black-tie corporate award ceremonies with red carpet photo-ops, custom trophy reveals, choreographed dance entries, and high-energy live entertainment.",
+    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80",
+    description: "Black-tie corporate award ceremonies with red carpet photo-ops, custom trophy reveals, choreographed dance entries, and high-energy live Bollywood entertainment.",
     features: [
       "Red Carpet Media Wall & 360 Photobooth",
       "LED Screen Synchronized Award Graphics",
@@ -135,13 +135,13 @@ export const WEDDING_SERVICES = [
   {
     id: "wed-decor",
     title: "Bespoke Thematic & Floral Decor",
-    tagline: "Grand visual poetry crafted with exotic flowers and fabrics",
+    tagline: "Grand visual poetry crafted with exotic flowers and royal fabrics",
     category: "Wedding",
     badge: "Royal Luxury",
-    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80",
-    description: "From regal Rajasthani palace motifs and European pastel glasshouses to modern minimalist botanical wonderlands tailored to your exact taste.",
+    image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80",
+    description: "From regal Rajasthani palace motifs and royal courtyard setups to modern floral mandaps with marigold, jasmine, and exotic blooms tailored to your wedding vision.",
     features: [
-      "Imported Dutch & Bangalore Fresh Florals",
+      "Fresh Indian Jasmine, Marigold & Exotic Florals",
       "Custom 3D Moodboards & Scale Drawings",
       "Crystal Chandeliers & Fairy Light Tunnels",
       "Bespoke Dining Table & Lounge Scaping",
@@ -154,8 +154,8 @@ export const WEDDING_SERVICES = [
     tagline: "The monumental centerpiece where your lifetime memories are made",
     category: "Wedding",
     badge: "Architectural",
-    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80",
-    description: "Engineered mandaps over water bodies, royal dome canopies, multi-level stages with floral chandeliers, and cantilevered ceremonial thrones.",
+    image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
+    description: "Engineered mandaps over palace water bodies, royal carved domes, multi-level wedding stages with floral chandeliers, and cantilevered ceremonial thrones.",
     features: [
       "Waterfront & Floating Mandap Engineering",
       "Fiber Carved Royal Domes & Pillars",
@@ -170,8 +170,8 @@ export const WEDDING_SERVICES = [
     tagline: "Acoustic brilliance and arena-grade lighting fixtures",
     category: "Wedding",
     badge: "Concert Grade",
-    image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1200&q=80",
-    description: "Stadium-grade line-array sound systems, Sharpy moving heads, follow spots, haze atmospheres, and warm architectural uplighting highlighting your venue.",
+    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80",
+    description: "Stadium-grade line-array sound systems, Sharpy moving heads, follow spots, haze atmospheres, and warm architectural uplighting highlighting Indian palace facades.",
     features: [
       "L-Acoustics & RCF Line-Array Audio",
       "Sharpy Moving Heads & Warm Par Uplights",
@@ -186,10 +186,10 @@ export const WEDDING_SERVICES = [
     tagline: "Exclusive access and negotiable rates at premier 5-star properties",
     category: "Wedding",
     badge: "Concierge",
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
-    description: "Palaces in Udaipur, beach resorts in Goa, luxury hotels in metro hubs, and heritage forts booked with maximum privileges and zero vendor penalty clauses.",
+    image: "https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    description: "Palaces in Udaipur and Jaipur, luxury beach resorts in Goa, heritage properties across Rajasthan and West Bengal booked with maximum privileges and zero vendor penalties.",
     features: [
-      "Preferred Partner Rates at Marriott, Taj, Oberoi",
+      "Preferred Partner Rates at Taj, Oberoi, ITC, Marriott",
       "Room Inventory & Guest Rooming Lists",
       "Strict Vendor Policy Approvals",
       "Liquor & PPL / IPRS License Assistance",
@@ -202,8 +202,8 @@ export const WEDDING_SERVICES = [
     tagline: "Vibrant yellow marigolds, festive photobooths & mela games",
     category: "Wedding",
     badge: "Celebration",
-    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
-    description: "Bohemian seating, brass urli floral tubs for haldi baths, colorful umbrella canopies, live lac bangle makers, parrot astrologers, and folk dancers.",
+    image: "https://images.pexels.com/photos/29496276/pexels-photo-29496276/free-photo-of-vibrant-haldi-ceremony-at-indian-wedding-celebration.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    description: "Authentic Indian Haldi rituals with brass urli floral tubs, fresh organic turmeric, marigold flower showers, colorful canopies, live Rajasthani folk music, and bridal mehndi lounges.",
     features: [
       "Handcrafted Brass Urli & Flower Petal Showers",
       "Organic Chemical-Free Haldi & Herbal Pastes",
@@ -218,8 +218,8 @@ export const WEDDING_SERVICES = [
     tagline: "Electric concert stage with family choreography & celebrity DJs",
     category: "Wedding",
     badge: "Party Peak",
-    image: "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1200&q=80",
-    description: "Transform your Sangeet into an award-show spectacle with professional Mumbai choreographers, LED background visuals, and non-stop party anthems.",
+    image: "https://images.pexels.com/photos/35328204/pexels-photo-35328204/free-photo-of-vibrant-indian-wedding-dance-celebration.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    description: "Transform your Sangeet into a Bollywood award-show spectacle with professional Mumbai choreographers, synchronized LED visuals, live dhol faceoffs, and non-stop party anthems.",
     features: [
       "Mumbai Celebrity Choreographer Training",
       "Interactive Dance Floor with Sparkulars",
@@ -234,8 +234,8 @@ export const WEDDING_SERVICES = [
     tagline: "Unforgettable arrivals with cold pyro, hydraulic stages & vintage rides",
     category: "Wedding",
     badge: "Showstopper",
-    image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80",
-    description: "Hydraulic entry stages, low-fog dry ice clouds, cold pyrotechnic fountains, antique vintage cars, royal palkis, and traditional chadar carried by brothers.",
+    image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80",
+    description: "Royal baraat arrivals with vintage heritage cars, hydraulic elevation stages, low-fog dry ice clouds, cold pyrotechnic fountains, royal palkis, and phoolon ki chadar.",
     features: [
       "Hydraulic Revolving Elevation Stages",
       "Cold Pyro Fountains (100% Smoke-Free & Safe)",
@@ -250,8 +250,8 @@ export const WEDDING_SERVICES = [
     tagline: "Seamless visuals from pre-wedding films to live multicam feeds",
     category: "Wedding",
     badge: "Tech Brilliance",
-    image: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1200&q=80",
-    description: "Curved and seamless high-refresh-rate indoor and outdoor LED walls displaying 4K live camera feeds, visual audio loops, and couple love stories.",
+    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+    description: "Curved and seamless high-refresh-rate indoor and outdoor LED walls displaying 4K live multicam camera feeds, visual audio loops, and couple love stories across your venue.",
     features: [
       "P2.5 & P3 High-Nit Outdoor Day-Visible LEDs",
       "Multi-Camera Wireless Live Video Switching",
@@ -266,8 +266,8 @@ export const WEDDING_SERVICES = [
     tagline: "Cherishing decades of enduring love with timeless elegance",
     category: "Wedding",
     badge: "Memorable",
-    image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1200&q=80",
-    description: "Whether it is a 25th Silver Jubilee vow renewal or an opulent 50th Golden Anniversary celebration, we curate timeless, sophisticated experiences.",
+    image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=80",
+    description: "Whether it is a 25th Silver Jubilee vow renewal or an opulent 50th Golden Anniversary celebration at an illuminated palace, we curate timeless, sophisticated experiences.",
     features: [
       "Nostalgic Memory Walkway & Timeline Displays",
       "Vow Renewal Stage Architecture & Crystal Decor",
@@ -282,8 +282,8 @@ export const WEDDING_SERVICES = [
     tagline: "Spectacular milestone birthday celebrations tailored to every age",
     category: "Wedding",
     badge: "Celebration",
-    image: "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1200&q=80",
-    description: "From lavish 1st birthday wonderlands and 18th debutante balls to landmark 50th celebrations with custom themes, interactive entertainment, and dessert bars.",
+    image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1200&q=80",
+    description: "From lavish 1st birthday wonderlands and 18th debutante balls to landmark 50th celebrations with custom themes, interactive entertainment, and gourmet dessert stations.",
     features: [
       "Bespoke 3D Theme Backdrops & Balloon Architecture",
       "Custom Designer Tiered Cakes & Candy Stations",
@@ -298,8 +298,8 @@ export const WEDDING_SERVICES = [
     tagline: "Auspicious baby naming and first solid food blessings",
     category: "Wedding",
     badge: "Traditional",
-    image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
-    description: "Authentic Annaprashan ceremonies with silver thali setups, traditional conch shell blowing, floral sanctorum, and comfortable family seating.",
+    image: "https://images.unsplash.com/photo-1609137144813-7d9921338f24?auto=format&fit=crop&w=1200&q=80",
+    description: "Authentic Annaprashan ceremonies with pure silver thali setups, traditional conch shell blowing, sacred marigold floral sanctorum, and comfortable family dining logistics.",
     features: [
       "Pure Silverware Puja & Thali Setups",
       "Child-Safe Floral Sanctorum & Cradle",
@@ -316,79 +316,79 @@ export const MANPOWER_ROSTER = [
     name: "Elite Hospitality & Guest Care Team",
     category: "Management",
     badge: "5-Star Standard",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.pexels.com/photos/3394314/pexels-photo-3394314.jpeg?auto=compress&cs=tinysrgb&w=1200",
     uniform: "Designer Formal Suits / Saree",
     headcount: "Batches of 5 to 50+",
     experience: "3+ Years Luxury Hotel Background",
     roles: ["Airport Meet & Greet", "Luggage Tagging & Delivery", "Room Hamper Distribution", "Helpdesk Desk 24/7"],
-    description: "Well-spoken, groomed, multilingual professionals trained to handle demanding VIPs, delegates, and wedding families with utmost grace."
+    description: "Well-spoken, groomed, multilingual Indian professionals trained to handle demanding VIPs, delegates, and wedding families with utmost grace."
   },
   {
     id: "mp-dance",
     name: "Professional Dance Troupes",
     category: "Artists",
     badge: "Stage Performers",
-    image: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.pexels.com/photos/35328204/pexels-photo-35328204/free-photo-of-vibrant-indian-wedding-dance-celebration.jpeg?auto=compress&cs=tinysrgb&w=1200",
     uniform: "Authentic Thematic Costumes",
     headcount: "Troupes of 6 to 24 Dancers",
     experience: "Reality Show / Bollywood Choreography",
     roles: ["Bollywood Medleys", "Contemporary & Sufi Acts", "Rajasthani Ghoomar & Kalbelia", "LED Tron Dance"],
-    description: "Synchronized performers delivering electrifying opening acts, family backups, and high-energy stage transitions."
+    description: "Synchronized Indian dancers delivering electrifying opening acts, family backups, and high-energy stage transitions."
   },
   {
     id: "mp-welcome",
     name: "Welcoming Hostesses & Ushers",
     category: "Hospitality",
     badge: "First Impression",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80",
-    uniform: "Coordinated Gowns / Traditional Attire",
+    image: "https://images.pexels.com/photos/8964916/pexels-photo-8964916.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    uniform: "Coordinated Gowns / Traditional Saree",
     headcount: "Teams of 4 to 20+",
     experience: "Exhibition & Corporate Trained",
     roles: ["Aarti & Tikka Welcome", "Rose Bud & Ittar Offering", "Seat Ushering", "Award Presentation Handover"],
-    description: "Polite, photogenic, and articulate hostesses providing the warmest first impression at the entrance of your gala."
+    description: "Polite, photogenic, and articulate Indian hostesses providing the warmest traditional first impression at the entrance of your gala."
   },
   {
     id: "mp-managers",
     name: "Event Operations & Floor Managers",
     category: "Management",
     badge: "Ground Command",
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.pexels.com/photos/7580648/pexels-photo-7580648.jpeg?auto=compress&cs=tinysrgb&w=1200",
     uniform: "Black Suits with Comms Earpieces",
     headcount: "Squads of 2 to 10",
     experience: "5+ Years Large-Scale Events",
     roles: ["Timecode Stage Management", "Catering Flow Monitoring", "Vendor Synchronization", "Crisis Resolution"],
-    description: "Seasoned ground generals with radio walkie-talkies ensuring timelines run down to the exact second."
+    description: "Seasoned ground generals with radio walkie-talkies ensuring Indian event timelines run down to the exact second."
   },
   {
     id: "mp-vip",
     name: "V.I.P & VVIP Protocol Marshals",
     category: "Security",
     badge: "Dignitary Care",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.pexels.com/photos/7580917/pexels-photo-7580917.jpeg?auto=compress&cs=tinysrgb&w=1200",
     uniform: "Black Formal Safari Suits",
     headcount: "Units of 2 to 15",
     experience: "Ex-Defense / High-Level Security",
     roles: ["Celebrity Greenroom Management", "Convoy Entry & Exit Clearing", "Private Lounge Access Control", "Personal Escorts"],
-    description: "Discreet and authoritative marshals specialized in dignitary protection, ministers, CEOs, and film stars."
+    description: "Discreet and authoritative marshals specialized in dignitary protection, ministers, CEOs, and Bollywood celebrities."
   },
   {
     id: "mp-security",
     name: "Event Security Marshals & Uniformed Guards",
     category: "Security",
     badge: "PSARA Certified",
-    image: "https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.pexels.com/photos/7709292/pexels-photo-7709292.jpeg?auto=compress&cs=tinysrgb&w=1200",
     uniform: "Armed & Unarmed Security Uniforms with Badges",
     headcount: "Detachments of 4 to 80+ Guards",
     experience: "Ex-Servicemen / PSARA Certified Security",
     roles: ["Metal Detector DFMD Frisking", "Perimeter & Parking Vigilance", "Bag Checks & Asset Protection", "24/7 Night Watch Shift"],
-    description: "Licensed, certified, and disciplined security personnel ensuring complete venue sanctity, visitor screening, and asset safety."
+    description: "Licensed, certified, and disciplined security personnel ensuring complete venue sanctity, visitor screening, and asset safety across India."
   },
   {
     id: "mp-bouncers",
     name: "High-Profile Bouncers (Male & Female)",
     category: "Security",
     badge: "Perimeter Shield",
-    image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.pexels.com/photos/837358/pexels-photo-837358.jpeg?auto=compress&cs=tinysrgb&w=1200",
     uniform: "Branded Black Muscle Fits / Formal Suits",
     headcount: "Packs of 4 to 100+",
     experience: "Verified Background & Physical Training",
@@ -400,19 +400,19 @@ export const MANPOWER_ROSTER = [
     name: "Groomed Banquet Waiters & Mixologists",
     category: "Hospitality",
     badge: "Banquet Dining",
-    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1200&q=80",
     uniform: "Tuxedo Vest & White Gloves",
     headcount: "Crews of 10 to 150+",
     experience: "5-Star Catering Standards",
     roles: ["Silver Platter Service", "Cocktail & Mocktail Flaring", "Continuous Table Clearance", "VIP Dining Attention"],
-    description: "Courteous, hygienically manicured catering staff who understand the delicate art of fine banquet dining."
+    description: "Courteous, hygienically manicured catering staff who understand the delicate art of fine Indian banquet dining."
   },
   {
     id: "mp-djs",
     name: "Celebrity & Club DJs",
     category: "Artists",
     badge: "Turntable Masters",
-    image: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80",
     uniform: "Modern Clubwear",
     headcount: "Solo / DJ with Console Setup",
     experience: "Sunburn, Top Metro Clubs, Big Weddings",
@@ -424,19 +424,19 @@ export const MANPOWER_ROSTER = [
     name: "Professional Bilingual Anchors & Emcees",
     category: "Artists",
     badge: "Stage Charmers",
-    image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.pexels.com/photos/7581113/pexels-photo-7581113.jpeg?auto=compress&cs=tinysrgb&w=1200",
     uniform: "Designer Tuxedos / Evening Gowns",
     headcount: "Solo / Co-Anchoring Duos",
     experience: "TV / Radio / 500+ Live Stages",
     roles: ["Audience Icebreakers & Games", "Dignitary Felicitation", "Sangeet Family Banter", "Corporate Script Delivery"],
-    description: "Charismatic orators who effortlessly bridge the gap between audience and stage with wit, energy, and charm."
+    description: "Charismatic bilingual Indian orators who effortlessly bridge the gap between audience and stage with wit, energy, and charm."
   },
   {
     id: "mp-aarti",
     name: "Authentic Varanasi Ganga Aarti Troupe",
     category: "Cultural",
     badge: "Sacred Heritage",
-    image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1561359313-0639aad49ca6?auto=format&fit=crop&w=1200&q=80",
     uniform: "Traditional Saffron Vedic Robes",
     headcount: "Troupes of 5, 7, 9, or 11 Priests",
     experience: "Kashi Ghat Trained Acharyas",
@@ -448,7 +448,7 @@ export const MANPOWER_ROSTER = [
     name: "Punjabi & Nasik Live Dholis",
     category: "Cultural",
     badge: "High Energy",
-    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1582233479366-6d38bc390a08?auto=format&fit=crop&w=1200&q=80",
     uniform: "Traditional Kurta & Turban / Dhoti",
     headcount: "Sets of 4 to 20 Drummers",
     experience: "Heritage Percussionists",
@@ -460,84 +460,84 @@ export const MANPOWER_ROSTER = [
     name: "Candid Photographers & Drone Pilots",
     category: "Production",
     badge: "4K Framing",
-    image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.pexels.com/photos/2774197/pexels-photo-2774197.jpeg?auto=compress&cs=tinysrgb&w=1200",
     uniform: "Professional Media Crew Wear",
     headcount: "Units of 2 to 8 Crew",
     experience: "Sony Alpha 7IV / Canon R5 Master Shooters",
     roles: ["Unfiltered Candid Moments", "Traditional Family Portraits", "4K Drone Aerial Framing", "Same-Day Teaser Edits"],
-    description: "Visual storytellers capturing spontaneous emotions, grand architecture, and candid laughter with cinematic lenses."
+    description: "Visual storytellers capturing spontaneous Indian wedding and corporate emotions with cinematic prime lenses."
   },
   {
     id: "mp-video",
     name: "Cinematic Cinematographers & Editors",
     category: "Production",
     badge: "Movie Grade",
-    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.pexels.com/photos/3062541/pexels-photo-3062541.jpeg?auto=compress&cs=tinysrgb&w=1200",
     uniform: "Production Crew Uniform",
     headcount: "Crews of 3 to 10",
     experience: "Feature Film & Commercial Ads",
     roles: ["Gimbal & Crane Steady Shots", "Audio Synced Speeches", "Full-Length 4K Film", "Social Media 9:16 Reels within 24h"],
-    description: "Equipped with motorized gimbals, jib cranes, and wireless audio lavs to craft movie-quality event documentaries."
+    description: "Equipped with motorized gimbals, jib cranes, and wireless audio lavs to craft movie-quality Indian event documentaries."
   },
   {
     id: "mp-models",
     name: "Ramp Models & Brand Ambassadors",
     category: "Artists",
     badge: "High Glamour",
-    image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.pexels.com/photos/2899738/pexels-photo-2899738.jpeg?auto=compress&cs=tinysrgb&w=1200",
     uniform: "Couture Fashion / Brand Monogrammed",
     headcount: "Casting of 4 to 30 Models",
     experience: "Fashion Weeks & Commercial Shoots",
     roles: ["Runway Fashion Shows", "Product Unveiling Poses", "Automobile Show Staging", "Print & Video Lookbooks"],
-    description: "High-caliber male and female models who add luxury aesthetic and aspirational appeal to product showcases."
+    description: "High-caliber Indian fashion models who add luxury aesthetic and aspirational appeal to product showcases and fashion runways."
   },
   {
     id: "mp-bands",
     name: "Live Fusion Bands & Instrumentalists",
     category: "Artists",
     badge: "Acoustic Luxury",
-    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80",
-    uniform: "Bohemian / Classic Black Tie",
+    image: "https://images.pexels.com/photos/6899933/pexels-photo-6899933.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    uniform: "Bohemian / Classic Indian Formal",
     headcount: "Bands of 3 to 8 Musicians",
     experience: "Indie Circuit & Coke Studio Sessions",
     roles: ["Sufi & Bollywood Acoustic Jams", "Saxophone Cocktails", "Electric Violin Entries", "Sitar & Flute Welcomes"],
-    description: "Soul-stirring instrumentalists creating ambient luxury during welcome drinks, dinners, and pre-event sundowners."
+    description: "Soul-stirring Indian instrumentalists creating ambient luxury during welcome drinks, dinners, and pre-event sundowners."
   },
   {
     id: "mp-russian",
     name: "International & Russian Performing Artists",
     category: "Artists",
     badge: "Global Glamour",
-    image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=1200&q=80",
     uniform: "Bespoke Glitz & Feather Costumes",
     headcount: "Acts of 2 to 12 Artists",
     experience: "International Circus & Carnival Standards",
     roles: ["Aerial Silk & Lyra Acrobatics", "Violin & Saxophone Acts", "Fire Spitting & Pyro Shows", "Champagne Chandelier Pouring"],
-    description: "World-class visual spectacle artists bringing global European glamour to high-profile stages and VIP soirees."
+    description: "World-class visual spectacle artists bringing global European glamour to high-profile stages and VIP soirees in India."
   },
   {
     id: "mp-promo",
     name: "BTL Promotion & Flyering Fleets",
     category: "Marketing",
     badge: "Ground Buzz",
-    image: "https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.pexels.com/photos/7580648/pexels-photo-7580648.jpeg?auto=compress&cs=tinysrgb&w=1200",
     uniform: "Brand T-Shirts & Caps",
     headcount: "Troops of 10 to 100 Promoters",
     experience: "Targeted Field Activations",
     roles: ["Pamphlet & Brochure Handover", "Sample Distribution", "Survey Form Submissions", "Street Corner Buzz Generation"],
-    description: "Enthusiastic youth teams trained in elevator pitches to maximize direct customer reach across high-traffic intersections."
+    description: "Enthusiastic Indian youth teams trained in elevator pitches to maximize direct customer reach across high-traffic intersections."
   },
   {
     id: "mp-marketing",
     name: "Direct Marketing & Field Survey Fleets",
     category: "Marketing",
     badge: "Data-Driven",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.pexels.com/photos/7581016/pexels-photo-7581016.jpeg?auto=compress&cs=tinysrgb&w=1200",
     uniform: "Smart Formal Monogrammed Attire",
     headcount: "Teams of 6 to 40 Field Executives",
     experience: "B2B & B2C Lead Generation",
     roles: ["Door-to-Door & Shop-to-Shop Outreach", "Digital Survey & Tablet Data Collection", "Product Demonstrations", "Consumer Feedback Audits"],
-    description: "Data-driven marketing teams executing disciplined door-to-door, store-to-store, and corporate park campaigns with GPS-tracked reporting."
+    description: "Data-driven Indian marketing teams executing disciplined door-to-door, store-to-store, and corporate park campaigns with GPS-tracked reporting."
   },
   {
     id: "mp-artistmgmt",
@@ -561,7 +561,7 @@ export const PORTFOLIO_PROJECTS = [
     client: "NexGen Cloud Systems",
     location: "Jio World Convention Centre, Mumbai",
     attendees: "3,200 Delegates",
-    image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80",
     tags: ["3D Curved LED", "120 Bouncers & Ushers", "Simultaneous Translation", "Live 4K Stream"]
   },
   {
@@ -571,7 +571,7 @@ export const PORTFOLIO_PROJECTS = [
     client: "Singhania & Mehta Families",
     location: "Jagmandir Island Palace, Udaipur",
     attendees: "650 Royal Guests",
-    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Heritage Mandap", "Varanasi Ganga Aarti", "Russian Violinists", "Drone Show"]
   },
   {
@@ -581,7 +581,7 @@ export const PORTFOLIO_PROJECTS = [
     client: "VoltMotors India",
     location: "Aerocity, New Delhi",
     attendees: "900 Dealers & Press",
-    image: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80",
     tags: ["Hydraulic Turntable", "Projection Mapping", "30 Hostesses", "Cold Pyro Fountains"]
   },
   {
@@ -591,7 +591,7 @@ export const PORTFOLIO_PROJECTS = [
     client: "The Kapoor Nuptials",
     location: "Alibaug Beachfront Villa",
     attendees: "400 Guests",
-    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.pexels.com/photos/29496276/pexels-photo-29496276/free-photo-of-vibrant-haldi-ceremony-at-indian-wedding-celebration.jpeg?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Marigold Urli Bathtubs", "Punjab Live Dhol", "DJ Concert Sound", "Cocktail Mixologists"]
   },
   {
@@ -601,7 +601,7 @@ export const PORTFOLIO_PROJECTS = [
     client: "Apex University Inter-College Council",
     location: "Bengaluru Grounds",
     attendees: "8,500 Students",
-    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80",
     tags: ["Arena German Truss", "Bollywood Singer Live", "Police Liaison", "50 Armed Guards"]
   },
   {
@@ -611,7 +611,7 @@ export const PORTFOLIO_PROJECTS = [
     client: "Banerjee Family",
     location: "ITC Sonar, Kolkata",
     attendees: "250 Family Guests",
-    image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1609137144813-7d9921338f24?auto=format&fit=crop&w=1200&q=80",
     tags: ["Pure Silver Thali Setups", "Conch Shell Aarti", "Live Shehnai", "Candid Photo Studio"]
   }
 ];

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, Star } from 'lucide-react';
 
 const HERO_IMAGES = [
-  'https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=2000&q=85',
-  'https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=2000&q=85',
-  'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=2000&q=85',
+  'https://images.pexels.com/photos/33485963/pexels-photo-33485963/free-photo-of-elegant-indian-palace-courtyard-wedding-venue.jpeg?auto=compress&cs=tinysrgb&w=2000',
+  'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=2000&q=85',
+  'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=2000&q=85',
 ];
 
 export default function Hero({ onOpenProposalModal, onViewPortfolio }) {

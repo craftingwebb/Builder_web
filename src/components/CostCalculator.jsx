@@ -324,7 +324,7 @@ export default function CostCalculator() {
                 onClick={handleWhatsAppQuote}
                 className="btn-gold w-full cursor-pointer flex items-center justify-center gap-2"
               >
-                <WhatsAppIcon className="size-4" bubbleColor="#130308" phoneColor="#c9a96a" />
+                <WhatsAppIcon className="size-4 text-[#130308]" />
                 <span>Send Estimate to WhatsApp</span>
               </button>
             </div>
