@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function AboutSection({ onOpenProposalModal, onNavigateAbout }) {
   return (
-    <section id="about" className="relative bg-ivory py-28 text-ink lg:py-36">
+    <section id="about" className="relative overflow-hidden bg-ivory py-20 sm:py-28 text-ink lg:py-36">
       <div className="site-container">
         
         <div className="grid gap-16 lg:grid-cols-12 lg:items-center">

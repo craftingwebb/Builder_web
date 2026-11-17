@@ -192,7 +192,7 @@ export default function PortfolioPage({ onNavigateHome, onOpenProposalModal }) {
         <div className="site-container">
           
           {/* Filter Pills with Count Badges (Screenshot 3) */}
-          <div className="flex items-center gap-2.5 overflow-x-auto pb-4 scrollbar-none mb-12 lg:mb-16">
+          <div className="-mx-4 px-4 sm:mx-0 sm:px-0 flex items-center gap-2.5 overflow-x-auto pb-4 scrollbar-none mb-10 sm:mb-12 lg:mb-16">
             {CATEGORY_TABS.map((tab) => {
               const isActive = activeTab === tab.key;
               return (
@@ -273,7 +273,7 @@ export default function PortfolioPage({ onNavigateHome, onOpenProposalModal }) {
       {/* 3. Bottom Banner Card (Screenshot 1 / 6: media_1794850379809_91fc7d25.jpg) */}
       <section className="bg-ivory pb-20 sm:pb-28">
         <div className="site-container">
-          <div className="relative isolate overflow-hidden rounded-[2.5rem] bg-ink px-8 py-16 sm:px-14 sm:py-20 text-white shadow-2xl">
+          <div className="relative isolate overflow-hidden rounded-2xl sm:rounded-[2.5rem] bg-ink px-5 py-12 sm:px-14 sm:py-20 text-white shadow-2xl">
             {/* Background Image of Concert / Event Crowd */}
             <img
               src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1800&q=80"
@@ -289,32 +289,32 @@ export default function PortfolioPage({ onNavigateHome, onOpenProposalModal }) {
             />
 
             {/* Eyebrow */}
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50 mb-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50 mb-4 sm:mb-6">
               — REQUEST A PROPOSAL
             </p>
 
             {/* Headline */}
-            <h2 className="max-w-2xl text-3xl sm:text-5xl lg:text-[3.5rem] font-semibold tracking-tight leading-[1.1] text-white">
+            <h2 className="max-w-2xl text-2xl min-[400px]:text-3xl sm:text-5xl lg:text-[3.5rem] font-semibold tracking-tight leading-[1.15] text-white">
               Want results like these?
             </h2>
 
             {/* Subtitle */}
-            <p className="mt-5 max-w-xl text-base sm:text-lg text-white/70 leading-relaxed">
+            <p className="mt-4 sm:mt-5 max-w-xl text-sm sm:text-lg text-white/70 leading-relaxed">
               Share a few details and receive a tailored concept note with indicative budget in 48 hours.
             </p>
 
             {/* Buttons */}
-            <div className="mt-9 flex flex-wrap items-center gap-4">
+            <div className="mt-8 sm:mt-9 flex flex-col min-[420px]:flex-row min-[420px]:items-center gap-3 sm:gap-4">
               <button
                 onClick={() => onOpenProposalModal?.({ title: "Portfolio Inquiries" })}
-                className="btn-gold !py-3.5 !px-7 font-semibold text-sm cursor-pointer shadow-lg"
+                className="btn-gold !py-3.5 !px-7 font-semibold text-sm cursor-pointer shadow-lg w-full min-[420px]:w-auto justify-center"
               >
                 <span>Start your proposal</span>
                 <ArrowUpRight className="size-4" />
               </button>
               <button
                 onClick={scrollToGrid}
-                className="btn-ghost-light !py-3.5 !px-7 font-semibold text-sm transition-all duration-300 cursor-pointer"
+                className="btn-ghost-light !py-3.5 !px-7 font-semibold text-sm transition-all duration-300 cursor-pointer w-full min-[420px]:w-auto justify-center"
               >
                 See our work
               </button>

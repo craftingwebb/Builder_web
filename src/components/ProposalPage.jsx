@@ -445,7 +445,7 @@ export default function ProposalPage({ onNavigateHome }) {
                               value={city}
                               onChange={(e) => setCity(e.target.value)}
                               placeholder="e.g. Mumbai, Goa, Bengaluru"
-                              className="w-full rounded-xl border border-ink/15 bg-zinc-50/50 px-4 py-2.5 text-xs sm:text-sm text-ink outline-none focus:border-ink focus:bg-white"
+                              className="w-full rounded-xl border border-ink/15 bg-zinc-50/50 px-4 py-2.5 text-base sm:text-sm text-ink outline-none focus:border-ink focus:bg-white"
                             />
                           </div>
                           <div>
@@ -458,7 +458,7 @@ export default function ProposalPage({ onNavigateHome }) {
                               value={targetDate}
                               onChange={(e) => setTargetDate(e.target.value)}
                               placeholder="e.g. November 2026 / Q4"
-                              className="w-full rounded-xl border border-ink/15 bg-zinc-50/50 px-4 py-2.5 text-xs sm:text-sm text-ink outline-none focus:border-ink focus:bg-white"
+                              className="w-full rounded-xl border border-ink/15 bg-zinc-50/50 px-4 py-2.5 text-base sm:text-sm text-ink outline-none focus:border-ink focus:bg-white"
                             />
                           </div>
                         </div>
@@ -473,7 +473,7 @@ export default function ProposalPage({ onNavigateHome }) {
                             value={briefNotes}
                             onChange={(e) => setBriefNotes(e.target.value)}
                             placeholder="Share any specific theme, stage requirements, or executive expectations..."
-                            className="w-full rounded-xl border border-ink/15 bg-zinc-50/50 p-3.5 text-xs sm:text-sm text-ink outline-none focus:border-ink focus:bg-white resize-none"
+                            className="w-full rounded-xl border border-ink/15 bg-zinc-50/50 p-3.5 text-base sm:text-sm text-ink outline-none focus:border-ink focus:bg-white resize-none"
                           />
                         </div>
 
@@ -540,7 +540,7 @@ export default function ProposalPage({ onNavigateHome }) {
                               value={fullName}
                               onChange={(e) => setFullName(e.target.value)}
                               placeholder="e.g. Rajesh Sharma"
-                              className="w-full rounded-xl border border-ink/15 bg-zinc-50/50 px-4 py-2.5 text-xs sm:text-sm text-ink outline-none focus:border-ink focus:bg-white"
+                              className="w-full rounded-xl border border-ink/15 bg-zinc-50/50 px-4 py-2.5 text-base sm:text-sm text-ink outline-none focus:border-ink focus:bg-white"
                             />
                           </div>
 
@@ -553,7 +553,7 @@ export default function ProposalPage({ onNavigateHome }) {
                               value={company}
                               onChange={(e) => setCompany(e.target.value)}
                               placeholder="e.g. Acme Enterprises"
-                              className="w-full rounded-xl border border-ink/15 bg-zinc-50/50 px-4 py-2.5 text-xs sm:text-sm text-ink outline-none focus:border-ink focus:bg-white"
+                              className="w-full rounded-xl border border-ink/15 bg-zinc-50/50 px-4 py-2.5 text-base sm:text-sm text-ink outline-none focus:border-ink focus:bg-white"
                             />
                           </div>
                         </div>
@@ -569,7 +569,7 @@ export default function ProposalPage({ onNavigateHome }) {
                               value={email}
                               onChange={(e) => setEmail(e.target.value)}
                               placeholder="you@company.com"
-                              className="w-full rounded-xl border border-ink/15 bg-zinc-50/50 px-4 py-2.5 text-xs sm:text-sm text-ink outline-none focus:border-ink focus:bg-white"
+                              className="w-full rounded-xl border border-ink/15 bg-zinc-50/50 px-4 py-2.5 text-base sm:text-sm text-ink outline-none focus:border-ink focus:bg-white"
                             />
                           </div>
 
@@ -583,7 +583,7 @@ export default function ProposalPage({ onNavigateHome }) {
                               value={phone}
                               onChange={(e) => setPhone(e.target.value)}
                               placeholder="+91 76001 XXXXX"
-                              className="w-full rounded-xl border border-ink/15 bg-zinc-50/50 px-4 py-2.5 text-xs sm:text-sm text-ink outline-none focus:border-ink focus:bg-white"
+                              className="w-full rounded-xl border border-ink/15 bg-zinc-50/50 px-4 py-2.5 text-base sm:text-sm text-ink outline-none focus:border-ink focus:bg-white"
                             />
                           </div>
                         </div>

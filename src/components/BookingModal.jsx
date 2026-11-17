@@ -141,7 +141,7 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="e.g. Rajesh Sharma"
-                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500"
+                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-base sm:text-xs text-white focus:outline-none focus:border-amber-500"
                   />
                 </div>
                 <div>
@@ -153,7 +153,7 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+91 98765 43210"
-                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500"
+                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-base sm:text-xs text-white focus:outline-none focus:border-amber-500"
                   />
                 </div>
               </div>
@@ -165,7 +165,7 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
                     name="eventType"
                     value={formData.eventType}
                     onChange={handleChange}
-                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500"
+                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-base sm:text-xs text-white focus:outline-none focus:border-amber-500"
                   >
                     <option value="Corporate Event">Corporate / Summit</option>
                     <option value="Product Launch">Product Launch &amp; Reveal</option>
@@ -184,7 +184,7 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
                     value={formData.serviceTitle}
                     onChange={handleChange}
                     placeholder="e.g. Banaras Aarti, 20 Bouncers"
-                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500"
+                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-base sm:text-xs text-white focus:outline-none focus:border-amber-500"
                   />
                 </div>
               </div>
@@ -199,7 +199,7 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
                     value={formData.city}
                     onChange={handleChange}
                     placeholder="e.g. Mumbai"
-                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500"
+                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-base sm:text-xs text-white focus:outline-none focus:border-amber-500"
                   />
                 </div>
                 <div>
@@ -209,7 +209,7 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
                     name="date"
                     value={formData.date}
                     onChange={handleChange}
-                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500"
+                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-base sm:text-xs text-white focus:outline-none focus:border-amber-500"
                   />
                 </div>
                 <div>
@@ -218,7 +218,7 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
                     name="guestCount"
                     value={formData.guestCount}
                     onChange={handleChange}
-                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500"
+                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2.5 text-base sm:text-xs text-white focus:outline-none focus:border-amber-500"
                   >
                     <option value="Under 100">Under 100</option>
                     <option value="100 - 300">100 - 300</option>
@@ -237,7 +237,7 @@ export default function BookingModal({ isOpen, onClose, initialData }) {
                   value={formData.notes}
                   onChange={handleChange}
                   placeholder="Tell us about your stage requirements, timings, specific artist preferences, or budget parameters..."
-                  className="w-full bg-zinc-900 border border-zinc-800 rounded-xl p-3 text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-amber-500"
+                  className="w-full bg-zinc-900 border border-zinc-800 rounded-xl p-3 text-base sm:text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-amber-500"
                 ></textarea>
               </div>
 

@@ -53,7 +53,7 @@ export default function Hero({ onOpenProposalModal, onViewPortfolio }) {
             </div>
 
             {/* Title with Split Line-by-Line Bottom Slide-Up Reveal (Matching Reference SplitText) */}
-            <h1 className="display mt-6 text-[2.8rem] sm:text-6xl lg:text-[5.5rem] xl:text-[6.4rem]">
+            <h1 className="display mt-6 text-[2.2rem] min-[390px]:text-[2.6rem] sm:text-6xl lg:text-[5.5rem] xl:text-[6.4rem]">
               <span className="block overflow-hidden py-1">
                 <span className="block animate-hero-line [animation-delay:200ms]">
                   Extraordinary
@@ -81,10 +81,10 @@ export default function Hero({ onOpenProposalModal, onViewPortfolio }) {
             </div>
 
             {/* Buttons */}
-            <div className="mt-9 flex flex-wrap gap-3 animate-hero-fade [animation-delay:820ms]">
+            <div className="mt-8 sm:mt-9 flex flex-col min-[420px]:flex-row flex-wrap gap-3 animate-hero-fade [animation-delay:820ms]">
               <button
                 onClick={onOpenProposalModal}
-                className="btn-gold cursor-pointer"
+                className="btn-gold cursor-pointer w-full min-[420px]:w-auto justify-center"
               >
                 <span>Request a Proposal</span>
                 <ArrowRight className="size-4" />
@@ -95,7 +95,7 @@ export default function Hero({ onOpenProposalModal, onViewPortfolio }) {
                   const target = document.querySelector('#portfolio');
                   if (target) target.scrollIntoView({ behavior: 'smooth' });
                 })}
-                className="btn-ghost-light cursor-pointer"
+                className="btn-ghost-light cursor-pointer w-full min-[420px]:w-auto justify-center"
               >
                 <span>View selected work</span>
               </button>

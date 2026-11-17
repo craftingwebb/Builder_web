@@ -507,7 +507,7 @@ export default function AboutPage({
       {/* ========================================================= */}
       <section className="bg-ivory pb-20 sm:pb-28">
         <div className="site-container">
-          <div className="relative overflow-hidden rounded-[2rem] bg-[#130308] p-8 sm:p-14 lg:p-16 text-white shadow-2xl border border-gold/20">
+          <div className="relative overflow-hidden rounded-2xl sm:rounded-[2rem] bg-[#130308] p-5 sm:p-14 lg:p-16 text-white shadow-2xl border border-gold/20">
             {/* Background Texture & Ambient Radial Glow */}
             <div
               aria-hidden="true"
@@ -528,28 +528,28 @@ export default function AboutPage({
             </div>
 
             {/* Headline */}
-            <h2 className="max-w-2xl text-3xl sm:text-5xl lg:text-[3.25rem] font-semibold tracking-tight leading-[1.12] text-white">
+            <h2 className="max-w-2xl text-2xl min-[400px]:text-3xl sm:text-5xl lg:text-[3.25rem] font-semibold tracking-tight leading-[1.15] text-white">
               Why choose our company? Let us show you.
             </h2>
 
             {/* Subtitle */}
-            <p className="mt-5 max-w-xl text-base sm:text-lg text-white/70 leading-relaxed">
+            <p className="mt-4 sm:mt-5 max-w-xl text-sm sm:text-lg text-white/70 leading-relaxed">
               Meet our team for a no-obligation creative session — we’ll bring
               ideas, references and an indicative budget.
             </p>
 
             {/* Action Buttons */}
-            <div className="mt-9 flex flex-wrap items-center gap-4">
+            <div className="mt-8 sm:mt-9 flex flex-col min-[420px]:flex-row min-[420px]:items-center gap-3 sm:gap-4">
               <button
                 onClick={onOpenProposalModal}
-                className="btn-gold !py-3.5 !px-7 font-semibold text-sm cursor-pointer shadow-lg"
+                className="btn-gold !py-3.5 !px-7 font-semibold text-sm cursor-pointer shadow-lg w-full min-[420px]:w-auto justify-center"
               >
                 <span>Start your proposal</span>
                 <ArrowUpRight className="size-4" />
               </button>
               <button
                 onClick={onViewPortfolio}
-                className="btn-ghost-light !py-3.5 !px-7 font-semibold text-sm transition-all duration-300 cursor-pointer"
+                className="btn-ghost-light !py-3.5 !px-7 font-semibold text-sm transition-all duration-300 cursor-pointer w-full min-[420px]:w-auto justify-center"
               >
                 See our work
               </button>

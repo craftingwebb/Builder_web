@@ -266,14 +266,14 @@ export default function InsightsPage({
         <div className="site-container">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
             {/* Category Filter Pills */}
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="-mx-4 px-4 sm:mx-0 sm:px-0 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none sm:flex-wrap">
               {CATEGORIES.map((cat) => {
                 const isActive = activeCategory === cat;
                 return (
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className={`rounded-full px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-semibold tracking-tight transition-all duration-300 cursor-pointer ${
+                    className={`rounded-full px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-semibold tracking-tight transition-all duration-300 cursor-pointer shrink-0 whitespace-nowrap ${
                       isActive
                         ? 'bg-[#801436] text-white shadow-lg shadow-[#801436]/40 ring-1 ring-[#c9a96a]/50 scale-102'
                         : 'bg-white text-ink/70 hover:text-ink hover:bg-white/90 border border-black/5 shadow-xs'
@@ -293,7 +293,7 @@ export default function InsightsPage({
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search articles..."
-                className="w-full rounded-full border border-black/10 bg-white pl-10 pr-9 py-2.5 text-xs sm:text-sm text-ink outline-none placeholder:text-ink/40 focus:border-gold focus:ring-2 focus:ring-gold/20 shadow-xs transition"
+                className="w-full rounded-full border border-black/10 bg-white pl-10 pr-9 py-2.5 text-base sm:text-sm text-ink outline-none placeholder:text-ink/40 focus:border-gold focus:ring-2 focus:ring-gold/20 shadow-xs transition"
               />
               {searchQuery && (
                 <button
@@ -562,7 +562,7 @@ export default function InsightsPage({
       {/* ========================================================= */}
       <section className="bg-ivory pb-20 sm:pb-28 pt-8">
         <div className="site-container">
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#18040b] via-[#24060f] to-[#120207] p-8 sm:p-14 lg:p-16 text-white shadow-2xl border border-gold/20">
+          <div className="relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] bg-gradient-to-br from-[#18040b] via-[#24060f] to-[#120207] p-5 sm:p-14 lg:p-16 text-white shadow-2xl border border-gold/20">
             {/* Background Texture & Ambient Radial Glow */}
             <div
               aria-hidden="true"
@@ -575,7 +575,7 @@ export default function InsightsPage({
             />
 
             {/* Eyebrow */}
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center gap-2 mb-4 sm:mb-6">
               <span className="w-8 h-px bg-gold" />
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
                 REQUEST A PROPOSAL
@@ -583,27 +583,27 @@ export default function InsightsPage({
             </div>
 
             {/* Headline */}
-            <h2 className="max-w-2xl text-3xl sm:text-5xl lg:text-[3.5rem] font-semibold tracking-tight leading-[1.1] text-white">
+            <h2 className="max-w-2xl text-2xl min-[400px]:text-3xl sm:text-5xl lg:text-[3.5rem] font-semibold tracking-tight leading-[1.15] text-white">
               Have an event on the horizon?
             </h2>
 
             {/* Subtitle */}
-            <p className="mt-5 max-w-xl text-base sm:text-lg text-white/70 leading-relaxed">
+            <p className="mt-4 sm:mt-5 max-w-xl text-sm sm:text-lg text-white/70 leading-relaxed">
               Share a few details and receive a tailored concept note with indicative budget in 48 hours.
             </p>
 
             {/* Action Buttons */}
-            <div className="mt-9 flex flex-wrap items-center gap-4">
+            <div className="mt-8 sm:mt-9 flex flex-col min-[420px]:flex-row min-[420px]:items-center gap-3 sm:gap-4">
               <button
                 onClick={onOpenProposalModal}
-                className="btn-gold !py-3.5 !px-7 font-semibold text-sm cursor-pointer shadow-lg"
+                className="btn-gold !py-3.5 !px-7 font-semibold text-sm cursor-pointer shadow-lg w-full min-[420px]:w-auto justify-center"
               >
                 <span>Start your proposal</span>
                 <ArrowUpRight className="size-4" />
               </button>
               <button
                 onClick={onViewPortfolio}
-                className="btn-ghost-light !py-3.5 !px-7 font-semibold text-sm transition-all duration-300 cursor-pointer"
+                className="btn-ghost-light !py-3.5 !px-7 font-semibold text-sm transition-all duration-300 cursor-pointer w-full min-[420px]:w-auto justify-center"
               >
                 See our work
               </button>

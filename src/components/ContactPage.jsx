@@ -333,7 +333,7 @@ export default function ContactPage({
                           setFormData({ ...formData, name: e.target.value })
                         }
                         placeholder="John Doe"
-                        className="w-full rounded-2xl border border-ink/15 bg-zinc-50/60 px-4 py-3 text-sm text-ink outline-none transition focus:border-ink focus:bg-white"
+                        className="w-full rounded-2xl border border-ink/15 bg-zinc-50/60 px-4 py-3 text-base sm:text-sm text-ink outline-none transition focus:border-ink focus:bg-white"
                       />
                     </div>
 
@@ -348,7 +348,7 @@ export default function ContactPage({
                           setFormData({ ...formData, company: e.target.value })
                         }
                         placeholder="Organization or Brand"
-                        className="w-full rounded-2xl border border-ink/15 bg-zinc-50/60 px-4 py-3 text-sm text-ink outline-none transition focus:border-ink focus:bg-white"
+                        className="w-full rounded-2xl border border-ink/15 bg-zinc-50/60 px-4 py-3 text-base sm:text-sm text-ink outline-none transition focus:border-ink focus:bg-white"
                       />
                     </div>
                   </div>
@@ -367,7 +367,7 @@ export default function ContactPage({
                           setFormData({ ...formData, email: e.target.value })
                         }
                         placeholder="name@organization.com"
-                        className="w-full rounded-2xl border border-ink/15 bg-zinc-50/60 px-4 py-3 text-sm text-ink outline-none transition focus:border-ink focus:bg-white"
+                        className="w-full rounded-2xl border border-ink/15 bg-zinc-50/60 px-4 py-3 text-base sm:text-sm text-ink outline-none transition focus:border-ink focus:bg-white"
                       />
                     </div>
 
@@ -382,7 +382,7 @@ export default function ContactPage({
                           setFormData({ ...formData, phone: e.target.value })
                         }
                         placeholder="+91 98765 XXXXX"
-                        className="w-full rounded-2xl border border-ink/15 bg-zinc-50/60 px-4 py-3 text-sm text-ink outline-none transition focus:border-ink focus:bg-white"
+                        className="w-full rounded-2xl border border-ink/15 bg-zinc-50/60 px-4 py-3 text-base sm:text-sm text-ink outline-none transition focus:border-ink focus:bg-white"
                       />
                     </div>
                   </div>
@@ -397,7 +397,7 @@ export default function ContactPage({
                       onChange={(e) =>
                         setFormData({ ...formData, subject: e.target.value })
                       }
-                      className="w-full rounded-2xl border border-ink/15 bg-zinc-50/60 px-4 py-3 text-sm text-ink outline-none transition focus:border-ink focus:bg-white cursor-pointer"
+                      className="w-full rounded-2xl border border-ink/15 bg-zinc-50/60 px-4 py-3 text-base sm:text-sm text-ink outline-none transition focus:border-ink focus:bg-white cursor-pointer"
                     >
                       <option value="General enquiry">General enquiry</option>
                       <option value="Corporate Conference / Summit">
@@ -431,7 +431,7 @@ export default function ContactPage({
                         setFormData({ ...formData, message: e.target.value })
                       }
                       placeholder="Share details of your upcoming event, expected scale, location, and dates..."
-                      className="w-full rounded-2xl border border-ink/15 bg-zinc-50/60 px-4 py-3 text-sm text-ink outline-none transition focus:border-ink focus:bg-white resize-none"
+                      className="w-full rounded-2xl border border-ink/15 bg-zinc-50/60 px-4 py-3 text-base sm:text-sm text-ink outline-none transition focus:border-ink focus:bg-white resize-none"
                     />
                   </div>
 
@@ -439,7 +439,7 @@ export default function ContactPage({
                   <div>
                     <button
                       type="submit"
-                      className="inline-flex items-center gap-2 rounded-full bg-ink px-8 py-4 text-sm font-semibold text-white shadow-lg transition-all hover:bg-black hover:shadow-xl cursor-pointer active:scale-95"
+                      className="inline-flex w-full sm:w-auto justify-center items-center gap-2 rounded-full bg-ink px-8 py-4 text-sm font-semibold text-white shadow-lg transition-all hover:bg-black hover:shadow-xl cursor-pointer active:scale-95"
                     >
                       <Send className="size-4" />
                       <span>Send message</span>

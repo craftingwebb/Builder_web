@@ -127,8 +127,8 @@ export default function ServicesSection({ onSelectService, onNavigateServices })
           </div>
         </div>
 
-        {/* Clean, Non-wrapping Single-Row Category Tabs */}
-        <div className="mb-12 flex items-center gap-3 overflow-x-auto pb-2 scrollbar-none">
+        {/* Clean, Non-wrapping Single-Row Category Tabs with mobile edge-to-edge scroll */}
+        <div className="mb-10 sm:mb-12 -mx-4 px-4 sm:mx-0 sm:px-0 flex items-center gap-2.5 sm:gap-3 overflow-x-auto pb-2 scrollbar-none">
           <button
             onClick={() => { setActiveTab('corporate'); setExpandedId(null); setHoveredIdx(null); }}
             className={`flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-semibold tracking-wide transition-all cursor-pointer whitespace-nowrap ${
@@ -213,7 +213,7 @@ export default function ServicesSection({ onSelectService, onNavigateServices })
                 <div
                   onMouseEnter={() => setHoveredIdx(idx)}
                   onClick={() => toggleExpand(item.id)}
-                  className="group relative grid items-center gap-4 py-6 transition-colors sm:grid-cols-[4rem_1fr_auto] sm:py-8 lg:grid-cols-[5rem_1.1fr_1fr_auto] cursor-pointer"
+                  className="group relative grid grid-cols-[1fr_auto] sm:grid-cols-[4rem_1fr_auto] lg:grid-cols-[5rem_1.1fr_1fr_auto] items-center gap-3 sm:gap-4 py-5 sm:py-8 transition-colors cursor-pointer"
                 >
                   {/* Column 1: Number */}
                   <span className="hidden text-sm font-medium text-white/35 tabular-nums sm:block font-mono">
@@ -221,9 +221,9 @@ export default function ServicesSection({ onSelectService, onNavigateServices })
                   </span>
 
                   {/* Column 2: Title */}
-                  <span className="flex items-center gap-4">
+                  <span className="flex items-center gap-3 sm:gap-4 min-w-0">
                     <span
-                      className={`text-xl font-semibold tracking-tight transition duration-500 sm:text-2xl lg:text-[1.85rem] ${
+                      className={`text-lg sm:text-2xl lg:text-[1.85rem] font-semibold tracking-tight transition duration-500 truncate sm:whitespace-normal ${
                         isHovered
                           ? 'translate-x-2 text-gold-soft'
                           : 'text-white'
@@ -240,24 +240,24 @@ export default function ServicesSection({ onSelectService, onNavigateServices })
 
                   {/* Column 4: Arrow Button (Unhovered: diagonal arrow ↗, Hovered: solid gold circle with horizontal arrow →) */}
                   <div
-                    className={`flex size-11 items-center justify-center rounded-full transition-all duration-300 shrink-0 ${
+                    className={`flex size-10 sm:size-11 items-center justify-center rounded-full transition-all duration-300 shrink-0 ${
                       isHovered
                         ? 'bg-gold text-ink border border-gold scale-105 shadow-lg shadow-gold/30'
                         : 'border border-white/15 text-white/70'
                     }`}
                   >
                     {isHovered ? (
-                      <ArrowRight className={`size-4.5 transition-transform duration-300 ${isExpanded ? 'rotate-90' : ''}`} />
+                      <ArrowRight className={`size-4 sm:size-4.5 transition-transform duration-300 ${isExpanded ? 'rotate-90' : ''}`} />
                     ) : (
-                      <ArrowUpRight className="size-4.5" />
+                      <ArrowUpRight className="size-4 sm:size-4.5" />
                     )}
                   </div>
                 </div>
 
                 {/* Expanded Details Drawer */}
                 {isExpanded && (
-                  <div className="pb-8 pt-2 px-6 sm:px-12 bg-white/[0.02] rounded-2xl mb-6 border border-white/10 animate-in fade-in duration-300">
-                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                  <div className="pb-8 pt-4 px-4 sm:px-12 bg-white/[0.02] rounded-2xl mb-6 border border-white/10 animate-in fade-in duration-300">
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-start">
                       
                       {item.image && (
                         <div className="md:col-span-4 rounded-2xl overflow-hidden aspect-video border border-white/10 shadow-xl">
@@ -286,13 +286,13 @@ export default function ServicesSection({ onSelectService, onNavigateServices })
                           </div>
                         )}
 
-                        <div className="pt-4 flex flex-wrap items-center gap-4">
+                        <div className="pt-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
                               onSelectService(item);
                             }}
-                            className="btn-gold cursor-pointer"
+                            className="btn-gold w-full sm:w-auto justify-center cursor-pointer"
                           >
                             <span>Request Booking &amp; Quote</span>
                             <ArrowRight className="size-4" />
@@ -302,7 +302,7 @@ export default function ServicesSection({ onSelectService, onNavigateServices })
                             href={`https://wa.me/917600149422?text=Hello,%20I%20want%20to%20inquire%20about%20${encodeURIComponent(item.title)}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-xs text-emerald-400 hover:underline font-semibold"
+                            className="text-xs text-emerald-400 hover:underline font-semibold text-center sm:text-left py-1"
                           >
                             Chat with Director on WhatsApp &rarr;
                           </a>

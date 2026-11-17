@@ -308,15 +308,13 @@ export default function ClientsPage({
             </span>
           </h2>
 
-          {/* 16-Logo Matrix Card (4 columns x 4 rows) */}
-          <div className="mt-10 overflow-hidden rounded-[2rem] border border-black/5 bg-white shadow-sm">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-black/5">
-              {CORPORATE_CLIENTS.map((client, idx) => (
+          {/* 16-Logo Matrix Card (4 columns on lg, 2 on mobile/tablet) */}
+          <div className="mt-8 sm:mt-10 overflow-hidden rounded-2xl sm:rounded-[2rem] border border-black/5 bg-white shadow-sm">
+            <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y divide-black/5">
+              {CORPORATE_CLIENTS.map((client) => (
                 <div
                   key={client.name}
-                  className={`flex flex-col items-center justify-center p-8 text-center transition-colors duration-300 hover:bg-zinc-50/80 border-b border-black/5 ${
-                    idx >= 12 ? 'lg:border-b-0' : ''
-                  }`}
+                  className="flex flex-col items-center justify-center p-4 sm:p-8 text-center transition-colors duration-300 hover:bg-zinc-50/80"
                 >
                   {/* Monogram Badge */}
                   <div className="flex items-center gap-2 mb-1.5">

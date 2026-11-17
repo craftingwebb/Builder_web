@@ -13,9 +13,9 @@ export function Logo({ variant = 'emblem', showText = true }) {
         />
       </span>
       {showText && (
-        <span className="text-[1.05rem] leading-none font-bold tracking-[-0.02em] text-white flex flex-wrap items-baseline gap-1">
-          <span>S. A Event&apos;s</span>
-          <span className="accent-serif text-[1.15rem] font-normal text-gold">
+        <span className="text-xs sm:text-[1.05rem] leading-tight font-bold tracking-[-0.02em] text-white flex flex-col min-[420px]:flex-row min-[420px]:items-baseline min-[420px]:gap-1">
+          <span className="whitespace-nowrap">S. A Event&apos;s</span>
+          <span className="accent-serif text-xs min-[420px]:text-[1.15rem] font-normal text-gold whitespace-nowrap">
             &amp; Manpower Service
           </span>
         </span>
@@ -173,7 +173,7 @@ export default function Navbar({ onOpenProposalModal, currentPage = 'home', onNa
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="lg:hidden bg-ink/95 border-none px-6 py-6 backdrop-blur-2xl animate-in slide-in-from-top-3">
+        <div className="lg:hidden bg-ink/98 border-b border-white/10 px-6 py-6 backdrop-blur-2xl animate-in slide-in-from-top-3 max-h-[calc(100svh-4.5rem)] overflow-y-auto shadow-2xl">
           <div className="flex flex-col gap-3">
             {links.map((link) => {
               const isActive =

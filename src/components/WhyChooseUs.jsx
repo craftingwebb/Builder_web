@@ -9,7 +9,6 @@ export default function WhyChooseUs() {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          let start = 0;
           const end = 72;
           const duration = 1800;
           const startTime = performance.now();
@@ -80,7 +79,7 @@ export default function WhyChooseUs() {
         {/* Section Header */}
         <div className="max-w-3xl mb-12 lg:mb-16">
           <p className="eyebrow text-[#a07e3a] mb-3">The operational edge</p>
-          <h2 className="display text-ink text-[2.6rem] sm:text-6xl lg:text-7xl">
+          <h2 className="display text-ink text-[2.1rem] min-[380px]:text-[2.5rem] sm:text-6xl lg:text-7xl">
             Unshakable poise behind{' '}
             <span className="accent-serif text-[#a07e3a]">
               every landmark stage.

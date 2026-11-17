@@ -87,9 +87,9 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
 
       <div className="site-container relative">
         {/* 1. Pre-footer CTA Section (Screenshot 3) */}
-        <div className="flex flex-col gap-8 border-b border-[#c9a96a]/15 py-16 lg:flex-row lg:items-end lg:justify-between lg:py-24">
+        <div className="flex flex-col gap-8 border-b border-[#c9a96a]/15 py-12 sm:py-16 lg:flex-row lg:items-end lg:justify-between lg:py-24">
           <div>
-            <h2 className="display max-w-3xl text-[2.6rem] sm:text-6xl lg:text-7xl font-semibold leading-[1.08] tracking-tight">
+            <h2 className="display max-w-3xl text-[2rem] min-[400px]:text-[2.4rem] sm:text-6xl lg:text-7xl font-semibold leading-[1.08] tracking-tight">
               Let’s engineer something{' '}
               <span className="accent-serif italic font-serif text-[#c9a96a]">
                 truly extraordinary.
@@ -97,17 +97,17 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
             </h2>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-col min-[420px]:flex-row min-[420px]:items-center gap-3">
             <button
               onClick={onOpenQuoteModal}
-              className="btn-gold cursor-pointer !py-3.5 !px-7 font-semibold text-sm"
+              className="btn-gold cursor-pointer !py-3.5 !px-7 font-semibold text-sm w-full min-[420px]:w-auto justify-center"
             >
               <span>Start your proposal</span>
               <ArrowUpRight className="size-4" />
             </button>
             <a
               href="tel:+917600149422"
-              className="btn-ghost-light !py-3.5 !px-7 font-semibold text-sm transition-all duration-300"
+              className="btn-ghost-light !py-3.5 !px-7 font-semibold text-sm transition-all duration-300 w-full min-[420px]:w-auto text-center justify-center"
             >
               Speak with a director
             </a>
@@ -142,7 +142,7 @@ export default function Footer({ onOpenQuoteModal, onNavigate }) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@organization.com"
-                  className="min-w-0 flex-1 bg-transparent px-4 text-sm text-white outline-none placeholder:text-white/35"
+                  className="min-w-0 flex-1 bg-transparent px-4 text-base sm:text-sm text-white outline-none placeholder:text-white/35"
                 />
                 <button
                   type="submit"

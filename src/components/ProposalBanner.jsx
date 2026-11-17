@@ -38,7 +38,7 @@ export default function ProposalBanner({ onOpenProposalModal }) {
     <section className="bg-ivory pb-24 sm:pb-32 text-ink">
       <div className="site-container">
         {/* 1. Dark Proposal Card (Screenshot 1) */}
-        <div className="relative isolate overflow-hidden rounded-[2.5rem] bg-ink px-8 py-16 sm:px-14 sm:py-20 text-white shadow-2xl">
+        <div className="relative isolate overflow-hidden rounded-2xl sm:rounded-[2.5rem] bg-ink px-5 py-12 sm:px-14 sm:py-20 text-white shadow-2xl">
           {/* Background Image of Concert / Event Crowd */}
           <img
             src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1800&q=80"
@@ -54,32 +54,32 @@ export default function ProposalBanner({ onOpenProposalModal }) {
           />
 
           {/* Eyebrow */}
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50 mb-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50 mb-4 sm:mb-6">
             — INITIATE A COLLABORATION
           </p>
 
           {/* Headline */}
-          <h2 className="max-w-2xl text-3xl sm:text-5xl lg:text-[3.5rem] font-semibold tracking-tight leading-[1.1] text-white">
+          <h2 className="max-w-2xl text-2xl min-[400px]:text-3xl sm:text-5xl lg:text-[3.5rem] font-semibold tracking-tight leading-[1.15] text-white">
             Planning a landmark gathering? Let’s craft it to perfection.
           </h2>
 
           {/* Subtitle */}
-          <p className="mt-5 max-w-xl text-base sm:text-lg text-white/70 leading-relaxed">
+          <p className="mt-4 sm:mt-5 max-w-xl text-sm sm:text-lg text-white/70 leading-relaxed">
             Share your preliminary vision and receive an executive concept deck complete with transparent budgetary modeling within 48 hours.
           </p>
 
           {/* Buttons */}
-          <div className="mt-9 flex flex-wrap items-center gap-4">
+          <div className="mt-8 sm:mt-9 flex flex-col min-[440px]:flex-row min-[440px]:items-center gap-3 sm:gap-4">
             <button
               onClick={onOpenProposalModal}
-              className="btn-gold !py-3.5 !px-7 font-semibold text-sm cursor-pointer shadow-lg"
+              className="btn-gold !py-3.5 !px-7 font-semibold text-sm cursor-pointer shadow-lg w-full min-[440px]:w-auto justify-center"
             >
               <span>Start your proposal</span>
               <ArrowUpRight className="size-4" />
             </button>
             <a
               href="#portfolio"
-              className="btn-ghost-light !py-3.5 !px-7 font-semibold text-sm transition-all duration-300"
+              className="btn-ghost-light !py-3.5 !px-7 font-semibold text-sm transition-all duration-300 w-full min-[440px]:w-auto text-center justify-center"
             >
               View selected portfolio
             </a>
@@ -87,7 +87,7 @@ export default function ProposalBanner({ onOpenProposalModal }) {
         </div>
 
         {/* 2. 4-Column Contact Desk (Screenshot 2) */}
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px overflow-hidden rounded-[2rem] border border-ink/[0.08] bg-ink/[0.08] shadow-sm">
+        <div className="mt-8 sm:mt-12 grid grid-cols-1 min-[480px]:grid-cols-2 lg:grid-cols-4 gap-px overflow-hidden rounded-2xl sm:rounded-[2rem] border border-ink/[0.08] bg-ink/[0.08] shadow-sm">
           {CONTACT_CHANNELS.map((item) => (
             <a
               key={item.label}
