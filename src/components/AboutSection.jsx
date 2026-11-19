@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import founderPhoto from '../assets/images/md-saif-bari.jpg';
 
 export default function AboutSection({ onOpenProposalModal, onNavigateAbout }) {
   return (
@@ -66,13 +67,16 @@ export default function AboutSection({ onOpenProposalModal, onNavigateAbout }) {
               </div>
             </div>
 
-            {/* Overlapping Small Panel Image */}
-            <div className="absolute -bottom-6 -left-4 w-40 sm:w-52 overflow-hidden rounded-3xl border-[6px] border-ivory shadow-2xl aspect-square z-10 bg-zinc-800">
+            {/* Overlapping Small Panel Image - Founder Portrait */}
+            <div className="absolute -bottom-6 -left-4 w-40 sm:w-52 overflow-hidden rounded-3xl border-[6px] border-ivory shadow-2xl aspect-square z-10 bg-zinc-800 group">
               <img
-                src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=600&q=85"
-                alt="Keynote presentation"
-                className="h-full w-full object-cover"
+                src={founderPhoto}
+                alt="MD Saif Bari - Founder & CEO"
+                className="h-full w-full object-cover object-top"
               />
+              <div className="absolute bottom-2 inset-x-2 rounded-lg bg-ink/85 backdrop-blur-md py-1 px-2 text-center text-[0.68rem] font-semibold text-white tracking-wide border border-white/10 shadow-sm">
+                MD Saif Bari <span className="text-gold">&bull;</span> Founder
+              </div>
             </div>
 
           </div>

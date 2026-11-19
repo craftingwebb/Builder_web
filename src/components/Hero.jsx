@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Star } from 'lucide-react';
+import founderPhoto from '../assets/images/md-saif-bari.jpg';
 
 const HERO_IMAGES = [
   'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=2000&q=85',
@@ -107,9 +108,9 @@ export default function Hero({ onOpenProposalModal, onViewPortfolio }) {
             <div className="flex items-center gap-3">
               <div className="flex -space-x-2">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80"
-                  alt="Indian Corporate Executive"
-                  className="size-9 rounded-full object-cover ring-2 ring-ink"
+                  src={founderPhoto}
+                  alt="MD Saif Bari - Founder & CEO"
+                  className="size-9 rounded-full object-cover object-top ring-2 ring-ink"
                 />
                 <img
                   src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=100&q=80"

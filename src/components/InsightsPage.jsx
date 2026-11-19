@@ -68,7 +68,7 @@ const ARTICLES = [
     title: 'Hybrid Is Here to Stay: What the 2026 MICE Outlook Means for Planners',
     excerpt:
       'Budgets are back, but expectations have changed. We break down the numbers and what they mean for your next event.',
-    author: 'Aarav Mehra',
+    author: 'MD Saif Bari',
     image:
       'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1000&q=80',
     content: [

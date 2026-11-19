@@ -9,6 +9,7 @@ import {
   ArrowUpRight,
   Mail,
 } from 'lucide-react';
+import founderPhoto from '../assets/images/md-saif-bari.jpg';
 
 // 5 Company Achievements Data (Screenshot 3: Recognition we're proud of)
 const ACHIEVEMENTS = [
@@ -50,10 +51,10 @@ const STATS = [
 // 4 Leadership Team Members (Authentic Indian executive leadership)
 const LEADERS = [
   {
-    name: "Aarav Mehra",
+    name: "MD Saif Bari",
     role: "Founder & CEO",
-    bio: "Two decades producing marquee corporate experiences across India and the Middle East.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+    bio: "Over a decade steering turnkey corporate experiences, luxury weddings, and certified manpower operations across Kolkata, Eastern India, and Delhi NCR.",
+    image: founderPhoto,
     contactEmail: "s.aeventsandmanpowerservice@gmail.com",
   },
   {
@@ -362,7 +363,7 @@ export default function AboutPage({
                   <img
                     src={leader.image}
                     alt={leader.name}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 filter grayscale contrast-110 group-hover:grayscale-0"
+                    className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105 filter grayscale contrast-110 group-hover:grayscale-0"
                   />
 
                   {/* Executive Direct Contact Badge */}
